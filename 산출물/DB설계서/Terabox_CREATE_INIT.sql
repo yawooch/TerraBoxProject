@@ -6,9 +6,9 @@
     "MEM_PHONE"     VARCHAR2(13)                            NULL,
     "MEM_EMAIL"     VARCHAR2(20)                            NULL,
     "MEM_SSN"       VARCHAR2(14)                            NULL,
-    "MKT_AGREE_YN"  CHAR(1)             DEFAULT Y           NOT NULL,
+    "MKT_AGREE_YN"  CHAR(1)             DEFAULT 'Y'         NOT NULL,
     "BNFTS_MEDIA"   VARCHAR2(10)                            NULL,
-    "MANAGER_YN"    CHAR(1)             DEFAULT N           NOT NULL,
+    "MANAGER_YN"    CHAR(1)             DEFAULT 'N'         NOT NULL,
     "JOIN_DTTM"     DATE                DEFAULT SYSDATE     NOT NULL
 );
 
@@ -84,7 +84,7 @@ CREATE TABLE "TICKET" (
     "TICKET_NO"         VARCHAR2(20)                    NOT NULL,
     "MEMBER_ID2"        VARCHAR2(30)                    NOT NULL,
     "SCRN_NO"           VARCHAR2(20)                    NOT NULL,
-    "TICKET_DV"         VARCHAR2(10)    DEFAULT ADULT   NOT NULL,
+    "TICKET_DV"         VARCHAR2(10)    DEFAULT 'ADULT' NOT NULL,
     "SEAT_NO"           VARCHAR(2)                      NOT NULL,
     "TICKET_CNCL_DTTM"  DATE                            NULL
 );
@@ -114,7 +114,7 @@ CREATE TABLE "THEATER" (
     "THEATER_NO"    VARCHAR2(10)                    NULL,
     "CINEMA_ID"     VARCHAR2(10)                    NOT NULL,
     "THEATER_TYPE"  CHAR(1)                         NULL,
-    "SPECIAL_YN"    VARCHAR2(30)        DEFAULT N   NOT NULL,
+    "SPECIAL_YN"    VARCHAR2(30)        DEFAULT 'N' NOT NULL,
     "VIDEO_QUALITY" CHAR(4)                         NULL
 );
 
@@ -180,7 +180,7 @@ CREATE TABLE "MOVIE_EVAL" (
     "EVAL_COMMENT"      VARCHAR2(200)               NOT NULL,
     "EVAL_REG_DTTM"     DATETIME                    NOT NULL,
     "VIW_PNT_CONTENT"   VARCHAR2(50)                NOT NULL,
-    "MOVIE_NO"      VARCHAR2(10)                    NOT NULL
+    "MOVIE_NO"          VARCHAR2(10)                NOT NULL
 );
 
 COMMENT ON TABLE  "MOVIE_EVAL"                   IS '영화평가';
@@ -238,7 +238,7 @@ CREATE TABLE "MOVIE_POST" (
     "POST_NO"       VARCHAR2(20)        NOT NULL,
     "TICKET_NO"     VARCHAR2(20)        NOT NULL,
     "POST_CONTENT"  VARCHAR2(100)       NULL,
-    "REG_DTTM"      DATETIME            NOT NULL,
+    "REG_DTTM"      DATE                NOT NULL,
     "MV_STEAL_NO"   VARCHAR2(20)        NOT NULL,
     "MEMBER_ID"     VARCHAR2(30)        NOT NULL,
     "MOVIE_NO"      VARCHAR2(10)        NOT NULL

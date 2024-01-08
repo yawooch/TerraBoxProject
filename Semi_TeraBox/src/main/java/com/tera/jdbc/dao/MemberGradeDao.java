@@ -40,9 +40,9 @@ public class MemberGradeDao
         {
             Class.forName("oracle.jdbc.driver.OracleDriver");// 오라클 드라이버
             
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "C##KH", "KH");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@2.156.11.186:8087:xe", "C##TERA", "TERA");
             stmt       = connection.createStatement();
-            rs         = stmt.executeQuery("SELECT * FROM MEMBER_GRADE");
+            rs         = stmt.executeQuery("SELECT * FROM MEMBER");
             
             while(rs.next())
             {

@@ -23,11 +23,13 @@ public class Application
 {
     public static void main(String[] args)
     {
-        JdbcTest.findAll();
+//        JdbcTest.findAll();
 //      JdbcTest.findByGradeCode(40);
 //        JdbcTest.findAllEmployee();
 //      JdbcTest.insert("일반화원");
 //        JdbcTest.update(50,"그냥회원","2023/11/15");
-        JdbcTest.delete(70);
+//        JdbcTest.delete(70);
+        JdbcTest.memberFindAll();
+        
     }
 }

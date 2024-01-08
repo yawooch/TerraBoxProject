@@ -3,8 +3,10 @@ package com.tera.jdbc.practice;
 import java.util.List;
 
 import com.tera.jdbc.dao.EmployeeDao;
+import com.tera.jdbc.dao.MemberDao;
 import com.tera.jdbc.dao.MemberGradeDao;
 import com.tera.jdbc.vo.Employee;
+import com.tera.jdbc.vo.Member;
 import com.tera.jdbc.vo.MemberGrade;
 
 /**
@@ -24,6 +26,19 @@ public class JdbcTest
         for (MemberGrade grade : grades)
         {
             System.out.println(grade);
+        }
+    }
+    /**
+     * 모든 member 테이블을 조회해서 보여준다.
+     */
+    public static void memberFindAll()
+    {
+        //데이터베이스에 접속해서 데이터를 가져오는 클래스를 생성
+        List<Member> members = new MemberDao().findAll();
+        
+        for (Member member : members)
+        {
+            System.out.println(member);
         }
     }
 
