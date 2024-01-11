@@ -1,0 +1,483 @@
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+element.style {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    overflow: auto;
+    overflow-y: scroll;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+/* body 중 메뉴바 */
+.page-util {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 42px;
+    background-color: #f8f8fa;
+}
+
+.inner-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.page-util .location a {
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    float: left;
+    height: 42px;
+    margin: 0 0 0 25px;
+    padding: 0;
+    line-height: 46px;
+    color: #666;
+}
+
+.page-util .location a:hover{
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    float: left;
+    height: 42px;
+    margin: 0 0 0 25px;
+    padding: 0;
+    line-height: 46px;
+    color: #666;
+}
+
+.page-util .location span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    width: 13px;
+    height: 100%;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    text-indent: -9999px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
+}
+
+.page-util .location a:before, .page-util .location span.no-link:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -14px;
+    top: 0;
+    width: 5px;
+    height: 42px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
+}
+
+a:visited {
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
+
+/* body */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    /* margin-block-start: 0.83em; */
+    /* margin-block-end: 0.83em; */
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+h2.tit {
+    padding: 0 0 26px 0;
+    font-size: 1.8666em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #222;
+}
+
+.inner-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.inner-wrap:after {
+    clear: both;
+}
+.inner-wrap:after, .inner-wrap:before {
+    content: '';
+    display: table;
+}
+
+.seat-select-section .seat-section {
+    float: left;
+    width: 770px;
+    height: 556px;
+    border-top: 1px solid #000;
+    background-color: #fff;
+}
+
+.seat-select-section .seat-section .tit-util {
+    padding: 8px 0 7px 0;
+}
+
+.seat-select-section .seat-section .tit-util .tit {
+    padding: 0;
+    line-height: 32px;
+}
+
+h3.tit {
+    margin: 0;
+    padding: 0 0 16px 0;
+    font-size: 1.6em;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+h3.tit.small {
+    padding: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #222;
+}
+
+h3 {
+    display: inline-block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.tit-util .right {
+    float: right;
+    
+}
+
+.button {
+    display: inline-block;
+    height: 36px;
+    margin: 0;
+    padding: 0 15px;
+    text-align: center;
+    line-height: 34px;
+    color: #6D3030;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    text-decoration: none;
+    border: 1px solid #6D3030;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.button.gray-line.small {
+    line-height: 32px;
+}
+
+.button.gray-line {
+    color: #444;
+    line-height: 36px;
+    border: 1px solid #c1c1c1;
+    background-color: #fff;
+}
+
+.button.small {
+    height: 32px;
+    padding: 0 12px;
+    line-height: 30px;
+    font-size: .9333em;
+}
+
+.button>i:first-child {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.button>i {
+    margin-top: -2px;
+    margin-left: 4px;
+}
+
+.ico-reset-small {
+    width: 14px;
+    height: 14px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-reset-small.png);
+}
+
+.iconset {
+    overflow: hidden;
+    display: inline-block;
+    margin: -1px 0 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.seat-count{
+    background-color: #f2f4f5;
+    width: 770px;
+    height: 53px;
+    border: 1px solid #d8d9db;
+    border-bottom: 0px;
+}
+
+.txt {
+    float: left;
+    line-height: 43px;
+    display: inline-block;
+    padding: 0px 10px 0px 20px;
+    margin: 0;
+    height:39px;
+}
+
+.counter-group{
+    float: left;
+    width: 106px;
+    padding-top: 5px;
+    
+}
+
+.counter{
+    position: relative;
+    float: left;
+    width: 42px;
+    height: 32px;
+    text-align: center;
+    padding-top:7px;
+}
+.btn-minus, .btn-plus {
+    height: 32px;
+    width: 34px;
+    float: left;
+    font-size: 18px;
+    padding-bottom: 7px;
+    margin: 0px -1px ;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.btn-minus, .btn-plus, .counter { 
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+}
+
+.btn-plus { 
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+}
+
+.btn-minus { 
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.cell{
+    float: left;
+    margin-left: 14px;
+}
+.seat-count{
+    padding:5px;
+}
+
+.seat-body {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    height: 452px;
+    border: 1px solid #d8d9db;
+}
+
+
+.screen-span{
+    display: flex;
+    justify-content: center;
+}
+
+.seat-container {
+    padding-top: 15px;
+    width: 53%;
+    margin: 0 auto;
+}
+
+.seat {
+    clear: both;
+    padding-top:5px;
+}
+
+.line {
+    width: 20px;
+    height: 20px;
+    text-align:center;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    margin-right: 10px;
+    background-color: white;
+    float:left;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+.seat-click { 
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    padding:0;
+    text-align: center;
+    float: left;
+    margin: 0 2px;
+    overflow: hidden;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    background-color: #747474;
+    border: 1px solid #6D3030;
+}
+
+.seat-click:hover, .seat-click:active{
+    background-color: #6D3030;
+}
+
+.seat-end {
+    margin-bottom: 10px;
+    
+}
+
+.black-box {
+    width: 310px;
+    height: 554px;
+    background-color: #000;
+    margin: 0px 0px 0px 790px;
+    background-color: #333;
+    border-radius: 10px;
+    
+}
+
+.choice-box {
+    padding: 15px 10px 0px 20px;
+}
+
+.bb-title {
+    display: block;
+    width: 270px;
+    height: 48px;
+    border-bottom: 1px solid #434343;
+}
+
+.bb-info {
+    width: 270px;
+    height: 121px;
+    border-bottom: 1px solid #434343;
+    margin-bottom: 10px;
+}
+
+.choice-seat {
+    border: 1px solid #434343;
+    width: 270px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+.choice-person {
+    width: 270px;
+    height: 20px;
+    border: 1px solid #c1c1c1;
+    margin-top: 35.8px;
+}
+
+.pay {
+    width: 270px;
+    height: 35px;
+    border: 1px solid aqua;
+}
+
+.btn-group {
+    z-index: 1;
+    padding: 0 auto;
+    width: 310px;
+    height: 40px;
+    background-color: yellowgreen;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* .tit-age-img {
+    background-image: ;
+} */
