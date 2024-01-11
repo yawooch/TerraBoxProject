@@ -353,7 +353,7 @@ h3 {
 }
 .cell{
     float: left;
-    margin-left: 14px;
+    margin-left: 54px;
 }
 .seat-count{
     padding:5px;
@@ -407,12 +407,12 @@ h3 {
     margin: 0 2px;
     overflow: hidden;
     font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
-    background-color: #747474;
+    background-image : url(./img/bg-seat-common.png);
     border: 1px solid #6D3030;
 }
 
-.seat-click:hover, .seat-click:active{
-    background-color: #6D3030;
+.seat-click:hover{
+    background-image: url(./img/bg-seat-choice.png);
 }
 
 .seat-end {
@@ -478,6 +478,35 @@ h3 {
     border-bottom-right-radius: 10px;
 }
 
-/* .tit-age-img {
-    background-image: ;
-} */
+.tit-age-img {
+    float: left;
+    background-image: url(./img/12_40x40.png);
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+}
+
+.tk-title {
+    font-size: 17px;
+    display: flex;
+    color: white;
+    padding-left: 7px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+.tk-sub-title {
+    color: #AAAAAA;
+    font-size: 13px;
+    margin-left: 25px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+.info-one{
+    margin-top: 10px;
+}
+
+
+.info-one, .info-two, .info-three {
+    color: #AAAAAA;
+    margin: 0px auto;
+}
