@@ -68,6 +68,12 @@ nav {
     display: block;
 }
 
+label{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
 
 /* 헤더부분 속성 모음 */
 
@@ -360,6 +366,29 @@ nav {
     content: '';
     display: table;
 }
+
+.qt-search-area-by .qt-label-by{
+    display: block;
+    float: left;
+    padding: 0 20px 0 0;
+    line-height: 36px;
+    font-weight: 600;
+    width: 85px;
+    font-size: 15px;
+}
+
+.qt-searchbar-by{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 230px;
+    height: 36px;
+    margin: 0;
+    padding: 0 31px 0 0;
+    border: 1px solid #d8d9db;
+    border-radius: 3px;
+}
+
 
 
 
