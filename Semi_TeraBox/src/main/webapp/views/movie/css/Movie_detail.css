@@ -32,65 +32,65 @@ section {
     height: 300px;
 }
 
-.movie_detail {
+.mv-movie-detail {
     position: relative;
     width: 100%;
     background-color: #0F0F0F;
     min-width: 1100px;
 }
 
-.div_black * {
+.mv-div-black * {
     color: white;
 }
 
-.div_black {
+.mv-div-black {
     margin: auto;
     width: 1100px;
     height: 100%;
 
 }
 
-.div1 {
+.mv-div1 {
     display: inline-block;
     width: 60%;
 }
 
 
-.kr-name {
+.mv-kr-name {
     font-size: 30px;
     margin: 0px;
     margin-top: 20px;
 }
 
-.eng-name {
+.mv-eng-name {
     font-size: 15px;
     margin: 5px;
 }
 
-.btn-util {
+.mv-btn-util {
     display: flex;
 }
 
-.btn-black {
+.mv-btn-black {
     background-color: black;
     border-radius: 5px;
     border: 1px solid gray;
     display: flex;
 }
 
-.btn-black > span {
+.mv-btn-black > span {
     margin: auto;
 }
 
-.btn-util :last-child {
+.mv-btn-util :last-child {
     margin-left: 5px;
 }
 
-.btn-black:hover {
+.mv-btn-black:hover {
     background-color: white;
 }
 
-.btn-black:hover span {
+.mv-btn-black:hover span {
     color: black;
 }
 
@@ -112,13 +112,13 @@ td {
     font-weight: bold;
 }
 
-.div2 {
+.mv-div2 {
     float: right;
     width: 30%;
     height: 290px;
 }
 
-.poster {
+.mv-poster {
     position: relative;
     margin: auto;
     margin-top: 20px;
@@ -127,24 +127,24 @@ td {
     border-radius: 5px;
 }
 
-.poster img {
+.mv-poster img {
     width: 100%;
 }
 
-.movie-age {
+.mv-movie-age {
     position: absolute;
     top: 5px;
     left: 5px;
 }
 
-.download_poster {
+.mv-download-poster {
     position: absolute;
     top: 5px;
     right: 5px;
 }
 
 
-.ticketing {
+.mv-ticketing {
     background-color: darkred;
     width: 150px;
     height: 30px;
@@ -155,7 +155,7 @@ td {
     border-style: none;
 }
 
-.sec1 {
+.mv-sec1 {
     width: 1100px;
     margin: auto;
     height: 680px;
@@ -193,29 +193,29 @@ a {
     
 }
 
-.large_p {
+.mv-large-p {
     clear: both;
     font-size: 25px;
 }
 
-.small_p {
+.mv-small-p {
     margin: 1px;
 }
 
 
-.movie-info {
+.mv-movie-info {
     box-sizing: border-box;
     
 }
 
-.sec1 > div > div p:not(:first-child) {
+.mv-sec1 > div > div p:not(:first-child) {
     margin-top: 5px;
     margin-bottom: 5px;
     padding-left: 20px;
 }
 
 
-.movie-info p {
+.mv-movie-info p {
     display: inline-block;
     
 }
@@ -223,7 +223,7 @@ a {
 
 /* 동영상 섹션 */
 
-.sec2 {
+.mv-sec2 {
     width: 1100px;
     margin: auto;
     height: 800px;
@@ -231,49 +231,49 @@ a {
 
 
 
-.movie-videotag {
+.mv-movie-videotag {
     height: 50px;
 }
 
-.movie-videotag p {
+.mv-movie-videotag p {
     float: left;
     font-size: 14px;
 }
 
-.movie-videotag p:last-child {
+.mv-movie-videotag p:last-child {
     padding-left: 20px;
 }
 
-.bold-hr {
+.mv-bold-hr {
     border-color: black;
     border-style: solid;
 }
 
-.video-name {
+.mv-video-name {
     font-size: 20px;
     font-weight: bold;
 }
 
-.thin-hr {
+.mv-thin-hr {
     border-color: #eaeaea;
     border-style: solid;
 }
 
-.video {
+.mv-video {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.btn-left {
+.mv-btn-left {
     text-align: center;
 }
 
-.video span{
+.mv-video span{
     display: block;
 }
 
-.btn-left + div {
+.mv-btn-left + div {
     margin: auto;
     width: 800px;
 }
@@ -281,14 +281,14 @@ a {
 video {
     width: 100%;
 }
-.btn-right  {
+.mv-btn-right  {
     text-align: center;
 }
 
 
 /* 동영상 리스트 */
 
-.video-list {
+.mv-video-list {
     margin-top: 40px;
     height: 120px;
     display: flex;
@@ -296,19 +296,19 @@ video {
     align-items: center;
 }
 
-.video-thumbnail {
+.mv-video-thumbnail {
     width: 210px;
     height: 100%;
 }
 
 
-.video-thumbnail div {
+.mv-video-thumbnail div {
     height: 100%;
     background-color: #0F0F0F;
 }
 
 
-.video-thumbnail:nth-child(2) {
+.mv-video-thumbnail:nth-child(2) {
     border: 5px solid #AF2D2D;
 }
 
@@ -321,7 +321,7 @@ button {
 }
 
 
-.btn_more {
+.mv-btn-more {
     display: block;
     margin: auto;
     width: 100%;
@@ -332,7 +332,8 @@ button {
     border-bottom: 1px solid #eaeaea;
     background-color: white;
 }
-.btn_more:hover {
+
+.mv-btn-more:hover {
     border-bottom: 1px solid #444;
     background-color: white;
 }
