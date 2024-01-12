@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="signup_3.css" rel="stylesheet">
+    <script src="/jquery/jquery-3.7.1.js" ></script>
+</head>
+<body>
+    <div class="member-wrap">
+        <!-- 로고 -->
+        <div class="logo"><a href="https://megabox.co.kr/main" id="logo">Megabox lifetheather</a>
+        </div>
+        <!-- 상단바 -->
+        <div class="col-wrap">
+            <!--step1 본인인증, step2 약관동의, step3 정보입력, step4 가입완료 
+                단계 중 step3 본인인증 단계-->
+            <div class="step-member">
+                <ol>
+                    <li>
+                        <p class="step">
+                            <span>STEP1.본인인증</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP2.약관동의</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP3.정보입력</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step on">
+                            <span>STEP4.가입완료</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <!-- "약관동의 및 정보활용동의" 문구 -->
+            <div class="pageinfotextdiv">
+                <p class="page-info-text">
+                    <strong>아무개님 안녕하세요</strong>
+                    <span>회원정보를 입력해주세요.</span>
+                </p>
+            </div>
+             <!-- 회원정보 입력창 -->
+             <div class="member-table-wrap">
+                <table class="member-table-form">
+                    <colgroup>
+                        <!-- col : col 은 column의 약자로 열을 합니다. 해당 열의 속성을 지정할 때 사용합니다. -->
+                        <col style="width: 130px;"> <!-- 왼쪽 -->
+                        <col> <!-- 오른쪽 -->
+                    </colgroup>
+                    <tbody>
+                        <!-- 생년월일 -->
+                        <tr>
+                            <th>생년월일</th>
+                            <td></td> <!--required : 필수입력폼-->
+
+                        </tr>
+                        <!-- 휴대폰번호  -->
+                        <tr>
+                            <th>주민번호</th>
+                            <td></td>
+                        </tr>
+                        <!-- 아이디 입력 폼 -->
+                        <tr>
+                            <th>휴대폰번호</th>
+                            <td><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
+                        </tr>
+                        <!-- 비밀번호 입력 폼 -->
+                        <tr>
+                            <th>휴대폰번호</th>
+                            <td><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
+                        </tr>
+                        <!-- 비밀번호확인 입력 폼 -->
+                        <tr>
+                            <th>휴대폰번호</th>
+                            <td><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
+                        </tr>
+                        <!-- 무인발권기기능설정  -->
+                        <tr>
+                            <th>이름</th>
+                            <td></td> <!--required : 필수입력폼-->
+
+                        </tr>
+                        <!-- 나만의 메가박스 설정 -->
+                        <tr>
+                            <th>이름</th>
+                            <td></td> <!--required : 필수입력폼-->
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="signup_1.css" rel="stylesheet">
+    <script src="/jquery/jquery-3.7.1.js" ></script>
+</head>
+<body>
+    <div class="member-wrap">
+        <!-- 로고 -->
+        <div class="logo"><a href="https://megabox.co.kr/main" id="logo">Megabox lifetheather</a>
+        </div>
+        <!-- 상단바 -->
+        <div class="col-wrap">
+            <!--step1 본인인증, step2 약관동의, step3 정보입력, step4 가입완료 
+                단계 중 step1 본인인증 단계-->
+            <div class="step-member">
+                <ol>
+                    <li>
+                        <p class="step on">
+                            <span>STEP1.본인인증</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP2.약관동의</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP3.정보입력</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP4.가입완료</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <!-- "회원가입을 위한 가입확인 단계입니다."" 문구 -->
+            <div class="signtitle">
+                <strong>회원가입을 위한 가입확인 단계입니다.</strong>
+            </div>
+            <!-- 이름, 주민번호, 휴대번호 입력창 -->
+            <div class="member-table-wrap">
+                <table class="member-table-form">
+                    <colgroup>
+                        <!-- col : col 은 column의 약자로 열을 합니다. 해당 열의 속성을 지정할 때 사용합니다. -->
+                        <col style="width: 130px;"> <!-- 왼쪽 -->
+                        <col> <!-- 오른쪽 -->
+                    </colgroup>
+                    <tbody>
+                        <!-- 이름 입력 폼 -->
+                        <tr>
+                            <th>이름</th>
+                            <td colspan="2"><input type="text" class="member-table-input" id="name" autocomplete="off" required maxlength="20"></td> <!--required : 필수입력폼-->
+
+                        </tr>
+                        <!-- 주민번호 입력 폼 -->
+                        <tr>
+                            <th>주민번호</th>
+                            <td><input type="password" class="member-table-input" id="security" autocomplete="off" required maxlength="20"></td>
+                            <td><input type="password" class="member-table-input" id="security" autocomplete="off" required maxlength="20"></td>
+                        </tr>
+                        <!-- 휴대폰번호 입력 폼 -->
+                        <tr>
+                            <th>휴대폰번호</th>
+                            <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 하단 문구  -->
+            <div class="member-bottom-text">
+                <ul>
+                    <li>14세 미만 어린이는 보호자 인증을 추가로 완료한 후 가입이 가능합니다.</li>
+                    <li>본인인증시 제공되는 정보는 해당 인증기관에서 직접 수집하며, 인증이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                </ul>
+            </div>
+            <!-- 확인 버튼 -->
+            <div class="agree-btn-bottom">
+                <button id="btnagreebottom" type="button" class="button red" disabled="disabled">확인</button>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
