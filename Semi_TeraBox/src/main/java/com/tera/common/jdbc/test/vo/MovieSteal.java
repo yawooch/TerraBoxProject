@@ -1,4 +1,4 @@
-package com.tera.jdbc.vo;
+package com.tera.common.jdbc.test.vo;
 
 public class MovieSteal
 {

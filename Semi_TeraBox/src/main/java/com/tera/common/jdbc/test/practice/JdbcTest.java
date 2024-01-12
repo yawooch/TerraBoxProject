@@ -1,13 +1,13 @@
-package com.tera.jdbc.practice;
+package com.tera.common.jdbc.test.practice;
 
 import java.util.List;
 
-import com.tera.jdbc.dao.EmployeeDao;
-import com.tera.jdbc.dao.MemberDao;
-import com.tera.jdbc.dao.MemberGradeDao;
-import com.tera.jdbc.vo.Employee;
-import com.tera.jdbc.vo.Member;
-import com.tera.jdbc.vo.MemberGrade;
+import com.tera.common.jdbc.test.dao.EmployeeDao;
+import com.tera.common.jdbc.test.dao.MemberDao;
+import com.tera.common.jdbc.test.dao.MemberGradeDao;
+import com.tera.common.jdbc.test.vo.Employee;
+import com.tera.common.jdbc.test.vo.Member;
+import com.tera.common.jdbc.test.vo.MemberGrade;
 
 /**
  * JDBC Test 하는 클래스

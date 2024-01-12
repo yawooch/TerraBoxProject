@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>나는 테라박스 히힣</title>
+    <title>LIFE THEATER, 테라박스</title>
+    <link rel="stylesheet" href="${path}/header.css">
+    <link rel="stylesheet" href="${path}/footer.css">
     <style>
         @charset "UTF-8";
 		@font-face {
@@ -75,101 +79,6 @@
             border: 0;
             background: #037b94;
         }
-
-        /******************************************** 
-            헤더 영역 속성정의 시작
-        *********************************************/
-        #header{
-            background-color: #6D3030;
-            border-bottom:1px solid white;
-            width:100%;
-            height:91px;
-        }
-        .content>.login-link {
-            position:absolute;
-            display: block;
-            right: 15px;
-            top: 13px;
-        }
-        .content>.login-link>a:hover{
-            text-decoration: underline;
-        }
-        .content>.login-link>a{
-            color: #888;
-            float: left;
-            margin-left:8px;
-        }
-        .mainLogo {
-            position:absolute;
-            width:140px;
-            height: 47px;
-            top: 25px;
-            left: 50%;
-            margin-left: -70px;
-            z-index: 1;
-        }
-        .mainLogo>img{
-            width:140px;
-            height: 47px;
-        }
-        #header>.content {
-            background-color: #6D3030;
-            position:relative;
-        }
-        .header-link-left>a, .header-link-right>a{
-            background-repeat: no-repeat;   
-            background-position: center;
-            display:inline-block;
-        }
-        .header-link-left>div, .header-link-right>div{
-            display: inline-block;
-            margin-top: 10px;
-            vertical-align: top;
-        }
-        .header-link-left{
-            position:absolute;
-            top:50px;
-            left:15px;
-        }
-        .header-link-right{
-            position:absolute;
-            top:50px;
-            right:15px;
-        }
-        .header-link-left>div>a{
-            margin-left:100px;
-            padding-bottom:8px;
-        }
-        .header-link-right>div>a{
-            margin-right:100px;
-            padding-bottom:8px;
-        }
-        .header-link-left>div>a:hover, .header-link-right>div>a:hover{
-            border-bottom:4px solid white;
-        }
-        .link-area-sitemap{
-            background-image: url(img/ico-sitemap-white.png);
-            width:36px;
-            height:36px;
-        }
-        .link-area-movie{
-            background-image: url(img/ico-movie-white.png);
-            width:36px;
-            height:36px;
-        }
-        .link-area-ticket{
-            background-image: url(img/ico-ticket-white.png);
-            width:36px;
-            height:36px;
-        }
-        .link-area-mypage{
-            background-image: url(img/ico-mypage-white.png);
-            width:36px;
-            height:36px;
-        }
-        /******************************************** 
-            헤더 영역 속성정의 끝
-        *********************************************/
         /******************************************** 
             Video 영역 속성정의 시작
         *********************************************/
@@ -406,112 +315,18 @@
             width:100%;
             height:91px;
         }
-        
-        /******************************************** 
-            footer 영역 속성정의 시작
-        *********************************************/
-        #footer{
-            background-color: #A0A0A0;
-            width:100%;
-            height:90px;
-        }
-        .footerContent{
-            height: 50px;
-            width: 100%;
-            position: relative;
-            color:white;
-        }
-        .footerContent>span{
-            position: absolute;
-            top:20px;
-        }
-        .footerContent>span:nth-child(2){
-            left:160px;
-            font-size:12px;
-        }
-        .footerContent>span:nth-child(3){
-            right:0px;
-        }
-        .footerContent>span:nth-child(2) li{
-            margin-bottom:8px;
-        }
-        .footerContent>span:nth-child(2) li:nth-child(3){
-            font-weight:900;
-        }
-        .footerLogo>img{
-            height:50px;
-        }
-        .footer-findCinema{
-            overflow: hidden;
-            float: right;
-            display: block;
-            width: 106px;
-            height: 30px;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            line-height: 28px;
-            color: #666;
-            font-size: .8667em;
-            border: 1px solid #d8d9db;
-            border-radius: 30px;
-            text-decoration: none;
-        }
-        .ico-footer-search{
-            width: 15px;
-            height: 15px;
-            background-image: url(img/ico-footer-search.png);
-            margin-left:4px;
-            overflow: hidden;
-            display: inline-block;
-            margin: -1px 0 0 0;
-            padding: 0;
-            font-size: 0;
-            line-height: 0;
-            vertical-align: middle;
-            background-position: 0 0;
-            background-repeat: no-repeat;
-        }
-        /******************************************** 
-            footer 영역 속성정의 끝
-        *********************************************/
     </style>
 </head>
 
 <body>
-    <header id="header">
-        <div class="content">
-            <div class="mainLogo"><img src="./img/mainLogo.png" alt=""></div>
-            <div class="login-link">
-                <a href="#">로그인</a>
-                <a href="#">회원가입</a>
-                <a href="#">빠른예매</a>
-            </div>
-            <div class="header-link-left">
-                <a href="#" class="link-area-sitemap"></a>
-                <a href="#" class="link-area-movie"></a>
-                <div>
-                    <a href="#">영화</a>
-                    <a href="#">예매</a>
-                </div>
-            </div>
-            <div class="header-link-right">
-                <div>
-                    <a href="#">극장</a>
-                    <a href="#">고객센터</a>
-                </div>
-                <a href="#" class="link-area-ticket"></a>
-                <a href="#" class="link-area-mypage"></a>
-            </div>
-        </div>
-    </header>
+	<jsp:include page="${path}/header.jsp" />
+
+    
     <section id="videoSection">
         <div class="content">
             <div class="video-frame">
                 <video autoplay="" muted="">
-                    <source src="video/sikyung.mp4" type="video/mp4">
-                    이 브라우저는 Video 태그를 지원하지 않습니다. (Your browser does not support the video tag.)
-                </video>
+                    <source src="video/sikyung.mp4" type="video/mp4">이 브라우저는 Video 태그를 지원하지 않습니다. (Your browser does not support the video tag.)</video>
                 <div class="video-wrap">
                     <div class="video-title">시경, 오 시경!</div>
                     <div class="video-subTitle">올겨울을 후누눈하게 보내게 해 줄<br>성시경의 킬링보이스를 듣소</div>
@@ -592,22 +407,6 @@
         </div>
     </section>
     <section id="noticeSection"></section>
-    <footer id="footer">
-        <div class="content">
-            <div class="footerContent">
-                <span class="footerLogo"><img src="./img/mainLogo.png" alt=""></span>
-                <span>
-                    <ul>
-                        <li>서울 중구 남대문로 120 대일빌딩 2층, 3층</li>
-                        <li>대표자명 : 양우찬 , 백성연, 손연희, 진병만, 김서하</li>
-                        <li>COPY RIGHT ⓒTERRABOX JONGRO-GO, Inc. All Right Reserved</li>
-                    </ul>
-                </span>
-                <span>
-                    <a href="#"class="footer-findCinema"><i class="ico-footer-search"></i>극장찾기</a>
-                </span>
-            </div>
-        </div>
-    </footer>
+	<jsp:include page="${path}/footer.jsp" />
 </body>
 </html>

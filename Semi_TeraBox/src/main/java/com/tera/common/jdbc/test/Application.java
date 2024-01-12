@@ -1,6 +1,6 @@
-package com.tera.jdbc;
+package com.tera.common.jdbc.test;
 
-import com.tera.jdbc.practice.JdbcTest;
+import com.tera.common.jdbc.test.practice.JdbcTest;
 
 /**
  * ORACLE OJDBC 테스트 실행 파일 

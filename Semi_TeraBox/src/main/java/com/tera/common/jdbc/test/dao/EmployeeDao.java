@@ -1,4 +1,4 @@
-package com.tera.jdbc.dao;
+package com.tera.common.jdbc.test.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tera.jdbc.vo.Employee;
+import com.tera.common.jdbc.test.vo.Employee;
 
 /**
  * <EMPLOYEE 테이블>

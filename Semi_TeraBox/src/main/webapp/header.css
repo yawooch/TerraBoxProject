@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+*{
+	box-sizing: border-box;
+}
+ul, ol{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+html, body{
+    font-family: 'NanumBarunGothic';
+    width:100%;
+    height:100%;
+    margin:0;
+}
+a {
+    text-decoration: none;
+    color:white;
+}
+#header>.content, #videoSection>.content, #footer>.content, #movieSection>.content, #noticeSection>.content{
+    width:1100px;
+    height:100%;
+    margin:0 auto;
+}
+.button {
+    display: inline-block;
+    height: 36px;
+    margin: 0;
+    padding: 0 15px;
+    text-align: center;
+    line-height: 34px;
+    color: #503396;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    text-decoration: none;
+    border: 1px solid #503396;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+}
+.button.gblue {
+    color: #fff;
+    line-height: 36px;
+    border: 0;
+    background: #037b94;
+}
+/******************************************** 
+    헤더 영역 속성정의 시작
+*********************************************/
+#header{
+    background-color: #6D3030;
+    border-bottom:1px solid white;
+    width:100%;
+    height:91px;
+}
+.content>.login-link {
+    position:absolute;
+    display: block;
+    right: 15px;
+    top: 13px;
+}
+.content>.login-link>a:hover{
+    text-decoration: underline;
+}
+.content>.login-link>a{
+    color: #888;
+    float: left;
+    margin-left:8px;
+}
+.mainLogo {
+    position:absolute;
+    width:140px;
+    height: 47px;
+    top: 25px;
+    left: 50%;
+    margin-left: -70px;
+    z-index: 1;
+}
+.mainLogo>img{
+    width:140px;
+    height: 47px;
+}
+#header>.content {
+    background-color: #6D3030;
+    position:relative;
+}
+.header-link-left>a, .header-link-right>a{
+    background-repeat: no-repeat;   
+    background-position: center;
+    display:inline-block;
+}
+.header-link-left>div, .header-link-right>div{
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+}
+.header-link-left{
+    position:absolute;
+    top:50px;
+    left:15px;
+}
+.header-link-right{
+    position:absolute;
+    top:50px;
+    right:15px;
+}
+.header-link-left>div>a{
+    margin-left:100px;
+    padding-bottom:8px;
+}
+.header-link-right>div>a{
+    margin-right:100px;
+    padding-bottom:8px;
+}
+.header-link-left>div>a:hover, .header-link-right>div>a:hover{
+    border-bottom:4px solid white;
+}
+.link-area-sitemap{
+    background-image: url(img/ico-sitemap-white.png);
+    width:36px;
+    height:36px;
+}
+.link-area-movie{
+    background-image: url(img/ico-movie-white.png);
+    width:36px;
+    height:36px;
+}
+.link-area-ticket{
+    background-image: url(img/ico-ticket-white.png);
+    width:36px;
+    height:36px;
+}
+.link-area-mypage{
+    background-image: url(img/ico-mypage-white.png);
+    width:36px;
+    height:36px;
+}
+/******************************************** 
+    헤더 영역 속성정의 끝
+*********************************************/
