@@ -353,7 +353,7 @@
             <div class="movie-list">
                 <ol class="list">
                     <li class="first">
-                        <a class="movie-list-info">
+                        <a class="movie-list-info" style="position: relative;">
                             <p class="rank">1<span class="ir">위</span></p>
                             <img src="img/외계인2.jpg" alt="" class="poster">
                             
@@ -366,7 +366,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="movie-list-info">
+                        <a class="movie-list-info" style="position: relative;">
                             <p class="rank">2<span class="ir">위</span></p>
                             <img src="img/wish.jpg" alt="" class="poster">
                             
@@ -379,7 +379,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="movie-list-info">
+                        <a class="movie-list-info" style="position: relative;">
                             <p class="rank">3<span class="ir">위</span></p>
                             <img src="img/seoulSpring.jpg" alt="" class="poster">
                             <div class="btn-util">
@@ -391,7 +391,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="movie-list-info">
+                        <a class="movie-list-info" style="position: relative;">
                             <p class="rank">4<span class="ir">위</span></p>
                             <img src="img/noRyang.jpg" alt="" class="poster" >
                             <div class="btn-util">
