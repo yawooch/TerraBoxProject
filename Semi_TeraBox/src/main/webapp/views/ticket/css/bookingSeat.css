@@ -431,7 +431,7 @@ h3 {
 }
 
 .tk-choice-box {
-    padding: 15px 10px 0px 20px;
+    padding: 10px 10px 0px 20px;
     font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
 
 }
@@ -504,25 +504,39 @@ h3 {
 
 .tk-info-one{
     margin-top: 10px;
-    color: #AAAAAA;
+    color: #c4c4c4;
     width: 50%;
     margin-bottom: 0px auto;
     display: inline-block;
+    font-size: 13px;
 }
 
 .tk-info-two, .tk-info-three {
+    margin: 0px;
     width:100px;
-    color: #AAAAAA;
-    margin: 0px auto;
+    color: #c4c4c4;
+    font-size: 13px;
 }
 
 .tk-info-btn {
-    
-    width: 50%;
+    background-color: transparent;
+    color: #fff;
+    width: 143px;
+    height: 28px;
+    font-size: 12px;
+    font-family: Roboto;
+    display: inline-block;
+    text-align: left;
+    margin: 0px;
+    border:none;
+    padding: 0px;
+
 }
 
 .tk-info-btn div {
     background-image: url(../img/bg-other-time-arr-down.png);
     width: 16px;
     height: 16px;
+    display: inline-block;
+    margin : 10px 0px 0px 10px
 }
