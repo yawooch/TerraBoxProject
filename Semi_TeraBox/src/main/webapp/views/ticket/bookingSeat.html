@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예매좌석선택</title>
+    <link rel="stylesheet" href="./bookingSeat.css">
+</head>
+<body>
+    <header></header>
+
+
+
+    <main>
+        <!-- body중 메뉴바 -->
+        <section>
+            <div class="page-util">
+                <div class="inner-wrap">
+                    <div class="location">
+                        <span>home</span>
+                        <a href="#" title="예매 페이지로 이동">
+                            예매
+                            </a>
+                        <a href="#" title="빠른예매 페이지로 이동">빠른예매</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>    
+    </section>
+    
+    <!-- body 왼쪽 좌석 박스으으  -->
+    <section>
+        <div class="inner-wrap" style="padding-top:40px; padding-bottom:100px;">
+            <div class="quick-reserve">
+                <h2 class="tit">빠른예매</h2>   
+            </div>
+            <div class="seat-select-section">
+                <div class="seat-section">
+                    <div class="tit-util">
+                        <h3 class="tit small"> 관람인원선택</h3>
+                        <div class="right">
+                            <button type="reset" class="button gray-line small" id="seatMemberCntInit">
+                                <i class="iconset ico-reset-small"></i> 초기화
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="seat-area">
+                        <div class="seat-count">
+                            <div class="cell">
+                                <p class="txt">성인</p>
+                                <div class="counter-group">
+                                    <button class="btn-minus" >-</button>
+                                    <div class="counter"><span>0</span></div>
+                                    <button class="btn-plus">+</button>
+                                </div>
+                            </div>
+                            <div class="cell">
+                                <p class="txt">청소년</p>
+                                <div class="counter-group">
+                                    <button class="btn-minus">-</button>
+                                    <div class="counter"><span>0</span></div>
+                                    <button class="btn-plus">+</button>
+                                </div>
+                            </div>
+                            <div class="cell">
+                                <p class="txt">경로</p>
+                                <div class="counter-group">
+                                    <button class="btn-minus">-</button>
+                                    <div class="counter"><span>0</span></div>
+                                    <button class="btn-plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seat-body">
+                            <span class="screen-span">    
+                                <img src="img/img-theater-screen.png" alt="screen" class="screen_img">
+                            </span>
+                            <div class="seat-container">
+                                <div class="seat"> 
+                                    <div class="line">A</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click"">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">B</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click"style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">C</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">D</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">E</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">F</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click" style="text-indent: -99999px; background-image: url(./img/bg-seat-finish.png);">6</button>
+                                    <button class="seat-click" style="text-indent: -99999px; background-image: url(./img/bg-seat-finish.png);">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">G</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click" style="background-image: url(./img/bg-seat-choice.png);">10</button>
+                                    <button class="seat-click" style="background-image: url(./img/bg-seat-choice.png);">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">H</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click" style="background-image: url(./img/bg-seat-choice.png);">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">I</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                                <div class="seat"> 
+                                    <div class="line">J</div>
+                                    <button class="seat-click">1</button>
+                                    <button class="seat-click">2</button>
+                                    <button class="seat-click">3</button>
+                                    <button class="seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="seat-click">5</button>
+                                    <button class="seat-click">6</button>
+                                    <button class="seat-click">7</button>
+                                    <button class="seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="seat-click">9</button>
+                                    <button class="seat-click">10</button>
+                                    <button class="seat-click">11</button>
+                                    <button class="seat-click">12</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                <!-- 오른쪽 검은색 박스  -->
+                <div class="black-box">
+                    <div class="choice-box">                        
+                        <div class="bb-title">
+                            <div class="tit-age-img"></div>
+                            <div class="tk-title">서울의 봄</div>
+                            <div class="tk-sub-title">2D</div>
+                        </div>
+                        <div class="bb-info">
+                            <p class="info-one">이수</p>
+                            <p class="info-two">6관</p>
+                            <p class="info-three">2024.01.16(화)</p>
+                            <button class="info-btn"> 16:40~19:11 <div class="info-btn-div"></div></button>
+                        </div>
+                        <div class="choice-seat"></div>
+                        <div class="choice-person"></div>
+                        <div class="pay"></div>
+                    </div>
+                        <div class="btn-group">
+                        <div class="previous page"></div>
+                        <div class="next page"></div>
+                    </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+
+
+
+    <footer></footer>
+</body>
+</html>
