@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+div {
+    display: block;
+}
+
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow: auto;
+    overflow-y: scroll;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+    font-family: NanumBarunGothic, Dotum, '돋움', sans-serif;
+}
+
+a:valid {
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 5px;
+}
+
+a:visited {
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
+
+a {
+    background-color: transparent;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: block;
+}
+
+
+
+
+
+#header-by {
+    position: relative;
+    z-index: 100;
+    height: 91px;
+    background: rgba(109, 48, 48, 1);
+}
+
+
+.body-by {
+    height: 100%;
+    padding: 0;
+}
+
+.main-by {
+    min-width: 1100px;
+    min-height: 100%;
+    margin: -92px 0 -200px 0;
+    padding: 92px 0 200px 0;
+}
+
+.main-by #contents-by {
+    float: right;
+    width: 840px;
+    height: 715px;
+}
+
+
+
+.submenu-by {
+    display: block;
+    position: static;
+    height: 42px;
+    background-color: #f8f8fa;
+}
+
+.submenu-area-by {
+    width: 1100px;
+    margin: 0 auto;
+    height: 42px;
+}
+
+.submenu-area-by .submenu-areaname-by {
+    float: left;
+    height: 42px;
+    width: 250px;
+}
+
+.submenu-area-by .submenu-areaname-by span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    width: 10px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
+}
+
+
+.submenu-area-by .submenu-areaname-by a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -14px;
+    top: 0;
+    width: 5px;
+    height: 42px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
+}
+
+
+.submenu-areaname-by>a {
+    display: inline;
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 90px;
+    margin: 0 0 0 25px;
+    padding: 0;
+    line-height: 46px;
+    color: #666;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.mainarea-by {
+    width: 1100px;
+    height: 750px;
+    margin: auto;
+}
+
+
+.mainarea-by #content-by h2 .sidebar-each-by {
+    padding: 0 0 26px 0;
+    font-size: 1.8666em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #222;
+    text-align: center;
+}
+
+#contents-by {
+    width: 100%;
+    margin: 0;
+    padding: 40px 0 0 0;
+}
+
+
+
+
+
+#sidebar-area-by {
+    margin-top: 60px;
+    right: 400px;
+    float: left;
+    width: 200px;
+    background-color: #fff;
+}
+
+
+#sidebar-area-by .sidebar-each-by {
+    overflow: hidden;
+    margin: 0%;
+    padding: 0%;
+    border-radius: 10px 10px 0 0;
+}
+
+#sidebar-area-by .sidebar-each-by a {
+    display: block;
+    font-size: 1.2em;
+    line-height: 400%;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(109, 48, 48, 1);
+    height: 80px;
+}
+
+#sidebar-area-by>ul {
+    border: 1px solid #d8d9db;
+    border: 1px solid #d8d9db;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-radius: 0 0 10px 10px;
+}
+
+#sidebar-area-by>ul>li {
+    border-top: 1px solid #d8d9db;
+}
+
+#sidebar-area-by ul li .first-area-by>a {
+    /* color: rgba(85, 87, 88, 1); */
+    font-weight: 500px;
+    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center;
+
+}
+
+#sidebar-area-by>ul>li>a {
+    display: block;
+    color: #222;
+    padding: 10px 17px;
+    font-weight: 200;
+    background-color: #f2f4f5;
+
+}
+
+#sidebar-area-by ul li a {
+    display: block;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
+
+
+
+#sidebar-area-by>ul>li {
+    border-top: 1px solid #d8d9db;
+}
+
+
+#sidebar-area-by .info-by {
+    position: relative;
+    z-index: 2;
+    margin: -1px 0 0 0;
+    padding: 20px 18px;
+    color: #666;
+    border: 2px solid #d8d9db;
+    border-top-width: 1px;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+}
+
+#sidebar-area-by .info-by .sidebar-each-by {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-image: none;
+}
+
+#sidebar-area-by .info-by p {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar-area-by .sidebar-each-by {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar-area-by .info-by .sidebar-each-by span {
+    display: block;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+#sidebar-area-by .info-by .time-by {
+    padding: 5px 0 0 0;
+    font-family: Roboto;
+    font-weight: 300;
+}
+
+#sidebar-area-by .info-by p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.clock-by {
+    overflow: hidden;
+    width: 13px;
+    height: 13px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-clock.png);
+}
+
+.iconset-by {
+    overflow: hidden;
+    display: inline-block;
+    margin: -1px 0 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+
+
+.mainname-by {
+    padding: 0 0 10px 0;
+    font-size: 1.8666em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    height: -62px;
+    color: #222;
+    font-family: Roboto, Noto-sans, Nanum Barun Gothic;
+}
+
+
+ .input-search-area-by {
+    margin: 0;
+    padding: 30px;
+    background-color: #f2f4f5;
+    border-radius: 10px;
+    margin-bottom: 30px!important;
+}
+
+.input-search-area-by:after, .input-search-area-by:before {
+    content: '';
+    display: table
+}
+
+.input-search-area-by:after {
+    clear: both
+}
+
+.search-area-by{
+    overflow: hidden;
+    
+    vertical-align: middle;
+} 
+
+.label-by{
+    /* display: block; */
+    float: left;
+    padding: 0 20px 0 0;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+.board-by{
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer-by {
+    position: relative;
+    min-width: 1000px;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8fa;
+}
