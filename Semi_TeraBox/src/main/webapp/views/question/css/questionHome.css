@@ -61,7 +61,8 @@ ol,
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0px;
+    width: 100%;
 }
 
 nav {
@@ -73,6 +74,8 @@ label{
     vertical-align: middle;
     cursor: pointer;
 }
+
+
 
 
 /* 헤더부분 속성 모음 */
@@ -127,46 +130,82 @@ label{
 .qt-submenu-area-by .qt-submenu-areaname-by {
     float: left;
     height: 42px;
-    width: 250px;
+    width: 230px;
 }
 
-.qt-submenu-area-by .qt-submenu-areaname-by span {
+
+.qt-submenu-areaname-by span {
     overflow: hidden;
     display: block;
     float: left;
-    width: 10px;
-    height: 100%;
+    width: 20px;
+    height: 95%;
     margin: 0;
-    padding: 0;
+    padding-left: 5px;
     background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
 }
 
 
-.qt-submenu-area-by .qt-submenu-areaname-by a::before {
+.qt-submenu-area-by #qt_submenuname_by::before{
     content: '';
     display: block;
     position: absolute;
-    left: -14px;
+    left: -12px;
+    margin-left: 16px;
     top: 0;
-    width: 5px;
+    width: 8px;
+    height: 42px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
+
+}
+
+.qt-submenu-area-by #qt_submenuname1_by::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 1px;
+    margin-left: 3px;
+    top: 0;
+    width: 8px;
     height: 42px;
     background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
 }
 
 
-.qt-submenu-areaname-by>a {
+
+#qt_submenuname_by{
+    display: inline;
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 80px;
+    margin: 0 0 0 0px;
+    padding: 0;
+    line-height: 42px;
+    color: #666;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+}
+
+#qt_submenuname1_by{
     display: inline;
     position: relative;
     float: left;
     height: 40px;
     width: 90px;
-    margin: 0 0 0 25px;
+    left: -15px;
+    margin: 0 0 0 0px;
     padding: 0;
-    line-height: 46px;
+    line-height: 42px;
     color: #666;
     text-decoration: none;
     text-align: center;
+    font-size: 12px;
 }
+
+
+
 
 
 /* 매인 컨텐츠 영역 속성 모음 */
@@ -187,6 +226,7 @@ label{
     right: 400px;
     float: left;
     width: 200px;
+    height: 600px;
     background-color: #fff;
 }
 
@@ -200,13 +240,14 @@ label{
 
 #qt_sidebar-area_by .qt-sidebar-each-by a {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.4em;
     line-height: 400%;
     text-align: center;
     color: #fff;
     text-decoration: none;
+    text-align-last:center;
     background-color: rgba(109, 48, 48, 1);
-    height: 80px;
+    height: 90px;
 }
 
 #qt_sidebar-area_by>ul {
@@ -229,10 +270,11 @@ label{
 
 }
 
+
 #qt_sidebar-area_by>ul>li>a {
     display: block;
     color: #222;
-    padding: 10px 17px;
+    padding: 10px 15px;
     font-weight: 200;
     background-color: #f2f4f5;
 
@@ -241,9 +283,14 @@ label{
 #qt_sidebar-area_by ul li a {
     display: block;
     text-decoration: none;
-    outline: 1px dotted #000;
+    outline: 1px #000;
 }
 
+#qt_sidebar-area_by ul li a:hover {
+    display: block;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
 
 
 #qt_sidebar-area_by>ul>li {
@@ -325,7 +372,7 @@ label{
 .qt-mainname-by {
     padding: 0 0 10px 0;
     font-size: 1.8666em;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -1px;
     height: -62px;
     color: #222;
@@ -350,7 +397,7 @@ label{
  #qt_contents_by{
     float: right;
     width: 840px;
-    height: 715px;
+    height: 752px;
     padding-top: 40px;
 }
 
@@ -359,7 +406,7 @@ label{
     padding: 30px;
     background-color: #f2f4f5;
     border-radius: 10px;
-    margin-bottom: 30px
+    margin-bottom: 20px
 }
 
 .qt-input-search-area-by:before {
@@ -367,30 +414,336 @@ label{
     display: table;
 }
 
-.qt-search-area-by .qt-label-by{
-    display: block;
-    float: left;
-    padding: 0 20px 0 0;
-    line-height: 36px;
-    font-weight: 600;
-    width: 85px;
-    font-size: 15px;
-}
+
 
 .qt-searchbar-by{
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: 230px;
+    width: 427px;
     height: 36px;
     margin: 0;
-    padding: 0 31px 0 0;
+    padding: 0 0 0 0;
     border: 1px solid #d8d9db;
     border-radius: 3px;
 }
 
 
 
+.qt-search-area-by .qt-label-by{
+    display: block;
+    float: left;
+    padding: 0 10px 0 0;
+    line-height: 36px;
+    font-weight: 600;
+    width: 90px;
+    font-size: 13px;
+}
+
+.qt-searchbar-by  .qt-board-by{
+    width: 427px; 
+    display: block;
+    width: 100%;
+    height: 34px;
+    border: 0;
+}
+
+.qt-board-by{
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+    padding:  0 0 0 5px;
+    line-height: 30px;
+    color: #444;
+    border: 1px solid #d8d9db;
+    vertical-align: middle;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif; 
+}
+
+.qt-searchbar-by  .qt-buttonicon-by{
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+
+.qt-buttonicon-by{
+    overflow: hidden;
+    width: 30px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    border: 0;
+    text-indent: -9999px;
+    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-search-input.png) no-repeat center;
+}
+
+button {
+    cursor: pointer;
+    letter-spacing: -.5px;
+    font-weight: 400;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+/* 메인컨텐츠 영역 */
+
+.qt-custo-main-by{
+    height: 541px;
+    width: 100%;
+    margin-left: 0px;
+}
+
+.qt-custo-main-by .qt-custo-main-area-by{
+    position: relative;
+    border-bottom: 1px solid #eaeaea;
+    height: 62%;
+}
+
+/* 분실물문의 아이콘 */
+
+
+.qt-block-content-by{
+    margin-left: 80px;
+}
+
+.qt-block-content2-by{
+    margin-left: 80px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by:nth-child(1){
+    background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-miss-question.png) 20px top no-repeat;
+}
+
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by{
+    float: left;
+    width: 280px;
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by a{
+    display: block;
+    width: 280px;
+    height: 170px;
+    padding: 0 0 0 10px;
+}
+
+a:link {
+    color: #444;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by p{
+    margin: 0;
+    padding: 50px 0 0 0;
+    color: #444;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by strong{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
+    color: #222;
+}
+
+
+/*  1:1 문의 아이콘 */
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by{
+    background: url(/src/main/webapp/img/icon-inquiry.png) 20px top no-repeat;
+}
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by{
+    float: left;
+    width: 280px;
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by a{
+    display: block;
+    width: 280px;
+    height: 170px;
+    padding: 0 0 0 10px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by p{
+    margin: 0;
+    padding: 50px 0 0 0;
+    color: #444;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by strong{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
+    color: #222;
+}
+
+
+
+
+
+/*  단체관람 및 대관 문의 아이콘 */
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by{
+    background: url(/src/main/webapp/img/ico-rent.png) 20px top no-repeat;
+}
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by{
+    float: left;
+    width: 280px;
+    height: 152px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by a{
+    display: block;
+    width: 260px;
+    height: 150px;
+    padding: 0 0 0 10px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by p{
+    margin: 0;
+    padding: 50px 0 0 0;
+    color: #444;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by strong{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
+    color: #222;
+}
+
+
+/* 자주 묻는 질문 속성 */
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by{
+    background: url(/src/main/webapp/img/icon-faq.png) 20px top no-repeat;
+}
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by{
+    float: left;
+    width: 280px;
+    height: 157px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by a{
+    display: block;
+    width: 280px;
+    height: 170px;
+    padding: 0 0 0 10px;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by p{
+    margin: 0;
+    padding: 50px 0 0 0;
+    color: #444;
+}
+
+
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by strong{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
+    color: #222;
+}
+
+/* 자주묻는 질문 탭 */
+
+.qt-notice-wrap-by{
+        height: 220px;
+    }
+
+
+.qt-notice-wrap-by .qt-block-left-by{
+    float: left;
+    width: 400px;
+    height: 191px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px ;
+}
+
+
+.qt-notice-wrap-by  .qt-tit-area-by{
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #555;
+}
+
+
+.qt-notice-wrap-by .qt-tit-area-by .qt-tit-by{
+    float: left;
+    line-height: 32px;
+    padding: 0 0 10px 0;
+    font-size: 1.0em;
+    color: #222;
+    margin: 5px;
+}
+
+.qt-notice-wrap-by .qt-tit-area-by .qt-tit-by{
+    float: left;
+    line-height: 32px;
+    width: 50%;
+}
+
+h3 .qt-tit-by .qt-small-by{
+    padding: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #222;
+}
+
+.qt-notice-wrap-by  .qt-tit-area-by .qt-more-by{
+    float: right;
+    line-height: 20px;
+    width: 17%;
+    margin-top: 15px;
+}
+
+.qt-iconsetarea-by{
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-arr-right-gray.png);
+    overflow: hidden;
+    display: inline-block;
+    margin: 3px 0 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    float: right;
+
+
+}
 
 
 
@@ -407,7 +760,15 @@ label{
 
 
 
+/* 자주묻는 질문 탭 */
 
+.qt-notice-wrap-by .qt-block-right-by{
+    float: left;
+    width: 400px;
+    height: 191px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #eaeaea;
+}
 
 
 
