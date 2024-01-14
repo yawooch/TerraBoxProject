@@ -40,58 +40,38 @@ a {
     text-decoration: none;
     color:white;
 }
-#header>.content, #videoSection>.content, #footer>.content, #movieSection>.content, #noticeSection>.content{
+#cm_header>.cm-content, #main_videoSection>.main-content, #cm_footer>.cm-content, #main_movieSection>.main-content{
     width:1100px;
     height:100%;
     margin:0 auto;
 }
-.button {
-    display: inline-block;
-    height: 36px;
-    margin: 0;
-    padding: 0 15px;
-    text-align: center;
-    line-height: 34px;
-    color: #503396;
-    font-weight: 400;
-    border-radius: 4px;
-    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
-    text-decoration: none;
-    border: 1px solid #503396;
-    vertical-align: middle;
-    background-color: #fff;
-    cursor: pointer;
-}
-.button.gblue {
-    color: #fff;
-    line-height: 36px;
-    border: 0;
-    background: #037b94;
-}
 /******************************************** 
     헤더 영역 속성정의 시작
 *********************************************/
-#header{
+/******************************************** 
+    메인메뉴 영역 속성정의 시작
+*********************************************/
+#cm_header{
     background-color: #6D3030;
     border-bottom:1px solid white;
     width:100%;
     height:91px;
 }
-.content>.login-link {
+.cm-content>.cm-login-link {
     position:absolute;
     display: block;
     right: 15px;
     top: 13px;
 }
-.content>.login-link>a:hover{
+.cm-content>.cm-login-link>a:hover{
     text-decoration: underline;
 }
-.content>.login-link>a{
+.cm-content>.cm-login-link>a{
     color: #888;
     float: left;
     margin-left:8px;
 }
-.mainLogo {
+.cm-mainLogo {
     position:absolute;
     width:140px;
     height: 47px;
@@ -100,65 +80,508 @@ a {
     margin-left: -70px;
     z-index: 1;
 }
-.mainLogo>img{
+.cm-mainLogo>img{
     width:140px;
     height: 47px;
 }
-#header>.content {
+#cm_header>.cm-content{
     background-color: #6D3030;
     position:relative;
 }
-.header-link-left>a, .header-link-right>a{
+.cm-header-link-left>a, .cm-header-link-right>a{
     background-repeat: no-repeat;   
     background-position: center;
     display:inline-block;
 }
-.header-link-left>div, .header-link-right>div{
+.cm-header-link-left>div, .cm-header-link-right>div{
     display: inline-block;
     margin-top: 10px;
     vertical-align: top;
 }
-.header-link-left{
+.cm-header-link-left{
     position:absolute;
     top:50px;
     left:15px;
 }
-.header-link-right{
+.cm-header-link-right{
     position:absolute;
     top:50px;
     right:15px;
 }
-.header-link-left>div>a{
+.cm-header-link-left>div>a{
     margin-left:100px;
     padding-bottom:8px;
 }
-.header-link-right>div>a{
+.cm-header-link-right>div>a{
     margin-right:100px;
     padding-bottom:8px;
 }
-.header-link-left>div>a:hover, .header-link-right>div>a:hover{
+.cm-header-link-left>div>a:hover, .cm-header-link-right>div>a:hover{
     border-bottom:4px solid white;
 }
-.link-area-sitemap{
+.cm-link-area-sitemap{
     background-image: url(img/ico-sitemap-white.png);
     width:36px;
     height:36px;
 }
-.link-area-movie{
+.cm-link-area-movie{
     background-image: url(img/ico-movie-white.png);
     width:36px;
     height:36px;
 }
-.link-area-ticket{
+.cm-link-area-ticket{
     background-image: url(img/ico-ticket-white.png);
     width:36px;
     height:36px;
 }
-.link-area-mypage{
+.cm-link-area-mypage{
     background-image: url(img/ico-mypage-white.png);
     width:36px;
     height:36px;
 }
+/******************************************** 
+    메인메뉴 영역 속성정의 끝
+*********************************************/
+/*****************************************************
+ * header-nav 영역 스타일 설정 시작
+ *****************************************************/
+.cm-header-nav{
+    background-color: rgba(109, 48, 48, 0.8);
+    height: 45px;
+    z-index: 2;
+    position: relative;
+}
+/* .cm-header-nav.on{
+    background-color: rgba(109, 48, 48, 0.8);
+} */
+.cm-header-nav *{
+    height: 45px;
+    z-index: 2;
+}
+.cm-header-nav>.cm-header-nav-sub {
+    position: relative;
+    width: 1100px;
+    margin: auto;
+    z-index: 2;
+}
+.cm-header-nav-sub>.cm-gnb-depth2:first-child{
+    margin-left:95px;
+}
+.cm-header-nav-sub>.cm-gnb-depth2:nth-child(2){
+    margin-left:220px;
+}
+.cm-header-nav-sub>.cm-gnb-depth2:nth-child(3){
+    margin-left:620px;
+}
+.cm-header-nav-sub>.cm-gnb-depth2:last-child{
+    margin-left:300px;
+}
+.cm-header-nav .cm-gnb-depth2 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 44px;
+}
+.cm-gnb-depth2>ul{
+    height:100%;
+}
+.cm-gnb-depth2>ul>li{
+    float:left;
+    height:100%;
+    margin-left:40px;
+}
+.cm-gnb-depth2>ul>li>a{
+    display:block;
+    color:white;
+    padding-top: 15px;
+}
+.cm-gnb-depth2>ul>li>a:hover{
+    text-decoration: underline;
+}
+.cm-gnb-depth2>ul:before {
+    content: '';
+    display: table;
+}
+/*****************************************************
+ * header-nav 영역 스타일 설정 끝
+ *****************************************************/
+/*****************************************************
+ * header-sitemap 영역 스타일 설정 시작
+ *****************************************************/
+.cm-layer-sitemap {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    z-index: 101;
+    width: 100%;
+    min-width: 1100px;
+    height: 500px;
+    overflow: auto;
+    background-color: rgb(51, 51, 51);
+    border-top:1px solid white;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-tit{
+    padding: 50px 0 0 0;
+    font-size: 1.4666em;
+    color: #fff;
+    line-height: 1.1;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list{
+    position: absolute;
+    width: 180px;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list.cm-position-1 {
+    left: 0;
+    top: 97px;
+    width: 180px;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list.cm-position-2 {
+    left: 307px;
+    top: 97px;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list.cm-position-3 {
+    left: 614px;
+    top: 97px;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list.cm-position-4 {
+    left: 920px;
+    top: 97px;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list>.cm-tit-depth {
+    height: 48px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 46px;
+    text-align: center;
+    border-width: 1px 0;
+    border-color: rgba(68,68,68,.5);
+    border-style: solid;
+}
+.cm-layer-sitemap>.cm-layer-sitemap-wrap>.cm-list>.cm-list-depth>li {
+    padding: 18px 0 0 0;
+    text-align: center;
+}
+.cm-list-depth>li>a {
+    display: inline-block;
+    color: #bbb;
+}
+.cm-link-area-sitemap.on, .cm-link-area-movie.on, .cm-link-area-ticket.on, .cm-link-area-mypage.on{
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-header-layer-close.png)!important;
+}
+/*****************************************************
+ * header-sitemap 영역 스타일 설정 끝
+ *****************************************************/
+/*****************************************************
+ * header-search 영역 스타일 설정 시작
+ *****************************************************/
+ .cm-layer-header-search {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 380px;
+    background-color: #555758;
+    z-index: 99;
+    border-top:1px solid white;
+}
+.cm-layer-header-search>.cm-header-search-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-tab-rank {
+    padding-top: 50px;
+}
+.cm-header-search-wrap>.cm-tab-rank>ul {
+    overflow: hidden;
+}
+.cm-header-search-wrap>.cm-tab-rank>ul>li.on>.cm-header-search-btn {
+    border-color: #fff;
+}
+.cm-header-search-wrap>.cm-tab-rank>ul>li>.cm-header-search-btn {
+    display: block;
+    margin: 0;
+    font-size:15px;
+    padding: 0 0 8px 0;
+    text-decoration: none;
+    color: #fff;
+    line-height: 1.1;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+    letter-spacing: -.5px;
+    font-weight: 400;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-tab-rank {
+    padding-top: 50px;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-rank-cont {
+    overflow: hidden;
+    position: relative;
+    min-height: 215px;
+    margin: 30px 0 0 0;
+    padding: 0 0 0 200px;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-rank-cont>.cm-img{
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 150px;
+    height: 214px;
+    font-size: 0;
+    line-height: 0;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-rank-cont>.cm-img>img {
+    width: 100%;
+    max-height: 100%;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-rank-cont>.cm-list{
+    width: 250px;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-rank-cont>.cm-list>ol>li {
+    position: relative;
+    padding: 11px 0 0 30px;
+    height: 40px;
+    width: 100%;
+}
+.cm-header-search-wrap>.cm-rank-cont>.cm-list>ol>li>em {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    font-family: Roboto;
+    font-style: italic;
+    font-size: 1.8666em;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.1;
+    vertical-align: middle;
+}
+.cm-header-search-wrap>.cm-rank-cont>.cm-img>img {
+    width: 100%;
+    max-height: 100%;
+}
+.cm-header-search-wrap>.cm-rank-cont>.cm-list>ol>li>a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    vertical-align: middle;
+    max-width: 320px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cm-layer-header-search>.cm-header-search-wrap>.cm-header-search-area {
+    overflow: hidden;
+    position: absolute;
+    left: 560px;
+    top: 170px;
+    width: 420px;
+    height: 60px;
+    border-bottom: 1px solid #fff;
+}
+.cm-header-search-wrap>.cm-header-search-area>.cm-input-text {
+    display: block;
+    float: left;
+    width: 360px;
+    height: 59px;
+    border: 0;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: transparent;
+}
+.cm-header-search-wrap>.cm-header-search-area>.cm-btn-search {
+    overflow: hidden;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    text-indent: -9999px;
+    border: 0;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-header-search.png) no-repeat center;
+}
+.cm-header-search-area>.cm-input-text {
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+    padding: 0 10px;
+    line-height: 30px;
+    color: #FFFFFF;
+    border: 0;
+    vertical-align: middle;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+.cm-header-search-area>.cm-input-text:focus {
+    border:0;
+    outline:none;
+}
+.cm-header-search-area>.cm-input-text::placeholder {
+    color: #FFFFFF;
+}
+/*****************************************************
+ * header-search 영역 스타일 설정 끝
+ *****************************************************/
+/*****************************************************
+ * header-mypage 영역 스타일 설정 시작
+ *****************************************************/
+/* before login 시작 */
+.cm-layer-mypage.on {
+    display: block;
+}
+.cm-layer-mypage {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    width: 100%;
+    height: 120px;
+    background-color: #333;
+    z-index: 3;
+    border-top:1px solid white;
+}
+.cm-layer-mypage>.cm-mypage-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+.cm-layer-mypage>.cm-mypage-wrap>.cm-login-before {
+    text-align: center;
+}
+.cm-layer-mypage>.cm-mypage-wrap>.cm-login-before>.cm-txt{
+    padding: 32px 0 12px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 24px;
+    letter-spacing: -.01em;
+}
+.cm-layer-mypage>.cm-mypage-wrap>.cm-login-before>.cm-linkBox>.cm-btn-modal-open {
+    display: inline-block;
+    width: 108px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-right: 11px;
+    color: #fff;
+    text-decoration: none;
+}
+.cm-mypage-wrap>.cm-login-before>.cm-linkBox>.cm-link{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    color: rgba(255,255,255,.5);
+    text-decoration: underline;
+}
+/* before login 끝 */
+/* after login 시작 */
+.cm-layer-mypage>.cm-mypage-wrap>.cm-login-after>.cm-inner{
+    position: relative;
+    padding: 33px 0 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.cm-layer-mypage>.cm-mypage-wrap>.cm-login-after>.cm-inner>.cm-box{
+    position: relative;
+    min-width: 82px;
+    padding-top: 3px;
+    margin-left: 56px;
+}
+.cm-mypage-wrap>.cm-login-after>.cm-inner>.cm-box:nth-child(1) {
+    padding: 0 0 0 69px;
+    width: 264px;
+    margin-left: 0;
+}
+.cm-login-after>.cm-inner>.cm-box:nth-child(1)>.cm-mbimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56px;
+    height: 56px;
+}
+.cm-login-after>.cm-inner>.cm-box:nth-child(1)>.cm-mbimg>img {
+    width: 100%;
+}
+.cm-login-after>.cm-inner>.cm-box:nth-child(1)>.cm-name{
+    font-size: 22px;
+    line-height: 25px;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 9px;
+}
+.cm-login-after>.cm-inner>.cm-box:nth-child(1)>.cm-linkBtn {
+    display: block;
+    width: 83px;
+    height: 20px;
+    line-height: 18px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    padding: 0 0 0 6px;
+    background: url(https://img.megabox.co.kr/static/pc/images/2023/01/arrow_right_w.png) right 8px top 3px no-repeat;
+    background-size: 10px 10px;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: -.01em;
+}
+.cm-login-after>.cm-inner>.cm-box{
+    position: relative;
+    min-width: 82px;
+    padding-top: 3px;
+    margin-left: 56px;
+}
+.cm-login-after>.cm-inner>.cm-box>.cm-tit>.cm-linkA {
+    display: block;
+    background: url(https://img.megabox.co.kr/static/pc/images/2023/01/arrow_right_w.png) 100% 0 no-repeat;
+    background-size: 16px 16px;
+}
+.cm-login-after>.cm-inner>.cm-box .cm-tit span {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: -.01em;
+    color: #fff;
+}
+.cm-login-after>.cm-inner>.cm-box .cm-count{
+    padding-top: 18px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    color: #fff;
+}
+.cm-login-after>.cm-inner>.cm-box .cm-count .cm-txt {
+    padding-top: 0;
+    font-size: 11px;
+    font-weight: 300;
+    color: #999;
+    white-space: pre;
+}
+/* after login 끝 */
+
+/*****************************************************
+ * header-mypage 영역 스타일 설정 시작
+ *****************************************************/
 /******************************************** 
     헤더 영역 속성정의 끝
 *********************************************/
