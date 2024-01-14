@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+element.tk-style {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    overflow: auto;
+    overflow-y: scroll;
+    letter-spacing: 0;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #444;
+    font-weight: 400;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+.tk-page-util {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 42px;
+    background-color: #f8f8fa;
+}
+
+.tk-inner-wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.tk-page-util .tk-location a {
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    float: left;
+    height: 42px;
+    margin: 0 0 0 25px;
+    padding: 0;
+    line-height: 46px;
+    color: #666;
+}
+
+
+.tk-page-util .tk-location a:hover{
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    float: left;
+    height: 42px;
+    margin: 0 0 0 25px;
+    padding: 0;
+    line-height: 46px;
+    color: #666;
+}
+
+.tk-page-util .tk-location span {
+    overflow: hidden;
+    display: block;
+    float: left;
+    width: 13px;
+    height: 100%;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    text-indent: -9999px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
+}
+
+.tk-page-util .tk-location a:before, .tk-page-util .tk-location span .tk-no-link:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -14px;
+    top: 0;
+    width: 5px;
+    height: 42px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
+}
+
+a:visited {
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
+
+.tk-bodyBox{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.tk-bigName{
+    font-size: 28px;
+    font-weight: 400;
+    color: #222;
+    margin-top: 40px;
+    margin-bottom: 26px;
+}
+
+.tk-bodyLeft{
+    width: 770px;
+    height: 385px;
+    border-top: 1px solid #000;
+    float: left;
+
+}
+
+.tk-bodyRight {
+    width: 310px;
+    height: 556px;
+    float: left;
+}
+
+.tk-titleImg {
+    clear: both;
+    background-image: url(../img/check-box.png);
+    width: 28px;
+    height: 28px;
+    margin: 8px 0 7px 0;
+    display: inline-block;
+}
+
+.tk-titleText{
+    width: 120px;
+    font-size: 18px;
+    color: #222;
+    font-weight: 900;
+    margin: 0px auto;
+    display: inline-block;
+    margin: 3px 0px 0px 36px;
+}
+
+.tk-button {
+    display: inline-block;
+    height: 36px;
+    margin: 0;
+    padding: 0 15px;
+    text-align: center;
+    line-height: 34px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    text-decoration: none;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+    border: 1px solid #c1c1c1;
+    float: right;
+    margin: 8px 0 7px 0;
+}
+
+.tk-button.small {
+    height: 32px;
+    padding: 0 12px;
+    line-height: 30px;
+
+}
+
+.tk-button>i:first-child {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.tk-button>i {
+    margin-top: -2px;
+    margin-left: 4px;
+}
+
+.tk-ico-reset-small {
+    width: 14px;
+    height: 14px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-reset-small.png);
+}
+
+.tk-iconset {
+    overflow: hidden;
+    display: inline-block;
+    margin: -1px 0 0 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.tk-box {
+    width: 770px;
+    height: 38px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-top: 10px;
+    border: 1px solid #d8d9db;
+    padding: 0 19px;;
+}
+
+.tk-boxText{
+    display: inline-block;
+    font-size: 15px;
+    margin-top: 9px;
+}
+
+.tk-box > a {
+    float: right;
+    margin-top: 9px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #444;
+}
+
+
+
+
+/* 오른쪽 블랙박스 시작 */
+.tk-black-box {
+    width: 310px;
+    height: 554px;
+    margin-left: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    
+}

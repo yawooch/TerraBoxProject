@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예매좌석선택</title>
     <link rel="stylesheet" href="../ticket/css/bookingSeat.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 <body>
     <header></header>
@@ -24,10 +26,8 @@
                         <a href="#" title="빠른예매 페이지로 이동">빠른예매</a>
                     </div>
                 </div>
-                
-            </div>
-        </div>    
-    </section>
+            </div>    
+        </section>
     
     <!-- body 왼쪽 좌석 박스으으  -->
     <section>
@@ -51,16 +51,16 @@
                             <div class="tk-cell">
                                 <p class="tk-txt">성인</p>
                                 <div class="tk-counter-group">
-                                    <button class="tk-btn-minus" >-</button>
-                                    <div class="tk-counter"><span>0</span></div>
-                                    <button class="tk-btn-plus">+</button>
+                                    <button class="tk-btn-minus" id="tk_btn_minus" >-</button>
+                                    <div class="tk-counter"><span id="tk_now">0</span></div>
+                                    <button class="tk-btn-plus" id="tk_btn_plus">+</button>
                                 </div>
                             </div>
                             <div class="tk-cell">
                                 <p class="tk-txt">청소년</p>
                                 <div class="tk-counter-group">
                                     <button class="tk-btn-minus">-</button>
-                                    <div class="tk-counter"><span>0</span></div>
+                                    <div class="tk-counter"><span id="tk_now2">0</span></div>
                                     <button class="tk-btn-plus">+</button>
                                 </div>
                             </div>
@@ -73,6 +73,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- 스크린 안에 좌석 -->
                         <div class="tk-seat-body">
                             <span class="tk-screen-span">    
                                 <img src="/src/main/webapp/views/ticket/img/img-theater-screen.png" alt="screen" class="tk-screen_img">
@@ -160,8 +161,8 @@
                                     <button class="tk-seat-click">3</button>
                                     <button class="tk-seat-click" style="margin-right: 23px;">4</button>
                                     <button class="tk-seat-click">5</button>
-                                    <button class="tk-seat-click" style="text-indent: -99999px; background-image: url(../ticket/img/bg-seat-finish.png);">6</button>
-                                    <button class="tk-seat-click" style="text-indent: -99999px; background-image: url(../ticket/img/bg-seat-finish.png);">7</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
                                     <button class="tk-seat-click" style="margin-right: 23px;">8</button>
                                     <button class="tk-seat-click">9</button>
                                     <button class="tk-seat-click">10</button>
@@ -179,8 +180,8 @@
                                     <button class="tk-seat-click">7</button>
                                     <button class="tk-seat-click" style="margin-right: 23px;">8</button>
                                     <button class="tk-seat-click">9</button>
-                                    <button class="tk-seat-click" style="background-image: url(../ticket/img/bg-seat-choice.png);">10</button>
-                                    <button class="tk-seat-click" style="background-image: url(../ticket/img/bg-seat-choice.png);">11</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
                                     <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
@@ -194,7 +195,7 @@
                                     <button class="tk-seat-click">7</button>
                                     <button class="tk-seat-click" style="margin-right: 23px;">8</button>
                                     <button class="tk-seat-click">9</button>
-                                    <button class="tk-seat-click" style="background-image: url(../ticket/img/bg-seat-choice.png);">10</button>
+                                    <button class="tk-seat-click">10</button>
                                     <button class="tk-seat-click">11</button>
                                     <button class="tk-seat-click">12</button>
                                 </div>
@@ -218,7 +219,7 @@
                                     <button class="tk-seat-click">1</button>
                                     <button class="tk-seat-click">2</button>
                                     <button class="tk-seat-click">3</button>
-                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click test" style="margin-right: 23px;">4</button>
                                     <button class="tk-seat-click">5</button>
                                     <button class="tk-seat-click">6</button>
                                     <button class="tk-seat-click">7</button>
@@ -231,7 +232,7 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
                 <!-- 오른쪽 검은색 박스  -->
                 <div class="tk-black-box">
                     <div class="tk-choice-box">                        
@@ -242,28 +243,68 @@
                         </div>
                         <div class="tk-bb-info">
                             <div class="tk-info-one">이수</div>
+                            <div class="tk-poster"><img src="../ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div>
                             <div class="tk-info-two">6관</div>
                             <div class="tk-info-three">2024.01.16(화)</div>
                             <button class="tk-info-btn"> 16:40~19:11
                                 <div class="tk-info-btn-div"></div>
                             </button>
                         </div>
-                        <div class="tk-choice-seat"></div>
-                        <div class="tk-choice-person"></div>
-                        <div class="tk-pay"></div>
+                        <div class="tk-choice-seat">
+                            <div class="tk-choice-seat-left">
+                                <div class="tk-seat-type">
+                                    <img src="../ticket/img/bg-seat-choice.png" alt="선택">
+                                    <div>선택</div>
+                                </div>
+                                <div class="tk-seat-type">
+                                    <img src="../ticket/img/bg-seat-finish.png" alt="선택">
+                                    <div>예매완료</div>
+                                </div>
+                                <div class="tk-seat-type">
+                                    <img src="../ticket/img/bg-seat-impossible.png" alt="선택">
+                                    <div>선택불가</div>
+                                </div>
+                                <div class="tk-seat-type">
+                                    <img src="../ticket/img/bg-seat-common.png" alt="선택">
+                                    <div>일반</div>
+                                </div>
+                            </div>
+                            <div class="tk-choice-seat-right">
+                                <div class="tk-select-seat">선택좌석</div>
+                                
+                                <div class="tk-my-seat">
+                                    <div class="tk-choice-seat-now" id="select_seat_01" >-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                        <div class="tk-btn-group">
-                        <div class="tk-previous page"></div>
-                        <div class="tk-next page"></div>
+                    <div class="tk-btn-group" id="test">
+                        <div class="tk-previous-page">이전</div>
+                        <div class="tk-next-page">다음</div>
                     </div>
+                </div>
             </div>
-        </div>
         </section>
-    </main>
-
-
-
-
-    <footer></footer>
+        </main>
+        
+        <footer></footer>
 </body>
 </html>
+<script>
+$(document).ready(function(){
+    $('#tk_btn_plus').click(function(){
+        let tk_now = $('#tk_now').html();
+        console.log(tk_now);
+    });
+
+
+})
+    
+</script>
