@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/java,eclipse,node,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse,node,react
 
+# tomcat
+apache-tomcat-9.0.83-windows-x64/
+Servers/
+
 ### Eclipse ###
 .metadata
 bin/
@@ -61,7 +65,9 @@ local.properties
 
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
-#.project
+Semi_TeraBox/.project
+Semi_TeraBox/.classpath
+Servers/.project
 
 ### Eclipse Patch ###
 # Spring Boot Tooling
