@@ -1,6 +1,33 @@
 
 /* 태그 속성 모음 */
 
+@charset "UTF-8";
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -35,12 +62,12 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    margin: 5px;
 }
 
 
 a {
     background-color: transparent;
+    color: #000;
 }
 
 * {
@@ -261,23 +288,22 @@ li {
 
 #qt_sidebar-area_by>ul>li>a {
     display: block;
-    color: #222;
     padding: 10px 15px;
-    font-weight: 550;
+    font-weight: 500;
     background-color: #f2f4f5;
-
 }
+
+
+#qt_sidebar-area_by>ul>li>a:hover{
+    display: block;
+    color: rgba(109, 48, 48, 1);
+}
+
 
 #qt_sidebar-area_by ul li a {
     display: block;
     text-decoration: none;
     outline: 1px #000;
-}
-
-#qt_sidebar-area_by ul li a:hover {
-    display: block;
-    text-decoration: underline;
-    color: rgba(109, 48, 48, 1);
 }
 
 
@@ -394,7 +420,7 @@ li {
     /* 빠른검색  영역 속성 모음 */
 }
 
- #qt_contents_by{
+#qt_contents_by{
     float: right;
     width: 840px;
     height: 752px;
@@ -514,7 +540,7 @@ button {
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by{
-    background: url(../img/ico-miss-question.png) 20px top no-repeat;
+    background: url(../img/ico-miss-question.png) 10px top no-repeat;
 
 }
 
@@ -523,15 +549,15 @@ button {
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by{
     float: left;
     width: 220px;
-    height: 142px;
-    margin-bottom: 10px;
+    height: 120px;
+    margin-bottom: auto;
 }
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by a{
     display: block;
     width: 240px;
-    height: 142px;
+    height: 120px;
     padding: 0 0 0 10px;
 }
 
@@ -545,17 +571,16 @@ a {
 }
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by p{
-    margin: 0;
-    padding: 50px 0 0 0;
+    padding: 34px 0 0 0;
     color: #444;
 }
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by strong{
     display: block;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    font-weight: 550px;
+    margin-bottom: 2px;
+    font-size: 16.5px;
+    font-weight: 400;
     color: #222;
 }
 
@@ -569,8 +594,8 @@ a {
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by{
     float: left;
     width: 220px;
-    height: 142px;
-    margin-bottom: 10px;
+    height: 120px;
+    margin-bottom: auto;
     margin-left: 150px;
 
 }
@@ -579,9 +604,7 @@ a {
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by a{
     display: block;
     width: 220px;
-    height: 141px;
-    padding: -2 0 0 10px;
-    
+    height: 121px;  
 }
 
 
@@ -594,8 +617,8 @@ a {
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by strong{
     display: block;
-    margin-bottom: 10px;
-    font-size: 1.1em;
+    margin-bottom: 2px;
+    font-size: 16.5px;
     font-weight: 550px;
     color: #222;
 }
@@ -612,6 +635,7 @@ a {
     float: left;
     width: 280px;
     height: 121px;
+    margin-top: 11px;
 }
 
 
@@ -624,8 +648,7 @@ a {
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by p{
-    margin: 0;
-    padding: 50px 0 0 0;
+    padding: 40px 0 0 0;
     color: #444;
 }
 
@@ -633,7 +656,7 @@ a {
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by strong{
     display: block;
     margin-bottom: 1px;
-    font-size: 1.1em;
+    font-size: 16.5px;
     font-weight: 550px;
     color: #222;
 }
@@ -649,15 +672,16 @@ a {
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by{
     float: left;
     width: 280px;
-    height: 121px;
+    height: 101px;
     margin-left: 75px;
+    margin-top: 25px;
 }
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by a{
     display: block;
     width: 280px;
-    height: 170px;
+    height: 100px;
     padding: 0 0 0 10px;
 }
 
@@ -799,7 +823,12 @@ h3 .qt-tit-by .qt-small-by{
     right: -81%;
 }
 
-
+.qt-qna1-by:hover{
+    overflow: hidden;
+    text-decoration: underline;
+    color: rgba(109, 48, 48, 1);
+    font-weight: 100000px!important;
+}
 
 
 
@@ -921,6 +950,9 @@ float: right;
     background-position: 0 0;
     background-repeat: no-repeat;
 }
+
+
+
 
 
 
