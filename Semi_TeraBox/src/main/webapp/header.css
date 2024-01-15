@@ -73,7 +73,7 @@ a:hover {
 .cm-content>.cm-login-link>a{
     color: #888;
     float: left;
-    margin-left:8px;
+    margin-left:15px;
 }
 .cm-mainLogo {
     position:absolute;
@@ -150,7 +150,7 @@ a:hover {
     color:white;
     text-decoration: none;
 } */
-.cm-header-nav:hover,
+/* .cm-header-nav:hover,
 .cm-header-nav:hover>.cm-header-nav-sub>.cm-gnb-depth2,
 .cm-header-nav:hover>.cm-header-nav-sub,
 .cm-header-nav:hover>.cm-header-nav-sub:hover>.cm-gnb-depth2{
@@ -161,7 +161,10 @@ a:hover {
 .cm-link-text-cinema.on+a,
 .cm-link-text-question.on+a{
     display:inline-block;
-}
+} */
+/* .cm-header-nav:hover *{
+    display:inline-block;
+} */
 a[class^=cm-link-text-].on
 {
     display:inline-block;

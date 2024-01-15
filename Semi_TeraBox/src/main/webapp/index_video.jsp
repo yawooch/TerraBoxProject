@@ -3,7 +3,7 @@
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <link rel="icon" href="${path}/img/TeraBox.ico">
 <link rel="stylesheet" href="${path}/css/index_video.css">
-  
+
 <section id="main_videoSection">
     <div class="main-content">
         <div class="main-video-frame">

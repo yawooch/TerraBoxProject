@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <link rel="stylesheet" href="${path}/header.css">
@@ -55,34 +55,36 @@
         //     console.log(element);
         // });
 
-		let menus   = document.querySelectorAll('a[class^=cm-link-text-');
+		let menus   = document.querySelectorAll('a[class^=cm-link-text-]');
         let subMenuArea = document.getElementsByClassName('cm-header-nav')[0];
-        let subMenu     = document.getElementsByClassName('cm-gnb-depth2')[0];
+        let subMenu     = document.getElementsByClassName('cm-gnb-depth2');
 
         for(let idx = 0 ; idx < menus.length; idx++){
             let menu = menus[idx];
             menu.setAttribute('idx', idx);
-            console.log(menu);
             menu.addEventListener('mouseover', function(event){
+                for(let idx = 0; idx < menus.length; idx ++){
+                    menus[idx].classList.remove('on');
+                }
                 $(this).addClass('on');
-                console.log(this);
-                console.log(event.target);
-                console.log($(this));
                 let elementIdx = $(this).attr('idx');
                 subMenuArea.style.display = 'block';
-                document.getElementsByClassName('cm-gnb-depth2')[elementIdx].style.display = 'block';
+                
+                for(let idx = 0; idx < subMenu.length; idx ++){
+                    subMenu[idx].style.display = 'none';
+                }
+                subMenu[elementIdx].style.display = 'block';
             });
         }
-        // for(let idx = 0 ; idx < menus.length; idx++){
-        //     let menu = menus[idx];
-        //     menu.setAttribute('idx', idx);
-        //     menu.addEventListener('mouseover', function(event){
-        //         $(this).removeClass('on');
-        //         let elementIdx = $(this).attr('idx');
-        //         subMenuArea.style.display = 'none';
-        //         document.getElementsByClassName('cm-gnb-depth2')[elementIdx].style.display = 'none';
-        //     });
-        // }
+        subMenuArea.addEventListener('mouseout', function(event){
+            subMenuArea.style.display = 'none';
+            for(let idx = 0; idx < menus.length; idx ++){
+                menus[idx].classList.remove('on');
+            }
+        });
+        subMenuArea.addEventListener('mouseover', function(event){
+            subMenuArea.style.display = 'block';
+        });
             
         // cm-link-text-movie
         // cm-link-text-ticket
