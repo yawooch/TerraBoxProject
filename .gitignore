@@ -4,9 +4,8 @@
 # tomcat
 apache-tomcat-9.0.83-windows-x64/
 apache-tomcat-9.0.85-windows-x64/
-Servers/
-
 apache-tomcat-9.0.84/
+
 
 ### Eclipse ###
 Servers/
@@ -21,6 +20,8 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.classpath
+.project
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
@@ -93,8 +94,8 @@ local.properties
 
 # Uncomment this line if you wish to ignore the project description file.
 # Typically, this file would be tracked if it contains build/dependency configurations:
-*.project
-*.classpath
+Semi_TeraBox/*.project
+Semi_TeraBox/*.classpath
 Servers/.project
 
 ### Eclipse Patch ###
