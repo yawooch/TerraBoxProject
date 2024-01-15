@@ -1,7 +1,96 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
-    <link rel="stylesheet" href="${path}/header.css">
+<link rel="stylesheet" href="${path}/header.css">
+<script src="views/js/jquery-3.7.1.min.js"></script>
+<script>
+	window.onload = function(){
+		//상단 메뉴 사이트맵 열기/닫기 이벤트
+		let siteMap = document.getElementsByClassName('cm-link-area-sitemap')[0];
+		siteMap.addEventListener('click', function(event){
+			let siteMapId = document.getElementById('cm_layer_sitemap');
+			if(siteMap.classList.contains('on'))
+			{
+				siteMap.classList.remove('on');
+				siteMapId.style.display = 'none';
+			}
+			else{
+				siteMap.classList.add('on');
+				siteMapId.style.display = 'block';
+			}
+		});
+		//상단 메뉴 검색창 열기/닫기 이벤트
+		let areaMovie = document.getElementsByClassName('cm-link-area-movie')[0];
+		areaMovie.addEventListener('click', function(event){
+			let headerSearch = document.getElementById('cm_layer_header_search');
+			if(areaMovie.classList.contains('on'))
+			{
+				areaMovie.classList.remove('on');
+				headerSearch.style.display = 'none';
+			}
+			else{
+				areaMovie.classList.add('on');
+				headerSearch.style.display = 'block';
+			}
+		});
+		//상단 메뉴 마이페이지 열기/닫기 이벤트
+		let mypage = document.getElementsByClassName('cm-link-area-mypage')[0];
+		mypage.addEventListener('click', function(event){
+			let layerMypage = document.getElementById('cm_layer-mypage');
+			if(mypage.classList.contains('on'))
+			{
+				mypage.classList.remove('on');
+				layerMypage.style.display = 'none';
+				document.getElementsByClassName('cm-login-before')[0].style.display = 'none';
+			}
+			else{
+				mypage.classList.add('on');
+				layerMypage.style.display = 'block';
+				document.getElementsByClassName('cm-login-before')[0].style.display = 'block';
+			}
+		});
+        //상단 메뉴 영화 호버 이벤트
+        // let menu = $('a[class~=cm-link-text-]');
+        // menu.array.forEach(element => {
+        //     console.log(element);
+        // });
+
+		let menus   = document.querySelectorAll('a[class^=cm-link-text-');
+        let subMenuArea = document.getElementsByClassName('cm-header-nav')[0];
+        let subMenu     = document.getElementsByClassName('cm-gnb-depth2')[0];
+
+        for(let idx = 0 ; idx < menus.length; idx++){
+            let menu = menus[idx];
+            menu.setAttribute('idx', idx);
+            console.log(menu);
+            menu.addEventListener('mouseover', function(event){
+                $(this).addClass('on');
+                console.log(this);
+                console.log(event.target);
+                console.log($(this));
+                let elementIdx = $(this).attr('idx');
+                subMenuArea.style.display = 'block';
+                document.getElementsByClassName('cm-gnb-depth2')[elementIdx].style.display = 'block';
+            });
+        }
+        // for(let idx = 0 ; idx < menus.length; idx++){
+        //     let menu = menus[idx];
+        //     menu.setAttribute('idx', idx);
+        //     menu.addEventListener('mouseover', function(event){
+        //         $(this).removeClass('on');
+        //         let elementIdx = $(this).attr('idx');
+        //         subMenuArea.style.display = 'none';
+        //         document.getElementsByClassName('cm-gnb-depth2')[elementIdx].style.display = 'none';
+        //     });
+        // }
+            
+        // cm-link-text-movie
+        // cm-link-text-ticket
+        // cm-link-text-cinema
+        // cm-link-text-question
+		
+	}
+</script>
 <header id="cm_header">
     <div class="cm-content">
         <div class="cm-mainLogo"><img src="./img/mainLogo.png" alt=""></div>
@@ -14,14 +103,14 @@
             <a href="#" class="cm-link-area-sitemap"></a>
             <a href="#" class="cm-link-area-movie"></a>
             <div>
-                <a href="#">영화</a>
-                <a href="#">예매</a>
+                <a href="#" class="cm-link-text-movie">영화</a>
+                <a href="#" class="cm-link-text-ticket">예매</a>
             </div>
         </div>
         <div class="cm-header-link-right">
             <div>
-                <a href="#">극장</a>
-                <a href="#">고객센터</a>
+                <a href="#" class="cm-link-text-cinema">극장</a>
+                <a href="#" class="cm-link-text-question">고객센터</a>
             </div>
             <a href="#" class="cm-link-area-ticket"></a>
             <a href="#" class="cm-link-area-mypage"></a>
@@ -115,16 +204,16 @@
             </div>
             <div class="cm-rank-cont">
                 <p class="cm-img">
-                	<img src="https://img.megabox.co.kr/SharedImg/2023/12/18/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_316.jpg" alt="외계+인 2부">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/12/18/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_316.jpg" alt="외계+인 2부">
                 </p>
                 <div class="cm-list">
-                	<ol>
+                    <ol>
                         <li><em>1</em> <a href="javascript:gfn_moveDetail('23085100')" data-imgsrc="https://img.megabox.co.kr/SharedImg/2023/12/18/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_316.jpg">외계+인 2부</a></li>
                         <li><em>2</em> <a href="javascript:gfn_moveDetail('23097300')" data-imgsrc="https://img.megabox.co.kr/SharedImg/2023/12/29/SPkT9JIvqlfh06XYPy0WihdUI5jgrLm4_316.jpg">엔드 오브 에반게리온</a></li>
                         <li><em>3</em> <a href="javascript:gfn_moveDetail('23093500')" data-imgsrc="https://img.megabox.co.kr/SharedImg/2023/12/15/NWONgIDGBypWUvJSg3RHcUYbpt2sHPW3_316.jpg">시민덕희</a></li>
                         <li><em>4</em> <a href="javascript:gfn_moveDetail('23081200')" data-imgsrc="https://img.megabox.co.kr/SharedImg/2023/11/22/aM1zeiVGySigNObspcjcoH9NaebEPa2f_316.jpg">서울의 봄</a></li>
                         <li><em>5</em> <a href="javascript:gfn_moveDetail('23094700')" data-imgsrc="https://img.megabox.co.kr/SharedImg/2023/12/20/m5crrh1pa4RIS5SIC6u1cJsSAhx4Sjqs_316.jpg">위시</a></li>
-                	</ol>
+                    </ol>
                 </div>
             </div>
             <div class="cm-header-search-area">

@@ -55,6 +55,11 @@ body {
     font-family: NanumBarunGothic, Dotum, '돋움', sans-serif;
 }
 
+a:valid {
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
 
 p {
     display: block;
@@ -64,6 +69,11 @@ p {
     margin-inline-end: 0px;
 }
 
+a:visited {
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
 
 a {
     background-color: transparent;
@@ -244,7 +254,6 @@ li {
 
 /* 왼쪽 사이드메뉴바 속성모음 */
 
-
 #qt_sidebar-area_by {
     margin-top: 60px;
     right: 400px;
@@ -265,7 +274,6 @@ li {
 #qt_sidebar-area_by .qt-sidebar-each-by a {
     display: block;
     font-size: 1.4em;
-    font-weight: 100px;
     line-height: 400%;
     text-align: center;
     color: #fff;
@@ -273,9 +281,7 @@ li {
     text-align-last:center;
     background-color: rgba(109, 48, 48, 1);
     height: 90px;
-    font-weight: 500!important;
 }
-
 
 #qt_sidebar-area_by>ul {
     border: 1px solid #d8d9db;
@@ -283,13 +289,29 @@ li {
     border-left-width: 2px;
     border-right-width: 2px;
     border-bottom-width: 2px;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 10px 10px;
 }
+
+#qt_sidebar-area_by>ul>li {
+    border-top: 1px solid #d8d9db;
+}
+
+#qt_sidebar-area_by ul li .qt-first-area-by>a {
+    /* color: rgba(85, 87, 88, 1); */
+    font-weight: 500px;
+    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center;
+
+}
+
 
 #qt_sidebar-area_by>ul>li>a {
     display: block;
     padding: 10px 15px;
+<<<<<<< HEAD
     font-weight: 500;
+=======
+    font-weight: 200;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
     background-color: #f2f4f5;
 }
 
@@ -306,29 +328,26 @@ li {
     outline: 1px #000;
 }
 
+<<<<<<< HEAD
+=======
+#qt_sidebar-area_by ul li a:hover {
+    display: block;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
+
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 
 #qt_sidebar-area_by>ul>li {
     border-top: 1px solid #d8d9db;
 }
 
 
-#qt_sidebar-area_by .qt-first-area-by a
-{
-    color:rgba(109, 48, 48, 1);
-    font-weight: 400;
-    background: url(../img/Group\ 74.png) no-repeat right center!important;
-}
-
-.qt-more-by:hover{
-    display: block;
-    text-decoration: underline;
-}
-
 #qt_sidebar-area_by .qt-info-by {
     position: relative;
     z-index: 2;
-    margin: -4px 0 0 0;
-    padding: 20px 21px;
+    margin: -1px 0 0 0;
+    padding: 20px 18px;
     color: #666;
     border: 2px solid #d8d9db;
     border-top-width: 1px;
@@ -429,7 +448,7 @@ li {
 
 .qt-search-area-by{
     margin: 0;
-    padding: 21px;
+    padding: 30px;
     background-color: #f2f4f5;
     border-radius: 10px;
     margin-bottom: 20px
@@ -459,10 +478,10 @@ li {
 .qt-search-area-by .qt-label-by{
     display: block;
     float: left;
-    padding: 0 5px 0 0;
+    padding: 0 10px 0 0;
     line-height: 36px;
     font-weight: 600;
-    width: 75px;
+    width: 90px;
     font-size: 13px;
 }
 
@@ -524,7 +543,7 @@ button {
 .qt-custo-main-by .qt-custo-main-area-by{
     position: relative;
     border-bottom: 1px solid #eaeaea;
-    height: 52%;
+    height: 62%;
 }
 
 /* 분실물문의 아이콘 */
@@ -539,25 +558,41 @@ button {
 }
 
 
+<<<<<<< HEAD
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by{
     background: url(../img/ico-miss-question.png) 10px top no-repeat;
 
+=======
+.qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by:nth-child(1){
+    background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-miss-question.png) 20px top no-repeat;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 }
 
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by{
     float: left;
+<<<<<<< HEAD
     width: 220px;
     height: 120px;
     margin-bottom: auto;
+=======
+    width: 280px;
+    height: 170px;
+    margin-bottom: 10px;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 }
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by a{
     display: block;
+<<<<<<< HEAD
     width: 240px;
     height: 120px;
+=======
+    width: 280px;
+    height: 170px;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
     padding: 0 0 0 10px;
 }
 
@@ -578,8 +613,13 @@ a {
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content-by strong{
     display: block;
+<<<<<<< HEAD
     margin-bottom: 2px;
     font-size: 16.5px;
+=======
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
     font-weight: 400;
     color: #222;
 }
@@ -588,23 +628,35 @@ a {
 /*  1:1 문의 아이콘 */
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by{
-    background: url(../img/icon-inquiry.png) 20px top no-repeat;
+    background: url(/src/main/webapp/img/icon-inquiry.png) 20px top no-repeat;
 }
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by{
     float: left;
+<<<<<<< HEAD
     width: 220px;
     height: 120px;
     margin-bottom: auto;
     margin-left: 150px;
 
+=======
+    width: 280px;
+    height: 170px;
+    margin-bottom: 10px;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 }
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by a{
     display: block;
+<<<<<<< HEAD
     width: 220px;
     height: 121px;  
+=======
+    width: 280px;
+    height: 170px;
+    padding: 0 0 0 10px;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 }
 
 
@@ -617,32 +669,45 @@ a {
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by strong{
     display: block;
+<<<<<<< HEAD
     margin-bottom: 2px;
     font-size: 16.5px;
     font-weight: 550px;
+=======
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
     color: #222;
 }
+
+
+
 
 
 /*  단체관람 및 대관 문의 아이콘 */
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by{
-    background: url(../img/ico-rent.png) 20px top no-repeat;
+    background: url(/src/main/webapp/img/ico-rent.png) 20px top no-repeat;
 }
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by{
     float: left;
     width: 280px;
+<<<<<<< HEAD
     height: 121px;
     margin-top: 11px;
+=======
+    height: 152px;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 }
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by a{
     display: block;
     width: 260px;
-    height: 123px;
+    height: 150px;
     padding: 0 0 0 10px;
 }
 
@@ -655,9 +720,15 @@ a {
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content2-by strong{
     display: block;
+<<<<<<< HEAD
     margin-bottom: 1px;
     font-size: 16.5px;
     font-weight: 550px;
+=======
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
     color: #222;
 }
 
@@ -666,15 +737,19 @@ a {
 
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by{
-    background: url(../img/icon-faq.png) 20px top no-repeat;
+    background: url(/src/main/webapp/img/icon-faq.png) 20px top no-repeat;
 }
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by{
     float: left;
     width: 280px;
+<<<<<<< HEAD
     height: 101px;
     margin-left: 75px;
     margin-top: 25px;
+=======
+    height: 157px;
+>>>>>>> 950ec57f62eda900c60374d537b6acded048db64
 }
 
 
@@ -695,16 +770,16 @@ a {
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content3-by strong{
     display: block;
-    margin-bottom: -1px;
-    font-size: 1.1em;
-    font-weight: 550px;
+    margin-bottom: 10px;
+    font-size: 1.3333em;
+    font-weight: 400;
     color: #222;
 }
 
 /* 자주묻는 질문 탭  (상단)*/
 
 .qt-notice-wrap-by{
-        height: 200px;
+        height: 220px;
     }
 
 
@@ -713,12 +788,13 @@ a {
     width: 400px;
     height: 191px;
     border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px ;
 }
 
 
 .qt-notice-wrap-by  .qt-tit-area-by{
     overflow: hidden;
-    margin-bottom: -3px;
+    margin-bottom: 15px;
     border-bottom: 1px solid #555;
 }
 
@@ -805,7 +881,7 @@ h3 .qt-tit-by .qt-small-by{
 
 
 .qt-notice-wrap-by  .qt-numbercheck-by li span .qt-numbercheck-by{
-    color: 037B94;
+    color: #01738b;
     font-style: italic
 }
 
@@ -920,7 +996,7 @@ float: right;
 .qt-iconotice-by{
     width: 13px;
     height: 14px;
-    background-image: url(../img/Group\ 73.png);
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-notice.png);
     overflow: hidden;
     display: inline-block;
     margin: -1px 0 0 0;
@@ -933,13 +1009,13 @@ float: right;
 }
 
 .qt-iconotice-name-by{
-    color: #000!important;
+    color: #503396!important;
 }
 
 .qt-iconotice-block-by{
     width: 12px;
     height: 15px;
-    background-image: url(../img/Mask\ group.png);
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-marker.png);
     overflow: hidden;
     display: inline-block;
     margin: -1px 0 0 0;

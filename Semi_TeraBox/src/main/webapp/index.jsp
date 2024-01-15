@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="${path}/img/TeraBox.ico">
+    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>LIFE THEATER, 테라박스</title>
 
 <body>
