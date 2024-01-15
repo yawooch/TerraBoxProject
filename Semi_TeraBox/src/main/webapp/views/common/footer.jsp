@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<link rel="stylesheet" href="${path}/footer.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
+<link rel="stylesheet" href="${path}/views/common/css/footer.css">
+<script src="${path}/views/js/jquery-3.7.1.min.js"></script>
 <footer id="cm_footer">
     <div class="cm-content">
         <div class="cm-footerContent">
-            <span class="cm-footerLogo"><img src="./img/mainLogo.png" alt=""></span>
+            <span class="cm-footerLogo"><img src="${path}/views/common/img/mainLogo.png" alt=""></span>
             <span>
                 <ul>
                     <li>서울 중구 남대문로 120 대일빌딩 2층, 3층</li>
@@ -54,7 +56,6 @@
         </div>
     </div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
     let findCinema = document.getElementsByClassName('cm-footer-findCinema')[0];
     let closeCinema = document.getElementsByClassName('cm-btn-footer-layer-close')[0];

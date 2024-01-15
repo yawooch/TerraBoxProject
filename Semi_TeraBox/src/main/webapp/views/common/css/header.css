@@ -126,22 +126,22 @@ a:hover {
     text-decoration: none;
 } */
 .cm-link-area-sitemap{
-    background-image: url(img/ico-sitemap-white.png);
+    background-image: url(../../../img/ico-sitemap-white.png);
     width:36px;
     height:36px;
 }
 .cm-link-area-movie{
-    background-image: url(img/ico-movie-white.png);
+    background-image: url(../../../img/ico-movie-white.png);
     width:36px;
     height:36px;
 }
 .cm-link-area-ticket{
-    background-image: url(img/ico-ticket-white.png);
+    background-image: url(../../../img/ico-ticket-white.png);
     width:36px;
     height:36px;
 }
 .cm-link-area-mypage{
-    background-image: url(img/ico-mypage-white.png);
+    background-image: url(../../../img/ico-mypage-white.png);
     width:36px;
     height:36px;
 }

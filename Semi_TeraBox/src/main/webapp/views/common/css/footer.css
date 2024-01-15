@@ -120,7 +120,7 @@ a {
 .cm-ico-footer-search{
     width: 15px;
     height: 15px;
-    background-image: url(img/ico-footer-search.png);
+    background-image: url(../../../img/ico-footer-search.png);
     margin-left:4px;
     overflow: hidden;
     display: inline-block;

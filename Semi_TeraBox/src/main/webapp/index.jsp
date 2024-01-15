@@ -9,7 +9,7 @@
     <title>LIFE THEATER, 테라박스</title>
 
 <body>
-	<jsp:include page="${path}/header.jsp" />
+	<jsp:include page="${path}/views/common/header.jsp" />
 
 	<jsp:include page="${path}/index_video.jsp" />
 
@@ -17,6 +17,6 @@
 
 	<jsp:include page="${path}/index_notice.jsp" />
 
-	<jsp:include page="${path}/footer.jsp" />
+	<jsp:include page="${path}/views/common/footer.jsp" />
 </body>
 </html>

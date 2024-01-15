@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
-<link rel="stylesheet" href="${path}/header.css">
-<script src="views/js/jquery-3.7.1.min.js"></script>
+<link rel="stylesheet" href="${path}/views/common/css/header.css">
+<script src="${path}views/js/jquery-3.7.1.min.js"></script>
 <script>
 	window.onload = function(){
 		//상단 메뉴 사이트맵 열기/닫기 이벤트
@@ -95,7 +95,7 @@
 </script>
 <header id="cm_header">
     <div class="cm-content">
-        <div class="cm-mainLogo"><img src="./img/mainLogo.png" alt=""></div>
+        <div class="cm-mainLogo"><img src="${path }/views/common/img/mainLogo.png" alt=""></div>
         <div class="cm-login-link">
             <a href="#">로그인</a>
             <a href="#">회원가입</a>
