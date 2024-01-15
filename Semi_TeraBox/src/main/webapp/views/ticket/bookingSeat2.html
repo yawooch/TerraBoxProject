@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예매좌석선택</title>
-    <link rel="stylesheet" href="../ticket/css/bookingSeat.css">
+    <link rel="stylesheet" href="../ticket/css/bookingSeat2.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 </head>
@@ -246,8 +246,8 @@
                             <div class="tk-poster"><img src="../ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div>
                             <div class="tk-info-two">6관</div>
                             <div class="tk-info-three">2024.01.16(화)</div>
-                            <button class="tk-info-btn"> 16:40~19:11
-                                <div class="tk-info-btn-div"></div>
+                            <button class="tk-info-btn"> 16:40~19:10
+                                <div class="tk-info-btn-d"></div>
                             </button>
                         </div>
                         <div class="tk-choice-seat">
@@ -285,9 +285,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tk-titleImg">
+                        <div class="tk-titleText">약관 필수 동의</div>
+                    </div>
+                    <div class="tk-box">
+                        <div class="tk-boxText">개인정보 수집 및 개인정보 제공</div>
+                        <a href="#">내용보기</a>
+                    </div>
                     <div class="tk-btn-group" id="test">
                         <div class="tk-previous-page">이전</div>
-                        <div class="tk-next-page">다음</div>
+                        <div class="tk-next-page">예매</div>
                     </div>
                 </div>
             </div>
@@ -299,9 +306,19 @@
 </html>
 <script>
 $(document).ready(function(){
+
     $('#tk_btn_plus').click(function(){
+
         let tk_now = $('#tk_now').html();
-        console.log(tk_now);
+
+        
+        let tk_now_status = Number(tk_now)+1;
+
+        console.log(tk_now_status);
+
+        
+        
+
     });
 
 

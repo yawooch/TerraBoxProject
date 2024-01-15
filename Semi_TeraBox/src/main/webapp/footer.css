@@ -197,6 +197,9 @@ a {
     text-indent: -9999px;
     background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-footer-theater-close.png) no-repeat center;
 }
+.cm-layer-looking-theater>.cm-looking-wrap>.cm-btn-footer-layer-close:hover {
+    cursor:pointer;
+}
 /* looking-theater 영역 스타일 끝 */
 /******************************************** 
     footer 영역 속성정의 끝
