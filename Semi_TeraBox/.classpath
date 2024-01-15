@@ -8,8 +8,12 @@
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/app/user1/product/21c/dbhomeXE/jdbc/lib/ojdbc8.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/TeraaaaServerr">
+=======
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/teraaaaaaa">
+>>>>>>> origin/master
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
