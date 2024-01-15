@@ -307,19 +307,19 @@
 <script>
 $(document).ready(function(){
 
-    $('#tk_btn_plus').click(function(){
-
+    $('#tk_btn_plus').on('click', () => {
         let tk_now = $('#tk_now').html();
-
+        let tk_now_status = $('#tk_now');
         
-        let tk_now_status = Number(tk_now)+1;
+        tk_now_status = Number(tk_now)+1;
 
         console.log(tk_now_status);
 
-        
-        
 
     });
+        
+
+    
 
 
 })
