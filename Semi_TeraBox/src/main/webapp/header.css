@@ -120,11 +120,11 @@ a:hover {
     margin-right:100px;
     padding-bottom:8px;
 }
-.cm-header-link-left>div>a:hover, .cm-header-link-right>div>a:hover{
+/* .cm-header-link-left>div>a:hover, .cm-header-link-right>div>a:hover{
     border-bottom:4px solid white;
     color:white;
     text-decoration: none;
-}
+} */
 .cm-link-area-sitemap{
     background-image: url(img/ico-sitemap-white.png);
     width:36px;
@@ -144,6 +144,30 @@ a:hover {
     background-image: url(img/ico-mypage-white.png);
     width:36px;
     height:36px;
+}
+/* .cm-header-link-left>div>a:hover, .cm-header-link-right>div>a:hover{
+    border-bottom:4px solid white;
+    color:white;
+    text-decoration: none;
+} */
+.cm-header-nav:hover,
+.cm-header-nav:hover>.cm-header-nav-sub>.cm-gnb-depth2,
+.cm-header-nav:hover>.cm-header-nav-sub,
+.cm-header-nav:hover>.cm-header-nav-sub:hover>.cm-gnb-depth2{
+    display:block;
+}
+.cm-link-text-movie.on+a, 
+.cm-link-text-ticket.on+a,
+.cm-link-text-cinema.on+a,
+.cm-link-text-question.on+a{
+    display:inline-block;
+}
+a[class^=cm-link-text-].on
+{
+    display:inline-block;
+    border-bottom:4px solid white;
+    color:white;
+    text-decoration: none;
 }
 /******************************************** 
     메인메뉴 영역 속성정의 끝
