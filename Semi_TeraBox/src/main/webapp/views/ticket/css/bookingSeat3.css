@@ -166,7 +166,6 @@ a:visited {
 }
 
 .tk-titleImg {
-    clear: both;
     background-image: url(../img/check-box.png);
     width: 28px;
     height: 28px;
@@ -240,8 +239,8 @@ a:visited {
     background-repeat: no-repeat;
 }
 
-.tk-box {
-    width: 770px;
+.tk-box{
+    width: 3px;
     height: 38px;
     border: 1px solid #000;
     border-radius: 4px;
