@@ -76,7 +76,7 @@ ul {
 }
 
 a:link {
-    color: #444;
+    color: #000;
     text-decoration: none;
 }
 
@@ -282,6 +282,7 @@ p {
     padding: 10px 15px;
     font-weight: 500;
     background-color: #f2f4f5;
+    color: #000;
 }
 
 #qt_sidebar-area_by>ul>li>a:hover {
@@ -725,9 +726,21 @@ a:-webkit-any-link {
     font-weight: 700;
 }
 
-.qt-faq-list-by ul li .qt-qut-by a .qt-txt-by {
+.qt-faq-list-by ul li .qt-qut-by a .qt-txt-by{
     position: relative;
     padding-left: 20px;
+    color: #000;
+}
+
+.qt-faq-list-by ul li .qt-qut-by a .qt-txt-by:hover {
+    position: relative;
+    padding-left: 20px;
+    color: #ec7f7a;
+}
+
+
+.qt-faq-list-by ul li .qt-qut-by a:hover {
+    background-color: #f7f8f9;
 }
 
 .qt-faq-list-by p {
@@ -754,6 +767,7 @@ a:-webkit-any-link {
     top: 0;
     left: 0;
     font-weight: 400;
+    color: 000;
 }
 
 .qt-font-block-by {
