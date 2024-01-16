@@ -6,6 +6,7 @@
     <title>영화 주요정보</title>
     <link rel="stylesheet" href="./css/Movie_detail.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="jquery-3.7.1.min.js"></script>
 
 </head>
 <body>
@@ -21,12 +22,12 @@
                     <br>
                     <p class="mv-eng-name">12.12: THE DAY</p>
                     <div class="mv-btn-util">
-                        <button class="mv-btn-black">
-                            <img src="./image/heart.png" class="mv-icon heart">
+                        <button class="mv-btn-black" id="mv-like">
+                            <img src="./image/heart.png" class="mv-icon heart" id="mv-like-image">
                             <span>1.2k</span>
                         </button>
-                        <button class="mv-btn-black">
-                            <img src="./image/share.png" class="mv-icon share">
+                        <button class="mv-btn-black" id="mv-link">
+                            <img src="./image/share.png" class="mv-icon share" id="mv-link-image">
                             <span>공유하기</span>
                         </button>
                     </div>
@@ -290,8 +291,7 @@
     </footer>
 
 
-    <script src="./Movie_detail.js"></script>
-    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="Movie_detail.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script>
