@@ -509,16 +509,9 @@ h3 {
     width:100px;
     color: #c4c4c4;
     font-size: 13px;
+    margin-top: 3px;
 }
 
-.tk-info-btn-d{
-    display: inline-block;
-    background-image: url(../img/bg-other-time-arr-down.png);
-    width: 16px;
-    height: 16px;
-    margin : 0px 0px 0px 10px;
-    vertical-align:middle;
-}
 
 .tk-poster {
     float: right;

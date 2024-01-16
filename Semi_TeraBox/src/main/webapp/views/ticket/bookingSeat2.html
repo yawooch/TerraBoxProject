@@ -246,10 +246,13 @@
                             <div class="tk-poster"><img src="../ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div>
                             <div class="tk-info-two">6관</div>
                             <div class="tk-info-three">2024.01.16(화)</div>
-                            <button class="tk-info-btn"> 16:40~19:10
-                                <div class="tk-info-btn-d"></div>
-
-                            </button>
+                            <select name="tk-time" class="tk-time" 
+                            style="background-color: #333; color: #fff; border:none;margin-top: 10px; margin-left: -4px;"> 
+                                <option selecte>16:40~19:10</option>
+                                <option value="tk-time-1">09:40~12:10</option>
+                                <option value="tk-time-2">11:40~14:10</option>
+                                <option value="tk-time-3">16:40~19:10</option>
+                            </select>
                         </div>
                         <div class="tk-choice-seat">
                             <div class="tk-choice-seat-left">
@@ -307,22 +310,15 @@
 </html>
 <script>
 $(document).ready(function(){
+    $('#tk_btn_plus').click(function(){
+        let tk_now= $('#tk_now').html();
+        let tk_status = Number(tk_now)+1;
 
-    $('#tk_btn_plus').on('click', () => {
-        let tk_now = $('#tk_now').html();
-        let tk_now_status = $('#tk_now');
-        
-        tk_now_status = Number(tk_now)+1;
-
-        console.log(tk_now_status);
-
+        tk_status.html(tk_now);
 
     });
-        
 
-    
+    });
 
-
-})
     
 </script>
