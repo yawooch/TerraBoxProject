@@ -301,7 +301,7 @@ li {
 
 #qt_sidebar-area_by .qt-first-area-by a
 {
-    color:rgba(109, 48, 48, 1);
+    color:#000;
     font-weight: 400;
     background: url(../img/Group\ 74.png) no-repeat right center!important;
 }
