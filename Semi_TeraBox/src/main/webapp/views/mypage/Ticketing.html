@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Ticketing.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <!-- body중 메뉴바 -->
+        <section>
+            <div class="mp-page-util">
+                <div class="mp-inner-wrap">
+                    <div class="mp-location">
+                        <span>home</span>
+                        <a href="#" title="마이페이지">
+                            나의 테라박스
+                        </a>
+                        <a href="#" title="나의 예매 내역">나의 예매 내역</a>
+                    </div>
+                </div>
+            </div>    
+        </section>
+        <!-- 왼쪽 메뉴바  -->
+        <section>
+            <div class="mp-body-all">
+                <div class="mp-left-box">
+                    <div class="mp-tera-box">
+                        <a href="#">나의 테라박스</a>
+                    </div>
+                    <div class="mp-ticketing">
+                        <a href="#">나의 예매 내역  <img src="./img/arrow.png" alt="화살표"></a>
+                    </div>
+                    <div class="mp-question">
+                        <a href="#">나의 문의 내역</a>
+                    </div>
+                    <div class="mp-member">
+                        <a href="#">회원 정보 수정</a>
+                    </div>
+                    <!-- 클릭! 화살표 표시 한다!  -->
+                </div>
+                <div class="mp-right-box">
+                <h2>나의 예매 내역 </h2>
+                <div class="mp-box1">
+                    <table>
+                        <th>구분</th>
+                        <td>
+                            <input type="radio" id="mp_now" name="mp_now" value="mp_now" checked="checked">
+                            <label for="mp_now" class="mp-now">예매내역</label>
+                            <input type="radio" id="mp_before" name="mp_before" value="mp_before">
+                            <label for="mp_before" class="mp-before">지난내역</label>
+                            <div class="mp-dropDown-box">
+                                <select class="mp-dropDown" name="mp-dropDown" id="mp_dropDown" >
+                                    <option name="202401" >2024년 1월</option>
+                                    <option name="202312" >2023년 12월</option>
+                                    <option name="202311" >2023년 11월</option>
+                                    <option name="202310" >2023년 10월</option>
+                                    <option name="202309" >2023년 9월</option>
+                                    <option name="202308" >2023년 8월</option>
+                                    <option name="202307" >2023년 7월</option>
+                                    <option name="202306" >2023년 6월</option>
+                                    <option name="202305" >2023년 5월</option>
+                                    <option name="202304" >2023년 4월</option>
+                                    <option name="202303" >2023년 3월</option>
+                                    <option name="202302" >2023년 2월</option>
+                                </select>
+                            </div>
+                            <button type="button" class="mp-dropDown-btn"><img src="./img/ico-search-gray.png" alt="돋보기"><div>조회</div></button>
+                        </td>
+                    </table>
+                </div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer></footer>
+</body>
+</html>
