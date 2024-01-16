@@ -199,6 +199,7 @@ em {
     border-style: none;
     font-size: 1.3em;
     font-weight: bold;
+    
 }
 
 /* 주요 정보 섹션 */
@@ -206,7 +207,6 @@ em {
 .mv-sec1 {
     width: 1100px;
     margin: auto;
-    height: 650px;
 }
 
 nav {
@@ -275,6 +275,8 @@ a {
 
 .mv-small-p {
     margin: 1px;
+    height: 65px;
+    overflow: hidden;
 }
 
 
