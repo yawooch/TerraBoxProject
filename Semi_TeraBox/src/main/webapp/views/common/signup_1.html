@@ -42,40 +42,41 @@
             </div>
             <!-- "회원가입을 위한 가입확인 단계입니다."" 문구 -->
             <div class="signtitle">
-                <strong>회원가입을 위한 가입확인 단계입니다.</strong>
+                <p>회원가입을 위한 가입확인 단계입니다.</p>
             </div>
             <!-- 이름, 주민번호, 휴대번호 입력창 -->
             <div class="member-table-wrap">
                 <table class="member-table-form">
                     <colgroup>
                         <!-- col : col 은 column의 약자로 열을 합니다. 해당 열의 속성을 지정할 때 사용합니다. -->
-                        <col style="width: 130px;"> <!-- 왼쪽 -->
+                        <col> <!-- 왼쪽 -->
                         <col> <!-- 오른쪽 -->
                     </colgroup>
                     <tbody>
                         <!-- 이름 입력 폼 -->
                         <tr>
                             <th>이름</th>
-                            <td colspan="2"><input type="text" class="member-table-input" id="name" autocomplete="off" required maxlength="20"></td> <!--required : 필수입력폼-->
+                            <td colspan="3"><input type="text" class="member-table-input1" id="name" autocomplete="off" required maxlength="20"></td> <!--required : 필수입력폼-->
 
                         </tr>
                         <!-- 주민번호 입력 폼 -->
                         <tr>
                             <th>주민번호</th>
-                            <td><input type="password" class="member-table-input" id="security" autocomplete="off" required maxlength="20"></td>
-                            <td><input type="password" class="member-table-input" id="security" autocomplete="off" required maxlength="20"></td>
+                            <td class="mti-left"><input type="password" class="member-table-input2" id="security" autocomplete="off" required maxlength="20"></td>
+                            <td class="mti-middle">-</td>
+                            <td class="mti-right"><input type="password" class="member-table-input2" id="security" autocomplete="off" required maxlength="20"></td>
                         </tr>
                         <!-- 휴대폰번호 입력 폼 -->
                         <tr>
                             <th>휴대폰번호</th>
-                            <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
+                            <td colspan="3"><input type="tel" class="member-table-input1" id="phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <!-- 하단 문구  -->
             <div class="member-bottom-text">
-                <ul>
+                <ul style="list-style-type: disc">
                     <li>14세 미만 어린이는 보호자 인증을 추가로 완료한 후 가입이 가능합니다.</li>
                     <li>본인인증시 제공되는 정보는 해당 인증기관에서 직접 수집하며, 인증이외의 용도로 이용 또는 저장되지 않습니다.</li>
                 </ul>

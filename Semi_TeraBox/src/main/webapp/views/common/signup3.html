@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="signup3.css" rel="stylesheet">
+    <script src="/jquery/jquery-3.7.1.js" ></script>
+</head>
+<body>
+    <div class="member-wrap">
+        <!-- 로고 -->
+        <div class="logo"><a href="https://megabox.co.kr/main" id="logo">Megabox lifetheather</a>
+        </div>
+        <!-- 상단바 -->
+        <div class="col-wrap">
+            <!--step1 본인인증, step2 약관동의, step3 정보입력, step4 가입완료 
+                단계 중 step3 본인인증 단계-->
+            <div class="step-member">
+                <ol>
+                    <li>
+                        <p class="step">
+                            <span>STEP1.본인인증</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP2.약관동의</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step on">
+                            <span>STEP3.정보입력</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="step">
+                            <span>STEP4.가입완료</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <!-- "약관동의 및 정보활용동의" 문구 -->
+            <div class="pageinfotextdiv">
+                <p class="page-info-text">
+                    <strong>아무개님 안녕하세요</strong>
+                    <span>회원정보를 입력해주세요.</span>
+                </p>
+            </div>
+             <!-- 회원정보 입력창 -->
+             <div class="member-table-wrap">
+                <table class="member-table-form">
+                    <!-- <caption></caption> -->
+                    <colgroup>
+                        <!-- col : col 은 column의 약자로 열을 합니다. 해당 열의 속성을 지정할 때 사용합니다. -->
+                        <col style="width: 130px;"> <!-- 왼쪽 -->
+                        <col> <!-- 오른쪽 -->
+                    </colgroup>
+                    <tbody>
+                        <!-- 생년월일 -->
+                        <tr>
+                            <th>생년월일</th>
+                            <td colspan="2">2000년 6월 27일</td> <!--required : 필수입력폼-->
+
+                        </tr>
+                        <!-- 휴대폰번호  -->
+                        <tr>
+                            <th>주민번호</th>
+                            <td colspan="2">010-0000-0000</td>
+                        </tr>
+                        <!-- 아이디 입력 폼 -->
+                        <tr>
+                            <th>아이디</th>
+                            <td><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="영문, 숫자 조합(8~12자)"></td>
+                            <td><button class="btn-doublechk">중복확인</button></td>
+                            <!-- 아이디는 영문,숫자 조합 8자리 이상 12자리 이하 입니다. -->
+                        </tr>
+                        <!-- 비밀번호 입력 폼 -->
+                        <tr>
+                            <th>비밀번호</th>
+                            <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
+                            <!-- 비밀번호는 영문, 숫자, 특수기호 중 2가지 이상 조합하여 10자리 이상 16자리 이하 입니다. -->
+                        </tr>
+                        <!-- 비밀번호확인 입력 폼 -->
+                        <tr>
+                            <th>비밀번호 확인</th>
+                            <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
+                            <!-- 비밀번호는 영문, 숫자, 특수기호 중 2가지 이상 조합하여 10자리 이상 16자리 이하입니다. -->
+                        </tr>
+                        <!-- 이메일주소 -->
+                        <tr>
+                            <th>이메일 주소</th>
+                            <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="이메일주소를 입력해 주세요"></td>
+                            <!-- 올바른 이메일 형식으로 입력해주세요. -->
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- 마케팅 활용을 위한 개인정보 수집 이용 안내(선택) -->
+            <div class="marketing-agree">
+                <p class="title">마케팅 활용을 위한 개인정보 수집 이용 안내</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
