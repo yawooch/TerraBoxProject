@@ -311,11 +311,12 @@
 <script>
 $(document).ready(function(){
     $('#tk_btn_plus').click(function(){
-        let tk_now= $('#tk_now').html();
-        let tk_status = Number(tk_now)+1;
+        let tk_now = $('#tk_now').html();
+        let tk_nowBox = $('#tk_now');
 
-        tk_status.html(tk_now);
+        tk_now = Number(tk_now)+1;
 
+        tk_nowBox.text(tk_now);
     });
 
     });
