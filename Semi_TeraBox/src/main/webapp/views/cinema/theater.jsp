@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예매좌석선택</title>
-    <link rel="stylesheet" href="theater.css">
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <body>
     <header></header>
+<link rel="stylesheet" href="./css/theater.css">
 
+	<jsp:include page="${path}/views/common/header.jsp" />
     <main>
         <!-- body중 메뉴바 -->
-        <section>
-            <div class="tk-page-util">
-                <div class="tk-inner-wrap">
-                    <div class="tk-location">
-                        <span>home</span>
-                        <a href="#" title="예매 페이지로 이동">
-                            극장
-                            </a>
-                        <a href="#" title="빠른예매 페이지로 이동">전체극장</a>
-                    </div>
+        <div class="tk-page-util">
+            <div class="tk-inner-wrap">
+                <div class="tk-location">
+                    <span>home</span>
+                    <a href="#" title="예매 페이지로 이동">
+                        극장
+                        </a>
+                    <a href="#" title="빠른예매 페이지로 이동">전체극장</a>
                 </div>
-            </div>  
-        </section>
+            </div>
+        </div>  
         <section>
             <!-- content -->
             <div class="contents">
@@ -47,14 +42,15 @@
                                     </div>
                                     <div class="theater-btn">
                                         <button type="button" class="theater-preview" tabindex="0" 
-                                                role="button" aria-label="Previous slide"><img src="/icons8-셰브론-왼쪽-24.png"></button>
+                                                role="button" aria-label="Previous slide"><img src="../img/icons8-셰브론-왼쪽-24.png"></button>
                                         <button type="button" class="theater-next" tabindex="0" 
-                                                role="button" aria-label="Previous slide"><img src="/icons8-셰브론-오른쪽-24.png"></button>
+                                                role="button" aria-label="Previous slide"><img src="../img/icons8-셰브론-오른쪽-24.png"></button>
                                     </div>
                                 </div>
                             </div>
                         </section>
                     </main>
 
-    <footer></footer>
+	<jsp:include page="${path}/views/common/footer.jsp" />
 </body>
+</html>
