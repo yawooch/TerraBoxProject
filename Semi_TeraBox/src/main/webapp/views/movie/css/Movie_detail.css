@@ -31,6 +31,7 @@
 * {
     box-sizing: border-box;
     font-family: 'NanumBarunGothic', sans-serif;
+    line-height: 22px;
 }
 
 
@@ -41,19 +42,12 @@ header {
     min-width: 1100px;
 }
 
-div {
-    border: 1px solid blue;
-}
-
-
-
 body {
     margin: 1px;
 }
 
 
 section {
-    border: 1px solid red;
     width: 100%;
 }
 
@@ -94,6 +88,7 @@ section {
 .mv-eng-name {
     font-size: 20px;
     margin: 5px;
+    margin-left: 0;
 }
 
 .mv-btn-util {
@@ -117,7 +112,7 @@ section {
 }
 
 .mv-btn-util :last-child {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .mv-btn-black:hover {
@@ -206,8 +201,6 @@ em {
     font-weight: bold;
 }
 
-
-
 /* 주요 정보 섹션 */
 
 .mv-sec1 {
@@ -236,12 +229,36 @@ nav>ul li {
     border: 1px solid black;
     height: 100%;
 }
+
+.mv-first {
+    border-top: 1px solid #AF2D2D;
+    border-left: 1px solid #AF2D2D;
+    border-right: 1px solid #AF2D2D;
+    border-bottom: none;    
+}
+
+.mv-second {
+    border-top: 1px solid #EBEBEB;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #AF2D2D;
+}
+
+.mv-last {
+    border-top: 1px solid #EBEBEB;
+    border-left: 1px solid #EBEBEB;
+    border-right: 1px solid #EBEBEB;
+    border-bottom: 1px solid #AF2D2D;
+}
+
+
+
+
+
 nav>ul li:nth-child(2) {
     margin: 0 -1px;
 }
 
-
-/* 수정해얗 함 */
 a {
     display: block;
     text-decoration: none;
@@ -277,6 +294,7 @@ a {
     display: inline-block;
     
 }
+
 
 
 /* 동영상 섹션 */
@@ -315,71 +333,126 @@ a {
     border-style: solid;
 }
 
-.mv-video {
+div[class="swiper mySwiper2"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 10px;
 }
 
-.mv-btn-left {
-    text-align: center;
-}
 
-.mv-video span{
+div[class="swiper mySwiper2"] span{
     display: block;
 }
 
-.mv-btn-left + div {
+div[class="swiper mySwiper2"] .swiper-slide {
     margin: auto;
     width: 800px;
+    display: flex;
+    justify-content: center;
 }
 
 video {
-    width: 100%;
-}
-.mv-btn-right  {
-    text-align: center;
+    width: 800px;
+    margin-left: 150px;
 }
 
+.swiper-button-next  {
+    text-align: center;
+    flex-direction: column;
+}
+
+.swiper-button-prev {
+    text-align: center;
+    flex-direction: column;
+    width: 200px;
+}
+.swiper-button-prev::after {
+    display: none;
+}
+.swiper-button-next::after {
+    display: none;
+}
 
 /* 동영상 리스트 */
 
-.mv-video-list {
+div[class="swiper mySwiper"] {
     margin-top: 40px;
-    height: 130px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.mv-video-thumbnail {
+div[class="swiper mySwiper"] .swiper-slide {
     width: 210px;
     height: 100%;
 }
 
 
-.mv-video-thumbnail div {
+div[class="swiper mySwiper"] .swiper-slide div {
     height: 100%;
     background-color: #0F0F0F;
 }
 
+.swiper-slide img {
+    width: 100%;
+    
+}
 
-.mv-video-thumbnail:nth-child(2) {
+
+
+div[class="swiper mySwiper"] .swiper-slide:nth-child(2) {
     border: 5px solid #AF2D2D;
 }
 
-.mv-video-thumbnail img {
-    box-sizing: border-box;
-    width: 100%;
+
+
+button {
+    cursor: pointer;
+    
 }
 
+
+.mv-btn-more {
+    display: block;
+    margin: auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    background-color: white;
+}
+
+.mv-btn-more:hover {
+    border-bottom: 1px solid #444;
+    background-color: white;
+}
+
+.mySwiper .swiper-slide-thumb-active img {
+    border: 5px solid red;
+}
+
+
 /* 스틸컷 섹션 */
-.mv-blocksit img {
+.mv-sec3 {
+    width: 1100px;
+    margin: auto;
+}
+
+
+.mv-container img {
     width: 260px;
     border-radius: 10px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
 }
 
+.grid-item { 
+    float: left;
+    width: 270px; 
+}
 
 
 button {

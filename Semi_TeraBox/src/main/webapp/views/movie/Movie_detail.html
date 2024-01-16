@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        영화 주요정보
-    </title>
+    <title>영화 주요정보</title>
     <link rel="stylesheet" href="./css/Movie_detail.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <script src="./jquery-3.7.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./Movie_detail.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 <body>
     <header>
@@ -20,14 +16,14 @@
         <!-- 포스터 있는 검은 부분 -->
         <section class="mv-movie-detail">
             <div class="mv-div-black">
-                <!-- <img src=""> -->
                 <div class="mv-div1">
-                    <p class="mv-kr-name">서울의 봄</p>
+                    <h2 class="mv-kr-name">서울의 봄</h2>
+                    <br>
                     <p class="mv-eng-name">12.12: THE DAY</p>
                     <div class="mv-btn-util">
                         <button class="mv-btn-black">
                             <img src="./image/heart.png" class="mv-icon heart">
-                            <span>좋아요</span>
+                            <span>1.2k</span>
                         </button>
                         <button class="mv-btn-black">
                             <img src="./image/share.png" class="mv-icon share">
@@ -58,7 +54,7 @@
                                 </td>
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-person.png">
-                                    <em>1,159,789,123</em>
+                                    <em>1,159,789</em>
                                     명
                                 </td>
                             </tr>
@@ -81,15 +77,13 @@
             </div>
         </section>
 
-
-
         <!-- 주요 정보 -->
         <section class="mv-sec1">
             <nav>
                 <ul>
-                    <li><a href="#" class="mv-first">주요정보/예고편/스틸컷</a></li>
-                    <li><a href="#" class="mv-second">실관람평</a></li>
-                    <li><a href="#" class="mv-last">무비포스트</a></li>
+                    <li class="mv-first"><a href="#">주요정보/예고편/스틸컷</a></li>
+                    <li class="mv-second"><a href="#">실관람평</a></li>
+                    <li class="mv-last"><a href="#">무비포스트</a></li>
                 </ul>
 
             </nav>
@@ -129,7 +123,6 @@
         
 
         <!-- 동영상 -->
-        <!-- js Swiper 라이브러리 사용 예정 -->
         <section class="mv-sec2">
             <div class="mv-movie-videotag">
                 <p>예고편(7)</p>
@@ -139,73 +132,191 @@
             <p class="mv-video-name">론칭 예고편</p>
             <hr class="mv-thin-hr">
 
-            <div class="mv-video">
-                <div class="mv-btn-left">
+            <div style="--swiper-navigation-color: #444; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
+                        poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="https://s3550.smartucc.kr/encodeFile/3550/2023/11/22/c65f68824965934d22e879a5c7e2c028_W.mp4"
+                        poster="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg" controls></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
+                        poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="https://s3550.smartucc.kr/encodeFile/3550/2023/11/22/c65f68824965934d22e879a5c7e2c028_W.mp4"
+                        poster="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg" controls></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
+                        poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="https://s3550.smartucc.kr/encodeFile/3550/2023/11/22/c65f68824965934d22e879a5c7e2c028_W.mp4"
+                        poster="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg" controls></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
+                    </div>
+                    
+                </div>
+                <div class="swiper-button-prev" style="width: 10%">
                     <img src="./image/이전 영상 아이콘.png" alt="">
                     <span>이전 영상</span>
                 </div>
-                <div>
-                    <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
-                </div>
-                <div class="mv-btn-right">
+                <div class="swiper-button-next" style="width: 10%">
                     <img src="./image/다음 영상 아이콘.png">
                     <span>다음 영상</span>
                 </div>
             </div>
 
-            <div class="mv-video-list">
-                <div>
-                    <img src="./image/왼쪽으로.png" alt="">
-                </div>
-                <div class="mv-video-thumbnail">
-                    <div>
-                        <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+            <div thumbsSlider="" class="swiper mySwiper" style="padding-top: 10px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                        </div>
                     </div>
-                </div>
-                <div class="mv-video-thumbnail">
-                    <div>
-                        <img src="">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg">
+                        </div>
                     </div>
-                </div>
-                <div class="mv-video-thumbnail">
-                    <div>
-                        <img src="">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                        </div>
                     </div>
-                </div>
-                <div class="mv-video-thumbnail">
-                    <div>
-                        <img src="">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="./image/오른쪽으로.png" alt="">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-                
-        </section>
             
-
+            
+        </section>
         <!-- 스틸컷 -->
-        <section class="mv-sec1">
+        <section class="mv-sec3">
             <h2>서울에 봄에 대한 <span>83</span>개의 스틸컷이 있어요!</h2>
             <hr class="mv-thin-hr">
-            <!-- 라이브러리 쓸 div -->
-            <div class="mv-blocksit">
-                <div>
+
+            <!-- masonry 라이브러리 사용 -->
+            <!-- 버튼 누를 때마다 20개의 이미지 출력 -->
+            <!-- 기본값 20개 -->
+            <div class="grid mv-container">
+                <div class="grid-item mv-block">
                     <img src="./image/메인포스터_절찬_대표포스터.jpg">
                 </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
+                </div>
+                <div class="grid-item mv-block">
+                    <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
+                </div>
+                
             </div>
-
+            
             <!-- 더보기 버튼 -->
             <button class="mv-btn-more">더보기</button>
         </section>
-
-
     </main>
 
     <footer>
         풋터
     </footer>
-    
+
+
+    <script src="./Movie_detail.js"></script>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 270
+        });
+    </script>
 </body>
 </html>
