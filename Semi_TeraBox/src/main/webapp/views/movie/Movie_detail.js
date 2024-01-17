@@ -63,7 +63,6 @@ $(document).ready(function() {
             $('#mv-moreText').removeClass('on');
             $('#mv-moreText').addClass('off');
         } 
-
     })
 
 

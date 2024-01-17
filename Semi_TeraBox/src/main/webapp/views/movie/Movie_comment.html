@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영화 주요정보</title>
+    <title>영화 실관람평</title>
     <link rel="stylesheet" href="./css/Movie_comment.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="jquery-3.7.1.min.js"></script>
@@ -78,15 +78,57 @@
         </section>
 
         <!-- 주요 정보 -->
-        <section class="mv-sec1">
+        <section class="mv-com-sec1">
             <nav>
                 <ul>
                     <li class="mv-first"><a href="#">주요정보/예고편/스틸컷</a></li>
                     <li class="mv-second"><a href="#">실관람평</a></li>
                     <li class="mv-last"><a href="#">무비포스트</a></li>
                 </ul>
-
             </nav>
+
+            <!-- 코멘트 부분 -->
+            <div class="mv-com-head">
+                <h2>서울의 봄에 대한 <span>29,750</span>개의 이야기가 있어요!</h2>
+                <button class="mv-com-addMovie">본 영화 등록</button>
+            </div>
+            <div class="mv-com-selection">
+                <span>전체 <span>29,751</span>건</span>
+                <div>
+                    <button>최신순</button>
+                    <button>공감순</button>
+                    <button>평점순</button>
+                </div>
+            </div>
+            <div class="mv-com-main">
+                <ul class="mv-com-main-ul">
+                    <li class="mv-com-main-li fixed">
+                        <div class="mv-com-main-li-icon">
+                            <img src="./image/heartFull.png" alt="프사"> 
+                            <span>아이디</span>
+                        </div>
+                        <div class="mv-com-main-textbox">
+                            <div class="mv-com-main-textbox-text">
+                                <span>내용</span>
+                                <br>
+                                <span>내용</span>
+                                <br>
+                                <span>내용</span>
+                            </div>
+                            <div class="mv-com-main-textbox-btn">
+                                <button>관람평쓰기</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mv-com-main-li"></li>
+                    <li class="mv-com-main-li"></li>
+                    <li class="mv-com-main-li"></li>
+                    <li class="mv-com-main-li"></li>
+                </ul>
+            </div>
+
+
+
 
 
         </section>    
@@ -97,32 +139,9 @@
     </footer>
 
 
-    <script src="Movie_detail.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="Movie_comment.js"></script>
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            watchSlidesProgress: true,
-        });
-        var swiper2 = new Swiper(".mySwiper2", {
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            thumbs: {
-                swiper: swiper,
-            },
-        });
-
-        $('.grid').masonry({
-            // options
-            itemSelector: '.grid-item',
-            columnWidth: 270
-        });
+        
     </script>
 </body>
 </html>

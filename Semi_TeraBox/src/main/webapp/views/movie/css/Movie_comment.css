@@ -46,9 +46,14 @@ body {
     margin: 1px;
 }
 
+div {
+    border: 1px solid blue;
+}
+
 
 section {
     width: 100%;
+    height: 1000px; /* 끝나면 지우기 */
 }
 
 .mv-movie-detail {
@@ -205,7 +210,7 @@ em {
 /* 주요 정보 섹션 */
 
 /* 네비게이션 */
-.mv-sec1 {
+.mv-com-sec1 {
     width: 1100px;
     margin: auto;
 }
@@ -267,11 +272,101 @@ a {
 }
 /* 네비게이션 끝 */
 
-/* 섹션 2 - 코멘트 */
+/* 섹션 - 코멘트 */
+.mv-com-head {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mv-com-head>h2 {
+    display: inline-block;
+}
+
+/* 본 영화 등록 버튼 */
+.mv-com-addMovie {
+    min-width: 100px;
+    border-radius: 5px;
+    border: 1px solid #AF2D2D;
+    background-color: #ffffff;
+    height: 34px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.mv-com-addMovie:hover {
+    background-color: #f8f6f6;
+}
+
+.mv-com-selection {
+    margin-top: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mv-com-selection>div>button{
+    margin-left: 10px;
+    background-color: #ffffff;
+    border: none;
+}
+
+/* 실  */
+.mv-com-main {
+    margin-top: 10px;
+    height: 500px;
+}
+
+.mv-com-main-ul {
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.mv-com-main-li {
+    display: flex;
+    height: 84px;
+}
+
+.mv-com-main-li-icon {
+    width: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mv-com-main-li-icon>img{
+    width: 50px;
+    height: 50px;
+
+}
+.mv-com-main-li-icon>span{
+    text-align: center;
+}
+
+.mv-com-main-textbox {
+    width: 100%;
+    display: flex;
+
+}
+
+.mv-com-main-textbox-text {
+    padding-left: 30px;
+    padding-top: 5px;
+    width: 85%;
+}
+.mv-com-main-textbox-btn {
+    width: 15%;
+}
 
 
 
 
+button {
+    cursor: pointer;
+}
 
 footer {
     height: 200px;
