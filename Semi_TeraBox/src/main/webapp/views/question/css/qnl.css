@@ -576,6 +576,13 @@ p {
     text-decoration: none;
 }
 
+.qt-acolor-by {
+    color: #fff!important;
+}
+.qt-acolor1-by{
+    color: #666!important;
+}
+
 [type=button],
 [type=reset],
 [type=submit],
