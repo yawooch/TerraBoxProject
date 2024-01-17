@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+
 /* body 중 메뉴바 */
 .mp-session {
     width: 1100px;
@@ -140,8 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-    /* 왼쪽 메뉴바 시작  */
+  /* 왼쪽 메뉴바 시작  */
 .mp-left-box {
     width: 200px;
     height: 285px;
@@ -243,58 +243,42 @@ h1, h2, h3, h4, h5, h6 {
     width: 840px;  
 }
 
-.mp-pwd-box {
-    margin-top: 10px;
-    width: 710px;
-    height: 200px;
-    padding: 80px 100px 40px 100px;
-    text-align: center;
+.right-ul {
+    padding-left: 20px ;
+} 
+
+
+.right-ul li {
+    list-style-type: square;
 }
 
-.mp-inner-box {
-    text-align: center;
-    width: 345px;
-    height: 60px;
-    border-top: 1px solid #555;
-    border-bottom: 1px solid #d1d5dd;
-    display: inline-block;
+.tb-wrap {
     position: relative;
+    border-top: 1px solid #555;
 }
 
-.mp-lb-box {
-    width: 130px;
-    height: 59px;
-    position: absolute;
-    background: #f7f8f9;
-    text-align: center;
+.tb-wrap table {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.tb-th{
+    background-color: #f7f8f9;
+}
+
+.tb-th, .tb-td{
+    height: 50px;
+    padding: 25px 15px 7px 15px;
+    text-align: left;
     border-bottom: 1px solid #d1d5dd;
 }
 
-.mp-lb-box label{
-    display: flex;
-    justify-content: center;
-    margin-top: 17px;
-}
-
-.mp-ip-box input {
+.tb-btn1 {
     float: right;
-    margin-top: 17px;
-    margin-right: 25px;
+    width: 75px;
+    height: 32px;
+    margin-bottom: 10px;
 }
-
-.mp-btn1-box {
-    margin-left: 310px;
-    
-}
-
-.mp-btn1{
-    width: 107px;
-    height: 40px;
-    color: #fff;
-    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
-    font-size: 15px;
-    background-color: #6D3030;
-    border-radius: 5px;
-    border: none;
-}
-

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/myinfo.css">
+    <link rel="stylesheet" href="./css/myInfo.css">
 </head>
 <body>
     <header></header>
@@ -19,7 +19,7 @@
                         <a href="#" title="마이페이지">
                             나의 테라박스
                         </a>
-                        <a href="#" title="나의 예매 내역">나의 예매 내역</a>
+                        <a href="#" title="나의 예매 내역">회원 정보 수정</a>
                     </div>
                 </div>
             </div>    
@@ -27,25 +27,48 @@
         </div>
         <!-- 왼쪽 메뉴바 -->
         <section class="mp-section">
-            <div class="mp-body-all">
+            <div class="mp-body">
                 <div class="mp-left-box">
                     <div class="mp-tera-box">
                         <a href="#">나의 테라박스</a>
                     </div>
                     <div class="mp-ticketing">
-                        <a href="#">나의 예매 내역  <img src="./img/arrow.png" alt="화살표"></a>
+                        <a href="#">나의 예매 내역</a>
                     </div>
                     <div class="mp-question">
                         <a href="#">나의 문의 내역</a>
                     </div>
                     <div class="mp-member">
-                        <a href="#">회원 정보 수정</a>
+                        <a href="#">회원 정보 수정 <img src="./img/arrow.png" alt="화살표"></a>
                     </div>
                 </div>
-            </div>    
-        </section>       
+                
+                <!-- 오른쪽 구역  -->
+                <div class="mp-right">
+                    <h2>회원 정보 수정</h2>
+                    <div class="mp-pwd-box">
+                        <strong>회원님의 개인정보 보호를 위해 비밀번호를 인증해주세요.</strong>
+                        <div class="mp-inner-box">
+                            <div class="mp-lb-box">
+                                <label for="ip_text">비밀번호</label>
+                            </div>
+                            <div class="mp-ip-box">
+                                <input type="text" id="ip_text" name="ip_text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mp-btn1-box">
+                        <button class="mp-btn1">확인</button>
+                    </div>
 
-    </main>
+
+                    
+                </div>
+                
+                
+            </div>
+        </section>
+        </main>
     <footer></footer>
 </body>
 </html>
