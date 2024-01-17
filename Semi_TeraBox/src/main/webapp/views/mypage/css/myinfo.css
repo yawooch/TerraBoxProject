@@ -133,19 +133,14 @@ h1, h2, h3, h4, h5, h6 {
     background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
 }
 
-/* a:visited {
-    color: #666;
-    text-decoration: none;
-    outline: 1px dotted #000;
-} */
-
 .mp-body-all {
     width: 1100px;
     box-sizing: border-box;
     margin: 40px auto;
 }
 
-/* 왼쪽 메뉴바 */
+
+    /* 왼쪽 메뉴바 시작  */
 .mp-left-box {
     width: 200px;
     height: 285px;
@@ -190,6 +185,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #6D3030;
 }
 
+/* 화살표 이미지 */
 .mp-ticketing a img {
     margin-left:45px;
 }
@@ -237,223 +233,3 @@ h1, h2, h3, h4, h5, h6 {
 .mp-member a:hover{
     color: #6D3030;
 }
-
-/* 오른쪽 박스 */
-
-.mp-right-box{
-    float: right;
-    width: 840px;
-}
-
-.mp-right-box > h2 {
-    color: #000;
-}
-
-.mp-box1 {
-    width: 840px;
-    height: 76px;
-    background-color: #f2f4f5;
-    margin-top: 10px;
-}
-
-.mp-dropDown-box{
-    display: inline-block;
-}
-
-.mp-box1 table {
-    padding: 20px 40px;
-    text-align: center;
-
-}
-
-.mp-box1 th {
-    color: #444;
-    padding-right: 40px;
-}
-
-.mp-box1 input {
-    width: 16px;
-    height: 16px;
-    vertical-align: sub;
-}
-
-.mp-box1 label {
-    padding-right: 20px;
-}
-
-.mp-box1 select {
-    height: 32px;
-    border-radius: 3px;
-    margin-right: 13px;
-}
-
-.mp-dropDown-btn{
-    border: 1px solid #c1c1c1;
-    background-color: #fff;
-    height: 32px;
-    width: 73px;
-    border-radius: 5px;
-    vertical-align: inherit;
-    background-image: url(../img/ico-search-gray.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 9px;
-}
-
-.mp-dropDown-btn div {
-    text-align: center;
-}
-
-/* 예매 내역 시작   */
-
-.mp-small-tit{
-    font-weight: 700;
-}
-
-.mp-small-tit span {
-    color: #AF2D2D;
-}
-
-.mp-round {
-    border: 1px solid #d8d9db;
-    border-radius: 10px;
-    width: 840px;
-    height: 247px;
-    padding: 30px 30px 30px 194px; 
-    display: inline-block;
-    position: relative;
-}
-
-.mp-round a {
-    display: block;
-    position: absolute;
-    left: 30px;
-    top: 27px;
-    width: 135px;
-    height: 194px;
-}
-
-
-.mp-round img {
-    width:100%;
-    height:100%;
-}
-
-.mp-th {
-    text-align: right;
-    padding-right: 5px;
-    font-size: 14px
-}
-
-.mp-num{
-    color: #AF2D2D;
-    margin: 0 auto;
-    font-size: 17px;
-}
-
-.mp-td {
-    height: 33px;
-}
-
-.mp-round-right table {
-    padding-top: 20px;
-}
-
-.mp-cancel-btn {
-    width: 80px;
-    height: 32px;
-    background-color: #555758;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    float: right;
-}
-
-.cancel-tit {
-    font-size: 24px;
-    color: #6D3030;
-    margin-top: 30px;
-    padding-bottom: 8px;
-}
-
-.cancel-tit2 {
-    margin: 0 auto;
-}
-
-.cancel-table{
-    position: relative;
-    border-top: 1px solid #555;
-}
-
-.board-list {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.board-list th {
-    height: 45px;
-    padding: 3px 10px;
-    color: #222;
-    border: 1px solid #eaeaea;
-    border-width: 0 0 1px 0;
-    background-color: #f2f4f5;
-}
-
-.cancel-td {
-    text-align: center;
-    height: 50px;
-}
-
-.cancel-page {
-    height: 26px;
-    width: 26px;
-    background-color: #555758;
-    color: #fff;
-    border: none;
-}
-
-.cancel-page-div {
-    margin: 20px 0px;
-    text-align: center;
-}
-
-.btn-toggle {
-    padding: 0px 20px;
-    width: 840px;
-    height: 39px;
-    background-color: white;
-    font-size: 15px;
-    text-align: left;
-    border-radius: 5px;
-    border: 1px solid #d8d9db;
-}
-
-.btn-toggle img {
-    float: right;
-    text-align: center;
-    padding-top: 7px;
-}
-
-.mp-count {
-    width: 840px;
-    padding: 20px;
-}
-
-.dot-list {
-    margin: 0 auto;
-    padding-bottom: 30px;
-}
-
-.dot-list li {
-    padding: 0 auto;
-}
-
-.dash-list {
-    list-style-type: none;
-    padding: 0;
-    .dash-li::before{
-        content: '- ';
-    }
-    
-}
-

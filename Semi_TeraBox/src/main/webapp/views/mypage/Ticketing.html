@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/Ticketing.css">
+    <link rel="stylesheet" href="./css/ticketing.css">
 </head>
 <body>
-    <header></header>
-    <main>
-        <!-- body중 메뉴바 -->
-        <section>
-            <div class="mp-page-util">
-                <div class="mp-inner-wrap">
-                    <div class="mp-location">
-                        <span>home</span>
-                        <a href="#" title="마이페이지">
-                            나의 테라박스
-                        </a>
-                        <a href="#" title="나의 예매 내역">나의 예매 내역</a>
-                    </div>
+    <!-- body중 메뉴바 -->
+    <div style="width: 100%; background-color: #f8f8fa;">
+    <section style="width: 1100px; margin: 0 auto;">
+        <div class="mp-page-util">
+            <div class="mp-inner-wrap">
+                <div class="mp-location">
+                    <span>home</span>
+                    <a href="#" title="마이페이지">
+                        나의 테라박스
+                    </a>
+                    <a href="#" title="나의 예매 내역">나의 예매 내역</a>
                 </div>
-            </div>    
-        </section>
+            </div>
+        </div>    
+    </section>
+    </div>
+    <main style="width: 1100px; margin: 0 auto;">
+        <div class="mp-div">
         <!-- 왼쪽 메뉴바  -->
-        <section>
+        <section class="mp-section">
             <div class="mp-body-all">
                 <div class="mp-left-box">
                     <div class="mp-tera-box">
@@ -41,7 +43,7 @@
                     </div>
                     <!-- 클릭! 화살표 표시 한다!  -->
                 </div>
-                <div class="mp-right-box">
+                <div class="mp-right-box mp-section">
                 <h2>나의 예매 내역 </h2>
                 <div class="mp-box1">
                     <table>
@@ -159,6 +161,7 @@
                         이용안내
                     <img src="./img/ico-arr-toggle-down.png" alt="화살표">
                 </button>
+                <!-- 토클로 보이게 안보이게 하기 -->
                 <div class="mp-count">
                     <strong>[예매 안내]</strong>
                     <ul class="dot-list">
@@ -191,7 +194,7 @@
             </div>
         </div>
         </section>
-
+        </div>
     </main>
     <footer></footer>
 </body>
