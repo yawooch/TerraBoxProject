@@ -294,7 +294,7 @@ p {
 
 }
 
-#qt_sidebar-area_by ul li .qt-third-text-by {
+#qt_sidebar-area_by ul li .qt-four-text-by {
     color: #000;
     font-weight: 400;
     background: #fff url(../img/Group\ 74.png) no-repeat right center;
@@ -584,7 +584,7 @@ em {
 .board-search .input-text {
     display: block;
     width: 100%;
-    height: 34px;
+    height: 32px;
     border: 0;
 }
 
@@ -822,3 +822,126 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     color: #666!important;
 }
 
+/*  */
+
+
+.clearfix:after, .clearfix:before {
+    content: '';
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix:after, .clearfix:before {
+    content: '';
+    display: table;
+}
+.dot-list>li {
+    position: relative;
+    padding: 0 0 0 8px;
+    list-style-type: none;
+}
+.dot-list>li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: #503396;
+    width: 3px;
+    height: 3px;
+}
+a.button:active, a.button:focus, a.button:hover, a.button:visited {
+    color: #503396;
+}
+
+a.button {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    height: 36px;
+    margin: 0;
+    padding: 0 15px;
+    text-align: center;
+    line-height: 34px;
+    color: #503396;
+    font-weight: 400;
+    border-radius: 4px;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+    text-decoration: none;
+    border: 1px solid #503396;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+    float: right;
+}
+
+.dot-list>li+li {
+    margin-top: 2px;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix:after, .clearfix:before {
+    content: '';
+    display: table;
+}
+
+
+.qt-pagination-by .control.next {
+    margin-left: 5px;
+    background-position: -64px 0;
+}
+
+.qt-pagination-by .control.last {
+    background-position: right 0;
+}
+
+.qt-pagination-by .control {
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-paging.png) no-repeat 0 0;
+}
+
+.qt-pagination-by .control, .qt-pagination-by a, .qt-pagination-by strong {
+    display: inline-block;
+    position: relative;
+    min-width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid #ebebeb;
+    text-decoration: none;
+    line-height: 30px;
+    color: #333;
+    font-weight: 400;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by strong {
+    display: inline-block;
+    position: relative;
+    min-width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0 8px;
+    border: 1px solid #ebebeb;
+    text-decoration: none;
+    line-height: 30px;
+    color: #333;
+    font-weight: 400;
+    vertical-align: middle;
+    border-radius: 4px;
+}
