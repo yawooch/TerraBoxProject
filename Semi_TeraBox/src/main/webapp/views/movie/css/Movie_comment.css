@@ -47,7 +47,6 @@ body {
 }
 
 div {
-    border: 1px solid blue;
 }
 
 
@@ -272,6 +271,7 @@ a {
 }
 /* 네비게이션 끝 */
 
+
 /* 섹션 - 코멘트 */
 .mv-com-head {
     margin-top: 20px;
@@ -313,21 +313,23 @@ a {
     border: none;
 }
 
-/* 실  */
+
+/* 실관람평 시스템 */
 .mv-com-main {
     margin-top: 10px;
-    height: 500px;
 }
 
 .mv-com-main-ul {
     text-decoration: none;
     list-style: none;
+    margin: 0;
 
 }
 
 .mv-com-main-li {
     display: flex;
     height: 84px;
+    flex-wrap: wrap;
 }
 
 .mv-com-main-li-icon {
@@ -347,21 +349,135 @@ a {
 }
 
 .mv-com-main-textbox {
-    width: 100%;
+    width: 90%;
     display: flex;
-
+    border: 1px solid #EBEBEB;
 }
 
 .mv-com-main-textbox-text {
-    padding-left: 30px;
-    padding-top: 5px;
+    padding-left: 20px;
+    padding-top: 15px;
     width: 85%;
 }
 .mv-com-main-textbox-btn {
     width: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.mv-com-btn-write {
+    border: none;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.mv-com-btn-write>img {
+    width: 20px;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.mv-com-btn-write>span {
+    font-size: 1.1em;
+
+}
+
+.mv-com-main-li {
+    margin-bottom: 20px;
 }
 
 
+
+/* 유저가 등록한 실관람평 */
+.mv-com-main-list {
+    display: flex;
+    height: 84px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+
+.mv-textbox-user div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mv-com-main-name {
+    width: 95px;
+}
+
+.mv-com-main-score {
+    width: 90px;
+    font-size: 2em;
+    margin-top: 5px;
+}
+
+.mv-com-main-point {
+    width: 85px;
+}
+
+.mv-com-main-story {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 600px;
+    text-align: left;
+    justify-content: left !important;
+}
+
+.mv-com-main-like {
+    width: 90px;
+}
+
+.mv-com-main-btn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: none;
+    background-color: #ffffff;
+}
+
+.mv-com-main-date {
+    padding-top: 10px;
+    width: 100%;
+    text-align: right;
+}
+
+
+
+
+/* 페이지 이동 버튼 리스트 */
+.mv-com-btnlist {
+    position: relative;
+    text-align: center;
+}
+
+.mv-com-btnlist button {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+.mv-com-btnlist button:hover {
+    border: 1px solid #AF2D2D;
+    background-color: #ffffff;
+    color: #AF2D2D;
+}
+
+.mv-com-btnlist img {
+    vertical-align: middle;
+}
+
+.mv-com-btnFunction {
+    border: none;
+}
+
+.mv-com-btnNumber {
+    border: 1px solid #EBEBEB;
+    background-color: #ffffff;
+}
 
 
 button {
@@ -370,6 +486,6 @@ button {
 
 footer {
     height: 200px;
-    background-color: beige;
+    background-color: #EAEAEA;
 }
 
