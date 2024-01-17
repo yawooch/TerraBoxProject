@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <link rel="stylesheet" href="${path}/views/common/css/header.css">
-<script src="${path}views/js/jquery-3.7.1.min.js"></script>
+<script src="${path}/views/js/jquery-3.7.1.min.js"></script>
 <script>
 	window.onload = function(){
 		//상단 메뉴 사이트맵 열기/닫기 이벤트
@@ -122,7 +122,7 @@
         <div class="cm-header-nav-sub">
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/movie/all"       title="전체영화">전체영화</a></li>
+                    <li><a href="/movie"           title="전체영화">전체영화</a></li>
                     <li><a href="/movie/moviepost" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
@@ -134,13 +134,13 @@
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/cinema"          title="전체극장">전체극장</a></li>
-                    <li><a href="/cinema/special/" title="특별관">특별관</a></li>
+                    <li><a href="/cinema"         title="전체극장">전체극장</a></li>
+                    <li><a href="/cinema/special" title="특별관">특별관</a></li>
                 </ul>
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/question/"          title="고객센터 홈">고객센터 홈</a></li>
+                    <li><a href="/question"          title="고객센터 홈">고객센터 홈</a></li>
                     <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/notice"    title="고객센터 홈">공지사항</a></li>
                     <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
@@ -159,8 +159,8 @@
                 <p class="cm-tit-depth">영화</p>
 
                 <ul class="cm-list-depth">
-                    <li><a href="/movie"         title="전체영화">전체영화</a></li>
-                    <li><a href="/moviepost/all" title="무비포스트">무비포스트</a></li>
+                    <li><a href="/movie"           title="전체영화">전체영화</a></li>
+                    <li><a href="/movie/moviepost" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
 
@@ -186,7 +186,7 @@
                 <p class="cm-tit-depth">고객센터</p>
 
                 <ul class="cm-list-depth">
-                    <li><a href="/question/"          title="고객센터 홈">고객센터 홈</a></li>
+                    <li><a href="/question"           title="고객센터 홈">고객센터 홈</a></li>
                     <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/notice"    title="고객센터 홈">공지사항</a></li>
                     <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
@@ -231,17 +231,17 @@
         <!-- wrap-->
         <div class="cm-mypage-wrap" >
     
-            <div class="cm-login-after" style="display: none;">
+            <div class="cm-login-after" style="display: block;">
                 <div class="cm-inner">
                     <div class="cm-box">
                         <div class="cm-mbimg"><img src="https://img.megabox.co.kr/static/pc/images/2023/01/member_WELCOME_2.png" alt="WELCOME"></div>
                         <div class="cm-name">양우찬<span>님</span></div>
     
-                        <a href="/mypage" class="cm-linkBtn" title="나의  테라박스">나의  테라박스</a>
+                        <a href="/mypage/myticket" class="cm-linkBtn" title="나의  테라박스">나의  테라박스</a>
                     </div>
                     <div class="cm-box cm-reserve">
                         <div class="cm-tit">
-                            <a class="cm-linkA" href="/mypage/ticketlist" title="예매내역"><span>예매</span></a>
+                            <a class="cm-linkA" href="/mypage/myticket" title="예매내역"><span>예매</span></a>
                         </div>
     
                         <div title="예매 수" class="cm-count"><div class="cm-txt">예매내역이 없어요!</div></div>

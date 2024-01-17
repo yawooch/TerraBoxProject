@@ -3,18 +3,17 @@
         <c:set var="path" value="${ pageContext.request.contextPath }" />
 
         <body>
-            <header></header>
-            <link rel="stylesheet" href="./css/theater.css">
 
             <jsp:include page="${path}/views/common/header.jsp" />
+            
+            <link rel="stylesheet" href="${path}/views/cinema/css/theater.css">
             <main class="container">
                 <!-- body중 메뉴바 -->
                 <div class="page-util">
                     <div class="inner-wrap">
                         <div class="location">
                             <span>home</span>
-                            <a href="#" title="예매 페이지로 이동">극장</a>
-                            <a href="#" title="빠른예매 페이지로 이동">전체극장</a>
+                            <a href="#" title="극장 페이지로 이동">극장</a>
                         </div>
                     </div>
                 </div>
@@ -305,5 +304,4 @@
 
             <jsp:include page="${path}/views/common/footer.jsp" />
         </body>
-
         </html>
