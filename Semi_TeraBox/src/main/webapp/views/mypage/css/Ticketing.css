@@ -292,16 +292,17 @@ a:visited {
     width: 73px;
     border-radius: 5px;
     vertical-align: inherit;
-    
-    
+    background-image: url(../img/ico-search-gray.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position-x: 9px;
 }
 
-.mp-dropDown-btn img {
-    margin-top: 5px;
-    margin-right: 5px;
-}
+/* .mp-dropDown-btn img {
+
+} */
 
 .mp-dropDown-btn div {
-    display: inline-block;
-    
+    text-align: center;
+
 }
