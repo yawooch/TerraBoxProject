@@ -273,6 +273,7 @@ li {
     padding: 10px 15px;
     font-weight: 500;
     background-color: #f2f4f5;
+    text-decoration: none;
 }
 
 #qt_sidebar-area_by>ul>li>a:hover{
@@ -540,6 +541,7 @@ button {
     width: 240px;
     height: 120px;
     padding: 0 0 0 10px;
+    text-decoration: none;
 }
 
 
@@ -578,6 +580,7 @@ button {
     display: block;
     width: 220px;
     height: 121px;  
+    text-decoration: none;
 }
 
 .qt-custo-main-by .qt-custo-main-area-by .qt-block-content1-by p{
@@ -615,6 +618,7 @@ button {
     width: 260px;
     height: 123px;
     padding: 0 0 0 10px;
+    text-decoration: none;
 }
 
 
@@ -654,6 +658,19 @@ button {
     width: 280px;
     height: 100px;
     padding: 0 0 0 10px;
+    text-decoration: none;
+}
+
+.qt-quqtionlist-by a{
+	text-decoration: none;
+}
+
+.qt-notice-wrap-by .qt-tit-area-by .qt-more-by{
+	text-decoration: none;
+	color: black;
+}
+.qt-notice-wrap-by .qt-tit-area-by .qt-more-by:hover{
+	text-decoration: underline;
 }
 
 

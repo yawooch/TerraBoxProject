@@ -13,24 +13,24 @@
                 <div class="qt-submenu-area-by">
                     <div class="qt-submenu-areaname-by">
                         <span></span>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
+                        <a href="http://localhost:8080/views/question/qnq.jsp" title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
                     </div>
                 </div>
             </div>
             <div class="qt-mainarea-by">
                 <nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
                     <p class="qt-sidebar-each-by">
-                        <a href="#" title="고객센터">고객센터</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터">고객센터</a>
                     </p>
                     <ul>
                         <li class="qt-first-area-by">
                             <a class="qt-first-text-by"
-                                href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html#">고객센터
+                                href="http://localhost:8080/views/question/questionHome.jsp">고객센터
                                 홈</a>
                         </li>
                         <li><a class="qt-second-text-by"
-                                href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html#">자주
+                                href="http://localhost:8080/views/question/qnq.jsp">자주
                                 묻는 질문</a></li>
                         <li><a href="#">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
@@ -64,15 +64,15 @@
                         <ul>
                             <li>
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="88"
-                                    title="전체"><a class="qt-acolor1-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html">전체</a></button>
+                                    title="전체"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/qnq.jsp">전체</a></button>
                             </li>
                             <li class="qt-on-by">
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no
-                                    title="영화예매"><a class="qt-acolor-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnqmovie.html">영화예매</a></button>
+                                    title="영화예매"><a class="qt-acolor-by" href="http://localhost:8080/views/question/qnqmovie.jsp">영화예매</a></button>
                             </li>
                             <li>
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="89"
-                                    title="극장/특별관"><a class="qt-acolor1-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnqstate.html">극장/특별관</a></button>
+                                    title="극장/특별관"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/qnqstate.jsp">극장/특별관</a></button>
                             </li>
                         </ul>
                     </div>

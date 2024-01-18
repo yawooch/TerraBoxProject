@@ -11,8 +11,8 @@
                 <div class="qt-submenu-area-by">
                     <div class="qt-submenu-areaname-by">
                         <span></span>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname1_by"> 고객센터 홈</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터 페이지로 이동" id="qt_submenuname1_by"> 고객센터 홈</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                         <li class="qt-first-area-by">
                             <a class="qt-first-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html">고객센터 홈</a>
                         </li>
-                        <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html">자주 묻는 질문</a></li>
+                        <li><a href="http://localhost:8080/views/question/qnq.jsp">자주 묻는 질문</a></li>
                         <li><a href="file:///D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
                         <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
@@ -88,7 +88,7 @@
                                 </a>
                             </div>
                             <div class="qt-block-content3-by">
-                                <a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html" title="자주 묻는 질문 페이지로 이동">
+                                <a href="http://localhost:8080/views/question/qnq.jsp" title="자주 묻는 질문 페이지로 이동">
                                     <p>
                                         <Strong>자주 묻는 질문</Strong>
                                         "빠르고 간편하게 검색하세요"
@@ -100,7 +100,7 @@
                             <div class="qt-block-left-by">
                                 <div class="qt-tit-area-by">
                                     <h3 class="qt-tit-by qt-small-by ">자주 묻는 질문 BEST5</h3>
-                                    <a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html#" class="qt-more-by" title="더보기">
+                                    <a href="http://localhost:8080/views/question/qnq.jsp" class="qt-more-by" title="더보기">
                                         더보기
                                         <i class="qt-iconsetarea-by"></i>
                                     </a>
