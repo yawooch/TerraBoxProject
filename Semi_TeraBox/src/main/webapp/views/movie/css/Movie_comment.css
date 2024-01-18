@@ -46,13 +46,9 @@ body {
     margin: 1px;
 }
 
-div {
-}
-
 
 section {
     width: 100%;
-    height: 1000px; /* 끝나면 지우기 */
 }
 
 .mv-movie-detail {
@@ -313,6 +309,15 @@ a {
     border: none;
 }
 
+.mv-com-selection>div>.on {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.mv-com-selection>div>:not(.on) {
+    font-weight: normal;
+}
+
 
 /* 실관람평 시스템 */
 .mv-com-main {
@@ -349,9 +354,11 @@ a {
 }
 
 .mv-com-main-textbox {
+    height: 84px;
     width: 90%;
     display: flex;
     border: 1px solid #EBEBEB;
+    border-radius: 0 10px 10px 10px;
 }
 
 .mv-com-main-textbox-text {
@@ -397,6 +404,9 @@ a {
     margin-bottom: 50px;
 }
 
+.mv-textbox-user {
+    background-color: #f7f3f3;
+}
 
 .mv-textbox-user div{
     display: flex;
@@ -416,6 +426,7 @@ a {
 
 .mv-com-main-point {
     width: 85px;
+    text-align: center;
 }
 
 .mv-com-main-story {
@@ -428,6 +439,7 @@ a {
 
 .mv-com-main-like {
     width: 90px;
+    
 }
 
 .mv-com-main-btn {
@@ -436,7 +448,7 @@ a {
     text-align: center;
     align-items: center;
     border: none;
-    background-color: #ffffff;
+    background-color: #f7f3f3;
 }
 
 .mv-com-main-date {
@@ -478,6 +490,7 @@ a {
     border: 1px solid #EBEBEB;
     background-color: #ffffff;
 }
+
 
 
 button {

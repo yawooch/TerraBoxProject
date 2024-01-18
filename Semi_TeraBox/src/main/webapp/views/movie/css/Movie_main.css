@@ -1,0 +1,109 @@
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'NanumBarunGothic', sans-serif;
+    line-height: 22px;
+
+}
+
+
+header {
+    height: 91px;
+    width: 100%;
+    background-color: darkred;
+    min-width: 1100px;
+}
+
+body {
+    margin: 1px;
+}
+
+main {
+    border: 1px solid black;
+    height: 2000px;
+    margin: auto;
+}
+
+nav {
+    background-color: #f8f8fa;
+}
+
+.mv-main-nav {
+    width: 1100px;
+    margin: auto;
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.mv-main-nav>img {
+    width: 15px;
+    height: 15px;
+}
+
+.mv-main-nav span {
+    margin-left: 20px;
+}
+
+section {
+    width: 1100px;
+    height: 500px;
+    border: 1px solid green;
+    margin: auto;
+}
+
+
+
+
+
+/* 하단 더보기 버튼 설정 */
+.mv-btn-more {
+    display: block;
+    margin: auto;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 35px;
+    border: 1px solid #eaeaea;
+    background-color: white;
+}
+
+.mv-btn-more:hover {
+    border: 1px solid #444;
+    background-color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+footer {
+    height: 200px;
+    background-color: #EAEAEA;
+}
+

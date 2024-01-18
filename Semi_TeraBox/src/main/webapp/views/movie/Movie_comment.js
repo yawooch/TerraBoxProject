@@ -21,7 +21,6 @@ $(document).ready(function() {
         }
     });
     
-    
     // 공유 버튼 호버하면 색 들어간 이미지로 변경
     $('#mv-link').hover(
         () => $('#mv-link-image').attr('src', './image/shareFull.png'),
@@ -29,14 +28,65 @@ $(document).ready(function() {
     );
 
     // 공유 버튼 클릭하면 현재 페이지의 링크 복사
-    // https://sisiblog.tistory.com/301
     // https에서만 사용 가능
     $('#mv-link').click(() => {
         alert(location.href);
-        // navigator.clipboard.writeText(location.href).then(() => {
-        //     alert('복사 성공')
-        // }, () => {
-        //     alert('복사 실패')
-        // });
     });
+
+    // 실관람평 분류 기준 선택하면 on 클래스 추가 / 나머지는 on 삭제
+    $('#mv-com-btnRecent').click(() => {
+        $('#mv-com-btnRecent').addClass('on');
+        $('#mv-com-btnLike').removeClass('on');
+        $('#mv-com-btnScore').removeClass('on');
+    });
+    $('#mv-com-btnLike').click(() => {
+        $('#mv-com-btnRecent').removeClass('on');
+        $('#mv-com-btnLike').addClass('on');
+        $('#mv-com-btnScore').removeClass('on');
+    });
+    $('#mv-com-btnScore').click(() => {
+        $('#mv-com-btnRecent').removeClass('on');
+        $('#mv-com-btnLike').removeClass('on');
+        $('#mv-com-btnScore').addClass('on');
+    });
+
+    // point <!-- 1. 연출 2. 스토리 3. 영상미 4. 배우 5. ost --> 순으로
+    // 3개 이상이면 순위 높은거 하나 출력 + n
+    
+    // 체크박스로 
+
+
+
+
+    // 실관람평 좋아요 누르면 색상 변경 및 좋아요 1 상승 / 한번 더 누르면 취소
+    // 현재 클래스 속성으로 만들어서 모든 버튼이 활성화되는데
+    // 백엔드 들어가면 회원의 id 값에 따라 다르게 만들것.
+    $('.mv-com-main-btn').click(() => {
+        let like = parseInt($('.mv-com-like-count').html());
+        if ($('.mv-com-main-btn').hasClass('on')) {
+            $('.mv-com-main-btn').removeClass('on');
+            $('.mv-com-like-img').attr('src', 'https://img.megabox.co.kr/static/pc/images/common/ico/ico-like-g.png')
+            like = like - 1;
+            $('.mv-com-like-count').html(like);
+        } else {
+            $('.mv-com-main-btn').addClass('on');
+            $('.mv-com-like-img').attr('src', './image/likeFull.png')
+            like += 1;
+            $('.mv-com-like-count').html(like);
+        }
+    });
+
+
+    // 선택된 버튼 색상 변경 및 커서 기본으로 변경
+    $('.mv-com-btnlist').children('.on').css({
+        'border': '1px solid #AF2D2D',
+        'background-color': '#AF2D2D',
+        'color': 'white',
+        'cursor': 'auto'
+    });
+
+
+
+
+
 });

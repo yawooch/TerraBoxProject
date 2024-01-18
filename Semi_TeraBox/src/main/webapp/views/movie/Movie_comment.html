@@ -97,9 +97,9 @@
             <div class="mv-com-selection">
                 <span>전체 <span>29,751</span>건</span>
                 <div>
-                    <button>최신순</button>
-                    <button>공감순</button>
-                    <button>평점순</button>
+                    <button class="on" id="mv-com-btnRecent">최신순</button>
+                    <button id="mv-com-btnLike">공감순</button>
+                    <button id="mv-com-btnScore">평점순</button>
                 </div>
             </div>
             <div class="mv-com-main">
@@ -135,8 +135,29 @@
                             <div class="mv-com-main-story">실관람평50자가 넘어가면 두줄로 나오는거 같습니다만//실관람평50자가 넘어가면 두줄로 나오는거 같습니다만</div>
                             <div class="mv-com-main-like">
                                 <button class="mv-com-main-btn">
-                                    <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-like-g.png" alt="">
-                                    <span>0</span>
+                                    <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-like-g.png" class="mv-com-like-img">
+                                    <span class="mv-com-like-count">0</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mv-com-main-date">
+                            2024.01.07
+                        </div>
+                    </li>
+                    <li class="mv-com-main-list">
+                        <div class="mv-com-main-li-icon">
+                            <img src="https://img.megabox.co.kr/static/pc/images/mypage/bg-profile.png" alt="">
+                            <span>아이디</span>
+                        </div>
+                        <div class="mv-com-main-textbox mv-textbox-user"><!-- 1. 연출 2. 스토리 3. 영상미 4. 배우 5. ost -->
+                            <div class="mv-com-main-name">관람평</div>
+                            <div class="mv-com-main-score">10</div>
+                            <div class="mv-com-main-point">연출 외 <br> + 2</div>
+                            <div class="mv-com-main-story">실관람평50자가 넘어가면 </div>
+                            <div class="mv-com-main-like">
+                                <button class="mv-com-main-btn">
+                                    <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-like-g.png" class="mv-com-like-img">
+                                    <span class="mv-com-like-count">0</span>
                                 </button>
                             </div>
                         </div>
@@ -152,7 +173,7 @@
                     <button class="mv-com-btnPrev mv-com-btnFunction">
                         <img src="./image/arrow-left.png" alt="">
                     </button>
-                    <button class="mv-com-btnNumber"><span>1</span></button>
+                    <button class="mv-com-btnNumber on">1</button>
                     <button class="mv-com-btnNumber">2</button>
                     <button class="mv-com-btnNumber">3</button>
                     <button class="mv-com-btnNumber">4</button>
