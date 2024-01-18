@@ -1,18 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예매좌석선택</title>
-    <link rel="stylesheet" href="../ticket/css/bookingSeat2.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-</head>
-<body>
-    <header></header>
-
-
-
+    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
+    <title>LIFE THEATER, 테라박스</title>
+    <link rel="stylesheet" href="${path}/views/ticket/css/bookingSeat2.css">
+    <jsp:include page="${path}/views/common/header.jsp" />
     <main>
         <!-- body중 메뉴바 -->
         <section>
@@ -76,7 +72,7 @@
                         <!-- 스크린 안에 좌석 -->
                         <div class="tk-seat-body">
                             <span class="tk-screen-span">    
-                                <img src="../ticket/img/img-theater-screen.png" alt="screen" class="tk-screen_img">
+                                <img src="${path}/views/ticket/img/img-theater-screen.png" alt="screen" class="tk-screen_img">
                             </span>
                             <div class="tk-seat-container">
                                 <div class="tk-seat"> 
@@ -243,7 +239,7 @@
                         </div>
                         <div class="tk-bb-info">
                             <div class="tk-info-one">이수</div>
-                            <div class="tk-poster"><img src="../ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div>
+                            <div class="tk-poster"><img src="${path}/views/ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div>
                             <div class="tk-info-two">6관</div>
                             <div class="tk-info-three">2024.01.16(화)</div>
                             <select name="tk-time" class="tk-time" 
@@ -257,19 +253,19 @@
                         <div class="tk-choice-seat">
                             <div class="tk-choice-seat-left">
                                 <div class="tk-seat-type">
-                                    <img src="../ticket/img/bg-seat-choice.png" alt="선택">
+                                    <img src="${path}/views/ticket/img/bg-seat-choice.png" alt="선택">
                                     <div>선택</div>
                                 </div>
                                 <div class="tk-seat-type">
-                                    <img src="../ticket/img/bg-seat-finish.png" alt="선택">
+                                    <img src="${path}/views/ticket/img/bg-seat-finish.png" alt="선택">
                                     <div>예매완료</div>
                                 </div>
                                 <div class="tk-seat-type">
-                                    <img src="../ticket/img/bg-seat-impossible.png" alt="선택">
+                                    <img src="${path}/views/ticket/img/bg-seat-impossible.png" alt="선택">
                                     <div>선택불가</div>
                                 </div>
                                 <div class="tk-seat-type">
-                                    <img src="../ticket/img/bg-seat-common.png" alt="선택">
+                                    <img src="${path}/views/ticket/img/bg-seat-common.png" alt="선택">
                                     <div>일반</div>
                                 </div>
                             </div>
@@ -304,29 +300,4 @@
             </div>
         </section>
         </main>
-        
-        <footer></footer>
-</body>
-</html>
-<script>
-    $(document).ready(function(){
-    $('#tk_btn_plus').click(function(){
-        let tk_now = $('#tk_now').html();
-        let tk_nowBox = $('#tk_now');
-
-        tk_now = Number(tk_now)+1;
-
-        tk_nowBox.text(tk_now);
-    }
-    
-
-
-
-
-
-
-    )});
-
-
-
-</script>
+<jsp:include page="${path}/views/common/footer.jsp" />

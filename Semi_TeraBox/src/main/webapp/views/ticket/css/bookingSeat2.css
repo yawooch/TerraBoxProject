@@ -132,11 +132,11 @@ h1, h2, h3, h4, h5, h6 {
     background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) no-repeat left center;
 }
 
-a:visited {
-    color: #666;
-    text-decoration: none;
-    outline: 1px dotted #000;
-}
+/*a:visited {*/
+/*    color: #666;*/
+/*    text-decoration: none;*/
+/*    outline: 1px dotted #000;*/
+/*}*/
 
 /* body */
 body, html {

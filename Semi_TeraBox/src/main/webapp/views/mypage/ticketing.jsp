@@ -1,11 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
+    <title>LIFE THEATER, 테라박스</title>
     <link rel="stylesheet" href="./css/ticketing.css">
-</head>
+    <jsp:include page="${path}/views/common/header.jsp" />
 <body>
     <!-- body중 메뉴바 -->
     <div style="width: 100%; background-color: #f8f8fa;">
@@ -33,7 +36,7 @@
                         <a href="#">나의 테라박스</a>
                     </div>
                     <div class="mp-ticketing">
-                        <a href="#">나의 예매 내역  <img src="./img/arrow.png" alt="화살표"></a>
+                        <a href="#">나의 예매 내역  <img src="${path}/views/mypage/img/arrow.png" alt="화살표"></a>
                     </div>
                     <div class="mp-question">
                         <a href="#">나의 문의 내역</a>
@@ -159,7 +162,7 @@
                 </div>
                 <button type="button" class="btn-toggle">
                         이용안내
-                    <img src="./img/ico-arr-toggle-down.png" alt="화살표">
+                    <img src="${path}/views/mypage/img/ico-arr-toggle-down.png" alt="화살표">
                 </button>
                 <!-- 토클로 보이게 안보이게 하기 -->
                 <div class="mp-count">
@@ -196,6 +199,4 @@
         </section>
         </div>
     </main>
-    <footer></footer>
-</body>
-</html>
+<jsp:include page="${path}/views/common/footer.jsp" />
