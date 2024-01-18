@@ -36,14 +36,6 @@ html, body{
     height:100%;
     margin:0;
 }
-a {
-    text-decoration: none;
-    color:white;
-}
-a:hover {
-    text-decoration: none;
-    color:white;
-}
 #cm_header>.cm-content, #main_videoSection>.main-content, #cm_footer>.cm-content, #main_movieSection>.main-content{
     width:1100px;
     height:100%;
@@ -115,10 +107,18 @@ a:hover {
 .cm-header-link-left>div>a{
     margin-left:100px;
     padding-bottom:8px;
+    text-decoration: none;
+    color:white;
 }
 .cm-header-link-right>div>a{
     margin-right:100px;
     padding-bottom:8px;
+    text-decoration: none;
+    color:white;
+}
+.cm-header-link-left>div>a:link, .cm-header-link-right>div>a:link{
+    text-decoration: none;
+    color:white;
 }
 /* .cm-header-link-left>div>a:hover, .cm-header-link-right>div>a:hover{
     border-bottom:4px solid white;
