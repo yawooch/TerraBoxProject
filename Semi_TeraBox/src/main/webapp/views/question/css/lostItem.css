@@ -945,3 +945,18 @@ a.button {
     vertical-align: middle;
     border-radius: 4px;
 }
+
+a.button:hover{
+    color: #000;
+    background-color: #ebebeb;
+}
+
+.qt-pagination-by a:hover{
+    border: 2px solid #6D3030;
+    color: #6D3030;
+}
+
+.qt-pagination-by strong:hover{
+    border: 2px solid #6D3030;
+    color: #6D3030;
+}

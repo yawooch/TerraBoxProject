@@ -847,3 +847,12 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     border-color:rgba(85, 87, 88, 1);
 }
 
+.qt-pagination-by a:hover{
+    border: 2px solid #6D3030;
+    color: #6D3030;
+}
+
+.qt-pagination-by strong:hover{
+    border: 2px solid #6D3030;
+    color: #6D3030;
+}
