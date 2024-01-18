@@ -92,9 +92,6 @@ a {
 .cm-footerContent>span:nth-child(3){
     right:0px;
 }
-.cm-footerContent>span:nth-child(2) li{
-    margin-bottom:8px;
-}
 .cm-footerContent>span:nth-child(2) li:nth-child(3){
     font-weight:900;
 }
