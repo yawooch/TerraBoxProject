@@ -57,6 +57,44 @@
                             </tr>
                     </table>
                 </div>
+                <div class="mp-tit-box">
+                    <h3>기본정보</h3>
+                    <p class="mp-pp"><span class="font-orange">* </span>필수</p>
+                </div>
+                <div class="tb-wrap-box">
+                    <table class="mp-tb">
+                        <colgroup>
+                        <col style="width: 180px;">
+                        <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">이름 <span class="font-orange">*</span></th>
+                                <td><input type="text" id="inputName" class="ipt" placeholder="변경할 이름을 입력해 주세요. "></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"> 생년월일 <span class="font-orange">*</span></th>
+                                <td><input type="text" id="inputNumber" class="ipt" placeholder="변경할 생년월일을 입력해 주세요. "></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"> 휴대폰 <span class="font-orange">*</span></th>
+                                <td><input type="text" id="inputPhone" class="ipt" placeholder="변경할 전화번호를 입력해 주세요. "></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"> 이메일 <span class="font-orange">*</span></th>
+                                <td><input type="email" id="inputEmail" class="ipt" placeholder="변경할 이메일을 입력해 주세요. "></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"> 비밀번호 <span class="font-orange">*</span></th>
+                                <td><input type="text" id="inputPwd" class="ipt" placeholder="변경할 패스워드를 입력해 주세요. "></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mp-buttonBox">
+                    <button class="mp-button-1">취소</button>
+                    <button class="mp-button-2">수정</button>
+                </div>
             </div> 
         </div>
     </section>
