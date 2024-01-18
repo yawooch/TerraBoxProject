@@ -17,6 +17,6 @@ public class MemberMypageServlet extends HttpServlet {
     public MemberMypageServlet() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/mypage/Ticketing.html").forward(request, response);
+		request.getRequestDispatcher("/views/mypage/Ticketing.jsp").forward(request, response);
 	}
 }
