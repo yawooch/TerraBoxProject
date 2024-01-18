@@ -49,21 +49,21 @@ body {
 div{
     display: block; /**/
 }
-.h1{
+.cm-h1{
     margin: 67em;
 }
-.member-wrap{
+.cm-member-wrap{
     background-color: white;
     width: 710px;
     min-height: 100%;
     margin: 0 auto;
     padding: 80px 100px;
 }
-.member-wrap .logo {
+.cm-member-wrap .cm-logo {
     display: block;
     padding: 0 0 70px 0;
 }
-#logo {
+#cm_logo {
     display: block;
     width: 140px;
     height: 47px;
@@ -74,33 +74,33 @@ div{
     background-size: contain;
 }
 /* 상단바 */
-.step-member{
+.cm-step-member{
     border-bottom: 1px solid #ebebeb;
     width: 510px;
     margin: 0 0 40px 0;
     position: relative;
 }
-.step-member ol{
+.cm-step-member ol{
     list-style: none;
     width: 510px;
 }
-.step-member ol li {
+.cm-step-member ol li {
     padding: 0;
     float: left;
 }
-.member-wrap .step-member ol li:first-child {
+.cm-member-wrap .cm-step-member ol li:first-child {
     margin-left: 0;
 }
-.member-wrap .step-member ol li {
+.cm-member-wrap .cm-step-member ol li {
     margin: 0 0 0 46px;
     text-align: center;
     font-size: .866em;
 }
-.member-wrap .step-member ol li .step.on {
+.cm-member-wrap .cm-step-member ol li .cm-step.on {
     border-bottom: 2px solid #6D3030;
     color: #6D3030;
 }
-.member-wrap .step-member ol li .step {
+.cm-member-wrap .cm-step-member ol li .cm-step {
     position: relative;
     /* z-index: 2; */
     margin: 0;
@@ -110,18 +110,18 @@ div{
 }
 
 /* 약관동의 및 정보활용동의 문구 */
-.member-wrap .page-info-txt {
+.cm-member-wrap .cm-page-info-txt {
     margin-bottom: 20px;
     padding: 0 0 20px 0 !important;
     line-height: 1.1;
 }
-.text-agree{
+.cm-text-agree{
     display: block;
     padding: 0 0 10px 0 ; 
     font-size: 20px;
     color: #222;
 }
-.pageinfotextdiv {
+.cm-pageinfotextdiv {
     padding-bottom: 20px;
 }
 /* 약관동의 */
@@ -136,7 +136,7 @@ label {
 
 }
 /* 필수항목전체동의 */
-.member-wrap .agree-member .all-chk {
+.cm-member-wrap .cm-agree-member .cm-all-chk {
     margin: 0;
     padding: 0 0 15px 0;
     font-size: 15px;
@@ -144,15 +144,15 @@ label {
     border-bottom: 1px solid #ebebeb;
 }
 /* 약관동의 전체 블록(공통) */
-.member-wrap .agree-member .block {
+.cm-member-wrap .cm-agree-member .cm-block {
     padding: 30px 0 0 0;
 }
-.member-wrap .agree-member .block .chk {
+.cm-member-wrap .cm-agree-member .cm-block .cm-chk {
     margin: 0;
     padding: 0 0 15px 0;
 }
 /* 스크롤 블록 (공통)*/
-.member-wrap .agree-member .block .scroll {
+.cm-member-wrap .cm-agree-member .cm-block .cm-scroll {
     overflow: hidden;
     overflow-y: scroll;
     height: 130px;
@@ -161,39 +161,39 @@ label {
     font-size: 14px!important;
 }
 /* 약관 선택 (필수) */
-.must {
+.cm-must {
     color: #6D3030;
     font-size: 13px;
 }
 /* 약관 선택 (선택) */
-.must {
+.cm-must {
     font-size: 13px;
 }
 /* x축스크롤 */
-.x-scroll {
+.cm-x-scroll {
     overflow-x: scroll!important;
 }
 /* 하단 버튼 */
-.member-wrap .agree-btn-bottom {
+.cm-member-wrap .cm-agree-btn-bottom {
     padding: 40px 0 0 0;
     text-align: center;
 }
-.button{
+.cm-button{
     border-radius: 4px;
 }
-.button[disabled] {
+.cm-button[disabled] {
     color: #777!important;
     cursor: default!important;
     background-color: #e0e0e0!important;
     border-color: #e0e0e0!important;
 }
-.button.red {
+.cm-button.red {
     color: #fff;
     line-height: 36px;
     border: 0;
     background: #6D3030;
 }
-#btnagreebottom {
+#cm_btnagreebottom {
     border: 0;
     width: 200px;
     height: 45px;

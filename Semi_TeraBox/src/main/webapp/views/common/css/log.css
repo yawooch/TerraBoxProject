@@ -40,20 +40,20 @@ body {
 div {
     display: block;
 }
-.login-box-out {
+.cm-login-box-out {
     width: 850px;
     height: 484px;
     background-color: white;
     /* margin-left: 295px;
     margin-top: 280px; */
 }
-.layer-header {
+.cm-layer-header {
     position: relative;
     width: 850px;
     height: 45px;
     background-color: #6D3030;
 }
-.layer-header h4 {
+.cm-layer-header h4 {
     /* font-weight: 100; */
     padding-top: 10px;
     padding-left: 20px;
@@ -62,7 +62,7 @@ div {
     text-align: left;
 }
 /* 닫기버튼 */
-.login-close-btn{
+.cm-login-close-btn{
     display: block;
     position: absolute; /*relative 안에 고정 시킨다. */
     top: 15px;
@@ -75,60 +75,60 @@ div {
     text-indent: -9999px;
     background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-layer-close.png) no-repeat center;
 }
-.login-box-inner {
+.cm-login-box-inner {
     display: block;
     padding: 20px 20px 0 20px;
     width: 850px;
     height: 439px;
 }
-.col-left{
+.cm-col-left{
     float: left;
     width: 380px;
     height: 345px;
 }
-.login-input-area .btn-area{
+.cm-login-input-area .cm-btn-area{
     width: 100%;
     height: 100%;
 }
-#id {
+#cm_id {
     padding: 0 10px;
     border: 1px solid #d8d9db;
     width: 100%;
     height: 46px;
 }
-#pw {
+#cm_pw {
     margin-top: 15px;
     padding: 0 10px;
     border: 1px solid #d8d9db;
     width: 100%;
     height: 46px;
 }
-.ckboxline {
+.cm-ckboxline {
     padding: 15px 0 35px 0;
     cursor: pointer;
 }
-#ckidsave {
+#cm_ckidsave {
     width: 16px;
     height: 16px;
     vertical-align: middle;
 }
-#btnlogin {
+#cm_btnlogin {
     width: 100%;
     height: 46px;
 }
 /* 로그인버튼 비활성화(?) */
-.input:dis {
+.cm-input:dis {
     color: #777!important;
     cursor: default!important;
     background-color: #e0e0e0!important;
 }
-#btnlogin.btnred {
+#cm_btnlogin.cm-btnred {
     color: #fff;
     line-height: 36px;
     border: 0;
     background: #6D3030;
 }
-.col-right {
+.cm-col-right {
     float: left;
     width: 380px;
     height: 385px;

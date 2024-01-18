@@ -49,21 +49,21 @@ body {
 div{
     display: block; /**/
 }
-.h1{
+h1{
     margin: 67em;
 }
-.member-wrap{
+.cm-member-wrap{
     background-color: white;
     width: 710px;
     min-height: 100%;
     margin: 0 auto;
     padding: 80px 100px;
 }
-.member-wrap .logo {
+.cm-member-wrap .cm-logo {
     display: block;
     padding: 0 0 70px 0;
 }
-#logo {
+#cm_logo {
     display: block;
     width: 140px;
     height: 47px;
@@ -73,28 +73,28 @@ div{
     background: url(https://i.ibb.co/grsGs7C/Logo-Transparent.png) center no-repeat;
     background-size: contain;
 }
-.step-member{
+.cm-step-member{
     border-bottom: 1px solid #ebebeb;
     position: relative;
     margin: 0 0 40px 0;
 }
-.step-member ol li {
+.cm-step-member ol li {
     list-style: none;
     float: left;
 }
-.member-wrap .step-member ol li:first-child {
+.cm-member-wrap .cm-step-member ol li:first-child {
     margin-left: 0;
 }
-.member-wrap .step-member ol li {
+.cm-member-wrap .cm-step-member ol li {
     margin: 0 0 0 46px;
     text-align: center;
     font-size: .866em;
 }
-.member-wrap .step-member ol li .step.on {
+.cm-member-wrap .cm-step-member ol li .cm-step.on {
     border-bottom: 2px solid #6D3030;
     color: #6D3030;
 }
-.member-wrap .step-member ol li .step {
+.cm-member-wrap .cm-step-member ol li .cm-step {
     position: relative;
     z-index: 2;
     margin: 0;
@@ -103,7 +103,7 @@ div{
     letter-spacing: 0;
 }
 /* "회원가입을 위한 가입확인 단계입니다." 문구 */
-.signtitle {
+.cm-signtitle {
     padding: 0 0 25px 0;
     font-size: 1.4666em;
     color: #222;
@@ -119,28 +119,28 @@ th{
     font-weight: normal;
     color: black;
 }
-.member-table-wrap {
+.cm-member-table-wrap {
     position: relative;
     border-top: 1px solid #555;
 }
-.member-table-form tbody th {
+.cm-member-table-form tbody th {
     width: 140px;
     background : #f7f8f9;
 }
-.member-table-form tbody th, .member-table-form tbody td{
+.cm-member-table-form tbody th, .cm-member-table-form tbody td{
     height: 50px;
     padding: 7px 0 7px 15px;
     text-align: left;
     border-bottom: 1px solid #d1d5dd;
 }
 /* 주민번호 입력창 */
-.mti-left{
+.cm-mti-left{
     width: 100px;
 }
-.mti-middle{
+.cm-mti-middle{
     width: 20px;
 }
-.member-table-input1{
+.cm-member-table-input1{
     width: 258px;
     height: 32px;
     padding: 0 10px;
@@ -148,7 +148,7 @@ th{
     color: #444;
     border: 1px solid #d8d9db;
 }
-.member-table-input2{
+.cm-member-table-input2{
     width: 110px;
     height: 32px;
     padding: 0 10px;
@@ -158,16 +158,16 @@ th{
 }
 
 /* 하단 문구 */
-.member-bottom-text {
+.cm-member-bottom-text {
     margin-top: 25px;
     font-size: .866em;
 }
 /* 하단버튼 */
-.member-wrap .agree-btn-bottom {
+.cm-member-wrap .cm-agree-btn-bottom {
     padding: 40px 0 0 0;
     text-align: center;
 }
-.button{
+.cm-button{
     border-radius: 4px;
 }
 .button[disabled] {
@@ -176,13 +176,13 @@ th{
     background-color: #e0e0e0!important;
     border-color: #e0e0e0!important;
 }
-.button.red {
+.cm-button.red {
     color: #fff;
     line-height: 36px;
     border: 0;
     background: #6D3030;
 }
-#btnagreebottom {
+#cm_btnagreebottom {
     border: 0;
     width: 200px;
     height: 45px;
