@@ -243,6 +243,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 840px;  
 }
 
+.mp-right h2 {
+    font-size: 27px;
+}
+
 .right-ul {
     padding-left: 20px ;
 } 
@@ -270,15 +274,101 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tb-th, .tb-td{
-    height: 50px;
-    padding: 25px 15px 7px 15px;
+    box-sizing: border-box;
     text-align: left;
     border-bottom: 1px solid #d1d5dd;
+    padding-left: 10px;
+}
+
+.tb-td {
+    line-height: 45px;
 }
 
 .tb-btn1 {
     float: right;
     width: 75px;
     height: 32px;
-    margin-bottom: 10px;
+    margin-top: 6px;
+    background-color: #fff;
+    border: 1px solid #6D3030;
+    border-radius: 5px;
+    color: #6D3030;
+
+}
+
+.tb-btn1:hover {
+    background-color: #f2f4f8;
+    border-color: #666;
+}
+
+.mp-tit-box {
+    margin: 40px 0px 10px 0px;
+}
+
+.mp-tit-box h3 {
+    font-size: 25px;
+    color: #6D3030;
+}
+
+.mp-pp {
+    text-align: right;
+    margin: 0px auto;
+}
+
+.mp-span {
+    color: orangered;
+}
+
+.mp-tb{
+    position: relative;
+    border-top: 1px solid #555;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.font-orange {
+    color: orangered;
+}
+
+.mp-tb tbody th {
+    background: #f7f8f9;
+}
+
+.mp-tb tbody th , .mp-tb tbody td {
+    position: relative;
+    height: 50px;
+    padding: 7px 15px;
+    text-align: left;
+    border-bottom: 1px solid #d1d5dd;
+}
+
+.mp-buttonBox {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.mp-button-1, .mp-button-2{
+    width: 80px;
+    height:40px;
+    margin: 0px 7px;
+    border-radius: 5px;
+}
+
+.mp-button-1 {
+    background-color: white;
+    border: 2px solid #6D3030;
+    color: #6D3030;
+}
+
+.mp-button-2 {
+    background-color: #6D3030;
+    border: 2px solid #6D3030;
+    color: white;
+}
+
+.ipt{
+    height: 30px;
+    width: 230px;
+    border: 1px solid #d1d5dd;
+    border-radius: 4px;
 }
