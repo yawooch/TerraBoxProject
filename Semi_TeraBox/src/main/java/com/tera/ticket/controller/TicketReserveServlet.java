@@ -18,6 +18,6 @@ public class TicketReserveServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    //일단은 두번째 화면 
-		request.getRequestDispatcher("/views/ticket/bookingSeat2.html").forward(request, response);
+		request.getRequestDispatcher("/views/ticket/bookingSeat2.jsp").forward(request, response);
 	}
 }

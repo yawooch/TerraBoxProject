@@ -704,10 +704,6 @@ a {
     background-color: transparent;
 }
 
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-}
 
 .qt-faq-list-by ul li .qt-qut-by a .qt-tit-by {
     margin: 0 0 7px 0;

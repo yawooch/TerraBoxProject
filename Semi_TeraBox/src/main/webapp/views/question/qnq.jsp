@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자주 묻는 질문</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
+	<jsp:include page="${path}/views/common/header.jsp" />
     <link rel="stylesheet" href="../question/css/qnl.css">
     <link rel="img" href="/src/main/webapp/img/">
     <link rel="icon" href="../question/img/TeraBox.ico">
-    <script src="../js/jquery-3.7.1.js"></script>
-    <script src="./js/qnq.js"></script>
-</head>
-
-<body>
+    <script src="${path}/views/question/js/qnq.js" ></script>
     <div class="qt-body-by">
-        <header id="qt_header_by">
-        </header>
         <main class="qt-main-by">
             <div class="qt-submenu-by">
                 <div class="qt-submenu-area-by">
@@ -32,8 +23,8 @@
                         <a href="#" title="고객센터">고객센터</a>
                     </p>
                     <ul>
-                        <li class="qt-first-area-by"><a class="qt-first-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html#">고객센터홈</a> </li>
-                        <li><a class="qt-second-text-by"href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html#">자주묻는 질문</a></li>
+                        <li class="qt-first-area-by"><a class="qt-first-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html#">고객센터 홈</a> </li>
+                        <li><a class="qt-second-text-by"href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html#">자주 묻는 질문</a></li>
                         <li><a href="file://D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html#">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
                         <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
@@ -437,7 +428,4 @@
                 </div>
             </div>
         </main>
-</body>
-
-</html>
-
+	<jsp:include page="${path}/views/common/footer.jsp" />

@@ -17,6 +17,6 @@ public class QuestionHomeServlet extends HttpServlet {
     public QuestionHomeServlet() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/question/questionHome.html").forward(request, response);
+		request.getRequestDispatcher("/views/question/questionHome.jsp").forward(request, response);
 	}
 }

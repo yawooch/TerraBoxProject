@@ -5,8 +5,7 @@
     <link rel="stylesheet" href="../question/css/questionHome.css">
     <link rel="img" href="/src/main/webapp/img/">
     <div class="qt-body-by">
-        <header id="qt_header_by">
-        </header>
+       
         <main class="qt-main-by">
             <div class="qt-submenu-by">
                 <div class="qt-submenu-area-by">
@@ -23,7 +22,7 @@
                     <p class="qt-sidebar-each-by">
                         <a href="#" title="고객센터">고객센터</a>
                     </p>
-                    <ul>
+                    <ul class="qt-te-area-by">
                         <li class="qt-first-area-by">
                             <a class="qt-first-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html">고객센터 홈</a>
                         </li>

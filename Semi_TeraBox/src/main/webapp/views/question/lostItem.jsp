@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항(지점공지)</title>
-    <link rel="stylesheet" href="../question/css/announcementSeuel.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
+	<jsp:include page="${path}/views/common/header.jsp" />
+    <link rel="stylesheet" href="../question/css/lostItem.css">
     <link rel="img" href="/src/main/webapp/img/">
     <link rel="icon" href="../question/img/TeraBox.ico">
     <script src="../js/jquery-3.7.1.js"></script>
-    <script src="./js/announcementSeuel.js"></script>
-
-</head>
-
-<body>
+    <script src="./js/lostItem.js"></script>
     <div class="qt-body-by">
-        <header id="qt_header_by">
-        </header>
+        
         <main class="qt-main-by">
             <div class="qt-submenu-by">
                 <div class="qt-submenu-area-by">
                     <div class="qt-submenu-areaname-by">
                         <span></span>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname_by">고객센터</a>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname1_by">공지사항</a>
+                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
+                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname1_by">분실물 문의</a>
                     </div>
                 </div>
             </div>
@@ -43,9 +35,9 @@
                                 href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html">자주묻는
                                 질문</a></li>
                         <li><a class="qt-third-text-by"
-                                href="/src/main/webapp/views/question/announcement.html">공지사항</a></li>
+                                href="file:///D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
-                        <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
+                        <li><a class="qt-four-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
                     </ul>
                     <div class="qt-info-by">
                         <p class="qt-sidebar-each-by">
@@ -60,20 +52,15 @@
                     </div>
                 </nav>
                 <div id="qt_contents_by">
-                    <h2 class="qt-mainname-by">공지사항</h2>
-                    <div class="qt-tab-block-by qt-small-by qt-mb-30-by">
-                        <ul>
+                    <h2 class="qt-mainname-by">분실물 문의</h2>
+                    <div class="clearfix">
+                        <ul class="dot-list">
                             <li>
-                                <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="88"
-                                title="전체"><a class="qt-acolor1-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html">전체</a></button>
+                                메가박스에서 잃어버린 물건이 있다면 ‘분실물 문의/접수’를 통해 접수해주세요.
+                                <a href="#" class="button float-r" title="분실물 문의 등록하기">문의 하기</a>
                             </li>
                             <li>
-                                <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="89"
-                                title="테라박스 공지"><a class="qt-acolor1-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcementTerr.html">테라박스 공지</a></button>
-                            </li>
-                            <li class="qt-on-by">
-                                <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no
-                                    title="지점 공지"><a class="qt-acolor-by" href="file:///D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcementSeuel.html">지점 공지</a></button>
+                                접수하신 글은 비밀글로 등록되어 작성자와 관리자만 확인 가능합니다.
                             </li>
                         </ul>
                     </div>
@@ -85,10 +72,15 @@
                             <option value>홍대</option>
                             <option value>동대문</option>
                         </select>
+                        <select class="qt-area-by">
+                            <option value>접수 선택</option>
+                            <option value>답변</option>
+                            <option value>미답변</option>
+                        </select>
                         <p class="result-count">
                             <strong>
                                 "전체"
-                                <em class="font-gblue">3,646</em>
+                                <em class="font-gblue">7,865</em>
                                 "건"
                             </strong>
                         </p>
@@ -103,86 +95,93 @@
                             <caption>번호, 극장, 구분, 제목, 등록일이 들어간 공지사항 전체 리스트</caption>
                             <col style="width: 72px;">
                             <col style="width: 133px;">
-                            <col style="width: 95px;">
                             <col>
+                            <col style="width: 100px;">
                             <col style="width: 116px;">
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th scope="col">번호</th>
                                     <th scope="col">극장</th>
-                                    <th scope="col">구분</th>
                                     <th scope="col">제목</th>
+                                    <th scope="col">접수상태</th>
                                     <th scope="col">등록일</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
-                                    <td>강남</td>
-                                    <td>공지</td>
-                                    <th>
-                                        <a href="#" class="moveBtn" title="공지사항 상세보기"><span>[강남] 7월 9일 긴급점검으로 인한 운영중단 및 취소 안내</span></a></th>
-                                    <td>2024.01.15</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>강남</td>
-                                    <td>공지</td>
-                                    <th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[강남] 운영시간 임시 조정 안내</span></a></th>
-                                    <td>2024.01.15</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>동대문</td>
-                                    <td>공지</td>
-                                    <th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[동대문] 요금제 기준 변경 안내</span></a></th>
-                                    <td>2024.01.17</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>상암</td>
-                                    <td>공지</td>
-                                    <th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[상암월드컵경기장]23.10.31(화) 주차장 이용 안내</span></a>
-                                    </th>
-                                    <td>2024.01.15</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>목동</td>
-                                    <td>공지</td>
-                                    <th>
-                                        <a href="#" class="moveBtn" title="공지사항 상세보기"><span>[목동] 12월 26일 순간정전으로 인한 상영중단 및 취소 안내</span></a>
-                                    </th>
-                                    <td>2024.01.11</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
+                                    <td>7865</td>
                                     <td>홍대</td>
-                                    <td>공지</td>
-                                    <th>
-                                        <a href="#" class="moveBtn" title="공지사항 상세보기"><span>[홍대] 현금없는 극장 운영안내</span></a>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">키링(열쇠고리)분실</a>
                                     </th>
-                                    <td>2024.01.12</td>
+                                    <td>미답변</td>
+                                    <td>2024,01,07</td>
                                 </tr>
                                 <tr>
-                                    <td>7</td>
+                                    <td>7864</td>
+                                    <td>홍대</td>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">아이폰 충전기 분실</a>
+                                    </th>
+                                    <td>답변완료</td>
+                                    <td>2024,01,07</td>
+                                </tr>
+                                <tr>
+                                    <td>7863</td>
                                     <td>동대문</td>
-                                    <td>공지</td>
-                                    <th>
-                                        <a href="#" class="moveBtn" title="공지사항 상세보기"><span>[동대문] 굿모닝시티 건물 주차요금 변경 안내</span></a>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">샤넬 화장품</a>
                                     </th>
-                                    <td>2024.01.15</td>
+                                    <td>미답변</td>
+                                    <td>2024,01,07</td>
                                 </tr>
                                 <tr>
-                                    <td>8</td>
-                                    <td>목동</td>
-                                    <td>공지</td>
-                                    <th>
-                                        <a href="#" class="moveBtn" title="공지사항 상세보기"><span>[목동] 건물 내 전기 작업 관련 안내</span></a>
+                                    <td>7862</td>
+                                    <td>홍대</td>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">카드지갑</a>
                                     </th>
-                                    <td>2024.01.15</td>
+                                    <td>답변완료</td>
+                                    <td>2024,01,07</td>
                                 </tr>
+                                <tr>
+                                    <td>7861</td>
+                                    <td>상암</td>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">신용카드 분실 문의</a>
+                                    </th>
+                                    <td>미답변</td>
+                                    <td>2024,01,07</td>
+                                </tr>
+                                <tr>
+                                    <td>7860</td>
+                                    <td>강남</td>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">분실물 반지를 찾습니다.</a>
+                                    </th>
+                                    <td>답변완료</td>
+                                    <td>2024,01,07</td>
+                                </tr>
+                                <tr>
+                                    <td>7859</td>
+                                    <td>강남</td>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">신분증</a>
+                                    </th>
+                                    <td>답변완료</td>
+                                    <td>2024,01,07</td>
+                                </tr>
+                                <tr>
+                                    <td>7858</td>
+                                    <td>동대문</td>
+                                    <th scope="row">
+                                        <a href="#" class="btn-layer-open moveBtn" data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">남성 검은색 지갑</a>
+                                    </th>
+                                    <td>미답변</td>
+                                    <td>2024,01,07</td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -195,12 +194,7 @@
                         <a title="6페이지보기" href="#" pagenum="6">6</a>
                         <a title="이후 10페이지보기" href="#" class="control next" pagenum="11">next</a>
                         <a title="마지막 페이지보기" href="#" class="control last" pagenum="787">last</a>
-                        
                     </nav>
-            </div>
+                </div>
         </main>
-        <footer id="qt_footer_by">
-        </footer>
-</body>
-
-</html>
+       	<jsp:include page="${path}/views/common/footer.jsp" />
