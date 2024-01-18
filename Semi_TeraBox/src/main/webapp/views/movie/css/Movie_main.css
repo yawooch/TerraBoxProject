@@ -43,16 +43,15 @@ body {
 }
 
 main {
-    border: 1px solid black;
     height: 2000px;
     margin: auto;
 }
 
-nav {
+.mv-main-nav {
     background-color: #f8f8fa;
 }
 
-.mv-main-nav {
+.mv-main-navbox {
     width: 1100px;
     margin: auto;
     height: 42px;
@@ -60,23 +59,243 @@ nav {
     align-items: center;
 }
 
-.mv-main-nav>img {
+.mv-main-navbox>img {
     width: 15px;
     height: 15px;
 }
 
-.mv-main-nav span {
-    margin-left: 20px;
+.mv-main-navbox span {
+    margin-left: 10px;
+}
+.mv-main-navbox>span>img {
+    width: 5px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.mv-main-navbox>span>a {
+    text-decoration: none;
+    color: #444;
+}
+
+.mv-main-navbox>span>a:hover {
+    text-decoration: underline;
 }
 
 section {
     width: 1100px;
-    height: 500px;
-    border: 1px solid green;
     margin: auto;
 }
 
+/* 탑 메뉴 */
 
+.mv-main-menu {
+    margin-top: 20px;
+    position: relative;
+}
+
+.mv-main-menu>ul {
+    list-style: none;
+    margin: auto;
+    padding-left: 0;
+    height: 40px;
+    display: flex;
+    justify-content: left;
+}
+
+.mv-menu-first {
+    width: 200px;
+    border-top: 1px solid #AF2D2D;
+    border-left: 1px solid #AF2D2D;
+    border-right: none;
+    border-bottom: none;
+}
+
+.mv-menu-second {
+    width: 200px;
+    border-top: 1px solid #EBEBEB;
+    border-left: 1px solid #AF2D2D;
+    border-right: 1px solid #EBEBEB;
+    border-bottom: 1px solid #AF2D2D;    
+}
+
+nav>ul li:nth-child(2) {
+    margin: 0 -1px;
+}
+
+.mv-main-menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    text-align: center;
+    line-height: 2.5em;
+}
+
+.mv-menu-hidden {
+    width: 700px;
+    border-bottom: 1px solid #AF2D2D;
+}
+
+
+/* 개봉작 버튼, 검색창 div */
+.mv-main-wrap-top {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mv-main-result {
+    display: flex;
+}
+
+.mv-main-result>button {
+    background-color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.mv-main-result>button>span {
+    margin-left: 5px;
+}
+
+.mv-main-result>span {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.mv-main-search {
+    border: 1px solid #ebebeb;
+}
+
+.mv-main-search form {
+    display: flex;
+}
+
+.mv-main-search input{
+    border: none;
+    outline: none;
+}
+
+
+.mv-main-btnSearch {
+    border: none;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+}
+
+.mv-main-btnSearch>img {
+    margin-top: 5px;
+}
+
+
+/* 영화 리스트 */
+.mv-main-ul {
+    margin-left: -60px;
+    padding: 0;
+}
+
+.mv-main-mvlist {
+    width: 230px;
+    height: 440px;
+    list-style: none;
+    position: relative;
+    float: left;
+    margin-left: 60px;
+    margin-bottom: 40px;
+}
+
+
+/* 포스터 부분 */
+
+.mv-main-mv-poster img {
+    width: 100%;
+}
+
+/* 제목 부분 */
+.mv-main-mv-name {
+    display: flex;
+    align-items: center;
+    height: 23px;
+    margin-top: 5px;
+}
+
+.mv-main-mv-name>img {
+    width: 23px;
+}
+
+.mv-main-mv-name>span {
+    height: 100%;
+    margin-left: 5px;
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* ...으로 말 줄이기 */
+    word-break: break-all;  /* 단어 쪼개는 속성 */
+    white-space: nowrap; /* 줄바꿈, 공백 설정 - 한줄정렬 */
+}
+
+
+/* 정보 부분 */
+.mv-main-mv-info {
+    margin-top: 10px;
+}
+
+.mv-main-mv-info>span {
+    font-size: 14px;
+}
+
+.mv-main-mv-op {
+    margin-left: 10px;
+}
+
+
+
+
+/* 버튼 부분 */
+.mv-main-mv-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mv-main-mv-btn>button {
+    height: 36px;
+    border-radius: 5px;
+
+}
+
+.mv-main-btn-like {
+    width: 70px;
+    border: 1px solid #c4c4c4;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    
+}
+
+.mv-main-btn-like>span {
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.mv-main-btn-tk {
+    width: 150px;
+    border: none;
+    background-color: #AF2D2D;
+    color: white;
+    
+}
+
+.mv-main-btn-tk>span {
+    font-size: 15px;
+    line-height: 34px;
+}
 
 
 
@@ -96,6 +315,7 @@ section {
     border: 1px solid #444;
     background-color: white;
 }
+
 
 button {
     cursor: pointer;
