@@ -86,7 +86,12 @@ $(document).ready(function() {
     });
 
 
+    // 관람평 쓰기 버튼을 누르면 body에 overflow:hidden 속성 주기
 
 
+    // 별점 버튼 클릭하면 색 칠해지고 점수 나타내기
+
+
+    // 관람포인트 클릭하면 on 속성주고 색상 변경
 
 });

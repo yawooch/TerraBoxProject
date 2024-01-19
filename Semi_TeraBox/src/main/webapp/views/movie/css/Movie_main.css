@@ -211,16 +211,60 @@ nav>ul li:nth-child(2) {
 
 /* 포스터 부분 */
 
-.mv-main-mv-poster img {
-    width: 100%;
+.mv-main-mv-poster {
+    position: relative;
+    height: 330px;
 }
+
+.mv-main-mv-poster>img {
+    width: 100%;
+    position: absolute;
+}
+
+.mv-main-poster-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.mv-main-poster-bg:hover {  /* show, hide 사용 */
+    opacity: 1;
+}
+
+.mv-main-poster-a {
+    position: absolute;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    height: 330px;
+}
+
+.mv-main-poster-ex {
+    height: 55%;
+}
+
+.mv-main-poster-ex>span{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+
+.mv-main-poster-score>div {
+    margin-top: 110px;
+}
+
 
 /* 제목 부분 */
 .mv-main-mv-name {
+    position: relative;
     display: flex;
     align-items: center;
     height: 23px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .mv-main-mv-name>img {
@@ -235,6 +279,7 @@ nav>ul li:nth-child(2) {
     text-overflow: ellipsis; /* ...으로 말 줄이기 */
     word-break: break-all;  /* 단어 쪼개는 속성 */
     white-space: nowrap; /* 줄바꿈, 공백 설정 - 한줄정렬 */
+    line-height: 26px;
 }
 
 
@@ -276,8 +321,12 @@ nav>ul li:nth-child(2) {
     background-color: #ffffff;
     display: flex;
     align-items: center;
-    
 }
+
+.mv-main-btn-like:hover {
+    background-color: #f4f4f4;
+}
+
 
 .mv-main-btn-like>span {
     margin-left: 5px;
@@ -289,7 +338,10 @@ nav>ul li:nth-child(2) {
     border: none;
     background-color: #AF2D2D;
     color: white;
-    
+}
+
+.mv-main-btn-tk:hover {
+    background-color: #812020;
 }
 
 .mv-main-btn-tk>span {

@@ -44,6 +44,7 @@ header {
 
 body {
     margin: 1px;
+    
 }
 
 
@@ -492,6 +493,155 @@ a {
 }
 
 
+/* 관람평 작성하기 모달  */
+.mv-com-write-bg {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.mv-com-write-bg div {
+}
+
+
+.mv-com-write-wrap {
+    position: absolute;
+    width: 500px;
+    height: 680px;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -340px;
+    background-color: #ffffff;
+
+}
+
+/* 관람평 헤드 */
+.mv-com-write-head {
+    height: 50px;
+    background-color: #AF2D2D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mv-com-write-head>span {
+    display: block;
+    margin-left: 10px;
+    color: #ffffff;
+}
+
+.mv-com-write-head>button {
+    background-color: #AF2D2D;
+    border-style: none;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+
+/* 관람평 메인 */
+.mv-com-write-main {
+    height: 565px;
+    overflow-y: scroll;
+    padding: 20px 20px 0 20px;
+}
+
+
+/* 점수 부분 */
+.mv-com-write-score {
+    text-align: center;
+}
+
+.mv-com-write-score>p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+
+.mv-com-write-score>div {
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.mv-com-write-star>div {
+    display: inline-block;
+}
+
+.mv-com-write-star>span {
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
+
+/* 관람평 텍스트 부분 */
+.mv-com-write-textbox {
+    background-color: white;
+}
+
+.mv-com-write-textbox>div {
+    text-align: end;
+    padding: 5px;
+}
+
+.mv-com-write-score textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+
+/* 관람 포인트 부분 */
+.mv-com-write-point {
+    text-align: center;
+}
+
+.mv-com-write-point>p:first-child {
+    font-size: 20px;
+}
+.mv-com-write-point>p:not(:first-child) {
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 5px;
+}
+
+.mv-com-write-point-btn {
+    height: 120px;
+    padding: 20px;
+    background-color: #EBEBEB;
+}
+
+.mv-com-write-point-btn>button {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid #b8b8b8;
+    background-color: #EBEBEB;
+}
+
+/* 관람평 하단 버튼 */
+.mv-com-write-btn {
+    height: 65px;
+    text-align: center;
+}
+
+.mv-com-write-btn>button {
+    width: 55px;
+    height: 36px;
+    border-radius: 5px;
+}
+
+.mv-com-write-btn-submit {
+    margin-left: 5px;
+}
+
+
+
+/* 모든 버튼 속성 */
 
 button {
     cursor: pointer;

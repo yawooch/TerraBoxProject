@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    
-    
     //좋아요 버튼 호버하면 색 들어간 이미지로 변경
     $('#mv-like').hover(
         // 올라갔을 때 full
