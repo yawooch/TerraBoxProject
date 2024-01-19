@@ -3,7 +3,7 @@
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
     <meta charset="UTF-8">
     <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>LIFE THEATER, 테라박스</title>
@@ -26,7 +26,7 @@
         </div>    
     </section>
     </div>
-    <main style="width: 1100px; margin: 0 auto;">
+    <main style="width: 1100px; margin: 0 auto; overflow: auto;">
         <div class="mp-div">
         <!-- 왼쪽 메뉴바  -->
         <section class="mp-section">
