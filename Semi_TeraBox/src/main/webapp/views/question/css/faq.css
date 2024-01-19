@@ -616,19 +616,11 @@ button, input, optgroup, select, textarea {
     background-color: #555;
 }
 
-button:focus {
-    outline: 1px dotted #000;
-}
+
 
 .qt-tab-block-by ul li:last-child {
     border-right: 1px solid #d8d9db;
 }
-
-.qt-tab-block-by ul li .qt-btn-by:focus {
-    color: #fff;
-    background-color: #555;
-}
-
 
 /* 자주묻는 질문 태그 메인 영역  */
 
@@ -736,10 +728,6 @@ a {
 
 .qt-faq-list-by ul li .qt-qut-by a:hover {
     background-color: #f7f8f9;
-}
-
-.qt-faq-list-by ul li .qt-qut-by a:focus .qt-txt-by {
-    font-weight: 700;
 }
 
 .qt-faq-list-by p {

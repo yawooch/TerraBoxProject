@@ -68,28 +68,19 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="board-list-util">
-                        <select class="qt-area-by">
-                            <option value>강남</option>
-                            <option value>목동</option>
-                            <option value>상암</option>
-                            <option value>홍대</option>
-                            <option value>동대문</option>
-                        </select>
-                        <p class="result-count">
-                            <strong>
-                                "전체"
-                                <em class="font-gblue">3,646</em>
-                                "건"
-                            </strong>
-                        </p>
-                        <div class="board-search">
-                            <input type="text" id="searchTxt" title="검색어를 입력해 주세요." placeholder="검색어를 입력해 주세요."
-                                class="input-text" value maxlength="15">
-                            <button type="button" id="searchBtn" class="btn-search-input">검색</button>
-                        </div>
-                    </div>
-                    <div class="table-wrap">
+				<div class="board-list-util">
+					<p class="result-count">
+						<strong> "전체" <em class="font-gblue">3,646</em> "건"
+						</strong>
+					</p>
+					<div class="board-search">
+						<input type="text" id="searchTxt" title="검색어를 입력해 주세요."
+							placeholder="검색어를 입력해 주세요." class="input-text" value
+							maxlength="15">
+						<button type="button" id="searchBtn" class="btn-search-input">검색</button>
+					</div>
+				</div>
+				<div class="table-wrap">
                         <table class="board-list">
                             <caption>번호, 극장, 구분, 제목, 등록일이 들어간 공지사항 전체 리스트</caption>
                             <col style="width: 72px;">
