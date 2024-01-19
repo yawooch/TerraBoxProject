@@ -8,7 +8,8 @@
     <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>LIFE THEATER, 테라박스</title>
     <link rel="stylesheet" href="${path}/views/ticket/css/bookingSeat2.css">
-    <jsp:include page="${path}/views/common/header.jsp" />
+    <jsp:include page="/views/common/header.jsp" />
+    <script src="${path}/views/ticket/js/bookingSeat2.js"></script>
     <main>
         <!-- body중 메뉴바 -->
         <section>
@@ -47,25 +48,25 @@
                             <div class="tk-cell">
                                 <p class="tk-txt">성인</p>
                                 <div class="tk-counter-group">
-                                    <button class="tk-btn-minus" id="tk_btn_minus" >-</button>
+                                    <button class="tk-btn-minus tk_btn_minus" id="tk_btn_minus" >-</button>
                                     <div class="tk-counter"><span id="tk_now">0</span></div>
-                                    <button class="tk-btn-plus" id="tk_btn_plus">+</button>
+                                    <button class="tk-btn-plus tk_btn_plus" id="tk_btn_plus">+</button>
                                 </div>
                             </div>
                             <div class="tk-cell">
                                 <p class="tk-txt">청소년</p>
                                 <div class="tk-counter-group">
-                                    <button class="tk-btn-minus">-</button>
+                                    <button class="tk-btn-minus tk_btn_minus" id="tk_btn_minus2">-</button>
                                     <div class="tk-counter"><span id="tk_now2">0</span></div>
-                                    <button class="tk-btn-plus">+</button>
+                                    <button class="tk-btn-plus  tk_btn_plus" id="tk_btn_plus2">+</button>
                                 </div>
                             </div>
                             <div class="tk-cell">
                                 <p class="tk-txt">경로</p>
                                 <div class="tk-counter-group">
-                                    <button class="tk-btn-minus">-</button>
-                                    <div class="tk-counter"><span>0</span></div>
-                                    <button class="tk-btn-plus">+</button>
+                                    <button class="tk-btn-minus tk_btn_minus" id="tk_btn_minus3">-</button>
+                                    <div class="tk-counter"><span id="tk_now3">0</span></div>
+                                    <button class="tk-btn-plus tk_btn_plus" id="tk_btn_plus3">+</button>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +79,7 @@
                                 <div class="tk-seat"> 
                                     <div class="tk-line">A</div>
                                     <button class="tk-seat-click">1</button>
-                                    <button class="tk-seat-click"">2</button>
+                                    <button class="tk-seat-click">2</button>
                                     <button class="tk-seat-click">3</button>
                                     <button class="tk-seat-click" style="margin-right: 23px;">4</button>
                                     <button class="tk-seat-click">5</button>
