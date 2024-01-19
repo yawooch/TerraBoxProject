@@ -87,11 +87,82 @@ $(document).ready(function() {
 
 
     // 관람평 쓰기 버튼을 누르면 body에 overflow:hidden 속성 주기
+    $('.mv-com-btn-write').on('click', () => {
+        $('.mv-com-write-bg').css('display', 'block')
+    });
 
+    $('.mv-com-write-btn-cancle').on('click', () => {
+        $('.mv-com-write-bg').css('display', 'none')
+    });
 
     // 별점 버튼 클릭하면 색 칠해지고 점수 나타내기
 
 
-    // 관람포인트 클릭하면 on 속성주고 색상 변경
-
+    // 관람포인트 클릭하면 색상 변경
+    $('#mv-com-write-point-btn-ele1').on('click', () => {
+        if ( $('#mv-com-write-point-btn-ele1').css('background-color') == 'rgb(235, 235, 235)' ) {
+            $('#mv-com-write-point-btn-ele1').css({
+                'background-color': 'rgb(175, 45, 45)',
+                'color': 'white'
+            })
+            
+        } else {
+            $('#mv-com-write-point-btn-ele1').css({
+                'background-color': 'rgb(235, 235, 235)',
+                'color': 'black'
+            })
+        }
+    });
+    $('#mv-com-write-point-btn-ele2').on('click', () => {
+        if ( $('#mv-com-write-point-btn-ele2').css('background-color') == 'rgb(235, 235, 235)' ) {
+            $('#mv-com-write-point-btn-ele2').css({
+                'background-color': 'rgb(175, 45, 45)',
+                'color': 'white'
+            })
+        } else {
+            $('#mv-com-write-point-btn-ele2').css({
+                'background-color': 'rgb(235, 235, 235)',
+                'color': 'black'
+            })
+        }
+    });
+    $('#mv-com-write-point-btn-ele3').on('click', () => {
+        if ( $('#mv-com-write-point-btn-ele3').css('background-color') == 'rgb(235, 235, 235)' ) {
+            $('#mv-com-write-point-btn-ele3').css({
+                'background-color': 'rgb(175, 45, 45)',
+                'color': 'white'
+            })
+        } else {
+            $('#mv-com-write-point-btn-ele3').css({
+                'background-color': 'rgb(235, 235, 235)',
+                'color': 'black'
+            })
+        }
+    });
+    $('#mv-com-write-point-btn-ele4').on('click', () => {
+        if ( $('#mv-com-write-point-btn-ele4').css('background-color') == 'rgb(235, 235, 235)' ) {
+            $('#mv-com-write-point-btn-ele4').css({
+                'background-color': 'rgb(175, 45, 45)',
+                'color': 'white'
+            })
+        } else {
+            $('#mv-com-write-point-btn-ele4').css({
+                'background-color': 'rgb(235, 235, 235)',
+                'color': 'black'
+            })
+        }
+    });
+    $('#mv-com-write-point-btn-ele5').on('click', () => {
+        if ( $('#mv-com-write-point-btn-ele5').css('background-color') == 'rgb(235, 235, 235)' ) {
+            $('#mv-com-write-point-btn-ele5').css({
+                'background-color': 'rgb(175, 45, 45)',
+                'color': 'white'
+            })
+        } else {
+            $('#mv-com-write-point-btn-ele5').css({
+                'background-color': 'rgb(235, 235, 235)',
+                'color': 'black'
+            })
+        }
+    });
 });

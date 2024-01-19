@@ -495,7 +495,7 @@ a {
 
 /* 관람평 작성하기 모달  */
 .mv-com-write-bg {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 0;
     width: 100%;
@@ -535,7 +535,7 @@ a {
 }
 
 .mv-com-write-head>button {
-    background-color: #AF2D2D;
+    background-color: rgb(175, 45, 45);
     border-style: none;
     margin-top: 5px;
     margin-right: 10px;
@@ -563,7 +563,7 @@ a {
 }
 
 .mv-com-write-score>div {
-    background-color: #EBEBEB;
+    background-color: rgb(235, 235, 235);
     border-radius: 5px;
     padding: 15px;
 }
