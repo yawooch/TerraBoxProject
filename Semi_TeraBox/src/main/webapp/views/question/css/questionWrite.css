@@ -302,6 +302,11 @@
     text-decoration: none;
     outline: 1px dotted #000;
 }
+.tab-block ul li a{
+    color: #666;
+    text-decoration: none;
+    outline: 1px dotted #000;
+}
 
 .mypage-infomation {
     position: relative;
