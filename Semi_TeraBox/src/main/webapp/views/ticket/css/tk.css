@@ -43,7 +43,6 @@ div {
 
 body {
     overflow: auto;
-    overflow-y: scroll;
     letter-spacing: 0;
     line-height: 1.5;
     font-size: 15px;
@@ -116,7 +115,7 @@ em {
 }
 
 .tk-page-util .tk-location span {
-    overflow: hidden;
+    overflow: visible;
     display: block;
     float: left;
     width: 13px;
@@ -166,6 +165,14 @@ margin: auto;
     display: block;
     clear: both;
 }
+h2.tit {
+    padding: 0 0 26px 0;
+    font-size: 1.8666em;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #222;
+}
 .tit-util {
     padding: 0 0 26px 0;
     font-size: 18px;
@@ -199,6 +206,7 @@ margin: auto;
     height: 40px;
 }
 .wrap {
+    overflow: visible;
     height: 40px;
     border-top: 1px solid #555;
     border-left: 1px solid #d8d9db;
@@ -240,10 +248,11 @@ margin: auto;
 }
 .date-list {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     width: 980px;
     float: left;
 }
+
 /* 년도 월 표시 */
 
 .date-list .year {
@@ -259,6 +268,15 @@ margin: auto;
     text-align: center;
     background-color: #fff;
 }  
+.year-area {
+    content:""; 
+    display:block; 
+    clear:both; 
+    height: 0px;
+}
+.year-area .year{
+    height: 20px;
+}
 .date-area {
     height: 39px;
     float: left;
@@ -270,7 +288,6 @@ margin: auto;
     line-height: 18px;
     margin-top: -10px;
     border-radius: 10px;
-    font-family: Roboto;
     font-weight: 300;
 }
 .time-schedule .year {
@@ -278,14 +295,13 @@ margin: auto;
     top: 0;
     font-size: .8667em;
     width: 70px;
-    height: 28px;
-    line-height: 28px;
-    margin-top: -14px;
+    height: 20px;
+    margin-top: -10px;
     border: 1px solid #d8d9db;
     border-radius: 15px;
     text-align: center;
     background-color: #fff;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 /* datelist */
@@ -815,10 +831,10 @@ li {
     margin: 0;
 }
 /* 자바스크립트로 별도로 처리를 해 주지 않는 이상) 무시된다. */
-/* .mCustomScrollbar {
+.mCustomScrollbar {
     -ms-touch-action: pinch-zoom;
     touch-action: pinch-zoom;
-} */
+}
 .mCustomScrollBox {
     position: relative;
     overflow: hidden;

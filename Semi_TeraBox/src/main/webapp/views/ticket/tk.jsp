@@ -2,10 +2,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 	<jsp:include page="${path}/views/common/header.jsp" />
-    <link rel="stylesheet" href="./css/tk.css">
+    <link rel="stylesheet" href="${path}/views/ticket/css/tk.css">
+    <link rel="stylesheet" href="../ticket/css/jquery.mCustomScrollbar.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
     <main>
+    <script>
+        (function($){
+        $(window).on("load",function(){
+            $(".content").mCustomScrollbar();
+        });
+    })(jQuery);
+    </script>
         <!-- body중 메뉴바 -->
-        <section>
+         <section>
             <div class="tk-page-util">
                 <div class="tk-inner-wrap">
                     <div class="tk-location">
@@ -36,7 +46,7 @@
                                 <!-- 년도월표시 -->
                                 <div class="year" style="left: 0px; z-index: 1; opacity: 1;">2024.01</div>
                                 <div class="year" style="left: 839px; z-index: 1; opacity: 1;">2024.02</div>
-                            
+                            	<div style="overflow: hidden;">
                                 <div class="date-area" id="formDeList">
                                     <div class="wrap" style="position: relative; width: 2100px; border: none; left: -70px;">
                                         <button class="" type="button" date-data="2024.01.18" month="0" tabindex="-1">
@@ -137,6 +147,7 @@
                                         </button>
                                     </div>
                                 </div>
+                            	</div>
                             </div>
                             <!-- 다음날짜 -->
                             <button type="button" title="다음 날짜 보기" class="btn-next">
@@ -219,16 +230,6 @@
                                                     </ul>
                                                 </div>
                                                 <!-- 영화목록스크롤 -->
-                                                <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light   mCSB_scrollTools_vertical" style="display: block;">
-                                                    <div class="mCSB_draggerContainer">
-                                                        <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; max-height: 310px; top: 0px; height: 48px;">
-                                                            <div class="mCSB_dragger_bar" style="line-height: 30px;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mCSB_draggerRail">
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -344,14 +345,6 @@
                                                                     </ul>
                                                                 </div>
                                                                 <!-- 스크롤바 -->
-                                                                <div id="mCSB_4_scrollbar_vertical" class="mCSB_scrollTools mCSB_4_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                                                    <div class="mCSB_draggerContainer">
-                                                                        <div id="mCSB_4_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; top: 0px; height: 183px; max-height: 310px;">
-                                                                            <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                                                        </div>
-                                                                        <div class="mCSB_draggerRail"></div>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -583,15 +576,6 @@
                                                 </ul>
                                             </div>
                                             <!-- 스크롤바 -->
-                                            <div id="mCSB_17_scrollbar_vertical" class="mCSB_scrollTools mCSB_17_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
-                                                <div class="mCSB_draggerContainer">
-                                                    <div id="mCSB_17_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 395px; max-height: 420px; top: 0px;">
-                                                        <div class="mCSB_dragger_bar" style="line-height: 30px;">
-                                                        </div>
-                                                    </div>
-                                                    <div class="mCSB_draggerRail">
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -603,5 +587,6 @@
             </div>
         </section>
     </main>
+    
     
 	<jsp:include page="${path}/views/common/footer.jsp" />
