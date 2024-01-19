@@ -277,7 +277,7 @@
 .mypage-infomation {
     position: relative;
     min-height: 36px;
-    padding-bottom: 10px;
+    padding-bottom: 80px;
 }
 .mypage-infomation.mt20 {
     margin-top: 20px!important;
@@ -339,7 +339,20 @@
     font-weight: 700!important;
 }
 
-
+p.reset {
+    padding: 0;
+    margin: 0;
+}
+p.reset.mt10 {
+    margin-top: 10px!important;
+}
+p.reset.mt30.a-r {
+    margin-top: 30px!important;
+    text-align: right!important;
+}
+.font-orange {
+    color: #e63e30!important;
+}
 
 
 
@@ -347,6 +360,11 @@
     position: absolute;
     top: 0;
     right: 0;
+    padding: 0;
+    margin: 0;
+}
+.mypage-infomation .btn-group.positionRelative {
+    position: relative;
     padding: 0;
     margin: 0;
 }
@@ -366,7 +384,7 @@
 .btn-group .button {
     margin: 0 3px;
 }
-.btn-group .button {
+.button {
     display: inline-block;
     height: 36px;
     margin: 0;
@@ -500,4 +518,240 @@ table.board-list {
     margin: 0 auto;
     padding: 30px 0 0 0;
     text-align: center;
+}
+
+
+
+
+/* 입력폼 테이블 스타일 */
+.table-wrap {
+    position: relative;
+    border-top: 1px solid #555;
+}
+.table-wrap.mt10 {
+    margin-top: 10px!important;
+}
+.table-wrap .va-m {
+    vertical-align: middle!important;
+}
+.table-wrap table {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+    empty-cells: show;
+}
+.board-form tbody th {
+    background: #f7f8f9;
+}
+.board-form tbody td, 
+.board-form tbody th {
+    position: relative;
+    height: 50px;
+    padding: 7px 15px;
+    text-align: left;
+    border-bottom: 1px solid #d1d5dd;
+}
+.board-form [type=checkbox], 
+.board-form [type=radio] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.board-form label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.dropdown, .dropup {
+    position: relative;
+}
+/* .bootstrap-select.disabled, .bootstrap-select>.disabled {
+    cursor: default;
+    background-color: #f7f8f9;
+    border-color: #ccc;
+    color: #787878;
+}
+.bootstrap-select:not(.input-group-btn), .bootstrap-select[class*=col-] {
+    float: none; 
+    display: inline-block;
+    margin-left: 0;
+} */
+
+.input-text.w150px {
+    width: 150px!important;
+}
+.input-text {
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+    padding: 0 10px;
+    line-height: 30px;
+    color: #444;
+    border: 1px solid #d8d9db;
+    vertical-align: middle;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+.input-text.w60px {
+    width: 60px!important;
+}
+.input-text.w70px {
+    width: 70px!important;
+}
+.input-text+.button {
+    height: 32px;
+    line-height: 29px;
+}
+.button.gray {
+    color: #fff;
+    line-height: 36px;
+    border: 0;
+    background: #666;
+}
+.button.disabled {
+    color: #777!important;
+    background-color: #e0e0e0!important;
+    border-color: #e0e0e0!important;
+}
+.button.ml08 {
+    margin-left: 8px!important;
+}
+.w100px {
+    width: 100px!important;
+}
+.textarea {
+    border: 1px solid #d8d9db;
+}
+.input-textarea {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    line-height: 16px;
+    color: #333;
+    resize: vertical;
+    border-radius: 0!important;
+    border: 1px solid #d8d9db;
+    vertical-align: middle;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+.textarea .input-textarea {
+    border: 0;
+}
+.textarea .util {
+    overflow: hidden;
+    padding: 10px;
+    font-size: 14px;
+}
+.textarea .util .count {
+    float: right;
+}
+.textarea .util p {
+    margin: 0;
+    padding: 0;
+}
+
+.upload-image-box .info-txt {
+    margin-bottom: 10px;
+}
+.upload-image-box .info-txt p {
+    display: inline-block;
+}
+.upload-image-box p:first-child {
+    margin-top: 0!important;
+}
+.upload-image-box p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    height: 24px;
+    display: table;
+}
+.upload-image-box .info-txt button {
+    border: 1px solid #555;
+    background-color: #555;
+    line-height: 36px;
+    height: 36px;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0 20px;
+    margin-left: 10px;
+}
+.upload-image-box p.dw-link a {
+    display: table-cell;
+    vertical-align: middle;
+}
+.upload-image-box p.dw-link a:link {
+    color: #444;
+    text-decoration: none;
+}
+.upload-image-box .btn-del {
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    border: none;
+    background: #444 url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-delete-wh.png) no-repeat center;
+    margin-left: 10px;
+}
+
+.fc_r {
+    color: #e81002;
+    font-size: 14px;
+}
+em {
+    font-style: normal;
+}
+
+.pt40 {
+    padding-top: 40px!important;
+}
+.btn-group {
+    padding: 20px 0 30px 0;
+    margin: 0;
+    text-align: center;
+}
+.button.purple.large {
+    line-height: 46px;
+}
+.btn-group .button {
+    margin: 0 3px;
+}
+.button.purple {
+    color: #fff;
+    line-height: 36px;
+    border: 0;
+    background: #6D3030;
+}
+.button.large {
+    height: 46px;
+    padding: 0 30px;
+    line-height: 44px;
+    
+    font-size:15px;
+}
+
+.date-calendar {
+    display: inline-block;
+    width: 118px;
+    height: 32px;
+    padding: 0 10px;
+    line-height: 30px;
+    border-radius: 0!important;
+    border: 1px solid #d8d9db;
+    border-width: 1px 0 1px 1px;
+    vertical-align: middle;
+    font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
+}
+.ui-datepicker-trigger {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d8d9db;
+    border-width: 1px 1px 1px 0;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-calendar.png) no-repeat center;
 }
