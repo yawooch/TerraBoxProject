@@ -31,6 +31,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    padding-left:5px;
     text-indent: -9999px;
     background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
 }
@@ -43,6 +44,7 @@
     padding: 0;
     line-height: 46px;
     color: #666;
+    font-size:12px;
 }
 .location a:visited {
     color: #666;
@@ -91,6 +93,17 @@
     padding: 40px 0 0 0;
     background-color: #fff;
 }
+#lnb .left-customer-info {
+    position: relative;
+    z-index: 2;
+    margin: -8px 0 0 0;
+    padding: 20px 18px;
+    color: #666;
+    border: 2px solid #d8d9db;
+    border-top-width: 1px;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+}
 #lnb {
     margin: 0;
     padding: 0;
@@ -134,16 +147,25 @@
 #lnb.ty2 ul li.on>a {
     color: #6D3030;
     font-weight: 400;
-    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center;
+    background: #fff url(../img/Group\ 74.png) no-repeat right center;
 }
 
 #lnb>ul>li {
     border-top: 1px solid #d8d9db;
 }
 #lnb ul li.on>a {
-    color: #6D3030;
+    color: #222;
     font-weight: 400;
-    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center;
+    background: #fff url(../img/Group\ 74.png) no-repeat right center;
+}
+#lnb ul li.on>a:hover {
+    color: #B90505;
+    font-weight: 400;
+    background: #fff url(../img/Group\ 74.png) no-repeat right center;
+}
+#lnb ul li>a:hover {
+    color: #B90505;
+    font-weight: 400;
 }
 #lnb>ul>li>a {
     display: block;
@@ -172,7 +194,8 @@
     margin: 0;
     padding: 0;
     border-radius: 0;
-    background-image: none;
+    background-color: #fff;
+    font-size:15px;
 }
 #lnb .left-customer-info .tit span {
     display: block;
@@ -243,7 +266,7 @@
     display: table;
 }
 .tab-block ul li.on:first-child {
-    border-color: #6D3030;
+    border-color: #555555;
 }
 .tab-block ul li {
     position: relative;
@@ -252,9 +275,15 @@
     border: 1px solid #d8d9db;
     border-left: 0;
 }
+.tab-block ul li:first-child {
+    position: relative;
+    float: left;
+    width: 20%;
+    border: 1px solid #d8d9db;
+}
 .tab-block ul li.hover .btn, .tab-block ul li.on .btn {
     color: #fff;
-    background-color: #6D3030;
+    background-color: #555555;
 }
 .tab-block ul li .btn {
     display: block;

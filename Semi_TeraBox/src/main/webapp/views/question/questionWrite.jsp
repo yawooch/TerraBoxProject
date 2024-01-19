@@ -1,37 +1,89 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="path" value="${ pageContext.request.contextPath }" />
-<jsp:include page="${path}/views/common/header.jsp" />
-<link rel="stylesheet"
-	href="${path}/views/question/css/questionWrite.css">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
+<jsp:include page="/views/common/header.jsp" />
+<link rel="stylesheet" href="${path}/views/question/css/questionWrite.css">
+<script>
+    $(document).ready(function(){
+        let tabBlock = $('.tab-block ul li');
+        let tableWrap = $('.table-wrap');
+        tabBlock.each(element => {
+            $(tabBlock[element]).on('click', function(event){
+                tabBlock.each(ele => {
+                    $(tabBlock[ele]).removeClass('on');
+                });
+                $(event.target).parent().addClass('on');
+                console.log($(tableWrap[element]).css('display'));
+
+                tableWrap.each(e =>{
+                    $(tableWrap[element]).css('display', 'none');
+                });
+                $(tableWrap[element]).css('display', 'block');
+            });
+        });
+    });
+</script>
 <div class="container has-lnb">
-	<div class="page-util">
-		<div class="inner-wrap">
-			<div class="location">
-				<span>Home</span> <a href="/mypage" title="나의 테라박스 페이지로 이동">나의
-					테라박스</a> <a href="/mypage/myinquiry" title="나의 문의내역 페이지로 이동">나의
-					문의내역</a> <a href="/mypage/myinquiry?cd=INQD01" title="1:1 문의내역 페이지로 이동">1:1
-					문의내역</a>
-			</div>
-		</div>
-	</div>
-	<div class="inner-wrap">
-		<div class="lnb-area">
-			<nav id="lnb">
-				<p class="tit">
-					<a href="/mypage" title="나의 테라박스">나의 테라박스</a>
-				</p>
-				<ul>
-					<li class=""><a href="/mypage/bookinglist" title="예매/구매내역">예매/구매내역</a></li>
-					<li class="on"><a href="/mypage/myinquiry" title="나의 문의내역">나의
-							문의내역</a></li>
-					<li><a href="/mypage/myinfo?returnURL=info" title="회원정보">회원정보</a></li>
-				</ul>
-			</nav>
-		</div>
-		<div id="contents" class="location-fixed">
-			<h2 class="tit">나의 문의내역</h2>
+    <div class="page-util">
+        <div class="inner-wrap">
+            <div class="location">
+                <span>Home</span>
+                <a href="${path}/question" title="고객센터 페이지로 이동">고객센터</a>
+                <a href="${path}/question" title="문의하기 페이지로 이동">문의하기</a>
+            </div>
+        </div>
+    </div>
+        <div class="inner-wrap">
+            <div class="lnb-area">
+                <nav id="lnb">
+                    <p class="tit"><a href="${path}/question" title="고객센터">고객센터</a></p>
+                    <ul>
+                        <li class="on"><a href="${path}/question" title="고객센터 홈">고객센터 홈</a></li>
+                        <li class=""><a href="${path}/question" title="자주 묻는 질문">자주 묻는 질문</a></li>
+                        <li class=""><a href="${path}/question" title="공지사항">공지사항</a></li>
+                        <li class=""><a href="${path}/question" title="단체관람 및 대관문의">단체관람 및 대관문의</a></li>
+                        <li class=""><a href="${path}/question" title="분실물 문의">분실물 문의</a></li>
+                    </ul>
+                    <div class="left-customer-info">
+                        <p class="tit">
+                            테라박스 고객센터
+                            <i class="qt-bar-by"></i>
+                            <span>Dream center</span>
+                        </p>
+                        <p class="time">
+                            <i class="iconset ico-clock"></i>
+                            "10:00~19:00"
+                        </p>
+                    </div>
+                </nav>
+            </div>
+            <div id="contents" class="location-fixed">
+                <h2 class="tit">나의 문의내역</h2>
+                
+                <div class="mypage-infomation mt20">
+                    <ul class="dot-list mb20">
+                        <li><span style="font-weight: bold;">고객님의 문의에 답변하는 직원은 <span style="color: #EB323A;">고객 여러분의 가족 중 한 사람일 수 있습니다.</span></span><br>
+                            고객의 언어폭력(비하, 욕설, 협박, 성희롱 등)으로부터 직원을 보호하기 위해<br>
+                            관련 법에 따라 수사기관에 필요한 조치를 요구할 수 있으며, 형법에 의해 처벌 대상이 될 수 있습니다.<br>
+                        </li>
+                        <br>
+                        <li>문의하시기 전 FAQ를 확인하시면 궁금증을 더욱 빠르게 해결하실 수 있습니다. </li>
+                    </ul>
+                    
+                <div class="tab-block">
+                    <ul>
+                        <li data-url="/mypage/myinquiry?cd=INQD01" class="on"><a href="#" class="btn" data-cd="INQD01" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+                        <li data-url="/mypage/myinquiry?cd=INQD03"><a href="#" class="btn" data-cd="INQD03" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관 문의내역</a></li>
+                        <li data-url="/mypage/myinquiry?cd=INQD02"><a href="#" class="btn" data-cd="INQD02" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
+                    </ul>
+                </div>
+                <div class="agree-box">
+                    <dl>
+                        <dt>
+                            <span class="bg-chk mr10">
+                                <input type="checkbox" id="chk">
+                                <label for="chk"><strong>개인정보 수집에 대한 동의</strong></label>
+                            </span>
 
 			<div class="mypage-infomation mt20">
 				<ul class="dot-list mb20">

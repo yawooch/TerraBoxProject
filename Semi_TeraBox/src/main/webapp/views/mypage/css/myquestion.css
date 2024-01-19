@@ -31,6 +31,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    padding-left:5px;
     text-indent: -9999px;
     background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
 }
@@ -43,6 +44,7 @@
     padding: 0;
     line-height: 46px;
     color: #666;
+    font-size:12px;
 }
 .location a:visited {
     color: #666;
@@ -143,7 +145,8 @@
 #lnb ul li.on>a {
     color: #6D3030;
     font-weight: 400;
-    background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center;
+    /* background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center; */
+    background: #fff url(../img/Group74.png) no-repeat right center;
 }
 #lnb>ul>li>a {
     display: block;
@@ -218,6 +221,11 @@
 .tab-block {
     position: relative;
 }
+.tab-block ul li a
+{
+    color: #666;
+    text-decoration: none;
+}
 .tab-block:before {
     content: '';
     position: absolute;
@@ -254,7 +262,7 @@
 }
 .tab-block ul li.hover .btn, .tab-block ul li.on .btn {
     color: #fff;
-    background-color: #6D3030;
+    background-color: #555555;
 }
 .tab-block ul li .btn {
     display: block;
