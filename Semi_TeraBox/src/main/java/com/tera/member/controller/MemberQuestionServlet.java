@@ -8,15 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 나의 예매내역 으로 가는 페이지를 호출하는 Servlet
+ * 나의 문의 내역 화면으로 가는 페이지를 호출하는 Servlet
  */
-@WebServlet(name = "memberMypage", urlPatterns = { "/mypage" })
-public class MemberMypageServlet extends HttpServlet {
+@WebServlet(name = "memberQuestion", urlPatterns = { "/mypage/question" })
+public class MemberQuestionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public MemberMypageServlet() {}
+    public MemberQuestionServlet() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/mypage/ticketing.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
 	}
 }

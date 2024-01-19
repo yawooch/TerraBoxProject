@@ -8,9 +8,8 @@
         <div class="inner-wrap">
             <div class="location">
                 <span>Home</span>
-                <a href="/mypage" title="나의 테라박스 페이지로 이동">나의 테라박스</a>
-                <a href="/mypage/myinquiry" title="나의 문의내역 페이지로 이동">나의 문의내역</a>
-                <a href="/mypage/myinquiry?cd=INQD01" title="1:1 문의내역 페이지로 이동">1:1 문의내역</a>
+                <a href="/mypage"            title="나의 테라박스 페이지로 이동">나의 테라박스</a>
+                <a href="/mypage/myqeustion" title="나의 문의내역 페이지로 이동">나의 문의내역</a>
             </div>
         </div>
     </div>
@@ -19,23 +18,14 @@
                 <nav id="lnb">
                     <p class="tit"><a href="/mypage" title="나의 테라박스">나의 테라박스</a></p>
                     <ul>
-                        <li class=""><a href="/mypage/bookinglist" title="예매/구매내역">예매/구매내역</a></li>
-                        <li class="on"><a href="/mypage/myinquiry" title="나의 문의내역">나의 문의내역</a></li>
-                        <li><a href="/mypage/myinfo?returnURL=info" title="회원정보">회원정보</a></li>
+                        <li class=""><a href="/mypage" title="예매/구매내역">예매/구매내역</a></li>
+                        <li class="on"><a href="/mypage/question" title="나의 문의내역">나의 문의내역</a></li>
+                        <li class=""><a href="/mypage/myinfo" title="회원정보">회원정보</a></li>
                     </ul>
                 </nav>
             </div>
             <div id="contents" class="location-fixed">
                 <h2 class="tit">나의 문의내역</h2>
-            
-                <div class="tab-block">
-                    <ul>
-                        <li data-url="/mypage/myinquiry?cd=INQD01" class="on"><a href="#" class="btn" data-cd="INQD01" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
-                        <li data-url="/mypage/myinquiry?cd=INQD03"><a href="#" class="btn" data-cd="INQD03" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관 문의내역</a></li>
-                        <li data-url="/mypage/myinquiry?cd=INQD02"><a href="#" class="btn" data-cd="INQD02" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
-                    </ul>
-                </div>
-            
                 <div class="mypage-infomation mt20">
                     <ul class="dot-list mb20">
                         <li id="tabDesc">고객센터를 통해 남기신 문의내역을 확인하실 수 있습니다.</li>
@@ -43,7 +33,7 @@
                     </ul>
             
                     <div class="btn-group right">
-                        <a href="#" class="button" id="inqBtn" title="문의하기">문의하기</a>
+                        <a href="/question/write" class="button" id="inqBtn" title="문의하기">문의하기</a>
                     </div>
                 </div>
             

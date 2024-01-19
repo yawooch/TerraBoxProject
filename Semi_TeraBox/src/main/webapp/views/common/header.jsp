@@ -106,24 +106,24 @@
         <div class="cm-mainLogo"><img src="${path }/views/common/img/mainLogo.png" alt=""></div>
         <div class="cm-login-link">
             <a href="#">로그인</a>
-            <a href="#">회원가입</a>
-            <a href="#">빠른예매</a>
+            <a href="/member/enroll">회원가입</a>
+            <a href="/ticket/">빠른예매</a>
         </div>
         <div class="cm-header-link-left">
-            <a href="#" class="cm-link-area-sitemap"></a>
-            <a href="#" class="cm-link-area-movie"></a>
+            <a href="" class="cm-link-area-sitemap"></a>
+            <a href="" class="cm-link-area-movie"></a>
             <div>
-                <a href="#" class="cm-link-text-movie">영화</a>
-                <a href="#" class="cm-link-text-ticket">예매</a>
+                <a href="/movie"  class="cm-link-text-movie">영화</a>
+                <a href="/ticket" class="cm-link-text-ticket">예매</a>
             </div>
         </div>
         <div class="cm-header-link-right">
             <div>
-                <a href="#" class="cm-link-text-cinema">극장</a>
-                <a href="#" class="cm-link-text-question">고객센터</a>
+                <a href="/cinema"   class="cm-link-text-cinema">극장</a>
+                <a href="/question" class="cm-link-text-question">고객센터</a>
             </div>
-            <a href="#" class="cm-link-area-ticket"></a>
-            <a href="#" class="cm-link-area-mypage"></a>
+            <a href="/ticket" class="cm-link-area-ticket"></a>
+            <a href="" class="cm-link-area-mypage"></a>
         </div>
     </div>
     <nav class="cm-header-nav" style="display:none;">
@@ -148,11 +148,10 @@
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/question"          title="고객센터 홈">고객센터 홈</a></li>
-                    <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/notice"    title="고객센터 홈">공지사항</a></li>
+                    <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
-                    <li><a href="/question/borrow"    title="단체/대관 문의">단체/대관 문의</a></li>
+                    <li><a href="/question/rental"    title="단체/대관 문의">단체/대관 문의</a></li>
                     <li><a href="/question/lost"      title="분실물 문의">분실물 문의</a></li>
                 </ul>
             </div>
@@ -195,10 +194,10 @@
 
                 <ul class="cm-list-depth">
                     <li><a href="/question"           title="고객센터 홈">고객센터 홈</a></li>
-                    <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/notice"    title="고객센터 홈">공지사항</a></li>
+                    <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
-                    <li><a href="/question/borrow"    title="단체/대관 문의">단체/대관 문의</a></li>
+                    <li><a href="/question/rental"    title="단체/대관 문의">단체/대관 문의</a></li>
                     <li><a href="/question/lost"      title="분실물 문의">분실물 문의</a></li>
                 </ul>
             </div>
@@ -261,8 +260,8 @@
                 <div class="cm-txt">영화를 사랑하는 당신을 위한 꼭 맞는 혜택까지 확인해 보세요!</div>
     
                 <div class="cm-linkBox">
-                    <a href="#layer_login_common" id="cm_moveLogin" title="로그인" class="cm-btn-modal-open" w-data="850" h-data="484">로그인</a>
-                    <a href="/join" class="cm-link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
+                    <a href="layer_login_common" id="cm_moveLogin" title="로그인" class="cm-btn-modal-open" w-data="850" h-data="484">로그인</a>
+                    <a href="/member/enroll" class="cm-link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
                 </div>
     
             </div>

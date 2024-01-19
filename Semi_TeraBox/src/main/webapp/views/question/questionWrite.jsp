@@ -34,7 +34,7 @@
             <div class="location">
                 <span>Home</span>
                 <a href="/question" title="고객센터 페이지로 이동">고객센터</a>
-                <a href="/question" title="문의하기 페이지로 이동">문의하기</a>
+                <a href="/question/write" title="문의하기 페이지로 이동">문의하기</a>
             </div>
         </div>
     </div>
@@ -43,11 +43,12 @@
                <nav id="lnb">
                    <p class="tit"><a href="${path}/question" title="고객센터">고객센터</a></p>
                    <ul>
-                       <li class="on"><a href="${path}/question" title="고객센터 홈">고객센터 홈</a></li>
-                       <li class=""><a href="${path}/question" title="자주 묻는 질문">자주 묻는 질문</a></li>
-                       <li class=""><a href="${path}/question" title="공지사항">공지사항</a></li>
-                       <li class=""><a href="${path}/question" title="단체관람 및 대관문의">단체관람 및 대관문의</a></li>
-                       <li class=""><a href="${path}/question" title="분실물 문의">분실물 문의</a></li>
+                       <li class=""><a href="/question"      title="고객센터 홈">고객센터 홈</a></li>
+                       <li class=""><a href="/question/notice" title="공지사항">공지사항</a></li>
+                       <li class=""><a href="/question/faq"    title="자주 묻는 질문">자주 묻는 질문</a></li>
+                       <li class="on"><a href="/question/write"  title="1:1 문의">1:1 문의</a></li>
+                       <li class=""><a href="/question/write"  title="단체관람 및 대관문의">단체관람 및 대관문의</a></li>
+                       <li class=""><a href="/question/lost"   title="분실물 문의">분실물 문의</a></li>
                    </ul>
                    <div class="left-customer-info">
                        <p class="tit">
@@ -77,14 +78,9 @@
 
 			<div class="tab-block">
 				<ul>
-					<li data-url="/mypage/myinquiry?cd=INQD01" class="on"><a
-						href="#" class="btn" data-cd="INQD01" title="1:1 문의내역 탭으로 이동">1:1
-							문의내역</a></li>
-					<li data-url="/mypage/myinquiry?cd=INQD03"><a href="#"
-						class="btn" data-cd="INQD03" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관
-							문의내역</a></li>
-					<li data-url="/mypage/myinquiry?cd=INQD02"><a href="#"
-						class="btn" data-cd="INQD02" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
+					<li class="on"><a href="/question/write" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+					<li><a href="/question/write" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+					<li><a href="/question/lost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
 				</ul>
 			</div>
 			<div class="agree-box">
@@ -110,7 +106,7 @@
 				서비스를 이용하실 수 없습니다</p>
 			<p class="reset mt30 a-r font-orange">* 필수</p>
 			<form name="regFrm" method="post">
-				<div class="table-wrap mt10" style="display: none;">
+				<div class="table-wrap mt10" style="display: block;">
 					<table class="board-form va-m">
 						<colgroup>
 							<col style="width: 150px;">
@@ -414,107 +410,105 @@
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<div class="table-wrap mt10">
-						<table class="board-form va-m">
-							<colgroup>
-							<col style="width: 150px;">
-							<col>
-							<col style="width: 150px;">
-							<col>
+				</div>
+				<div class="table-wrap mt10" style="display: none;">
+					<table class="board-form va-m">
+						<colgroup>
+						<col style="width: 150px;">
+						<col>
+						<col style="width: 150px;">
+						<col>
 						</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row"><label for="place">분실장소</label> <em
-										class="font-orange">*</em></th>
-									<td colspan="3"><select id="theater" class="small"
-										title="지역선택">
-											<option value="">지역선택</option>
-											<option value="10">서울</option>
-											<option value="30">경기</option>
-											<option value="35">인천</option>
-											<option value="45">대전/충청/세종</option>
-											<option value="55">부산/대구/경상</option>
-											<option value="65">광주/전라</option>
-											<option value="70">강원</option>
-											<option value="80">제주</option>
-									</select> <select name="brchNo" id="theater02" title="극장선택"
-										class="small ml07" disabled="disabled">
-											<option value="">극장선택</option>
-									</select></td>
-								</tr>
-								<tr>
-									<th scope="row"><label for="name">이름</label> <em
-										class="font-orange">*</em></th>
-									<td colspan="3"><input type="text" name="inqurNm"
-										id="name" class="input-text w150px" value="" maxlength="30"></td>
-								</tr>
-								<tr>
-									<th scope="row"><label for="hpNum1">연락처</label> <em
-										class="font-orange">*</em></th>
-									<td><input type="text" name="hpNum1" id="hpNum1"
-										class="input-text w60px numType" maxlength="3"
-										title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-										type="text" name="hpNum2" class="input-text w60px numType"
-										maxlength="4" title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-										type="text" name="hpNum3" class="input-text w60px numType"
-										maxlength="4" title="핸드폰번호 마지막자리 입력"></td>
-									<th scope="row"><label for="email">이메일</label> <em
-										class="font-orange">*</em></th>
-									<td><input type="text" name="rpstEmail" id="email"
-										class="input-text" value="" autocomplete="new-password"
-										maxlength="50"></td>
-								</tr>
-								<tr>
-									<th scope="row"><label for="title">제목</label> <em
-										class="font-orange">*</em></th>
-									<td colspan="3"><input type="text" name="custInqTitle"
-										id="title" class="input-text" maxlength="100"></td>
-								</tr>
-								<tr>
-									<th scope="row"><label for="textarea">내용</label> <em
-										class="font-orange">*</em></th>
-									<td colspan="3">
-										<div class="textarea">
-											<textarea id="textarea" name="custInqCn" rows="5" cols="30"
-												title="내용입력"
-												placeholder="※ 문의 내용에 개인정보(이름, 연락처, 카드번호 등)가 포함되지 않도록 유의하시기 바랍니다.
+						<tbody>
+						<tr>
+							<th scope="row"><label for="place">분실장소</label> <em
+								class="font-orange">*</em></th>
+							<td colspan="3"><select id="theater" class="small"
+								title="지역선택">
+									<option value="">지역선택</option>
+									<option value="10">서울</option>
+									<option value="30">경기</option>
+									<option value="35">인천</option>
+									<option value="45">대전/충청/세종</option>
+									<option value="55">부산/대구/경상</option>
+									<option value="65">광주/전라</option>
+									<option value="70">강원</option>
+									<option value="80">제주</option>
+							</select> <select name="brchNo" id="theater02" title="극장선택"
+								class="small ml07" disabled="disabled">
+									<option value="">극장선택</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="name">이름</label> <em
+								class="font-orange">*</em></th>
+							<td colspan="3"><input type="text" name="inqurNm"
+								id="name" class="input-text w150px" value="" maxlength="30"></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="hpNum1">연락처</label> <em
+								class="font-orange">*</em></th>
+							<td><input type="text" name="hpNum1" id="hpNum1"
+								class="input-text w60px numType" maxlength="3"
+								title="핸드폰번호 첫자리 입력"> <span>-</span> <input
+								type="text" name="hpNum2" class="input-text w60px numType"
+								maxlength="4" title="핸드폰번호 중간자리 입력"> <span>-</span> <input
+								type="text" name="hpNum3" class="input-text w60px numType"
+								maxlength="4" title="핸드폰번호 마지막자리 입력"></td>
+							<th scope="row"><label for="email">이메일</label> <em
+								class="font-orange">*</em></th>
+							<td><input type="text" name="rpstEmail" id="email"
+								class="input-text" value="" autocomplete="new-password"
+								maxlength="50"></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="title">제목</label> <em
+								class="font-orange">*</em></th>
+							<td colspan="3"><input type="text" name="custInqTitle"
+								id="title" class="input-text" maxlength="100"></td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="textarea">내용</label> <em
+								class="font-orange">*</em></th>
+							<td colspan="3">
+								<div class="textarea">
+									<textarea id="textarea" name="custInqCn" rows="5" cols="30"
+										title="내용입력"
+										placeholder="※ 문의 내용에 개인정보(이름, 연락처, 카드번호 등)가 포함되지 않도록 유의하시기 바랍니다.
 ※ 분실장소와 분실물에 대한 상세 정보를 작성해주시면 분실물을 찾는데 도움이 됩니다.
 - 관람 영화정보(영화제목, 상영 회차, 상영시간 등) :
 - 극장/좌석/장소 정보 :
 - 분실물 상세정보"
-												class="input-textarea"></textarea>
-											<div class="util">
-												<p class="count">
-													<span id="textareaCnt">0</span> / 2000
-												</p>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row"><label for="pw">비밀번호</label> <em
-										class="font-orange">*</em></th>
-									<td colspan="3"><input type="number" maxlength="4"
-										name="lstrtclInqPwd" id="pw" class="input-text w150px pwnew"
-										placeholder="숫자 4자리" oninput="gfn_numberMaxLength(this);">
-										<em class="fc_r ml10">* 분실물에 대한 고객정보 보호를 위하여 게시글의 비밀번호를
-											설정해주세요.</em></td>
-								</tr>
-							</tbody>
+										class="input-textarea"></textarea>
+									<div class="util">
+										<p class="count">
+											<span id="textareaCnt">0</span> / 2000
+										</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="pw">비밀번호</label> <em
+								class="font-orange">*</em></th>
+							<td colspan="3"><input type="number" maxlength="4"
+								name="lstrtclInqPwd" id="pw" class="input-text w150px pwnew"
+								placeholder="숫자 4자리" oninput="gfn_numberMaxLength(this);">
+								<em class="fc_r ml10">* 분실물에 대한 고객정보 보호를 위하여 게시글의 비밀번호를
+									설정해주세요.</em></td>
+						</tr>
+						</tbody>
 						</table>
-					</div>
+				</div>
 
-					<div class="btn-group pt40 positionRelative">
-						<button type="submit" class="button purple large">등록</button>
-					</div>
-				</form>
-			</div>
-
-
+				<div class="btn-group pt40 positionRelative">
+					<button type="submit" class="button purple large">등록</button>
+				</div>
+			</form>
+		</div>
 		</div>
 	</div>
 </div>
-		</div>
+</div>
 </div>
 <jsp:include page="${path}/views/common/footer.jsp" />

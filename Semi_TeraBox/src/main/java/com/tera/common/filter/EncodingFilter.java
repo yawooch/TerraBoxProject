@@ -8,9 +8,10 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-//@WebFilter(filterName = "encodingFilter", urlPatterns = {"/*"})
+@WebFilter(filterName = "encodingFilter", urlPatterns = {"/*"})
 public class EncodingFilter implements Filter
 {
     // 서블릿 필터
@@ -19,7 +20,7 @@ public class EncodingFilter implements Filter
 
     public void init(FilterConfig fConfig) throws ServletException
     {
-       System.out.println("인코딩필터가 생성되어 초기화작 실행");
+       System.out.println("인코딩필터가 생성되어 초기화 작업 실행");
     }
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
     {
