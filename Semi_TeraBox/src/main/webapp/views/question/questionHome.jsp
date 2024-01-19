@@ -24,12 +24,12 @@
                     </p>
                     <ul class="qt-te-area-by">
                         <li class="qt-first-area-by">
-                            <a class="qt-first-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html">고객센터 홈</a>
+                            <a class="qt-first-text-by" href="http://localhost:8080/views/question/questionHome.jsp">고객센터 홈</a>
                         </li>
-                        <li><a href="http://localhost:8080/views/question/qnq.jsp">자주 묻는 질문</a></li>
-                        <li><a href="file:///D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html">공지사항</a></li>
+                        <li><a href="http://localhost:8080/views/question/faq.jsp">자주 묻는 질문</a></li>
+                        <li><a href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
-                        <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
+                        <li><a href="http://localhost:8080/views/question/lostItem.jsp">분실물 문의</a></li>
                     </ul>
                     <div class="qt-info-by">
                         <p class="qt-sidebar-each-by">
@@ -58,7 +58,7 @@
                     <div class="qt-custo-main-by">
                         <div class="qt-custo-main-area-by">
                             <div class="qt-block-content-by">
-                                <a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html" title="분실물 문의 페이지로 이동">
+                                <a href="http://localhost:8080/views/question/lostItem.jsp" title="분실물 문의 페이지로 이동">
                                     <p>
                                         <Strong>분실물 문의</Strong>
                                         "잃어버린 물건을 접수해 주시면"
@@ -88,7 +88,7 @@
                                 </a>
                             </div>
                             <div class="qt-block-content3-by">
-                                <a href="http://localhost:8080/views/question/qnq.jsp" title="자주 묻는 질문 페이지로 이동">
+                                <a href="http://localhost:8080/views/question/faq.jsp" title="자주 묻는 질문 페이지로 이동">
                                     <p>
                                         <Strong>자주 묻는 질문</Strong>
                                         "빠르고 간편하게 검색하세요"
@@ -100,7 +100,7 @@
                             <div class="qt-block-left-by">
                                 <div class="qt-tit-area-by">
                                     <h3 class="qt-tit-by qt-small-by ">자주 묻는 질문 BEST5</h3>
-                                    <a href="http://localhost:8080/views/question/qnq.jsp" class="qt-more-by" title="더보기">
+                                    <a href="http://localhost:8080/views/question/faq.jsp" class="qt-more-by" title="더보기">
                                         더보기
                                         <i class="qt-iconsetarea-by"></i>
                                     </a>
@@ -149,7 +149,7 @@
                             <div class="qt-block-right-by">
                                 <div class="qt-tit-area-by">
                                     <h3 class="qt-tit-by qt-small-by ">공지사항</h3>
-                                    <a href="file:///D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html" class="qt-more-by" title="더보기">
+                                    <a href="http://localhost:8080/views/question/lostItem.jsp" class="qt-more-by" title="더보기">
                                         더보기
                                         <i class="qt-iconsetarea-by"></i>
                                     </a>

@@ -2,10 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 	<jsp:include page="${path}/views/common/header.jsp" />
-    <link rel="stylesheet" href="../question/css/qnl.css">
+    <link rel="stylesheet" href="../question/css/faqmovie.css">
     <link rel="img" href="/src/main/webapp/img/">
     <link rel="icon" href="../question/img/TeraBox.ico">
-    <script src="${path}/views/question/js/qnq.js" ></script>
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="./js/faqmove.js"></script>
     <div class="qt-body-by">
         <main class="qt-main-by">
             <div class="qt-submenu-by">
@@ -13,21 +14,27 @@
                     <div class="qt-submenu-areaname-by">
                         <span></span>
                         <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
-                        <a href="http://localhost:8080/views/question/qnq.jsp" title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
+                        <a href="http://localhost:8080/views/question/faq.jsp" title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
                     </div>
                 </div>
             </div>
             <div class="qt-mainarea-by">
                 <nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
                     <p class="qt-sidebar-each-by">
-                        <a href="#" title="고객센터">고객센터</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터">고객센터</a>
                     </p>
                     <ul>
-                        <li class="qt-first-area-by"><a class="qt-first-text-by" href="http://localhost:8080/views/question/questionHome.jsp">고객센터 홈</a> </li>
-                        <li><a class="qt-second-text-by"href="http://localhost:8080/views/question/qnq.jsp">자주 묻는 질문</a></li>
-                        <li><a href="file://D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html#">공지사항</a></li>
+                        <li class="qt-first-area-by">
+                            <a class="qt-first-text-by"
+                                href="http://localhost:8080/views/question/questionHome.jsp">고객센터
+                                홈</a>
+                        </li>
+                        <li><a class="qt-second-text-by"
+                                href="http://localhost:8080/views/question/faq.jsp">자주
+                                묻는 질문</a></li>
+                        <li><a href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
-                        <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
+                        <li><a href="http://localhost:8080/views/question/lostItem.jsp">분실물 문의</a></li>
                     </ul>
                     <div class="qt-info-by">
                         <p class="qt-sidebar-each-by">
@@ -55,17 +62,17 @@
                     </div>
                     <div class="qt-tab-block-by qt-small-by qt-mb-30-by">
                         <ul>
-                            <li class="qt-on-by">
-                                <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no
-                                    title="전체"><a class="qt-acolor-by" href="http://localhost:8080/views/question/qnq.jsp">전체</a></button>
-                            </li>
                             <li>
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="88"
-                                    title="영화예매"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/qnqmovie.jsp">영화에매</a></button>
+                                    title="전체"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/faq.jsp">전체</a></button>
+                            </li>
+                            <li class="qt-on-by">
+                                <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no
+                                    title="영화예매"><a class="qt-acolor-by" href="http://localhost:8080/views/question/faqmovie.jsp">영화예매</a></button>
                             </li>
                             <li>
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="89"
-                                    title="극장/특별관"><a href="http://localhost:8080/views/question/qnqstate.jsp">극장/특별관</a></button>
+                                    title="극장/특별관"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/faqstate.jsp">극장/특별관</a></button>
                             </li>
                         </ul>
                     </div>
@@ -267,10 +274,10 @@
                                     <div class="qt-qut-by" id="qt_on_by5">
                                         <a href="#">
                                             <p class="qt-tit-by">
-                                                <span class="qt-font-green-by">[극장/특별관]</span>
+                                                <span class="qt-font-green-by">[영화예매]</span>
                                             </p>
                                             <p class="qt-txt-by">
-                                                <span class="qt-font-block-by">외부음식 반입이 가능한가요?</span>
+                                                <span class="qt-font-block-by">비회원 예매 시,현장에서 티켓수령은 어떻게 하나요?</span>
                                             </p>
                                         </a>
                                     </div>
@@ -278,14 +285,14 @@
                                         <p class="qt-cont-by">
                                             <span style="font-size: 10.0pt;">
                                                 <span style="line-height : 107%;">
-                                                    <span>상영관 내 외부 음식 반입은 가능하나</span>
+                                                    <span>비회원 예매 완료시 <strong style="color: blue;"> ▶[비회원 예매확인]</strong>을 통해 예매번호를 확인할 수 있으며,</span>
                                                     <br>
-                                                    <span>영화 관람 시 다른 고객님에게 방해가 되지않은 품목에 한하여 반입 가능합니다.</span>
+                                                    <span>예매번호를 무인발권기 또는 현장 매표소에서 입력 또는 제시시 티켓 발권이 가능합니다.</span>
                                                     <br>
                                                     <br>
-                                                    <span>강한 냄새 및 지속적인 소음이 발생하는 품목은 취식 후 입장해주시길 부탁드리며,</span>
+                                                    <span>※ 비회원으로 예매의 경우 고객님의 회원정보 미 일치시 정보조회가 되지 않습니다.</span>
                                                     <br>
-                                                    <span>쾌적한 관람 환경을 위해 많은 양해 부탁드립니다.</span>
+                                                    <span>(휴대폰번호+생년월일+비밀번호4자리)</span>
                                                 </span>
                                             </span>
                                             </span>
@@ -319,30 +326,7 @@
                                         </p>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="qt-qut-by" id="qt_on_by7">
-                                        <a href="#">
-                                            <p class="qt-tit-by">
-                                                <span class="qt-font-green-by">[극장/특별관]</span>
-                                            </p>
-                                            <p class="qt-txt-by">
-                                                <span class="qt-font-block-by">분실물 문의는 어떻게하나요?</span>
-                                            </p>
-                                        </a>
-                                    </div>
-                                    <div class="qt-awn-by" id="qt_awn_by7">
-                                        <p class="qt-cont-by">
-                                            <span style="font-size: 10.0pt;">
-                                                <span style="line-height : 107%;">
-                                                    <span>홈페이지 및 모바일 어플 고객센터 > 분실물 문의를 통해 관람하신 지점과 상세 내용을 기재하여 접수하여주시면</span>
-                                                    <br>
-                                                    <span>지점에서 확인 후 순차 답변을 드립니다.</span>
-                                                </span>
-                                            </span>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </li>              
+                                
                                 <li>
                                     <div class="qt-qut-by" id="qt_on_by8">
                                         <a href="#">
@@ -383,33 +367,6 @@
                                                 <br>
                                                 <span style="color: red;"><strong>* 보호자(성인) : 만 20세 이상의
                                                         성인</strong></span>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="qt-qut-by" id="qt_on_by9">
-                                        <a href="#">
-                                            <p class="qt-tit-by">
-                                                <span class="qt-font-green-by">[극장/특별관]</span>
-                                            </p>
-                                            <p class="qt-txt-by">
-                                                <span class="qt-font-block-by">반려동물과 함께 영화관람이 가능한가요?</span>
-                                            </p>
-                                        </a>
-                                    </div>
-                                    <div class="qt-awn-by" id="qt_awn_by9">
-                                        <p class="qt-cont-by">
-                                            <span style="font-size: 10.0pt;">
-                                                <span style="line-height : 107%;">
-                                                    <span>안내견 제외, 반려동물의 경우 상영관 동반 입장이 불가능한 점 이용에 참고부탁드립니다.</span>
-                                                    <br>
-                                                    <br>
-                                                    <span>상영관 내 돌발상황 발생 및 알러지 보유 고객 등 다른 고객으로부터 불편이 접수 될 수 있어 입장이 제한되는 점 양해 부탁드립니</span>
-                                                    <br>
-                                                    <span>다.</span>
-                                                </span>
-                                            </span>
                                             </span>
                                         </p>
                                     </div>

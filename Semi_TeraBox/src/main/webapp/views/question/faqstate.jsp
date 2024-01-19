@@ -2,18 +2,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 	<jsp:include page="${path}/views/common/header.jsp" />
-    <link rel="stylesheet" href="../question/css/qnlstate.css">
+    <link rel="stylesheet" href="../question/css/faqstate.css">
     <link rel="img" href="/src/main/webapp/img/">
     <link rel="icon" href="../question/img/TeraBox.ico">
-    <script src="./js/qnqstate.js"></script>
+    <script src="./js/faqstate.js"></script>
     <div class="qt-body-by">
         <main class="qt-main-by">
             <div class="qt-submenu-by">
                 <div class="qt-submenu-area-by">
                     <div class="qt-submenu-areaname-by">
                         <span></span>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
+                        <a href="http://localhost:8080/views/question/faq.jsp" title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
                     </div>
                 </div>
             </div>
@@ -25,15 +25,15 @@
                     <ul>
                         <li class="qt-first-area-by">
                             <a class="qt-first-text-by"
-                                href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html#">고객센터
+                                href="http://localhost:8080/views/question/questionHome.jsp">고객센터
                                 홈</a>
                         </li>
                         <li><a class="qt-second-text-by"
-                                href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html#">자주
+                                href="http://localhost:8080/views/question/faq.jsp">자주
                                 묻는 질문</a></li>
-                        <li><a href="#">공지사항</a></li>
+                        <li><a href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
-                        <li><a href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
+                        <li><a href="http://localhost:8080/views/question/lostItem.jsp">분실물 문의</a></li>
                     </ul>
                     <div class="qt-info-by">
                         <p class="qt-sidebar-each-by">
@@ -63,15 +63,15 @@
                         <ul>
                             <li>
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="88"
-                                    title="전체"><a class="qt-acolor1-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html">전체</a></button>
+                                    title="전체"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/faq.jsp">전체</a></button>
                             </li>
                             <li>
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no="89"
-                                    title="영화예매"><a class="qt-acolor1-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnqmovie.html">영화 예매</a></button>
+                                    title="영화예매"><a class="qt-acolor1-by" href="http://localhost:8080/views/question/faqmovie.jsp">영화 예매</a></button>
                             </li>
                             <li class="qt-on-by">
                                 <button type="button" class="qt-btn-by qt-tabBtn-by" id="qt-totalTab-by" data-no
-                                    title="극장/특별관"><a class="qt-acolor-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnqstate.html"></a>극장/특별관</button>
+                                    title="극장/특별관"><a class="qt-acolor-by" href="http://localhost:8080/views/question/faqstate.jsp"></a>극장/특별관</button>
                             </li>
                         </ul>
                     </div>

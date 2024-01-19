@@ -14,8 +14,8 @@
                 <div class="qt-submenu-area-by">
                     <div class="qt-submenu-areaname-by">
                         <span></span>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
-                        <a href="#" title="고객센터 페이지로 이동" id="qt_submenuname1_by">분실물 문의</a>
+                        <a href="http://localhost:8080/views/question/questionHome.jsp" title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a>
+                        <a href="http://localhost:8080/views/question/lostItem.jsp" title="고객센터 페이지로 이동" id="qt_submenuname1_by">분실물 문의</a>
                     </div>
                 </div>
             </div>
@@ -28,16 +28,16 @@
                     <ul>
                         <li class="qt-first-area-by">
                             <a class="qt-first-text-by"
-                                href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/questionHome.html">고객센터
+                                href="http://localhost:8080/views/question/questionHome.jsp">고객센터
                                 홈</a>
                         </li>
                         <li><a
-                                href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/qnq.html">자주묻는
+                                href="http://localhost:8080/views/question/faq.jsp">자주묻는
                                 질문</a></li>
                         <li><a class="qt-third-text-by"
-                                href="file:///D://develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/announcement.html">공지사항</a></li>
+                                href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
                         <li><a href="#">단체관람 및 대관문의</a></li>
-                        <li><a class="qt-four-text-by" href="file:///D:/develop/TerrBox__by/Semi_TeraBox/src/main/webapp/views/question/lostItem.html">분실물 문의</a></li>
+                        <li><a class="qt-four-text-by" href="http://localhost:8080/views/question/lostItem.jsp">분실물 문의</a></li>
                     </ul>
                     <div class="qt-info-by">
                         <p class="qt-sidebar-each-by">
