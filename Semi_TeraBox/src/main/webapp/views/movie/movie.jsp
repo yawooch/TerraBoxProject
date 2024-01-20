@@ -1,17 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>전체 영화</title>
     <link rel="stylesheet" href="./css/Movie_main.css">
-    <script src="jquery-3.7.1.min.js"></script>
-
+    <jsp:include page="/views/common/header.jsp" />
+    <script src="../js/jquery-3.7.1.js"></script>
 </head>
 <body>
-    <header>
-        헤더
-    </header>
     <main>
         <nav class="mv-main-nav">
             <div class="mv-main-navbox">
@@ -278,9 +278,6 @@
             <button class="mv-btn-more" id="mv-moreImage">더보기</button>
         </section>
     </main>
-    <footer>
-        풋터
-    </footer>
-    
 </body>
+<jsp:include page="${path}/views/common/footer.jsp" />
 </html>

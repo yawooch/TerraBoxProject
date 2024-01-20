@@ -1,18 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>영화 주요정보</title>
-    <link rel="stylesheet" href="./css/Movie_detail.css">
+    <link rel="stylesheet" href="${path}/views/movie/css/Movie_detail.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="jquery-3.7.1.min.js"></script>
+    <jsp:include page="/views/common/header.jsp" />
+    <script src="${path}/views/js/jquery-3.7.1.js"></script>
 
 </head>
 <body>
-    <header>
-        헤더
-    </header>
     <main>
         <!-- 포스터 있는 검은 부분 -->
         <section class="mv-movie-detail">
@@ -23,11 +24,11 @@
                     <p class="mv-eng-name">12.12: THE DAY</p>
                     <div class="mv-btn-util">
                         <button class="mv-btn-black" id="mv-like">
-                            <img src="./image/heart.png" class="mv-icon heart" id="mv-like-image">
+                            <img src="${path}/views/movie/image/heart.png" class="mv-icon heart" id="mv-like-image">
                             <span>1.2k</span>
                         </button>
                         <button class="mv-btn-black" id="mv-link">
-                            <img src="./image/share.png" class="mv-icon share" id="mv-link-image">
+                            <img src="${path}/views/movie/image/share.png" class="mv-icon share" id="mv-link-image">
                             <span>공유하기</span>
                         </button>
                     </div>
@@ -64,12 +65,12 @@
                 
                 <div class="mv-div2">
                     <div class="mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                        <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
                         <div class="mv-movie-age">
-                            <img src="./image/Movie_age.png" >
+                            <img src="${path}/views/movie/image/Movie_age.png" >
                         </div>
                         <div class="mv-download-poster">
-                            <img src="./image/download_poster.png">
+                            <img src="${path}/views/movie/image/download_poster.png">
                         </div>
                     </div>
                     <button class="mv-ticketing">예매</button>
@@ -135,7 +136,7 @@
             <div style="--swiper-navigation-color: #444; --swiper-pagination-color: #fff" class="swiper mySwiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
+                        <video src="${path}/views/movie/video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
                         poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
                     </div>
                     <div class="swiper-slide">
@@ -143,10 +144,10 @@
                         poster="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg" controls></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
+                        <video src="${path}/views/movie/video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
+                        <video src="${path}/views/movie/video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
                         poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
                     </div>
                     <div class="swiper-slide">
@@ -154,10 +155,10 @@
                         poster="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg" controls></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
+                        <video src="${path}/views/movie/video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
+                        <video src="${path}/views/movie/video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls 
                         poster="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg"></video>
                     </div>
                     <div class="swiper-slide">
@@ -165,16 +166,16 @@
                         poster="https://img.megabox.co.kr/SharedImg/2023/11/22/UdRXOPVrOYf56zPNZn4sqid5RkQxn7ri_1100.jpg" controls></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="./video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
+                        <video src="${path}/views/movie/video/3fced0d0c26ac3a9a9dc23601914cdbb_W.mp4" controls></video>
                     </div>
                     
                 </div>
                 <div class="swiper-button-prev" style="width: 10%">
-                    <img src="./image/이전 영상 아이콘.png" alt="">
+                    <img src="${path}/views/movie/image/이전 영상 아이콘.png" alt="">
                     <span>이전 영상</span>
                 </div>
                 <div class="swiper-button-next" style="width: 10%">
-                    <img src="./image/다음 영상 아이콘.png">
+                    <img src="${path}/views/movie/image/다음 영상 아이콘.png">
                     <span>다음 영상</span>
                 </div>
             </div>
@@ -242,7 +243,7 @@
             <!-- 기본값 20개 -->
             <div class="grid mv-container">
                 <div class="grid-item mv-block">
-                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                    <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
                 </div>
                 <div class="grid-item mv-block">
                     <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
@@ -251,7 +252,7 @@
                     <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
                 </div>
                 <div class="grid-item mv-block">
-                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                    <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
                 </div>
                 <div class="grid-item mv-block">
                     <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
@@ -260,7 +261,7 @@
                     <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
                 </div>
                 <div class="grid-item mv-block">
-                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                    <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
                 </div>
                 <div class="grid-item mv-block">
                     <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
@@ -269,7 +270,7 @@
                     <img src="https://img.megabox.co.kr/SharedImg/2023/10/25/UEatauRh0hZO3UZSo07PnHebGTskbXCY_1100.jpg">
                 </div>
                 <div class="grid-item mv-block">
-                    <img src="./image/메인포스터_절찬_대표포스터.jpg">
+                    <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
                 </div>
                 <div class="grid-item mv-block">
                     <img src="https://img.megabox.co.kr/SharedImg/2023/11/22/0LoVKKwlxoU0L0cznl1MHynAtZ5KT96O_380.jpg">
@@ -285,12 +286,7 @@
         </section>
     </main>
 
-    <footer>
-        풋터
-    </footer>
-
-
-    <script src="Movie_detail.js"></script>
+    <script src="${path}/views/movie/js/Movie_detail.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script>
@@ -316,6 +312,9 @@
             itemSelector: '.grid-item',
             columnWidth: 270
         });
+        
+        
     </script>
 </body>
+<jsp:include page="${path}/views/common/footer.jsp" />
 </html>

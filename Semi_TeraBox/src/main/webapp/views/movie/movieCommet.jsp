@@ -1,18 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>영화 실관람평</title>
     <link rel="stylesheet" href="./css/Movie_comment.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="jquery-3.7.1.min.js"></script>
-
+    <jsp:include page="/views/common/header.jsp" />
+    <script src="../js/jquery-3.7.1.js"></script>
 </head>
 <body>
-    <header>
-        헤더
-    </header>
     <main>
         <!-- 포스터 있는 검은 부분 -->
         <section class="mv-movie-detail">
@@ -244,15 +244,7 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        풋터
-    </footer>
-
-
-    <script src="Movie_comment.js"></script>
-    <script>
-        
-    </script>
+    <script src="./js/Movie_comment.js"></script>
 </body>
+<jsp:include page="${path}/views/common/footer.jsp" />
 </html>

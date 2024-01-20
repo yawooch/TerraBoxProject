@@ -95,6 +95,10 @@ $(document).ready(function() {
         $('.mv-com-write-bg').css('display', 'none')
     });
 
+    $('.mv-com-write-btn-submit').on('click', () => {
+        $('.mv-com-write-bg').css('display', 'none')
+    });
+
     // 별점 버튼 클릭하면 색 칠해지고 점수 나타내기
 
 
