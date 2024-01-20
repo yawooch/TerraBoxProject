@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
 <jsp:include page="${path}/views/common/header.jsp" />
-<link rel="stylesheet" href="../question/css/questionHome.css">
+<link rel="stylesheet" href="../question/css/question.css">
 <link rel="img" href="/src/main/webapp/img/">
 <div class="qt-body-by">
 
