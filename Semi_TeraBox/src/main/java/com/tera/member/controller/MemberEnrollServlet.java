@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse;	
 
 /**
  * 회원가입 화면으로 가는 페이지를 호출하는 Servlet
@@ -17,6 +17,6 @@ public class MemberEnrollServlet extends HttpServlet {
     public MemberEnrollServlet() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/common/signup_1.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/common/signup_3.jsp").forward(request, response);
 	}
 }
