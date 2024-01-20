@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./css/signup3.css" rel="stylesheet">
-    <script src="/jquery/jquery-3.7.1.js" ></script>
-</head>
-<body>
-    <header></header>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
+    <link rel="stylesheet" href="${path}/views/common/css/signup_3.css">
+    
+ <main>
     <section>
         <div class="member-wrap">
             <!-- 로고 -->
@@ -33,7 +28,7 @@
                         <li>
                             <p class="step on">
                                 <span>STEP3.정보입력</span>
-                            </p>
+                            </p> 
                         </li>
                         <li>
                             <p class="step">
@@ -143,6 +138,4 @@
             </div>
         </div>
     </section>
-    <footer></footer>
-</body>
-</html>
+    </main>

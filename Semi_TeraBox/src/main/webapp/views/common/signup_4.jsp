@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./css/signup_4.css" rel="stylesheet">
-    <script src="/jquery/jquery-3.7.1.js" ></script>
-</head>
-<body>
-    <header></header>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="path" value="${ pageContext.request.contextPath }"/>
+    <link rel="stylesheet" href="${path}/views/common/css/signup_4.css">
+    
+ <main>
+
     <section class="signup4">
         <div class="member-wrap">
             <!-- 로고 -->
@@ -55,6 +51,4 @@
             </div>
         </div>
     </section>
-<footer></footer>
-</body>
-</html>
+</main>
