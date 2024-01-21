@@ -96,7 +96,49 @@ $(document).ready(function() {
         $('.mv-com-write-bg').css('display', 'none')
     });
 
+	// 등록 버튼을 누르면 별점과 textarea의 innerHTML의 값과 관람포인트의 값들의 문자열이 Post 방식으로
+	// 서버에 넘어감
     $('.mv-com-write-btn-submit').on('click', () => {
+        alert($('#mv-com-write-textarea').val());
+        let comment = $('#mv-com-write-textarea').val();
+        let ele = '';
+        if ($('#mv-com-write-point-btn-ele1').css('background-color') == 'rgb(175, 45, 45)' ) {
+            ele += $('#mv-com-write-point-btn-ele1').html();
+        }
+        if ($('#mv-com-write-point-btn-ele2').css('background-color') == 'rgb(175, 45, 45)' ) {
+            ele += ` ${$('#mv-com-write-point-btn-ele2').html()}`;
+        }
+
+        if ($('#mv-com-write-point-btn-ele3').css('background-color') == 'rgb(175, 45, 45)' ) {
+            ele += ` ${$('#mv-com-write-point-btn-ele3').html()}`;
+        }
+        if ($('#mv-com-write-point-btn-ele4').css('background-color') == 'rgb(175, 45, 45)' ) {
+            ele += ` ${$('#mv-com-write-point-btn-ele4').html()}`;
+        }
+        if ($('#mv-com-write-point-btn-ele5').css('background-color') == 'rgb(175, 45, 45)' ) {
+            ele += ` ${$('#mv-com-write-point-btn-ele5').html()}`;
+        }
+
+        // ele는 요소+공백+요소 형태
+        // console.log(ele);
+
+
+        $.ajax ({
+            type: 'post',
+            url: '/movie/comment',
+            data: {
+                comment,
+                ele
+            },
+            success: (data) => {
+                console.log(data);
+            },
+            error: function (error) {
+                console.log(`status: ${error.status}`);
+            }
+
+        });
+
         $('.mv-com-write-bg').css('display', 'none')
     });
 
@@ -170,4 +212,10 @@ $(document).ready(function() {
             })
         }
     });
+
+
+
+
 });
+
+

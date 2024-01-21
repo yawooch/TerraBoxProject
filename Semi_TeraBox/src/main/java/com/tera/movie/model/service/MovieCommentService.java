@@ -40,4 +40,22 @@ public class MovieCommentService {
 		
 	}
 
+
+	public int save(MovieComment movieComment) {
+		int result = 0;
+		
+		Connection connection = getConnection();
+		
+		result = new MovieCommentDao().insertMovieComment(connection, movieComment);
+		
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		
+		
+		return result;
+	}
+
 }

@@ -50,7 +50,7 @@ public class MovieCommentDao {
 		
 		// 우선 부수적인것 제외하고 불러오기만
 		String query = "SELECT RNUM, TICKET_NO, EVAL_POINT, EVAL_COMMENT, EVAL_REG_DTTM, VIW_PNT_CONTENT, MOVIE_NO "
-				+ "FROM "
+				+ "FROM ( "
 				+ 	"SELECT ROWNUM AS RNUM, TICKET_NO, EVAL_POINT, EVAL_COMMENT, EVAL_REG_DTTM, VIW_PNT_CONTENT, MOVIE_NO "
 				+ 	"FROM ( "
 				+ 		"SELECT TICKET_NO, EVAL_POINT, EVAL_COMMENT, EVAL_REG_DTTM, VIW_PNT_CONTENT, MOVIE_NO "
@@ -58,8 +58,9 @@ public class MovieCommentDao {
 				+ 		"ORDER BY TO_NUMBER(TICKET_NO) DESC "
 				+ 	") "
 				+ ") "
-				+ "WHERE RNUM BETWEEN ? and ?;";
+				+ "WHERE RNUM BETWEEN ? and ?";
 		
+				
 		try {
 			pstmt = connection.prepareStatement(query);
 			pstmt.setInt(1, pageInfo.getStartList());
@@ -90,6 +91,28 @@ public class MovieCommentDao {
 		
 		
 		return list;
+	}
+
+	public int insertMovieComment(Connection connection, MovieComment movieComment) {
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO MOVIE_EVAL VALUES (2, 1, ?, SYSDATE, ?, 2)";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, movieComment.getComment());
+			pstmt.setString(2, movieComment.getPoint());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 	

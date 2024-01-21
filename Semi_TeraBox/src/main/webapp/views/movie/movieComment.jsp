@@ -166,7 +166,7 @@
                             2024.01.07
                         </div>
                     </li>
-                    <c:if test="${ not empty list }">  리스트가 있는지 확인
+                    <c:if test="${ not empty list }">
                    		<c:forEach var="movieComment" items="${ list }">
                    			<li class="mv-com-main-list">
 		                        <div class="mv-com-main-li-icon">
@@ -236,7 +236,7 @@
                         </p>
                         <div>
                             <div class="mv-com-write-star">
-                                <div>
+                                <div>                                    
                                     <button>
                                         <!-- 평점 아직 미구현 -->
                                     </button>
@@ -244,7 +244,7 @@
                                 <span>별점</span>
                             </div>
                             <div class="mv-com-write-textbox">
-                                <textarea cols="30" rows="5" placeholder="실관람평을 남겨주세요." style="height: 89px;"></textarea>
+                                <textarea id="mv-com-write-textarea" cols="30" rows="5" placeholder="실관람평을 남겨주세요." style="height: 89px;"></textarea>
                                 <div>
                                     <span>0</span>
                                     / 100
@@ -256,11 +256,11 @@
                         <p>관람포인트는 무엇인가요?</p>
                         <p>(최대 5개 선택 가능)</p>
                         <div class="mv-com-write-point-btn">
-                            <button id="mv-com-write-point-btn-ele1">연출</button>
-                            <button id="mv-com-write-point-btn-ele2">스토리</button>
-                            <button id="mv-com-write-point-btn-ele3">영상미</button>
-                            <button id="mv-com-write-point-btn-ele4">배우</button>
-                            <button id="mv-com-write-point-btn-ele5">OST</button>
+                            <button class="mv-com-write-btn-ele" id="mv-com-write-point-btn-ele1">연출</button>
+                            <button class="mv-com-write-btn-ele" id="mv-com-write-point-btn-ele2">스토리</button>
+                            <button class="mv-com-write-btn-ele" id="mv-com-write-point-btn-ele3">영상미</button>
+                            <button class="mv-com-write-btn-ele" id="mv-com-write-point-btn-ele4">배우</button>
+                            <button class="mv-com-write-btn-ele" id="mv-com-write-point-btn-ele5">OST</button>
                         </div>
                     </div>
                 </div>

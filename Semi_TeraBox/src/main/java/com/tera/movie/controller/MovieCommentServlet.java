@@ -61,10 +61,27 @@ public class MovieCommentServlet extends HttpServlet {
 //    	request.setAttribute("movieComment", movieComment);
     	
     	System.out.println(list);
-    	System.out.println(pageInfo);
     	
     	request.getRequestDispatcher("/views/movie/movieComment.jsp").forward(request, response);
     	
     }
-
+    
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//    	System.out.println("감상평: " + request.getParameter("comment"));
+//    	System.out.println("포인트: " + request.getParameter("ele"));
+    	
+    	MovieComment movieComment = new MovieComment();
+    	movieComment.setComment(request.getParameter("comment"));
+    	movieComment.setPoint(request.getParameter("ele"));
+    	
+    	int result = new MovieCommentService().save(movieComment);
+    	
+//    	if (result > 0) {
+//    		
+//    	} else {
+//    		
+//    	}
+    	
+    }
 }
