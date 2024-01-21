@@ -29,10 +29,11 @@
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
 						href="http://localhost:8080/question">고객센터
 							홈</a></li>
-					<li><a href="http://localhost:8080/question/faq">자주
-							묻는 질문</a></li>
 					<li><a
 						href="http://localhost:8080/question/notice">공지사항</a></li>
+					<li><a href="http://localhost:8080/question/faq">자주
+							묻는 질문</a></li>
+					<li><a href="http://localhost:8080/question/faq">1:1 문의</a></li>
 					<li><a href="http://localhost:8080/question/write">단체관람 및 대관문의</a></li>
 					<li><a
 						href="http://localhost:8080/views/question/lostItem.jsp">분실물
