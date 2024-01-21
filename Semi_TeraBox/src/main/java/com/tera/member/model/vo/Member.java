@@ -1,4 +1,4 @@
-package com.tera.common.jdbc.test.vo;
+package com.tera.member.model.vo;
 
 import java.util.Date;
 
