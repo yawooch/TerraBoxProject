@@ -2,13 +2,13 @@ $(document).ready(function() {
     //좋아요 버튼 호버하면 색 들어간 이미지로 변경
     $('#mv-like').hover(
         // 올라갔을 때 full
-        () => $('#mv-like-image').attr('src', './image/heartFull.png'),
+        () => $('#mv-like-image').attr('src', '/views/movie/image/heartFull.png'),
         // 내려갔을 때 db에 y이면 full, n이면 빈 이미지
         () => {
             if ($('#mv-like').hasClass('on')) {
-                $('#mv-like-image').attr('src', './image/heartFull.png');
+                $('#mv-like-image').attr('src', '/views/movie/image/heartFull.png');
             } else {
-                $('#mv-like-image').attr('src', './image/heart.png');
+                $('#mv-like-image').attr('src', '/views/movie/image/heart.png');
             }
         }
     );
@@ -23,8 +23,8 @@ $(document).ready(function() {
     
     // 공유 버튼 호버하면 색 들어간 이미지로 변경
     $('#mv-link').hover(
-        () => $('#mv-link-image').attr('src', './image/shareFull.png'),
-        () => $('#mv-link-image').attr('src', './image/share.png')
+        () => $('#mv-link-image').attr('src', '/views/movie/image/shareFull.png'),
+        () => $('#mv-link-image').attr('src', '/views/movie/image/share.png')
     );
 
     // 공유 버튼 클릭하면 현재 페이지의 링크 복사
@@ -70,7 +70,7 @@ $(document).ready(function() {
             $('.mv-com-like-count').html(like);
         } else {
             $('.mv-com-main-btn').addClass('on');
-            $('.mv-com-like-img').attr('src', './image/likeFull.png')
+            $('.mv-com-like-img').attr('src', '/views/movie/image/likeFull.png')
             like += 1;
             $('.mv-com-like-count').html(like);
         }
@@ -89,6 +89,7 @@ $(document).ready(function() {
     // 관람평 쓰기 버튼을 누르면 body에 overflow:hidden 속성 주기
     $('.mv-com-btn-write').on('click', () => {
         $('.mv-com-write-bg').css('display', 'block')
+        $('body').attr('')
     });
 
     $('.mv-com-write-btn-cancle').on('click', () => {

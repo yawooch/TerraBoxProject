@@ -25,8 +25,8 @@ $(document).ready(function() {
     
     // 공유 버튼 호버하면 색 들어간 이미지로 변경
     $('#mv-link').hover(
-        () => $('#mv-link-image').attr('src', '../image/shareFull.png'),
-        () => $('#mv-link-image').attr('src', '../image/share.png')
+        () => $('#mv-link-image').attr('src', '/views/movie/image/shareFull.png'),
+        () => $('#mv-link-image').attr('src', '/views/movie/image/share.png')
     );
 
     // 공유 버튼 클릭하면 현재 페이지의 링크 복사
