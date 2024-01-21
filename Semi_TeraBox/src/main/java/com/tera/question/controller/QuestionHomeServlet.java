@@ -19,6 +19,5 @@ public class QuestionHomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/views/question/question.jsp").forward(request, response);
 		
-		request.setAttribute("location", "/views/question/faq"); 
 	}
 }

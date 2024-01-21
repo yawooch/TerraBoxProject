@@ -33,7 +33,7 @@
 							묻는 질문</a></li>
 					<li><a
 						href="http://localhost:8080/question/notice">공지사항</a></li>
-					<li><a href="#">단체관람 및 대관문의</a></li>
+					<li><a href="http://localhost:8080/question/write">단체관람 및 대관문의</a></li>
 					<li><a
 						href="http://localhost:8080/views/question/lostItem.jsp">분실물
 							문의</a></li>
@@ -71,7 +71,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content1-by">
-							<a href="#" title="1:1 문의 페이지로 이동">
+							<a href="http://localhost:8080/question/write" title="1:1 문의 페이지로 이동">
 								<p>
 									<Strong>1:1 문의</Strong> "해결되지않은 문제가 있나요?" <br> "1:1문의로
 									문의주세요"
@@ -79,7 +79,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content2-by">
-							<a href="#" title="단체관람 및 대관 문의 페이지로 이동">
+							<a href="http://localhost:8080/question/write" title="단체관람 및 대관 문의 페이지로 이동">
 								<p>
 									<Strong>단체관람 및 대관문의</Strong> "단체관람 및 대관을 원하시면" <br> "문의
 									해주세요"

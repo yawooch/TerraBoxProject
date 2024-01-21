@@ -23,7 +23,7 @@
 		<div class="qt-mainarea-by">
 			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
 				<p class="qt-sidebar-each-by">
-					<a href="#" title="고객센터">고객센터</a>
+					<a href="http://localhost:8080/question" title="고객센터">고객센터</a>
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
@@ -33,7 +33,7 @@
 						href="http://localhost:8080/question/faq">자주 묻는 질문</a></li>
 					<li><a
 						href="http://localhost:8080/question/notice">공지사항</a></li>
-					<li><a href="#">단체관람 및 대관문의</a></li>
+					<li><a href="http://localhost:8080/question/write">단체관람 및 대관문의</a></li>
 					<li><a
 						href="http://localhost:8080/views/question/lostItem.jsp">분실물
 							문의</a></li>
