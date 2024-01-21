@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
 <jsp:include page="${path}/views/common/header.jsp" />
-<link rel="stylesheet" href="../question/css/lostItem.css">
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/views/question/css/lostItem.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
 <script src="../js/jquery-3.7.1.js"></script>
@@ -15,9 +15,9 @@
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
 					<span></span> <a
-						href="http://localhost:8080/views/question/questionHome.jsp"
+						href="http://localhost:8080/question"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="http://localhost:8080/views/question/lostItem.jsp"
+						href="http://localhost:8080/question/lost"
 						title="고객센터 페이지로 이동" id="qt_submenuname1_by">분실물 문의</a>
 				</div>
 			</div>
@@ -30,15 +30,15 @@
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
+						href="http://localhost:8080/question">고객센터
 							홈</a></li>
-					<li><a href="http://localhost:8080/views/question/faq.jsp">자주묻는
+					<li><a href="http://localhost:8080/question/faq">자주묻는
 							질문</a></li>
 					<li><a class="qt-third-text-by"
-						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
+						href="http://localhost:8080/question/notice">공지사항</a></li>
 					<li><a href="#">단체관람 및 대관문의</a></li>
 					<li><a class="qt-four-text-by"
-						href="http://localhost:8080/views/question/lostItem.jsp">분실물
+						href="http://localhost:8080/question/lost">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">

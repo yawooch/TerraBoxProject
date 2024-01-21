@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<link rel="stylesheet" href="../question/css/faq.css">
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/views/question/css/faq.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
 <jsp:include page="${path}/views/common/header.jsp" />
@@ -13,9 +13,9 @@
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
 					<span></span> <a
-						href="http://localhost:8080/views/question/questionHome.jsp"
+						href="http://localhost:8080/question"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="http://localhost:8080/views/question/faq.jsp"
+						href="http://localhost:8080/question/faq"
 						title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
 				</div>
 			</div>
@@ -27,12 +27,12 @@
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
+						href="http://localhost:8080/question">고객센터
 							홈</a></li>
 					<li><a class="qt-second-text-by"
-						href="http://localhost:8080/views/question/faq.jsp">자주 묻는 질문</a></li>
+						href="http://localhost:8080/question/faq">자주 묻는 질문</a></li>
 					<li><a
-						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
+						href="http://localhost:8080/question/notice">공지사항</a></li>
 					<li><a href="#">단체관람 및 대관문의</a></li>
 					<li><a
 						href="http://localhost:8080/views/question/lostItem.jsp">분실물
@@ -66,7 +66,7 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="전체">
 								<a class="qt-acolor-by"
-									href="http://localhost:8080/views/question/faq.jsp">전체</a>
+									href="http://localhost:8080/question/faq">전체</a>
 							</button>
 						</li>
 						<li>
