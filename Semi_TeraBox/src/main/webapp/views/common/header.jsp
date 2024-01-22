@@ -38,7 +38,7 @@
                         <label for="saveId">아이디 저장</label>
                     </div>
                     <div class="cm-btn-area">
-                        <button type="submit" id="cm_btnlogin" class="cm-btnred" >로그인</button>
+                        <button type="submit" id="cm_btnlogin" class="cm-btnred" disabled="disabled" >로그인</button>
                     </div>
                     </form>
                 </div>

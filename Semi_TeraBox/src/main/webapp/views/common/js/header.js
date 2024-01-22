@@ -72,4 +72,17 @@ $(document).ready(()=>{
 	$('.cm-login-close-btn').click((event)=>{
 		$('.cm-login-modal').fadeOut(200,'linear');
 	});
+
+	$('.cm-id-intput-area input').on('keyup', function(event){
+		let userId = $('#user_id').val().trim();
+		let userPw = $('#user_pw').val().trim();
+		if(userId !== '' && userPw !== ''){
+			$('#cm_btnlogin').attr('disabled', null);
+		}
+		else{
+			$('#cm_btnlogin').attr('disabled', 'disabled');
+		}
+
+	});
+
 });

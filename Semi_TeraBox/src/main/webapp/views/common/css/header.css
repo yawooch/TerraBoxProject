@@ -706,7 +706,12 @@ a[class^=cm-link-text-].on
     height: 46px;
 }
 /* 로그인버튼 비활성화(?) */
-.cm-input:dis {
+.cm-input:disabled {
+    color: #777!important;
+    cursor: default!important;
+    background-color: #e0e0e0!important;
+}
+#cm_btnlogin:disabled {
     color: #777!important;
     cursor: default!important;
     background-color: #e0e0e0!important;
