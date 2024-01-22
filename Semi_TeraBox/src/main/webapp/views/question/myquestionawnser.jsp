@@ -3,58 +3,41 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
 <jsp:include page="${path}/views/common/header.jsp" />
-<link rel="stylesheet" href="../question/css/lostItemreal.css">
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/views/question/css/myquestionawnser.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
 <script src="../js/jquery-3.7.1.js"></script>
 <script src="./js/lostItemreal.js"></script>
 <div class="qt-body-by">
 	<main class="qt-main-by">
-		<div class="qt-submenu-by">
-			<div class="qt-submenu-area-by">
-				<div class="qt-submenu-areaname-by">
-					<span></span> <a
-						href="http://localhost:8080/views/question/questionHome.jsp"
-						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="http://localhost:8080/views/question/lostItem.jsp"
-						title="고객센터 페이지로 이동" id="qt_submenuname1_by">분실물 문의</a>
+		<div class="page-util">
+			<div class="inner-wrap">
+				<div class="location">
+					<span>Home</span> <a href="/mypage" title="나의 테라박스 페이지로 이동">나의
+						테라박스</a> <a href="/mypage/myqeustion" title="나의 문의내역 페이지로 이동">나의
+						문의내역</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="qt-mainarea-by">
-			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
-				<p class="qt-sidebar-each-by">
-					<a href="#" title="고객센터">고객센터</a>
-				</p>
-				<ul>
-					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
-							홈</a></li>
-					<li><a href="http://localhost:8080/views/question/faq.jsp">자주묻는
-							질문</a></li>
-					<li><a class="qt-third-text-by"
-						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
-					<li><a href="#">단체관람 및 대관문의</a></li>
-					<li><a class="qt-four-text-by"
-						href="http://localhost:8080/views/question/lostItem.jsp">분실물
-							문의</a></li>
-				</ul>
-				<div class="qt-info-by">
-					<p class="qt-sidebar-each-by">
-						테라박스 고객센터 <i class="qt-bar-by"></i> <span>Dream center</span>
-					</p>
-					<p class="qt-time-by">
-						<i class="qt-clock-by qt-iconset-by"></i> "10:00~19:00"
-					</p>
-				</div>
+			<div class="lnb-area">
+                <nav id="lnb">
+                    <p class="tit"><a href="/mypage" title="나의 테라박스">나의 테라박스</a></p>
+                    <ul>
+                        <li class=""><a href="/mypage" title="예매/구매내역">예매/구매내역</a></li>
+                        <li class="on"><a href="/mypage/question" title="나의 문의내역">나의 문의내역</a></li>
+                        <li class=""><a href="/mypage/myinfo" title="회원정보">회원정보</a></li>
+                    </ul>
+                </nav>
+            </div>
+				
 			</nav>
 			<div id="qt_contents_by">
 				<h2 class="qt-mainname-by">나의 문의내역</h2>
 				<div class="clearfix">
 					<ul class="dot-list">
-						<li>메가박스에서 잃어버린 물건이 있다면 ‘분실물 문의/접수’를 통해 접수해주세요</li>
-						<li>접수하신 글은 비밀글로 등록되어 작성자와 관리자만 확인 가능합니다.</li>
+						   <li id="tabDesc">고객센터를 통해 남기신 문의내역을 확인하실 수 있습니다.</li>
 					</ul>
 				</div>
 				<div class="table-wrap"></div>
