@@ -47,7 +47,7 @@ public class QuestionWrite extends HttpServlet {
 		 
 		 System.out.println(request.getParameter("custInqTitle"));
 		 System.out.println(request.getParameter("custInqCn"));
-		 System.out.println(request.getParameter("custInqCn"));
+		 System.out.println(request.getParameter("nonMbInqPw"));
 		 System.out.println(request.getParameter("hpNum1"));
 		 System.out.println(request.getParameter("inqurNm"));
 		 System.out.println(request.getParameter("rpstEmail"));
@@ -56,8 +56,8 @@ public class QuestionWrite extends HttpServlet {
 		 
 		 question.setQuestTitle(request.getParameter("custInqTitle"));
 		 question.setQuestContent(request.getParameter("custInqCn"));
-		 question.setQuestPassNo(request.getParameter("custInqCn"));
-		 question.setQuestPhone(request.getParameter("hpNum1"));
+		 question.setQuestPassNo(request.getParameter("nonMbInqPw"));
+		 question.setQuestPhone(request.getParameter("hpNum1" + "hpNum2"+"hpNum3"));
 		 question.setQuestName(request.getParameter("inqurNm"));
 		 question.setQuestEmail(request.getParameter("rpstEmail"));
 		 question.setQuestType(request.getParameter("inqMclCd"));
