@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.tera.member.model.vo.Member;
+
 
 @WebServlet(name = "memberInput", urlPatterns = { "/member/input" })
 public class MemberInputServlet extends HttpServlet {
@@ -24,6 +26,15 @@ public class MemberInputServlet extends HttpServlet {
 
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	request.setCharacterEncoding("UTF-8");
+    	Member member = new Member();
+    	
+    	String birth = request.getParameter("memSsn"); //변수에 담아줌 2000627142514//
+    	
+    	member.setMemberName(request.getParameter("memberName"));
+    	member.setMemSsn(request.getParameter("memSsn"));
+    	member.setMemPhone(request.getParameter("memPhone"));
+    	
     	request.getRequestDispatcher("/views/common/signup_3.jsp").forward(request, response);
 		
 	}

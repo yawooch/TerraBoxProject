@@ -54,7 +54,7 @@
                         <!-- 이름 입력 폼 -->
                         <tr>
                             <th>이름</th>
-                            <td colspan="3"><input type="text" class="cm-member-table-input1" id="cm_name" autocomplete="off" required maxlength="20"></td> <!--required : 필수입력폼-->
+                            <td colspan="3"><input type="text" class="cm-member-table-input1" name="cm_name" id="cm_name" autocomplete="off" required maxlength="20"></td> <!--required : 필수입력폼-->
 
                         </tr>
                         <!-- 주민번호 입력 폼 -->
@@ -67,7 +67,7 @@
                         <!-- 휴대폰번호 입력 폼 -->
                         <tr>
                             <th>휴대폰번호</th>
-                            <td colspan="3"><input type="tel" class="cm-member-table-input1" id="cm_phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
+                            <td colspan="3"><input type="tel" class="cm-member-table-input1" name="cm_phone" id="cm_phone" autocomplete="off" required maxlength="20" placeholder="-를 제외한 입력"></td>
                         </tr>
                     </tbody>
                 </table>

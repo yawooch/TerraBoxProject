@@ -88,26 +88,26 @@
                             <!-- 아이디 입력 폼 -->
                             <tr>
                                 <th>아이디</th>
-                                <td><input type="text" class="member-table-input" name="MEMBER_ID" name="id" id="id" autocomplete="off" required maxlength="20" placeholder="영문, 숫자 조합(8~12자)"></td>
+                                <td><input type="text" class="member-table-input" name="MEMBER_ID" id="id" autocomplete="off" required maxlength="20" placeholder="영문, 숫자 조합(8~12자)"></td>
                                 <td><button class="btn-doublechk">중복확인</button></td>
                                 <!-- 아이디는 영문,숫자 조합 8자리 이상 12자리 이하 입니다. -->
                             </tr>
                             <!-- 비밀번호 입력 폼 -->
                             <tr>
                                 <th>비밀번호</th>
-                                <td colspan="2"><input type="text" class="member-table-input" name="PASSWORD" name="pwd1" id="pwd1" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
+                                <td colspan="2"><input type="password" class="member-table-input"  name="pwd1" id="pwd1" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
                                 <!-- 비밀번호는 영문, 숫자, 특수기호 중 2가지 이상 조합하여 10자리 이상 16자리 이하 입니다. -->
                             </tr>
                             <!-- 비밀번호확인 입력 폼 -->
                             <tr>
                                 <th>비밀번호 확인</th>
-                                <td colspan="2"><input type="tel" class="member-table-input" name="PASSWORD" name="pwd2" id="pwd2" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
+                                <td colspan="2"><input type="password" class="member-table-input" name="PASSWORD" id="pwd2" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
                                 <!-- 비밀번호는 영문, 숫자, 특수기호 중 2가지 이상 조합하여 10자리 이상 16자리 이하입니다. -->
                             </tr>
                             <!-- 이메일주소 -->
                             <tr>
                                 <th>이메일 주소</th>
-                                <td colspan="2"><input type="email" class="member-table-input" name="MEM_EMAIL" name="email" id="email" autocomplete="off" required maxlength="20" placeholder="이메일주소를 입력해 주세요"></td>
+                                <td colspan="2"><input type="email" class="member-table-input" name="MEM_EMAIL" id="email" autocomplete="off" required maxlength="20" placeholder="이메일주소를 입력해 주세요"></td>
                                 <!-- 올바른 이메일 형식으로 입력해주세요. -->
                             </tr>
                             
@@ -154,6 +154,9 @@
                 <!-- 회원가입 버튼 -->
                 <div class="agree-btn-bottom">
                     <button id="btnagreebottom" type="submit" class="button red" >회원가입</button>
+                    <input type="hidden" name="memberName" value="${member.memberName}"/> 
+    			    <input type="hidden" name="memSsn" value="${member.memSsn}"/> 
+    			    <input type="hidden" name="memPhone" value="${member.memPhone}"/> 
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.tera.member.model.service.MemberService;
 import com.tera.member.model.vo.Member;
@@ -29,13 +30,15 @@ public class MemberAgreeServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
     	Member member = new Member();
     	
-    	member.setMemberId(request.getParameter("cm_name"));
+    	member.setMemberName(request.getParameter("cm_name"));
     	member.setMemSsn(request.getParameter("cm_security1")+"-" +request.getParameter("cm_security2"));
     	member.setMemPhone(request.getParameter("cm_phone"));
-    	System.out.println(request.getParameter("cm_security1"));
-    	System.out.println(request.getParameter("cm_security2"));
+//    	System.out.println(request.getParameter("cm_phone"));
+//    	System.out.println(request.getParameter("cm_security1"));
+//    	System.out.println(request.getParameter("cm_security2"));
     	
-    	
+    	HttpSession session = request.getSession();
+    	session.setAttribute("member", member); //왼쪽멤버는 문자열멤버, 오른쪽은 member객체
     	
     	System.out.println(member);
     	

@@ -32,10 +32,13 @@ public class MemberEnrollServlet extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");
     	Member member = new Member();
     	
-    	member.setMemberId(request.getParameter("id"));
-    	member.setPassword(request.getParameter("cm_security"));
-    	member.setMemEmail(request.getParameter("email"));
     	
+    	member.setMemberId(request.getParameter("MEMBER_ID"));  //signup_3.jsp 의 name
+    	member.setPassword(request.getParameter("PASSWORD"));
+    	member.setMemEmail(request.getParameter("MEM_EMAIL"));
+    	member.setMemberName(request.getParameter("memberName")); //signup_1.jsp의 name
+    	member.setMemSsn(request.getParameter("memSsn"));
+    	member.setMemPhone(request.getParameter("memPhone"));
     	
     	
     	System.out.println(member);

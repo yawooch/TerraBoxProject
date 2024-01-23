@@ -1,6 +1,7 @@
 package com.tera.common.jdbc.test;
 
-import com.tera.common.jdbc.test.practice.JdbcTest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * ORACLE OJDBC 테스트 실행 파일 
@@ -29,7 +30,16 @@ public class Application
 //      JdbcTest.insert("일반화원");
 //        JdbcTest.update(50,"그냥회원","2023/11/15");
 //        JdbcTest.delete(70);
-        JdbcTest.memberFindAll();
+//        JdbcTest.memberFindAll();
+        try {
+            SimpleDateFormat sdf  = new SimpleDateFormat("yyMMdd");
+            SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
+            
+            String birth = "920421";
+            System.out.println(sdf2.format(sdf.parse(birth)));
+       } catch (ParseException e) {
+          e.printStackTrace();
+       }
         
     }
 }
