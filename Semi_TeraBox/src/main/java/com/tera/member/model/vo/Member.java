@@ -11,15 +11,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor  //인자가없는생성자
 
 public class Member {
+	
 	private String memberId;
+	
 	private String password;
+	
 	private String memberName;
+	
 	private String birth;
+	
 	private String memPhone;
+	
 	private String memEmail;
+	
 	private String memSsn;
+	
 	private String mktAgreeYn;
+	
 	private String bnftsMedia;
+	
 	private String managerYn;
+	
 	private Date   joinDttm;
 }
