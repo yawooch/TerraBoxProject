@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.tera.member.model.vo.Member;
 
+
 /**
  * <MEMBER 테이블>
  */

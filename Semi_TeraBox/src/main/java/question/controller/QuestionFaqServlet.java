@@ -1,4 +1,4 @@
-package com.tera.question.controller;
+package question.controller;
 
 import java.io.IOException;
 import java.util.List;

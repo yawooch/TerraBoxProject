@@ -1,4 +1,4 @@
-package com.tera.question.controller;
+package question.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -15,7 +15,7 @@ public class QuestionHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     public QuestionHomeServlet() {}
-
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/views/question/question.jsp").forward(request, response);
 		
