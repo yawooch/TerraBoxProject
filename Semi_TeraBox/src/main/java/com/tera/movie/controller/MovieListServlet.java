@@ -27,7 +27,6 @@ public class MovieListServlet extends HttpServlet {
     	list = new MovieService().getMovieList();
     			
     	request.setAttribute("list", list);
-    	System.out.println(list.size());
     	
         request.getRequestDispatcher("/views/movie/movie.jsp").forward(request, response);
     }

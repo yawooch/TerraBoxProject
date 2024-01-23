@@ -10,98 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tera.common.util.PageInfo;
-import com.tera.movie.model.vo.Movie;
 import com.tera.movie.model.vo.MovieComment;
 
 import static com.tera.common.jdbc.JDBCTemplate.*;
 
 public class MovieDao {
-	
-	
-	// 영화 부분 메소드
-	public List<Movie> findMovieAll(Connection connection) {
-		List<Movie> list = new ArrayList<>();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		String query = "SELECT * FROM MOVIE ORDER BY MOVIE_NO DESC";
-		
-		try {
-			pstmt = connection.prepareStatement(query);
-			rs = pstmt.executeQuery();
-			
-			while (rs.next()) {
-				Movie movie = new Movie();
-				
-				movie.setNo(rs.getInt("MOVIE_NO"));
-				movie.setKorName(rs.getString("MV_KOR_NAME"));
-				movie.setEngName(rs.getString("MV_ENG_NAME"));
-				movie.setPoster(rs.getString("MV_POSTER"));
-				movie.setSynopsis(rs.getString("MV_SYNOPSIS"));
-				movie.setType(rs.getString("MV_TYPE"));
-				movie.setDirector(rs.getString("MV_DIRECTOR"));
-				movie.setGenre(rs.getString("MV_GENRE"));
-				movie.setGrade(rs.getString("MV_GRADE"));
-				movie.setOpenDate(rs.getDate("MV_OPEN_DATE"));
-				movie.setActors(rs.getString("MV_CASTINGS"));
-				
-				list.add(movie);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		return list;
-	}
 
-	
-
-	// 영화 단일 객체 불러오기
-	public Movie findByNo(Connection connection, int no) {
-		Movie movie = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String query = "SELECT * FROM MOVIE WHERE MOVIE_NO = ?";
-		
-
-		try {
-			pstmt = connection.prepareStatement(query);
-			pstmt.setInt(1, no);
-			rs = pstmt.executeQuery();
-			
-			if (rs.next()) {
-				movie = new Movie();
-				
-				movie.setNo(rs.getInt("MOVIE_NO"));
-				movie.setKorName(rs.getString("MV_KOR_NAME"));
-				movie.setEngName(rs.getString("MV_ENG_NAME"));
-				movie.setPoster(rs.getString("MV_POSTER"));
-				movie.setSynopsis(rs.getString("MV_SYNOPSIS"));
-				movie.setType(rs.getString("MV_TYPE"));
-				movie.setDirector(rs.getString("MV_DIRECTOR"));
-				movie.setGenre(rs.getString("MV_GENRE"));
-				movie.setGrade(rs.getString("MV_GRADE"));
-				movie.setOpenDate(rs.getDate("MV_OPEN_DATE"));
-				movie.setActors(rs.getString("MV_CASTINGS"));
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		return movie;
-	}
-
-
-
-	
-	// 영화 관람평 부분 메소드 3가지
-	// 관람평 갯수 세기
 	public int getMovieCommentCount(Connection connection) {
 		int count = 0;
 		PreparedStatement pstmt = null;
@@ -125,11 +39,11 @@ public class MovieDao {
 			close(pstmt);
 		}
 		
+		
 		return count;
 	}
 
-	// 관람평 출력
-	public List<MovieComment> findCommentAll(Connection connection, PageInfo pageInfo) {
+	public List<MovieComment> findAll(Connection connection, PageInfo pageInfo) {
 		List<MovieComment> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -179,8 +93,6 @@ public class MovieDao {
 		return list;
 	}
 
-	
-	// 관람평 입력
 	public int insertMovieComment(Connection connection, MovieComment movieComment) {
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -202,10 +114,6 @@ public class MovieDao {
 		
 		return result;
 	}
-
-
-
-
 
 	
 	

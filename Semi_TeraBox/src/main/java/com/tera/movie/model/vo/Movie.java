@@ -1,7 +1,5 @@
 package com.tera.movie.model.vo;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -24,6 +22,5 @@ public class Movie {
 	private String grade;
 	private Date openDate;
 	private String actors;
-	
 	
 }
