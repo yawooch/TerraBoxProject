@@ -1,11 +1,19 @@
 package com.tera.question.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.tera.question.model.service.FaqService;
+import com.tera.question.model.vo.Faq;
+
+
+
 
 /**
  * 자주묻는질문 화면을 처리하는  Servlet
@@ -21,6 +29,22 @@ public class QuestionFaqServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int page = 0;
+		
+		
+		try {
+			
+			page = Integer.parseInt(request.getParameter("page"));
+		} catch (NumberFormatException e) {
+
+		
+		
+		}
+		
+		List<Faq> list = new FaqService().findAll();
+		
+		request.setAttribute("list", list);
+		
 		request.getRequestDispatcher("/views/question/faq.jsp").forward(request, response);
 	}
 }
