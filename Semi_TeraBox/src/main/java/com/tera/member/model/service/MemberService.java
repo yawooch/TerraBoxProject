@@ -1,6 +1,8 @@
 package com.tera.member.model.service;
 
-import static com.tera.common.jdbc.JDBCTemplate.*;
+import static com.tera.common.jdbc.JDBCTemplate.commit;
+import static com.tera.common.jdbc.JDBCTemplate.getConnection;
+import static com.tera.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 
@@ -24,12 +26,8 @@ public class MemberService {
 		return result;
 	}
 
-	public int input(Member member) {
-		int result = 0;
-		
-		
-		return 0;
+	public Member login(String userId, String userPwd) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-
 }

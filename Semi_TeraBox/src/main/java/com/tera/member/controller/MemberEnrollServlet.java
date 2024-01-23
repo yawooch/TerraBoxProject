@@ -1,6 +1,7 @@
 package com.tera.member.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,9 +33,9 @@ public class MemberEnrollServlet extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");
     	Member member = new Member();
     	
-    	member.setId(request.getParameter("id"));
+    	member.setMemberId(request.getParameter("id"));
     	member.setPassword(request.getParameter("cm_security"));
-    	member.setEmail(request.getParameter("email"));
+    	member.setMemEmail(request.getParameter("email"));
     	
     	
     	

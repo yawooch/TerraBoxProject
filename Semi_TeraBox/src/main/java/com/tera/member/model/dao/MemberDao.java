@@ -1,7 +1,7 @@
-package com.tera.member.member.dao;
+package com.tera.member.model.dao;
 
 
-import static com.tera.common.jdbc.JDBCTemplate.*;
+import static com.tera.common.jdbc.JDBCTemplate.close;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,6 +47,11 @@ public class MemberDao {
             close(psmt);
         }
 		return member;
+	}
+
+	public int insertMember(Connection connection, Member member) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
