@@ -115,12 +115,18 @@
 						</c:forEach>
 						</ul>
 					</div>
-					<nav class="qt-pagination-by">
-						<strong class="qt-active-by">1</strong> <a title="2페이지보기" href="#"
-							pagenum="2">2</a> <a title="3페이지보기" href="#" pagenum="3">3</a> <a
-							title="4페이지보기" href="#" pagenum="4">4</a> <a title="5페이지보기"
-							href="#" pagenum="5">5</a> <a title="6페이지보기" href="#" pagenum="6">6</a>
-					</nav>
+					<div class="qt-pagination-by">
+						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ page.endPage }" >
+							<c:choose>
+								<c:when test="${current == pageInfo.currentPage }">
+									<button disabled>${ current }</button>
+								</c:when>
+								<c:otherwise>			
+									<button onclick="location.href='${path}/question/faq?page${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
 		</div>

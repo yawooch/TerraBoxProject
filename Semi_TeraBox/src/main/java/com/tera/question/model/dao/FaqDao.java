@@ -53,6 +53,14 @@ public class FaqDao {
 		
 		return list;
 	}
+
+	public int getFaqCount(Connection connection) {
+		int count = 0;
+		String query = "SELECT COUNT(*) FROM FAQ";
+		
+		
+		return count;
+	}
 	
 	
 	

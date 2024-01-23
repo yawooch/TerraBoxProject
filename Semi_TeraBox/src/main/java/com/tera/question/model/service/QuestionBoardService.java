@@ -1,11 +1,13 @@
-package question.model.service;
+package com.tera.question.model.service;
+
+import static com.tera.common.jdbc.JDBCTemplate.commit;
+import static com.tera.common.jdbc.JDBCTemplate.getConnection;
+import static com.tera.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 
-import question.model.dao.QuestionBoardDao;
-import question.model.vo.Question;
-
-import static com.tera.common.jdbc.JDBCTemplate.*;
+import com.tera.question.model.dao.QuestionBoardDao;
+import com.tera.question.model.vo.Question;
 
 
 

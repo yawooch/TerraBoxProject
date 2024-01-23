@@ -1,13 +1,13 @@
-package question.model.dao;
+package com.tera.question.model.dao;
+
+import static com.tera.common.jdbc.JDBCTemplate.close;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import question.model.vo.Question;
-
-import static com.tera.common.jdbc.JDBCTemplate.*;
+import com.tera.question.model.vo.Question;
 
 public class QuestionBoardDao {
 
