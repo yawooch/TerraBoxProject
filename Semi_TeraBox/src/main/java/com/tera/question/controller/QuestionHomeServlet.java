@@ -1,4 +1,4 @@
-package question.controller;
+package com.tera.question.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,19 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "myQuestionAwnser", urlPatterns = { "/myQuestion/Awnser" })
-public class MyQuestionAwnser extends HttpServlet {
+/**
+ * 고객센터 홈으로 가는 페이지를 호출하는 Servlet
+ */
+@WebServlet(name = "questionHome", urlPatterns = { "/question" })
+public class QuestionHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public MyQuestionAwnser() {
-    }
-
+    public QuestionHomeServlet() {}
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.getRequestDispatcher("/views/question/myquestionawnser.jsp").forward(request, response);
-		
+		request.getRequestDispatcher("/views/question/question.jsp").forward(request, response);
 		
 	}
-
-	
 }

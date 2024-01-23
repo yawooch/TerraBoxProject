@@ -1,4 +1,4 @@
-package question.controller;
+package com.tera.question.controller;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import question.model.service.QuestionBoardService;
-import question.model.vo.Question;
+import com.tera.question.model.service.QuestionBoardService;
+import com.tera.question.model.vo.Question;
 
 /**
  * 문의하기 입력을 처리하는 Servlet

@@ -1,4 +1,4 @@
-package question.model.vo;
+package com.tera.question.model.vo;
 
 import java.sql.Date;
 

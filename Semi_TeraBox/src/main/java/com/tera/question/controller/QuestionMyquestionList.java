@@ -1,4 +1,4 @@
-package com.tera.question;
+package com.tera.question.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
