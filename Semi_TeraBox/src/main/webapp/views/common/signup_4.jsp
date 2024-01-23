@@ -6,6 +6,7 @@
  <main>
 
     <section class="signup4">
+    <form action="/">
         <div class="member-wrap">
             <!-- 로고 -->
             <div class="logo"><a href="https://megabox.co.kr/main" id="logo">Megabox lifetheather</a>
@@ -46,9 +47,11 @@
                 </div>
                 <!-- 신규혜택 버튼 -->
                 <div class="agree-btn-bottom">
-                    <button id="btnagreebottom" type="button" class="button red" disabled="disabled">확인</button>
+                    <button id="btnagreebottom" type="submit" class="button red">확인</button>
+                    <!-- <a href="/"><button id="btnagreebottom" type="submit" class="button red">확인</button></a>  -->
                 </div>
             </div>
         </div>
+        </form>
     </section>
 </main>

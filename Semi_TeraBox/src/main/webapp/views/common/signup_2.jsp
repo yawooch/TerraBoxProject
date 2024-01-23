@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="${path}/views/common/css/signup_2.css">
     
  <main>
+ <form action="/member/input" method="post">
       <div class="cm-member-wrap">
         <!-- 로고 -->
         <div class="cm-logo"><a href="https://megabox.co.kr/main" id="cm_logo">Megabox lifetheather</a>
@@ -692,8 +693,9 @@
                 </div>
                 <!-- 확인 버튼 -->
                 <div class="cm-agree-btn-bottom">
-                    <button id="cm_btnagreebottom" type="button" class="cm-button red" disabled="disabled">확인</button>
+                    <button id="cm_btnagreebottom" type="submit" class="cm-button red" >확인</button>
                 </div>
         </div>
     </div>
+    </form>
 </main>
