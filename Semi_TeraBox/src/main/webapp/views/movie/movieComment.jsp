@@ -84,9 +84,9 @@
         <section class="mv-com-sec1">
             <nav>
                 <ul>
-                    <li class="mv-first"><a href="#">주요정보/예고편/스틸컷</a></li>
-                    <li class="mv-second"><a href="#">실관람평</a></li>
-                    <li class="mv-last"><a href="#">무비포스트</a></li>
+                    <li class="mv-first"><a href="/movie/detail">주요정보/예고편/스틸컷</a></li>
+                    <li class="mv-second"><a href="/movie/comment">실관람평</a></li>
+                    <li class="mv-last"><a href="/movie/post">무비포스트</a></li>
                 </ul>
             </nav>
 

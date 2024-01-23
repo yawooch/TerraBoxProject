@@ -35,20 +35,7 @@
 }
 
 
-header {
-    height: 91px;
-    width: 100%;
-    background-color: darkred;
-    min-width: 1100px;
-}
-
-body {
-    margin: 1px;
-    
-}
-
-
-section {
+main section {
     width: 100%;
 }
 
@@ -129,28 +116,28 @@ section {
 }
 
 
-table {
+main table {
     position: absolute;
     bottom: 50px;
 }
 
-th {
+main th {
     font-weight: lighter;
     text-align: left;
 }
 
 
 
-thead {
+main thead {
     height: 40px;
 }
 
-tr>:not(:first-child) {
+main tr>:not(:first-child) {
     padding-left: 20px;
 }
 
 
-em {
+main em {
     font-style: normal;
     font-size: 30px;
     padding: 0;
@@ -211,12 +198,12 @@ em {
     margin: auto;
 }
 
-nav {
+main nav {
     margin-top: 20px;
     position: relative;
 }
 
-nav>ul {
+main nav>ul {
     list-style: none;
     width: 1100px;
     margin: auto;
@@ -226,7 +213,7 @@ nav>ul {
     justify-content: space-between;
 }
 
-nav>ul li {
+main nav>ul li {
     width: 100%;
     border: 1px solid black;
     height: 100%;
@@ -254,11 +241,11 @@ nav>ul li {
     border-bottom: 1px solid #AF2D2D;
 }
 
-nav>ul li:nth-child(2) {
+main nav>ul li:nth-child(2) {
     margin: 0 -1px;
 }
 
-a {
+main a {
     display: block;
     text-decoration: none;
     color: black;
@@ -641,12 +628,8 @@ a {
 
 /* 모든 버튼 속성 */
 
-button {
+main button {
     cursor: pointer;
 }
 
-footer {
-    height: 200px;
-    background-color: #EAEAEA;
-}
 

@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>전체 영화</title>
-    <link rel="stylesheet" href="./css/Movie_main.css">
+    <link rel="stylesheet" href="${path}/views/movie/css/Movie_main.css">
     <jsp:include page="/views/common/header.jsp" />
-    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="${path}/views/movie/js/jquery-3.7.1.js"></script>
 </head>
 <body>
     <main>
@@ -30,7 +30,7 @@
             <h2>전체 영화</h2>
             <nav class="mv-main-menu">
                 <ul>
-                    <li class="mv-menu-first"><a href="#">박스오피스</a></li>
+                    <li class="mv-menu-first"><a href="/movie">박스오피스</a></li>
                     <li class="mv-menu-second"><a href="#">상영예정작</a></li>
                     <li class="mv-menu-hidden"></li>
                 </ul>
@@ -38,7 +38,7 @@
             <div class="mv-main-wrap-top">
                 <div class="mv-main-result">
                     <button>
-                        <img src="./image/개봉작만off.png" alt="">
+                        <img src="${path}/views/movie/image/개봉작만off.png" alt="">
                         <span>개봉작만</span>
                     </button>
                     <span><b>129</b>개의 영화가 검색되었습니다.</span>
@@ -47,7 +47,7 @@
                     <form action="">
                         <input type="text" placeholder="영화명 검색">
                         <button class="mv-main-btnSearch">
-                            <img src="./image/movieSearch.png" alt="">
+                            <img src="${path}/views/movie/image/movieSearch.png" alt="">
                         </button>
                     </form>
                 </div>
@@ -55,9 +55,9 @@
             <ul class="mv-main-ul">
                 <li class="mv-main-mvlist">
                     <div class="mv-main-mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg" alt="">
+                        <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg" alt="">
                         <div class="mv-main-poster-bg">
-                            <a href="" class="mv-main-poster-a">
+                            <a href="/movie/detail" class="mv-main-poster-a">
                                 <div class="mv-main-poster-ex">
                                     <span>
                                         영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="mv-main-mv-name">
-                        <img src="./image/Movie_age.png" alt="">
+                        <img src="${path}/views/movie/image/Movie_age.png" alt="">
                         <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
                     </div>
                     <div class="mv-main-mv-info">
@@ -81,187 +81,7 @@
                     </div>
                     <div class="mv-main-mv-btn">
                         <button class="mv-main-btn-like">
-                            <img src="./image/heartGray.png" alt="">
-                            <span>3.5k</span>
-                        </button>
-                        <button class="mv-main-btn-tk">
-                            <span>예매</span>
-                        </button>
-                    </div>
-                </li>
-                <li class="mv-main-mvlist">
-                    <div class="mv-main-mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg" alt="">
-                        <div class="mv-main-poster-bg">
-                            <a href="" class="mv-main-poster-a">
-                                <div class="mv-main-poster-ex">
-                                    <span>
-                                        영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
-                                    </span>
-                                </div>
-                                <div class="mv-main-poster-score">
-                                    <div>
-                                        <span>평점</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mv-main-mv-name">
-                        <img src="./image/Movie_age.png" alt="">
-                        <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
-                    </div>
-                    <div class="mv-main-mv-info">
-                        <span class="mv-main-mv-tk">예매율 4.6%</span>
-                        <span class="mv-main-mv-op">개봉일 2023.11.22</span>
-                    </div>
-                    <div class="mv-main-mv-btn">
-                        <button class="mv-main-btn-like">
-                            <img src="./image/heartGray.png" alt="">
-                            <span>3.5k</span>
-                        </button>
-                        <button class="mv-main-btn-tk">
-                            <span>예매</span>
-                        </button>
-                    </div>
-                </li>
-                <li class="mv-main-mvlist">
-                    <div class="mv-main-mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg" alt="">
-                        <div class="mv-main-poster-bg">
-                            <a href="" class="mv-main-poster-a">
-                                <div class="mv-main-poster-ex">
-                                    <span>
-                                        영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
-                                    </span>
-                                </div>
-                                <div class="mv-main-poster-score">
-                                    <div>
-                                        <span>평점</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mv-main-mv-name">
-                        <img src="./image/Movie_age.png" alt="">
-                        <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
-                    </div>
-                    <div class="mv-main-mv-info">
-                        <span class="mv-main-mv-tk">예매율 4.6%</span>
-                        <span class="mv-main-mv-op">개봉일 2023.11.22</span>
-                    </div>
-                    <div class="mv-main-mv-btn">
-                        <button class="mv-main-btn-like">
-                            <img src="./image/heartGray.png" alt="">
-                            <span>3.5k</span>
-                        </button>
-                        <button class="mv-main-btn-tk">
-                            <span>예매</span>
-                        </button>
-                    </div>
-                </li>
-                <li class="mv-main-mvlist">
-                    <div class="mv-main-mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg" alt="">
-                        <div class="mv-main-poster-bg">
-                            <a href="" class="mv-main-poster-a">
-                                <div class="mv-main-poster-ex">
-                                    <span>
-                                        영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
-                                    </span>
-                                </div>
-                                <div class="mv-main-poster-score">
-                                    <div>
-                                        <span>평점</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mv-main-mv-name">
-                        <img src="./image/Movie_age.png" alt="">
-                        <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
-                    </div>
-                    <div class="mv-main-mv-info">
-                        <span class="mv-main-mv-tk">예매율 4.6%</span>
-                        <span class="mv-main-mv-op">개봉일 2023.11.22</span>
-                    </div>
-                    <div class="mv-main-mv-btn">
-                        <button class="mv-main-btn-like">
-                            <img src="./image/heartGray.png" alt="">
-                            <span>3.5k</span>
-                        </button>
-                        <button class="mv-main-btn-tk">
-                            <span>예매</span>
-                        </button>
-                    </div>
-                </li>
-                <li class="mv-main-mvlist">
-                    <div class="mv-main-mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg" alt="">
-                        <div class="mv-main-poster-bg">
-                            <a href="" class="mv-main-poster-a">
-                                <div class="mv-main-poster-ex">
-                                    <span>
-                                        영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
-                                    </span>
-                                </div>
-                                <div class="mv-main-poster-score">
-                                    <div>
-                                        <span>평점</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mv-main-mv-name">
-                        <img src="./image/Movie_age.png" alt="">
-                        <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
-                    </div>
-                    <div class="mv-main-mv-info">
-                        <span class="mv-main-mv-tk">예매율 4.6%</span>
-                        <span class="mv-main-mv-op">개봉일 2023.11.22</span>
-                    </div>
-                    <div class="mv-main-mv-btn">
-                        <button class="mv-main-btn-like">
-                            <img src="./image/heartGray.png" alt="">
-                            <span>3.5k</span>
-                        </button>
-                        <button class="mv-main-btn-tk">
-                            <span>예매</span>
-                        </button>
-                    </div>
-                </li>
-                <li class="mv-main-mvlist">
-                    <div class="mv-main-mv-poster">
-                        <img src="./image/메인포스터_절찬_대표포스터.jpg" alt="">
-                        <div class="mv-main-poster-bg">
-                            <a href="" class="mv-main-poster-a">
-                                <div class="mv-main-poster-ex">
-                                    <span>
-                                        영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
-                                    </span>
-                                </div>
-                                <div class="mv-main-poster-score">
-                                    <div>
-                                        <span>평점</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mv-main-mv-name">
-                        <img src="./image/Movie_age.png" alt="">
-                        <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
-                    </div>
-                    <div class="mv-main-mv-info">
-                        <span class="mv-main-mv-tk">예매율 4.6%</span>
-                        <span class="mv-main-mv-op">개봉일 2023.11.22</span>
-                    </div>
-                    <div class="mv-main-mv-btn">
-                        <button class="mv-main-btn-like">
-                            <img src="./image/heartGray.png" alt="">
+                            <img src="${path}/views/movie/image/heartGray.png" alt="">
                             <span>3.5k</span>
                         </button>
                         <button class="mv-main-btn-tk">
@@ -270,9 +90,50 @@
                     </div>
                 </li>
                 
+                <!-- 반복 -->
+                <c:if test="${ not empty list }">
+                	<c:forEach var="movie" items="${ list }">'
+		                <li class="mv-main-mvlist">
+		                    <div class="mv-main-mv-poster">
+		                        <img src="${ movie.poster }" alt="">
+		                        <div class="mv-main-poster-bg">
+		                            <a href="/movie/detail" class="mv-main-poster-a">
+		                                <div class="mv-main-poster-ex">
+		                                    <span>
+		                                        ${ movie.synopsis }
+		                                    </span>
+		                                </div>
+		                                <div class="mv-main-poster-score">
+		                                    <div>
+		                                        <span>평점</span>
+		                                    </div>
+		                                </div>
+		                            </a>
+		                        </div>
+		                    </div>
+		                    <div class="mv-main-mv-name">
+		                        <img src="${path}/views/movie/image/Movie_age.png" alt="">
+		                        <span>${ movie.name }</span>
+		                    </div>
+		                    <div class="mv-main-mv-info">
+		                        <span class="mv-main-mv-tk">예매율 4.6%</span>
+		                        <span class="mv-main-mv-op">개봉일 ${ movie.openDate }</span>
+		                    </div>
+		                    <div class="mv-main-mv-btn">
+		                        <button class="mv-main-btn-like">
+		                            <img src="${path}/views/movie/image/heartGray.png" alt="">
+		                            <span>3.5k</span>
+		                        </button>
+		                        <button class="mv-main-btn-tk">
+		                            <span>예매</span>
+		                        </button>
+		                    </div>
+		                </li>
+                	</c:forEach>
+                </c:if>
+                <!-- 반복 -->
+                
             </ul>
-
-
 
 
             <button class="mv-btn-more" id="mv-moreImage">더보기</button>

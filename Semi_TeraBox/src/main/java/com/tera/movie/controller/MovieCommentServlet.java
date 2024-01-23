@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.tera.common.util.PageInfo;
-import com.tera.movie.model.service.MovieCommentService;
+import com.tera.movie.model.service.MovieService;
 import com.tera.movie.model.vo.MovieComment;
 
 @WebServlet(name = "movieComment", urlPatterns = { "/movie/comment" })
@@ -52,9 +52,9 @@ public class MovieCommentServlet extends HttpServlet {
 
 //    	System.out.println(page);
     	
-    	listCount = new MovieCommentService().getMovieCommentCount();
+    	listCount = new MovieService().getMovieCommentCount();
     	pageInfo = new PageInfo(page, 5, listCount, 5);
-    	list = new MovieCommentService().getMovieCommentList(pageInfo);
+    	list = new MovieService().getMovieCommentList(pageInfo);
     	
     	request.setAttribute("pageInfo", pageInfo);
     	request.setAttribute("list", list);
@@ -75,7 +75,7 @@ public class MovieCommentServlet extends HttpServlet {
     	movieComment.setComment(request.getParameter("comment"));
     	movieComment.setPoint(request.getParameter("ele"));
     	
-    	int result = new MovieCommentService().save(movieComment);
+    	int result = new MovieService().save(movieComment);
     	
 //    	if (result > 0) {
 //    		

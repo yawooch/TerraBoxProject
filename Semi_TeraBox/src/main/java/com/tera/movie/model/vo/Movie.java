@@ -15,7 +15,7 @@ public class Movie {
 	private String korName;
 	private String engName;
 	private String poster;
-	private String intro;
+	private String synopsis;
 	private String type;
 	private String director;
 	private String genre;

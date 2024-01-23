@@ -30,18 +30,6 @@
 
 }
 
-
-header {
-    height: 91px;
-    width: 100%;
-    background-color: darkred;
-    min-width: 1100px;
-}
-
-body {
-    margin: 1px;
-}
-
 main {
     height: 2000px;
     margin: auto;
@@ -82,7 +70,7 @@ main {
     text-decoration: underline;
 }
 
-section {
+main section {
     width: 1100px;
     margin: auto;
 }
@@ -119,7 +107,7 @@ section {
     border-bottom: 1px solid #AF2D2D;    
 }
 
-nav>ul li:nth-child(2) {
+main nav>ul li:nth-child(2) {
     margin: 0 -1px;
 }
 
@@ -321,6 +309,7 @@ nav>ul li:nth-child(2) {
     background-color: #ffffff;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .mv-main-btn-like:hover {
@@ -369,13 +358,8 @@ nav>ul li:nth-child(2) {
 }
 
 
-button {
+main button {
     cursor: pointer;
 }
 
-
-footer {
-    height: 200px;
-    background-color: #EAEAEA;
-}
 
