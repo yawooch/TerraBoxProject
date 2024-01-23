@@ -62,10 +62,7 @@ public class QuestionBoardDao {
 				+ ", ?"
 				+ ")";
 
-		
-		
-		
-		
+	
 		try {
 
 			pstmt = connection.prepareStatement(query);

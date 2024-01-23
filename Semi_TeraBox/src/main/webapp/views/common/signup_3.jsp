@@ -2,10 +2,30 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
     <link rel="stylesheet" href="${path}/views/common/css/signup_3.css">
-    
- <main>
+    <script src="${path}/views/js/jquery-3.7.1.js"></script>
+    <script>
+//     	$(document).ready(() => {
+//     		$('#btnagreebottom').on('click',() => {
+//     			let id = $('#id').val();
+//     			let pwd1 = $('#pwd1').val();
+//     			let pwd2 = $('#pwd2').val();
+//     			let email = $('#email').val();
+//     			$.ajax({
+//     				type: 'post',
+//     				url: '/member/enroll',
+//     				data: {id,pwd1,pwd2,email},
+//     				success: (data)=>{console.log(data)
+//     					$('body').html(data);},
+//     				error: (error)=>{console.log(`status: ${'${error.status}'}`)}
+//     			})
+//     		})
+//     	})
+    </script>
+ <body>
     <section>
+    <form action="/member/enroll" method="post">
         <div class="member-wrap">
+        	<!-- <form method="post" action="signup_4.jsp"> -->
             <!-- 로고 -->
             <div class="logo"><a href="https://megabox.co.kr/main" id="logo">Megabox lifetheather</a>
             </div>
@@ -62,32 +82,32 @@
                             </tr>
                             <!-- 휴대폰번호  -->
                             <tr>
-                                <th>주민번호</th>
+                                <th>휴대폰 번호</th>
                                 <td colspan="2">010-0000-0000</td>
                             </tr>
                             <!-- 아이디 입력 폼 -->
                             <tr>
                                 <th>아이디</th>
-                                <td><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="영문, 숫자 조합(8~12자)"></td>
+                                <td><input type="text" class="member-table-input" name="MEMBER_ID" name="id" id="id" autocomplete="off" required maxlength="20" placeholder="영문, 숫자 조합(8~12자)"></td>
                                 <td><button class="btn-doublechk">중복확인</button></td>
                                 <!-- 아이디는 영문,숫자 조합 8자리 이상 12자리 이하 입니다. -->
                             </tr>
                             <!-- 비밀번호 입력 폼 -->
                             <tr>
                                 <th>비밀번호</th>
-                                <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
+                                <td colspan="2"><input type="text" class="member-table-input" name="PASSWORD" name="pwd1" id="pwd1" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
                                 <!-- 비밀번호는 영문, 숫자, 특수기호 중 2가지 이상 조합하여 10자리 이상 16자리 이하 입니다. -->
                             </tr>
                             <!-- 비밀번호확인 입력 폼 -->
                             <tr>
                                 <th>비밀번호 확인</th>
-                                <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
+                                <td colspan="2"><input type="tel" class="member-table-input" name="PASSWORD" name="pwd2" id="pwd2" autocomplete="off" required maxlength="20" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합"></td>
                                 <!-- 비밀번호는 영문, 숫자, 특수기호 중 2가지 이상 조합하여 10자리 이상 16자리 이하입니다. -->
                             </tr>
                             <!-- 이메일주소 -->
                             <tr>
                                 <th>이메일 주소</th>
-                                <td colspan="2"><input type="tel" class="member-table-input" id="phone" autocomplete="off" required maxlength="20" placeholder="이메일주소를 입력해 주세요"></td>
+                                <td colspan="2"><input type="email" class="member-table-input" name="MEM_EMAIL" name="email" id="email" autocomplete="off" required maxlength="20" placeholder="이메일주소를 입력해 주세요"></td>
                                 <!-- 올바른 이메일 형식으로 입력해주세요. -->
                             </tr>
                             
@@ -133,9 +153,10 @@
                 </div>
                 <!-- 회원가입 버튼 -->
                 <div class="agree-btn-bottom">
-                    <button id="btnagreebottom" type="button" class="button red" disabled="disabled">회원가입</button>
+                    <button id="btnagreebottom" type="submit" class="button red" >회원가입</button>
                 </div>
             </div>
         </div>
-    </section>
-    </main>
+        </form>
+</section>
+</body>
