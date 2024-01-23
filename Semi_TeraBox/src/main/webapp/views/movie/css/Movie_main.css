@@ -230,7 +230,8 @@ main nav>ul li:nth-child(2) {
 }
 
 .mv-main-poster-ex {
-    height: 55%;
+    height: 50%;
+    overflow: hidden;
 }
 
 .mv-main-poster-ex>span{

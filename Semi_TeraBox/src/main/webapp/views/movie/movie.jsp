@@ -92,12 +92,12 @@
                 
                 <!-- 반복 -->
                 <c:if test="${ not empty list }">
-                	<c:forEach var="movie" items="${ list }">'
+                	<c:forEach var="movie" items="${ list }">
 		                <li class="mv-main-mvlist">
-		                    <div class="mv-main-mv-poster">
+		                    <div class="mv-main-mv-poster"  style="overflow: hidden">
 		                        <img src="${ movie.poster }" alt="">
 		                        <div class="mv-main-poster-bg">
-		                            <a href="/movie/detail" class="mv-main-poster-a">
+		                            <a href="/movie/detail?no=${ movie.no }" class="mv-main-poster-a">
 		                                <div class="mv-main-poster-ex">
 		                                    <span>
 		                                        ${ movie.synopsis }
@@ -113,7 +113,7 @@
 		                    </div>
 		                    <div class="mv-main-mv-name">
 		                        <img src="${path}/views/movie/image/Movie_age.png" alt="">
-		                        <span>${ movie.name }</span>
+		                        <span>${ movie.korName }</span>
 		                    </div>
 		                    <div class="mv-main-mv-info">
 		                        <span class="mv-main-mv-tk">예매율 4.6%</span>
