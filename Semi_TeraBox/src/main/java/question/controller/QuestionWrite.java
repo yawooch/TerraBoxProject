@@ -17,7 +17,6 @@ import question.model.vo.Question;
 @WebServlet(name = "questionWrite", urlPatterns = { "/question/write" })
 public class QuestionWrite extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Question Question = null;
 
 	public QuestionWrite() {
 	}
@@ -39,38 +38,36 @@ public class QuestionWrite extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		 QuestionBoardService qbs = new QuestionBoardService();
 		 
 		 Question question = new Question();
 		 
-		 question.setQuestNo(request.getParameter("inqMclCd"));
+//		 question.setQuestNo(request.getParameter("inqMclCd"));
 		 
 		 
 		 
-		 System.out.println(request.getParameter("hpNum1"));
-		 System.out.println(request.getParameter("inqMclCd"));
 		 System.out.println(request.getParameter("custInqTitle"));
 		 System.out.println(request.getParameter("custInqCn"));
-		 System.out.println(request.getParameter("nonMbInqPwd"));
+		 System.out.println(request.getParameter("custInqCn"));
+		 System.out.println(request.getParameter("hpNum1"));
 		 System.out.println(request.getParameter("inqurNm"));
 		 System.out.println(request.getParameter("rpstEmail"));
+		 System.out.println(request.getParameter("inqMclCd"));
 		 
 		 
-		 question.setQuestPhone("hpNum1");
-		 question.setQuestTitle("custInqTitle");
-		 question.setQuestContent("custInqCn");
-		 question.setQuestPassNo("nonMbInqPwd");
-		 question.setQuestName("inqurNm");
-		 question.setQuestEmail("rpstEmail");
-		 question.setQuestType("inqMclCd");
+		 question.setQuestTitle(request.getParameter("custInqTitle"));
+		 question.setQuestContent(request.getParameter("custInqCn"));
+		 question.setQuestPassNo(request.getParameter("custInqCn"));
+		 question.setQuestPhone(request.getParameter("hpNum1"));
+		 question.setQuestName(request.getParameter("inqurNm"));
+		 question.setQuestEmail(request.getParameter("rpstEmail"));
+		 question.setQuestType(request.getParameter("inqMclCd"));
 		 
-		 qbs.save(question);
+		 System.out.println(question);
+		 
+
+         System.out.println(new QuestionBoardService().save(question));
 		
 
 		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
-		
-		
-		
 	}
-
 }
