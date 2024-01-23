@@ -56,13 +56,13 @@ public class QuestionWrite extends HttpServlet {
 		 System.out.println(request.getParameter("rpstEmail"));
 		 
 		 
-		 question.setQuestPhone("hpNum1");
-		 question.setQuestTitle("custInqTitle");
-		 question.setQuestContent("custInqCn");
-		 question.setQuestPassNo("nonMbInqPwd");
-		 question.setQuestName("inqurNm");
-		 question.setQuestEmail("rpstEmail");
-		 question.setQuestType("inqMclCd");
+		 question.setQuestPhone(request.getParameter("hpNum1"));
+		 question.setQuestTitle(request.getParameter("inqMclCd"));
+		 question.setQuestContent(request.getParameter("custInqTitle"));
+		 question.setQuestPassNo(request.getParameter("custInqCn"));
+		 question.setQuestName(request.getParameter("nonMbInqPwd"));
+		 question.setQuestEmail(request.getParameter("inqurNm"));
+		 question.setQuestType(request.getParameter("rpstEmail"));
 		 
 		 qbs.save(question);
 		
