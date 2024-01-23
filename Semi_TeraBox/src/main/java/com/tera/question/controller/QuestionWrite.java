@@ -50,7 +50,7 @@ public class QuestionWrite extends HttpServlet {
 
 		System.out.println(list);
 
-		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
 	}
 
 	/**

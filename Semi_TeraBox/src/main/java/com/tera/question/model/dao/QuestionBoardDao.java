@@ -22,8 +22,7 @@ public class QuestionBoardDao {
 		String query = "SELECT COUNT(*) FROM QUESTION";
 
 		try {
-			psmt = connection.prepareStatement(query);
-			
+			psmt = connection.prepareStatement(query);	
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
@@ -67,10 +66,11 @@ public class QuestionBoardDao {
 				questlist.setQuestType(rs.getString("QUEST_TYPE"));
 				questlist.setQuestPhone(rs.getString("QUEST_PHONE"));
 				questlist.setCinemaId(rs.getString("CINEMA_ID"));
+				questlist.setQuestDivsion(rs.getString("QUEST_DIVSION"));
 
 				list.add(questlist);
 			}
-
+	
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -105,9 +105,6 @@ public class QuestionBoardDao {
 
 			result = pstmt.executeUpdate();
 
-			System.out.println(question);
-
-			System.out.println(pstmt);
 
 		} catch (SQLException e) {
 			e.printStackTrace();

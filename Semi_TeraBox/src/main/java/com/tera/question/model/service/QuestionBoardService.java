@@ -45,7 +45,6 @@ public class QuestionBoardService {
 	
 	public List<Question> getQuestionList(PageInfo pageInfo){
 		List<Question> list =null;
-		
 		Connection connection =getConnection();
 		
 		list = new QuestionBoardDao().Questionlist(connection, pageInfo);
