@@ -50,8 +50,28 @@ public class MemberDao {
 	}
 
 	public int insertMember(Connection connection, Member member) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		PreparedStatement pstmt = null;
+		String query = "INSERT INTO MEMBER VALUES (?,?,'김서하',NULL,NULL,?,NULL,'Y',NULL,DEFAULT,SYSDATE)";
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1,member.getMemberId());
+			pstmt.setString(2,member.getPassword());
+			pstmt.setString(3, member.getMemEmail());
+			
+			result = pstmt.executeUpdate(); //업데이트된 행의 갯수
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
 	}
+
 
 }

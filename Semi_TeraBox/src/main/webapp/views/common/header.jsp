@@ -64,7 +64,7 @@
         <div class="cm-login-link">
             <c:if test="${empty loginMember}">
                 <a href="javascript:" class="cm-btn-modal-open">로그인</a>
-                <a href="/member/enroll">회원가입</a>
+                <a href="/member/confirm">회원가입</a>
             </c:if>
             <c:if test="${not empty loginMember}">
                 <a href="/logout">로그아웃</a>

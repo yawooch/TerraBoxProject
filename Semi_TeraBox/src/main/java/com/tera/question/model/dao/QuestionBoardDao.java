@@ -77,7 +77,7 @@ public class QuestionBoardDao {
 
 			result = pstmt.executeUpdate();
 
-			System.out.println(question.getQuestNo());
+			System.out.println(question);
 
 			System.out.println(pstmt);
 
