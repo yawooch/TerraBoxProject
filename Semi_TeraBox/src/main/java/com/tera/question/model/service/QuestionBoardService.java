@@ -1,11 +1,13 @@
 package com.tera.question.model.service;
 
-import static com.tera.common.jdbc.JDBCTemplate.commit;
+import static com.tera.common.jdbc.JDBCTemplate.*;
 import static com.tera.common.jdbc.JDBCTemplate.getConnection;
 import static com.tera.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
+import java.util.List;
 
+import com.tera.common.util.PageInfo;
 import com.tera.question.model.dao.QuestionBoardDao;
 import com.tera.question.model.vo.Question;
 
@@ -35,10 +37,26 @@ public class QuestionBoardService {
 		
 		count = new QuestionBoardDao().getQuestionBoardCount(connection);
 		
+		close(connection);
+		
 		return count;
+	}
+	
+	
+	public List<Question> getQuestionList(PageInfo pageInfo){
+		List<Question> list =null;
+		
+		Connection connection =getConnection();
+		
+		list = new QuestionBoardDao().Questionlist(connection, pageInfo);
+		
+		close(connection);
+		
+		return list;
 	}
 
 }
+
 
 
 

@@ -171,10 +171,10 @@
 								<td colspan="3"><input type="text" name="hpNum1"
 									id="hpNum1" class="input-text w60px numType" maxlength="3"
 									title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-									type="text" name="hpNum2" id="hpNum2"
+									type="text" name="hpNum2" id="hpNum1"
 									class="input-text w70px numType" maxlength="4"
 									title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-									type="text" name="hpNum3" id="hpNum3"
+									type="text" name="hpNum3" id="hpNum1"
 									class="input-text w70px numType" maxlength="4"
 									title="핸드폰번호 마지막자리 입력">
 									<button id="btnQnaMblpCertNoSend" type="button"
