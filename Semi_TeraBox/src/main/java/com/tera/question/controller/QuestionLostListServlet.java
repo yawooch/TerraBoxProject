@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 나의 문의하기 리스트을 보여주는 Servlet
  */
-@WebServlet(name = "questionWrite", urlPatterns = { "/question/myquestionlist" })
+@WebServlet(name = "myquestionlist", urlPatterns = { "/question/myquestionlist" })
 public class QuestionLostListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
