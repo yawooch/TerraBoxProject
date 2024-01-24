@@ -92,27 +92,27 @@ public class FaqDao {
 		return count;
 	}
 
-	public List<Faq> findMovieAll(Connection connection, PageInfo pageInfo) {
+	public List<Faq> findCategory(Connection connection, String category) {
 		List<Faq> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT * FROM "
-				+ "(SELECT ROWNUM AS RNUM, "
-				+ "FAQ.FAQ_NO, "
-				+ "FAQ_TITLE, "
-				+ "FAQ.FAQ_CONTENT, "
-				+ "FAQ.FAQ_CATEGORY, "
-				+ "FAQ.MEMBER_ID FROM FAQ ) "
-				+ "WHERE FAQ_CATEGORY = '영화예매' "
-				+ "AND RNUM BETWEEN ? AND ?";
+		String query = "SELECT FAQ_NO"
+				+ "     , FAQ_TITLE"
+				+ "     , FAQ_CONTENT"
+				+ "     , FAQ_CATEGORY"
+				+ "     , MEMBER_ID"
+				+ "  FROM FAQ"
+				+ " WHERE FAQ_CATEGORY = ?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setInt(1, pageInfo.getStartList());
-			pstmt.setInt(2, pageInfo.getEndList());
 			
-			rs = pstmt.executeQuery(query);
+			pstmt.setString(1, category);
+//			pstmt.setInt(2, pageInfo.getStartList());
+//			pstmt.setInt(3, pageInfo.getEndList());
+			
+			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				Faq faq = new Faq();
