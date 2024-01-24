@@ -48,7 +48,7 @@ public class QuestionFaqServlet extends HttpServlet {
 		pageInfo = new PageInfo(page, 10, listCount, 10);
 
 		
-		list = new FaqService().findAll();
+		list = new FaqService().findAll(pageInfo);
 		
 		request.setAttribute("pageInfo", pageInfo);
 		
