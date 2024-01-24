@@ -35,7 +35,7 @@ public class QuestionBoardService {
 		
 		Connection connection = getConnection();
 		
-		count = new QuestionBoardDao().getQuestionBoardCount(connection);
+		count = new QuestionBoardDao().getBoardCount(connection);
 		
 		close(connection);
 		
@@ -47,7 +47,7 @@ public class QuestionBoardService {
 		List<Question> list =null;
 		Connection connection =getConnection();
 		
-		list = new QuestionBoardDao().Questionlist(connection, pageInfo);
+		list = new QuestionBoardDao().findAll(connection, pageInfo);
 		
 		close(connection);
 		

@@ -50,7 +50,7 @@ public class QuestionWrite extends HttpServlet {
 
 		System.out.println(list);
 
-		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
 	}
 
 	/**
@@ -64,23 +64,22 @@ public class QuestionWrite extends HttpServlet {
 
 //		 question.setQuestNo(request.getParameter("inqMclCd"));
 
-		System.out.println(request.getParameter("custInqTitle"));
-		System.out.println(request.getParameter("custInqCn"));
-		System.out.println(request.getParameter("nonMbInqPwd"));
-		System.out.println(
-				request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
-		System.out.println(request.getParameter("inqurNm"));
-		System.out.println(request.getParameter("rpstEmail"));
-		System.out.println(request.getParameter("inqMclCd"));
+//		System.out.println(request.getParameter("custInqTitle"));
+//		System.out.println(request.getParameter("custInqCn"));
+//		System.out.println(request.getParameter("nonMbInqPwd"));
+//		System.out.println(
+//				request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
+//		System.out.println(request.getParameter("inqurNm"));
+//		System.out.println(request.getParameter("rpstEmail"));
+//		System.out.println(request.getParameter("inqMclCd"));
 
-		question.setQuestTitle(request.getParameter("custInqTitle"));
-		question.setQuestContent(request.getParameter("custInqCn"));
-		question.setQuestPassNo(request.getParameter("nonMbInqPwd"));
-		question.setQuestPhone(
-				request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
-		question.setQuestName(request.getParameter("inqurNm"));
-		question.setQuestEmail(request.getParameter("rpstEmail"));
-		question.setQuestType(request.getParameter("inqMclCd"));
+		question.setTitle(request.getParameter("custInqTitle"));
+		question.setContent(request.getParameter("custInqCn"));
+		question.setPassNo(request.getParameter("nonMbInqPwd"));
+		question.setPhone(request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
+		question.setName(request.getParameter("inqurNm"));
+		question.setEmail(request.getParameter("rpstEmail"));
+		question.setType(request.getParameter("inqMclCd"));
 
 		System.out.println(question);
 

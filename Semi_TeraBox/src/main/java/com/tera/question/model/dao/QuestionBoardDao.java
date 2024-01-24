@@ -13,13 +13,66 @@ import com.tera.common.util.PageInfo;
 import com.tera.question.model.vo.Question;
 
 public class QuestionBoardDao {
+	
 
-	public int getQuestionBoardCount(Connection connection) {
+	public List<Question> findAll(Connection connection, PageInfo pageinfo) {
+		List<Question> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String query = "SELECT ROWNUM QUEST_NO,QUEST_TITLE,QUEST_CONTENT,QUEST_PASS_NO,QUEST_PHONE,QUEST_NAME,QUEST_DIVISION,QUEST_EMAIL,"
+				+ "QUEST_TYPE,PICTR_FILE,VISIT_NUM,RENTAL_DATE,RENTAL_TIME,MEMBER_ID,ANSW_CHECK,CINEMA_ID,ANSW_CONTENT,ANSW_REG_DTTM,ANSW_MEMBER_ID "
+				+ "FROM QUESTION, WHERE ROWNUM BETWEEN ? and ?";
+
+		try {
+			pstmt = connection.prepareStatement(query);
+			pstmt.setInt(1, pageinfo.getStartList());
+			pstmt.setInt(2, pageinfo.getEndList());
+			
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				Question question = new Question();
+
+				question.setNo(rs.getString("QUEST_NO"));
+				question.setTitle(rs.getString("QUEST_TITLE"));
+				question.setContent(rs.getString("QUEST_CONTENT"));
+				question.setPassNo(rs.getString("QUEST_PASS_NO"));
+				question.setPhone(rs.getString("QUEST_PHONE"));
+				question.setName(rs.getString("QUEST_NAME"));
+				question.setDivsion(rs.getString("QUEST_DIVISION"));
+				question.setEmail(rs.getString("QUEST_EMAIL"));
+				question.setType(rs.getString("QUEST_TYPE"));
+				question.setFile(rs.getString("PICTR_FILE"));
+				question.setNum(rs.getInt("VISIT_NUM"));
+				question.setRentDate(rs.getString("RENTAL_DATE"));
+				question.setRentTime(rs.getString("RENTAL_TIME"));
+				question.setId(rs.getString("MEMBER_ID"));
+				question.setCheck(rs.getString("ANSW_CHECK"));
+				question.setCinemaId(rs.getString("CINEMA_ID"));
+				question.setAnswContent(rs.getString("ANSW_CONTENT"));
+				question.setAnswRegDttm(rs.getDate("ANSW_REG_DTTM"));
+				question.setAnswMemberId(rs.getString("ANSW_MEMBER_ID"));
+			
+				list.add(question);
+			}
+	
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+
+	}
+	
+	public int findBoardByNo(Connection connection,int no) {
 		int count = 0;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
-
-		String query = "SELECT COUNT(*) FROM QUESTION";
+		String query = "SELECT COUNT(*) FROM QUESTION WHERE STATUS ='Y'";
 
 		try {
 			psmt = connection.prepareStatement(query);	
@@ -39,53 +92,10 @@ public class QuestionBoardDao {
 		return count;
 	}
 
-	public List<Question> Questionlist(Connection connection, PageInfo pageinfo) {
-		List<Question> list = new ArrayList<>();
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		String query = " INSERT INTO QUESTION " + "( QUEST_NO" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO"
-				+ ", QUEST_PHONE" + ", QUEST_NAME" + ", QUEST_EMAIL" + ", QUEST_TYPE" + "CINEMA_ID" + ")" + "VALUES("
-				+ "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + "?" + ")";
-
-		try {
-			pstmt = connection.prepareStatement(query);
-			pstmt.setInt(1, pageinfo.getStartList());
-			pstmt.setInt(2, pageinfo.getEndList());
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-
-				Question questlist = new Question();
-
-				questlist.setQuestNo(rs.getString("QUEST_NO"));
-				questlist.setQuestTitle(rs.getString("QUEST_TITLE"));
-				questlist.setQuestContent(rs.getString("QUEST_CONTENT"));
-				questlist.setQuestPassNo(rs.getString("QUEST_PASS_NO"));
-				questlist.setQuestName(rs.getString("QUEST_EMAIL"));
-				questlist.setQuestType(rs.getString("QUEST_TYPE"));
-				questlist.setQuestPhone(rs.getString("QUEST_PHONE"));
-				questlist.setCinemaId(rs.getString("CINEMA_ID"));
-				questlist.setQuestDivsion(rs.getString("QUEST_DIVSION"));
-
-				list.add(questlist);
-			}
-	
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-		return list;
-
-	}
-
 	public int insertBoard(Connection connection, Question question) {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<Question> list = null;
 
 		String query = " INSERT INTO QUESTION " + "( QUEST_NO" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO"
 				+ ", QUEST_PHONE" + ", QUEST_NAME" + ", QUEST_EMAIL" + ", QUEST_TYPE" + ")" + "VALUES("
@@ -95,13 +105,13 @@ public class QuestionBoardDao {
 
 			pstmt = connection.prepareStatement(query);
 
-			pstmt.setString(1, question.getQuestTitle());
-			pstmt.setString(2, question.getQuestContent());
-			pstmt.setString(3, question.getQuestPassNo());
-			pstmt.setString(4, question.getQuestPhone());
-			pstmt.setString(5, question.getQuestName());
-			pstmt.setString(6, question.getQuestEmail());
-			pstmt.setString(7, question.getQuestType());
+			pstmt.setString(1, question.getTitle());
+			pstmt.setString(2, question.getContent());
+			pstmt.setString(3, question.getPassNo());
+			pstmt.setString(4, question.getPhone());
+			pstmt.setString(5, question.getName());
+			pstmt.setString(6, question.getEmail());
+			pstmt.setString(7, question.getType());
 
 			result = pstmt.executeUpdate();
 
@@ -115,6 +125,29 @@ public class QuestionBoardDao {
 
 		return result;
 
+	}
+	
+	public int getBoardCount(Connection connection) {
+		int count = 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT COUNT(*) FROM QUESTION WHERE STATUS = 'Y'";
+
+		try {
+			pstmt = connection.prepareStatement(query);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+
+		return count;
 	}
 
 }
