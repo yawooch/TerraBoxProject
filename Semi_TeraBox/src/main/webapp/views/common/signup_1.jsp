@@ -5,7 +5,6 @@
     
  <main>
     <section>
-    <form action="/member/agree" method="post">
     <div class="cm-member-wrap">
         <!-- 로고 -->
         <div class="cm-logo"><a href="https://megabox.co.kr/main" id="cm_logo">Megabox lifetheather</a>
@@ -60,9 +59,9 @@
                         <!-- 주민번호 입력 폼 -->
                         <tr>
                             <th>주민번호</th>
-                            <td class="cm-mti-left"><input type="number" class="cm-member-table-input2" name="cm_security1" id="cm_security1" autocomplete="off" required maxlength="20"></td>
+                            <td class="cm-mti-left"><input type="password" class="cm-member-table-input2" id="cm_security" autocomplete="off" required maxlength="20"></td>
                             <td class="cm-mti-middle">-</td>
-                            <td class="cm-mti-right"><input type="password" class="cm-member-table-input2" name="cm_security2" id="cm_security2" autocomplete="off" required maxlength="20"></td>
+                            <td class="cm-mti-right"><input type="password" class="cm-member-table-input2" id="cm_security" autocomplete="off" required maxlength="20"></td>
                         </tr>
                         <!-- 휴대폰번호 입력 폼 -->
                         <tr>
@@ -81,11 +80,10 @@
             </div>
             <!-- 확인 버튼 -->
             <div class="cm-agree-btn-bottom">
-                <button id="cm_btnagreebottom" type="submit" class="cm-button red" >확인</button>
+                <button id="cm_btnagreebottom" type="button" class="cm-button red" disabled="disabled">확인</button>
             </div>
         </div>
     </div>
-    </form>
     </section>
  </main>
  

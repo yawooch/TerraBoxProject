@@ -6,8 +6,8 @@ import com.tera.common.jdbc.test.dao.EmployeeDao;
 import com.tera.common.jdbc.test.dao.MemberDao;
 import com.tera.common.jdbc.test.dao.MemberGradeDao;
 import com.tera.common.jdbc.test.vo.Employee;
+import com.tera.common.jdbc.test.vo.Member;
 import com.tera.common.jdbc.test.vo.MemberGrade;
-import com.tera.member.model.vo.Member;
 
 /**
  * JDBC Test 하는 클래스

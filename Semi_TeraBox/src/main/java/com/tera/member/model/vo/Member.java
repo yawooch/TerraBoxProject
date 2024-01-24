@@ -7,30 +7,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor //모든인자가들어가는 생성자
-@NoArgsConstructor  //인자가없는생성자
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Member {
 	
-	private String memberId;
 	
+	private String id;
 	private String password;
-	
-	private String memberName;
-	
+	private String name;
 	private String birth;
-	
-	private String memPhone;
-	
-	private String memEmail;
-	
-	private String memSsn;
-	
-	private String mktAgreeYn;
-	
-	private String bnftsMedia;
-	
-	private String managerYn;
-	
-	private Date   joinDttm;
+	private String phone;
+	private String email;
+	private String ssn;
+	private String mkt;
+	private String bnfts;
+	private String manager;
+	private Date dttm;
 }

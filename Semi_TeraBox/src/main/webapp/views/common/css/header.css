@@ -67,9 +67,6 @@ html, body{
     float: left;
     margin-left:15px;
 }
-.cm-mainLogo:hover {
-    cursor:pointer;
-}
 .cm-mainLogo {
     position:absolute;
     width:140px;
@@ -210,7 +207,7 @@ a[class^=cm-link-text-].on
     margin-left:620px;
 }
 .cm-header-nav-sub>.cm-gnb-depth2:last-child{
-    margin-left:511px;
+    margin-left:300px;
 }
 .cm-header-nav .cm-gnb-depth2 {
     display: block;
@@ -621,126 +618,3 @@ a[class^=cm-link-text-].on
 /******************************************** 
     헤더 영역 속성정의 끝
 *********************************************/
-
-
-
-/*****************************************************
- * login 모달 영역 스타일 설정 시작
- *****************************************************/
- 
-.cm-login-box-out {
-    width: 850px;
-    height: 484px;
-    background-color: white;
-    /* margin-left: 295px;
-    margin-top: 280px; */
-}
-.cm-layer-header {
-    position: relative;
-    width: 850px;
-    height: 45px;
-    background-color: #6D3030;
-}
-.cm-layer-header h4 {
-    padding-top: 10px;
-    padding-left: 20px;
-    font-size: 18px; 
-    color:white;
-    text-align: left;
-    margin-top:0;
-}
-/* 닫기버튼 */
-.cm-login-close-btn{
-    display: block;
-    position: absolute; /*relative 안에 고정 시킨다. */
-    cursor:pointer;
-    top: 15px;
-    right: 20px;
-    width: 16px;
-    height: 15px;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    text-indent: -9999px;
-    background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-layer-close.png) no-repeat center;
-}
-.cm-login-box-inner {
-    display: block;
-    padding: 20px 20px 0 20px;
-    width: 850px;
-    height: 439px;
-}
-.cm-col-left{
-    float: left;
-    width: 380px;
-    height: 345px;
-}
-.cm-login-input-area .cm-btn-area{
-    width: 100%;
-    height: 100%;
-}
-#user_id {
-    padding: 0 10px;
-    border: 1px solid #d8d9db;
-    width: 100%;
-    height: 46px;
-}
-#user_pw {
-    margin-top: 15px;
-    padding: 0 10px;
-    border: 1px solid #d8d9db;
-    width: 100%;
-    height: 46px;
-}
-.cm-ckboxline {
-    padding: 15px 0 35px 0;
-    cursor: pointer;
-}
-#saveId {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-}
-#cm_btnlogin {
-    width: 100%;
-    height: 46px;
-}
-/* 로그인버튼 비활성화(?) */
-.cm-input:disabled {
-    color: #777!important;
-    cursor: default!important;
-    background-color: #e0e0e0!important;
-}
-#cm_btnlogin:disabled {
-    color: #777!important;
-    cursor: default!important;
-    background-color: #e0e0e0!important;
-}
-#cm_btnlogin.cm-btnred {
-    color: #fff;
-    line-height: 36px;
-    border: 0;
-    cursor:pointer;
-    background: #6D3030;
-}
-.cm-col-right {
-    float: left;
-    width: 380px;
-    height: 385px;
-    float: right;
-}
-.cm-login-modal{
-    position: fixed;
-    z-index: 10;
-    background-color: rgb(32 32 32 / 90%);
-    width:  100%;
-    height: 100%;
-}
-
-section.cm-loginform{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -425px;
-    margin-top: -250px;
-}

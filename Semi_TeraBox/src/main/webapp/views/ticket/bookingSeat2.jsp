@@ -78,153 +78,153 @@
                             <div class="tk-seat-container">
                                 <div class="tk-seat"> 
                                     <div class="tk-line">A</div>
-                                    <button class="tk-seat-click" cord="A1">1</button>
-                                    <button class="tk-seat-click" cord="A2">2</button>
-                                    <button class="tk-seat-click" cord="A3">3</button>
-                                    <button class="tk-seat-click" cord="A4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="A5">5</button>
-                                    <button class="tk-seat-click" cord="A6">6</button>
-                                    <button class="tk-seat-click" cord="A7">7</button>
-                                    <button class="tk-seat-click" cord="A8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="A9">9</button>
-                                    <button class="tk-seat-click" cord="A10">10</button>
-                                    <button class="tk-seat-click" cord="A11">11</button>
-                                    <button class="tk-seat-click" cord="A12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">B</div>
-                                    <button class="tk-seat-click" cord="B1">1</button>
-                                    <button class="tk-seat-click" cord="B2">2</button>
-                                    <button class="tk-seat-click" cord="B3">3</button>
-                                    <button class="tk-seat-click" cord="Bs" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="B5">5</button>
-                                    <button class="tk-seat-click" cord="B6">6</button>
-                                    <button class="tk-seat-click" cord="B7">7</button>
-                                    <button class="tk-seat-click" cord="B8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="B9">9</button>
-                                    <button class="tk-seat-click" cord="B10">10</button>
-                                    <button class="tk-seat-click" cord="B11">11</button>
-                                    <button class="tk-seat-click" cord="B12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click"style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">C</div>
-                                    <button class="tk-seat-click" cord="C1">1</button>
-                                    <button class="tk-seat-click" cord="C2">2</button>
-                                    <button class="tk-seat-click" cord="C3">3</button>
-                                    <button class="tk-seat-click" cord="C4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="C5">5</button>
-                                    <button class="tk-seat-click" cord="C6">6</button>
-                                    <button class="tk-seat-click" cord="C7">7</button>
-                                    <button class="tk-seat-click" cord="C8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="C9">9</button>
-                                    <button class="tk-seat-click" cord="C10">10</button>
-                                    <button class="tk-seat-click" cord="C11">11</button>
-                                    <button class="tk-seat-click" cord="C12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">D</div>
-                                    <button class="tk-seat-click" cord="D1">1</button>
-                                    <button class="tk-seat-click" cord="D2">2</button>
-                                    <button class="tk-seat-click" cord="D3">3</button>
-                                    <button class="tk-seat-click" cord="D4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="D5">5</button>
-                                    <button class="tk-seat-click" cord="D6">6</button>
-                                    <button class="tk-seat-click" cord="D7">7</button>
-                                    <button class="tk-seat-click" cord="D8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="D9">9</button>
-                                    <button class="tk-seat-click" cord="D10">10</button>
-                                    <button class="tk-seat-click" cord="D11">11</button>
-                                    <button class="tk-seat-click" cord="D12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">E</div>
-                                    <button class="tk-seat-click" cord="E1">1</button>
-                                    <button class="tk-seat-click" cord="E2">2</button>
-                                    <button class="tk-seat-click" cord="E3">3</button>
-                                    <button class="tk-seat-click" cord="E4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="E5">5</button>
-                                    <button class="tk-seat-click" cord="E6">6</button>
-                                    <button class="tk-seat-click" cord="E7">7</button>
-                                    <button class="tk-seat-click" cord="E8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="E9">9</button>
-                                    <button class="tk-seat-click" cord="E10">10</button>
-                                    <button class="tk-seat-click" cord="E11">11</button>
-                                    <button class="tk-seat-click" cord="E12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">F</div>
-                                    <button class="tk-seat-click" cord="F1">1</button>
-                                    <button class="tk-seat-click" cord="F2">2</button>
-                                    <button class="tk-seat-click" cord="F3">3</button>
-                                    <button class="tk-seat-click" cord="F4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="F5">5</button>
-                                    <button class="tk-seat-click" cord="F6">6</button>
-                                    <button class="tk-seat-click" cord="F7">7</button>
-                                    <button class="tk-seat-click" cord="F8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="F9">9</button>
-                                    <button class="tk-seat-click" cord="F10">10</button>
-                                    <button class="tk-seat-click" cord="F11">11</button>
-                                    <button class="tk-seat-click" cord="F12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">G</div>
-                                    <button class="tk-seat-click" cord="G1">1</button>
-                                    <button class="tk-seat-click" cord="G2">2</button>
-                                    <button class="tk-seat-click" cord="G3">3</button>
-                                    <button class="tk-seat-click" cord="G4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="G5">5</button>
-                                    <button class="tk-seat-click" cord="G6">6</button>
-                                    <button class="tk-seat-click" cord="G7">7</button>
-                                    <button class="tk-seat-click" cord="G8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="G9">9</button>
-                                    <button class="tk-seat-click" cord="G10">10</button>
-                                    <button class="tk-seat-click" cord="G11">11</button>
-                                    <button class="tk-seat-click" cord="G12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">H</div>
-                                    <button class="tk-seat-click" cord="H1">1</button>
-                                    <button class="tk-seat-click" cord="H2">2</button>
-                                    <button class="tk-seat-click" cord="H3">3</button>
-                                    <button class="tk-seat-click" cord="H4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="H5">5</button>
-                                    <button class="tk-seat-click" cord="H6">6</button>
-                                    <button class="tk-seat-click" cord="H7">7</button>
-                                    <button class="tk-seat-click" cord="H8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="H9">9</button>
-                                    <button class="tk-seat-click" cord="H10">10</button>
-                                    <button class="tk-seat-click" cord="H11">11</button>
-                                    <button class="tk-seat-click" cord="H12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">I</div>
-                                    <button class="tk-seat-click" cord="I1">1</button>
-                                    <button class="tk-seat-click" cord="I2">2</button>
-                                    <button class="tk-seat-click" cord="I3">3</button>
-                                    <button class="tk-seat-click" cord="I4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="I5">5</button>
-                                    <button class="tk-seat-click" cord="I6">6</button>
-                                    <button class="tk-seat-click" cord="I7">7</button>
-                                    <button class="tk-seat-click" cord="I8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="I9">9</button>
-                                    <button class="tk-seat-click" cord="I10">10</button>
-                                    <button class="tk-seat-click" cord="I11">11</button>
-                                    <button class="tk-seat-click" cord="I12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                                 <div class="tk-seat"> 
                                     <div class="tk-line">J</div>
-                                    <button class="tk-seat-click" cord="J1">1</button>
-                                    <button class="tk-seat-click" cord="J2">2</button>
-                                    <button class="tk-seat-click" cord="J3">3</button>
-                                    <button class="tk-seat-click test" cord="J4" style="margin-right: 23px;">4</button>
-                                    <button class="tk-seat-click" cord="J5">5</button>
-                                    <button class="tk-seat-click" cord="J6">6</button>
-                                    <button class="tk-seat-click" cord="J7">7</button>
-                                    <button class="tk-seat-click" cord="J8" style="margin-right: 23px;">8</button>
-                                    <button class="tk-seat-click" cord="J9">9</button>
-                                    <button class="tk-seat-click" cord="J10">10</button>
-                                    <button class="tk-seat-click" cord="J11">11</button>
-                                    <button class="tk-seat-click" cord="J12">12</button>
+                                    <button class="tk-seat-click">1</button>
+                                    <button class="tk-seat-click">2</button>
+                                    <button class="tk-seat-click">3</button>
+                                    <button class="tk-seat-click test" style="margin-right: 23px;">4</button>
+                                    <button class="tk-seat-click">5</button>
+                                    <button class="tk-seat-click">6</button>
+                                    <button class="tk-seat-click">7</button>
+                                    <button class="tk-seat-click" style="margin-right: 23px;">8</button>
+                                    <button class="tk-seat-click">9</button>
+                                    <button class="tk-seat-click">10</button>
+                                    <button class="tk-seat-click">11</button>
+                                    <button class="tk-seat-click">12</button>
                                 </div>
                             </div>
                         </div>
@@ -272,23 +272,21 @@
                             </div>
                             <div class="tk-choice-seat-right">
                                 <div class="tk-select-seat">선택좌석</div>
-                                <form action="/ticket" method="GET">
+                                
                                 <div class="tk-my-seat">
-                                    <div class="tk-choice-seat-now" name="a" id="select_seat_01" >-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>
-                                    <div class="tk-choice-seat-now" name="a">-</div>                                
-                                    <input type="submit" style="display : none;" id="formSubmit">
+                                    <div class="tk-choice-seat-now" id="select_seat_01" >-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
+                                    <div class="tk-choice-seat-now">-</div>
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="tk-titleImg" id="tk_titleImg">
+                    <div class="tk-titleImg">
                         <div class="tk-titleText">약관 필수 동의</div>
                     </div>
                     <div class="tk-box">
@@ -297,11 +295,10 @@
                     </div>
                     <div class="tk-btn-group" id="test">
                         <div class="tk-previous-page">이전</div>
-                        <div class="tk-next-page" id="tk_next_page">예매</div>
-                    
+                        <div class="tk-next-page">예매</div>
                     </div>
                 </div>
             </div>
         </section>
         </main>
-<jsp:include page="/views/common/footer.jsp" />
+<jsp:include page="${path}/views/common/footer.jsp" />

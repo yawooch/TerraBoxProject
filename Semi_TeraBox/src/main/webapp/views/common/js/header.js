@@ -103,6 +103,6 @@ $(document).ready(()=>{
 			$('.cm-modal').fadeOut(200,'linear');
 		});
 	}
-	teraModal('입력할메세지', '600px');
+	teraModal('alert 창 테서터');
 
 });
