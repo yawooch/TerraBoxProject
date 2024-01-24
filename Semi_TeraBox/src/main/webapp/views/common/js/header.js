@@ -84,5 +84,25 @@ $(document).ready(()=>{
 		}
 
 	});
+	//TeraModal
+	//모달 화면 표시
+	let teraModal = function(text, width)
+	{
+		if(width === null || width === undefined){
+			width = '300px';
+		}
+		width = width.replace('px','');
+
+		$('section.cm-modalSection').css('width', width + 'px');
+		$('section.cm-modalSection').css('margin-left', (width/2*-1)+ 'px');
+
+		$('#modalText').html(text);
+		$('.cm-modal').fadeIn(200,'linear');
+		//모달 화면 닫기
+		$('.cm-close-btn,#cm_btnConfirm').click((event)=>{
+			$('.cm-modal').fadeOut(200,'linear');
+		});
+	}
+	teraModal('alert 창 테서터');
 
 });
