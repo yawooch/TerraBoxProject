@@ -92,25 +92,63 @@ public class FaqDao {
 		return count;
 	}
 
-	public List<Faq> findCategory(Connection connection, String category) {
+	
+	
+	public int getCategoryCount(Connection connection, String category) {
+		int count = 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		
+		String query = "SELECT COUNT(*) FROM FAQ WHERE FAQ_CATEGORY = ? ";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setString(1, category);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			} 
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return count;
+	}
+	
+	
+	
+	public List<Faq> findCategory(Connection connection, String category, PageInfo pageInfo) {
 		List<Faq> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT FAQ_NO"
-				+ "     , FAQ_TITLE"
-				+ "     , FAQ_CONTENT"
-				+ "     , FAQ_CATEGORY"
-				+ "     , MEMBER_ID"
-				+ "  FROM FAQ"
-				+ " WHERE FAQ_CATEGORY = ?";
+		String query = "SELECT * FROM  "
+				+ "(SELECT ROWNUM AS RNUM, "
+				+ "FAQ.FAQ_NO, "
+				+ "FAQ_TITLE, "
+				+ "FAQ.FAQ_CONTENT, "
+				+ "FAQ.FAQ_CATEGORY, "
+				+ "FAQ.MEMBER_ID "
+				+ "FROM FAQ ) "
+				+ "WHERE FAQ_CATEGORY = ? "
+				+ "AND RNUM BETWEEN ? AND ? ";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
 			
 			pstmt.setString(1, category);
-//			pstmt.setInt(2, pageInfo.getStartList());
-//			pstmt.setInt(3, pageInfo.getEndList());
+			pstmt.setInt(2, pageInfo.getStartList());
+			pstmt.setInt(3, pageInfo.getEndList());
 			
 			rs = pstmt.executeQuery();
 			
@@ -136,6 +174,7 @@ public class FaqDao {
 		
 		return list;
 	}
+
 	
 	
 	

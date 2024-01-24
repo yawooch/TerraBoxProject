@@ -11,9 +11,9 @@
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
 					<span></span> <a
-						href="${ path }/views/question/questionHome.jsp"
+						href="${ path }/question"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="${ path }/views/question/faq.jsp"
+						href="${ path }/question/faq"
 						title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
 				</div>
 			</div>
@@ -21,20 +21,20 @@
 		<div class="qt-mainarea-by">
 			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
 				<p class="qt-sidebar-each-by">
-					<a href="${ path }/views/question/questionHome.jsp"
+					<a href="${ path }/question"
 						title="고객센터">고객센터</a>
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="${ path }/views/question/questionHome.jsp">고객센터
+						href="${ path }/question">고객센터
 							홈</a></li>
 					<li><a class="qt-second-text-by"
-						href="${ path }/views/question/faq.jsp">자주 묻는 질문</a></li>
+						href="${ path }/question/faq">자주 묻는 질문</a></li>
 					<li><a
-						href="${ path }/views/question/announcement.jsp">공지사항</a></li>
-					<li><a href="#">단체관람 및 대관문의</a></li>
+						href="${ path }/question/notice">공지사항</a></li>
+					<li><a href="${ path }/question/write">단체관람 및 대관문의</a></li>
 					<li><a
-						href="${ path }/views/question/lostItem.jsp">분실물
+						href="${ path }/question/lost">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
@@ -64,21 +64,21 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="전체">
 								<a class="qt-acolor1-by"
-									href="${ path }/views/question/faq.jsp">전체</a>
+									href="${ path }/question/faq">전체</a>
 							</button>
 						</li>
 						<li class="qt-on-by">
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="영화예매">
 								<a class="qt-acolor-by"
-									href="#">영화예매</a>
+									href="${ path }/question/faqmovie">영화예매</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="극장/특별관">
 								<a class="qt-acolor1-by"
-									href="${ path }/views/question/faqstate.jsp">극장/특별관</a>
+									href="${ path }/question/faqcinema">극장/특별관</a>
 							</button>
 						</li>
 					</ul>
@@ -113,12 +113,19 @@
 						</c:forEach>
 						</ul>
 					</div>
-					<nav class="qt-pagination-by">
-						<strong class="qt-active-by">1</strong> <a title="2페이지보기" href="#"
-							pagenum="2">2</a> <a title="3페이지보기" href="#" pagenum="3">3</a> <a
-							title="4페이지보기" href="#" pagenum="4">4</a> <a title="5페이지보기"
-							href="#" pagenum="5">5</a> <a title="6페이지보기" href="#" pagenum="6">6</a>
-					</nav>
+						<div class="qt-pagination-by"> 
+						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }" >
+							<c:choose>
+								<c:when test="${current == pageInfo.currentPage }">
+									<button style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 1.5px;
+									    width: 26px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
+								</c:when>
+								<c:otherwise>			
+									<button class="faq-btn-number" onclick="location.href='${path}/question/faqmovie?page=${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
 		</div>
