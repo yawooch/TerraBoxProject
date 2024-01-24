@@ -44,24 +44,24 @@ public class MovieService {
 
 	
 	// 영화 코멘트 부분 메소드 3가지
-	public int getMovieCommentCount() {
+	public int getMovieCommentCount(Movie movie) {
 		int count = 0;
 		
 		Connection connection = getConnection();
 		
-		count = new MovieDao().getMovieCommentCount(connection);
+		count = new MovieDao().getMovieCommentCount(connection, movie);
 		
 		close(connection);
 		
 		return count;
 	}
 	
-	public List<MovieComment> getMovieCommentList(PageInfo pageInfo) {
+	public List<MovieComment> getMovieCommentList(PageInfo pageInfo, Movie movie) {
 		List<MovieComment> list = null;
 		
 		Connection connection = getConnection();
 		
-		list = new MovieDao().findCommentAll(connection, pageInfo);
+		list = new MovieDao().findCommentAll(connection, pageInfo, movie);
 		
 		close(connection);
 		

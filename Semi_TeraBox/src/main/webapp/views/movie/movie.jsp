@@ -41,7 +41,7 @@
                         <img src="${path}/views/movie/image/개봉작만off.png" alt="">
                         <span>개봉작만</span>
                     </button>
-                    <span><b>129</b>개의 영화가 검색되었습니다.</span>
+                    <span><b>${ list.size() }</b>개의 영화가 검색되었습니다.</span>
                 </div>
                 <div class="mv-main-search">
                     <form action="">
@@ -100,7 +100,7 @@
 		                            <a href="/movie/detail?no=${ movie.no }" class="mv-main-poster-a">
 		                                <div class="mv-main-poster-ex">
 		                                    <span>
-		                                        ${ movie.synopsis }
+		                                        ${ movie.synopsis.replaceAll("<br>" , " ") }
 		                                    </span>
 		                                </div>
 		                                <div class="mv-main-poster-score">

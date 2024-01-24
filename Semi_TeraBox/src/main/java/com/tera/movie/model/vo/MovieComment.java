@@ -19,5 +19,5 @@ public class MovieComment {
 	private String comment;
 	private Date createDate;
 	private String point;
-	private String movieNo;
+	private int movieNo;
 }

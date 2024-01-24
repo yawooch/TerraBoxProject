@@ -19,9 +19,9 @@
         <section class="mv-movie-detail">
             <div class="mv-div-black">
                 <div class="mv-div1">
-                    <h2 class="mv-kr-name">서울의 봄</h2>
+                    <h2 class="mv-kr-name">${ movie.korName }</h2>
                     <br>
-                    <p class="mv-eng-name">12.12: THE DAY</p>
+                    <p class="mv-eng-name">${ movie.engName }</p>
                     <div class="mv-btn-util">
                         <button class="mv-btn-black" id="mv-like">
                             <img src="${path}/views/movie/image/heart.png" class="mv-icon heart" id="mv-like-image">
@@ -65,9 +65,9 @@
                 
                 <div class="mv-div2">
                     <div class="mv-poster">
-                        <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
+                        <img src="${ movie.poster }">
                         <div class="mv-movie-age">
-                            <img src="${path}/views/movie/image/Movie_age.png" >
+                            <img src="${path}/views/movie/image/Movie_age.png" >  <!-- 바꿔야함 -->
                         </div>
                         <div class="mv-download-poster">
                             <img src="${path}/views/movie/image/download_poster.png">
@@ -79,24 +79,23 @@
         </section>
 
 
-
         <!-- 주요 정보 -->
         <section class="mv-com-sec1">
             <nav>
                 <ul>
-                    <li class="mv-first"><a href="/movie/detail">주요정보/예고편/스틸컷</a></li>
-                    <li class="mv-second"><a href="/movie/comment">실관람평</a></li>
-                    <li class="mv-last"><a href="/movie/post">무비포스트</a></li>
+                    <li class="mv-first"><a href="/movie/detail?no=${movie.no}">주요정보/예고편/스틸컷</a></li>
+                    <li class="mv-second"><a href="/movie/comment?no=${movie.no}">실관람평</a></li>
+                    <li class="mv-last"><a href="/movie/post?no=${movie.no}">무비포스트</a></li>
                 </ul>
             </nav>
 
             <!-- 코멘트 부분 -->
             <div class="mv-com-head">
-                <h2>서울의 봄에 대한 <span>29,750</span>개의 이야기가 있어요!</h2>
+                <h2>${ movie.korName }에 대한 <span>${ pageInfo.listCount }</span>개의 이야기가 있어요!</h2>
                 <button class="mv-com-addMovie">본 영화 등록</button>
             </div>
             <div class="mv-com-selection">
-                <span>전체 <span>29,751</span>건</span>
+                <span>전체 <span>${ pageInfo.listCount }</span>건</span>
                 <div>
                     <button class="on" id="mv-com-btnRecent">최신순</button>
                     <button id="mv-com-btnLike">공감순</button>
@@ -112,7 +111,7 @@
                         </div>
                         <div class="mv-com-main-textbox">
                             <div class="mv-com-main-textbox-text">
-                                <span><span>서울의 봄</span>재미있게 보셨나요?</span>
+                                <span><span>${ movie.korName }</span>재미있게 보셨나요?</span>
                                 <br>
                                 <span>영화의 어떤 점이 좋았는지 이야기해주세요.</span>
                             </div>
@@ -168,6 +167,7 @@
                     </li>
                     <c:if test="${ not empty list }">
                    		<c:forEach var="movieComment" items="${ list }">
+                   		<c:if test="${ movie.no == movieComment.movieNo }">
                    			<li class="mv-com-main-list">
 		                        <div class="mv-com-main-li-icon">
 		                            <img src="https://img.megabox.co.kr/static/pc/images/mypage/bg-profile.png" alt="">
@@ -189,15 +189,17 @@
 		                            <fmt:formatDate value="${ movieComment.createDate }" dateStyle="short"/>
 		                        </div>
 		                    </li>
+                   		</c:if>
                    		</c:forEach>
                     </c:if>
                     
                 </ul>
+<%--                 <c:if test="${ movie.no == movieComment.movieNo }"> --%>
                 <div class="mv-com-btnlist">
-                    <button class="mv-com-btnFirst mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?page=1'">
+                    <button class="mv-com-btnFirst mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?no=${movie.no}&page=1'">
                         <img src="${path}/views/movie/image/arrow-leftleft.png" alt="">
                     </button>
-                    <button class="mv-com-btnPrev mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?page=${ pageInfo.prevPage }'">
+                    <button class="mv-com-btnPrev mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?no=${movie.no}&page=${ pageInfo.prevPage }'">
                         <img src="${path}/views/movie/image/arrow-left.png" alt="">
                     </button>
                     <c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
@@ -206,17 +208,18 @@
 								<button class="mv-com-btnNumber on">${ current }</button>
 							</c:when>
 							<c:otherwise>
-								<button class="mv-com-btnNumber" onclick="location.href='${ path }/movie/comment?page=${ current }'">${ current }</button>
+								<button class="mv-com-btnNumber" onclick="location.href='${ path }/movie/comment?no=${movie.no}&page=${ current }'">${ current }</button>
 							</c:otherwise>
 						</c:choose>
 					</c:forEach>
-                    <button class="mv-com-btnNext mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?page=${ pageInfo.nextPage }'">
+                    <button class="mv-com-btnNext mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?no=${movie.no}&page=${ pageInfo.nextPage }'">
                         <img src="${path}/views/movie/image/arrow-right.png" alt="">
                     </button>
-                    <button class="mv-com-btnLast mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?page=${ pageInfo.maxPage }'">
+                    <button class="mv-com-btnLast mv-com-btnFunction" onclick="location.href='${ path }/movie/comment?no=${movie.no}&page=${ pageInfo.maxPage }'">
                         <img src="${path}/views/movie/image/arrow-rightright.png" alt="">
                     </button>
                 </div>
+<%--                 </c:if> --%>
             </div>
         </section>
         <section class="mv-com-write-bg">

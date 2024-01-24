@@ -102,16 +102,16 @@ public class MovieDao {
 	
 	// 영화 관람평 부분 메소드 3가지
 	// 관람평 갯수 세기
-	public int getMovieCommentCount(Connection connection) {
+	public int getMovieCommentCount(Connection connection, Movie movie) {
 		int count = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null; 
 		
-		String query = "SELECT COUNT(*) FROM MOVIE_EVAL";
+		String query = "SELECT COUNT(*) FROM MOVIE_EVAL WHERE MOVIE_NO = ?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
-			
+			pstmt.setInt(1, movie.getNo());
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
@@ -129,7 +129,7 @@ public class MovieDao {
 	}
 
 	// 관람평 출력
-	public List<MovieComment> findCommentAll(Connection connection, PageInfo pageInfo) {
+	public List<MovieComment> findCommentAll(Connection connection, PageInfo pageInfo, Movie movie) {
 		List<MovieComment> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -143,14 +143,16 @@ public class MovieDao {
 				+ 		"FROM MOVIE_EVAL "
 				+ 		"ORDER BY TO_NUMBER(TICKET_NO) DESC "
 				+ 	") "
+				+ " WHERE MOVIE_NO = ?"
 				+ ") "
-				+ "WHERE RNUM BETWEEN ? and ?";
+				+ "WHERE RNUM BETWEEN ? AND ?";
 		
 				
 		try {
 			pstmt = connection.prepareStatement(query);
-			pstmt.setInt(1, pageInfo.getStartList());
-			pstmt.setInt(2, pageInfo.getEndList());
+			pstmt.setInt(1, movie.getNo());
+			pstmt.setInt(2, pageInfo.getStartList());
+			pstmt.setInt(3, pageInfo.getEndList());
 			rs = pstmt.executeQuery();
 			
 			
@@ -163,7 +165,7 @@ public class MovieDao {
 				movieComment.setComment(rs.getString("EVAL_COMMENT"));
 				movieComment.setCreateDate(rs.getDate("EVAL_REG_DTTM"));
 				movieComment.setPoint(rs.getString("VIW_PNT_CONTENT"));
-				movieComment.setMovieNo(rs.getString("MOVIE_NO"));
+				movieComment.setMovieNo(rs.getInt("MOVIE_NO"));
 				
 				list.add(movieComment);
 			}

@@ -183,6 +183,7 @@ main nav>ul li:nth-child(2) {
 /* 영화 리스트 */
 .mv-main-ul {
     margin-left: -60px;
+    margin-top: 30px;
     padding: 0;
 }
 
