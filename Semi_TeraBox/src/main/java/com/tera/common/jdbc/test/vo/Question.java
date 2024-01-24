@@ -2,8 +2,18 @@ package com.tera.common.jdbc.test.vo;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class Question
+
 {
+	
     private String questNo;                //문의번호                         QUEST_NO
     private String questTitle;             //문의제목                         QUEST_TITLE
     private String questContent;           //문의내용                         QUEST_CONTENT

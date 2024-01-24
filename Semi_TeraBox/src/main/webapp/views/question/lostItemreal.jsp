@@ -50,7 +50,7 @@
 				</div>
 			</nav>
 			<div id="qt_contents_by">
-				<h2 class="qt-mainname-by">분실물 문의</h2>
+				<h2 class="qt-mainname-by">나의 문의내역</h2>
 				<div class="clearfix">
 					<ul class="dot-list">
 						<li>메가박스에서 잃어버린 물건이 있다면 ‘분실물 문의/접수’를 통해 접수해주세요</li>

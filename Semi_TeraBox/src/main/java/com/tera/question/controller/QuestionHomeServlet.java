@@ -15,8 +15,9 @@ public class QuestionHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     public QuestionHomeServlet() {}
-
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/question/questionHome.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/question/question.jsp").forward(request, response);
+		
 	}
 }
