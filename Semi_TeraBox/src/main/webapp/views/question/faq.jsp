@@ -36,7 +36,7 @@
 						<li><a href="${ path }/question/write">1:1 문의</a></li>
 					<li><a href="${ path }/question/write">단체관람 및 대관문의</a></li>
 					<li><a
-						href="${ path }/question/lostItem.jsp">분실물
+						href="${ path }/question/lost">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
@@ -80,7 +80,7 @@
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="극장/특별관">
-								<a href="${ path }/question/faqstate.jsp">극장/특별관</a>
+								<a href="${ path }/question/faqcinema">극장/특별관</a>
 							</button>
 						</li>
 					</ul>
@@ -123,11 +123,7 @@
 									    width: 26px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
 								</c:when>
 								<c:otherwise>			
-<<<<<<< HEAD
-									<button onclick="location.href='${path}/question/faq?page=${ current }'">${ current }</button>
-=======
 									<button class="faq-btn-number" onclick="location.href='${path}/question/faq?page=${ current }'">${ current }</button>
->>>>>>> f8c7773cb1936563a538fcdc60372e16721d08c5
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>

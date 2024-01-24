@@ -43,12 +43,28 @@ public class FaqService {
 		return count;
 	}
 
-	public List<Faq> findCategory(String category) {
+	
+	
+	public int getCategoryCount(String category) {
+		int count = 0;
+		
+		Connection connection = getConnection();
+
+		count = new FaqDao().getCategoryCount(connection, category);
+		
+		close(connection);
+		
+		return count;
+	}
+	
+	
+	
+	
+	public List<Faq> findCategory(String category, PageInfo pageInfo) {
 		
 		Connection connection = getConnection();
 		
-		List<Faq> list = new FaqDao().findCategory(connection, category);
-		
+		List<Faq> list = new FaqDao().findCategory(connection, category, pageInfo);
 		
 		close(connection);
 		
