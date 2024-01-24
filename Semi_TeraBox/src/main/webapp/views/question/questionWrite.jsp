@@ -105,7 +105,7 @@
 			<p class="reset mt10">* 원활한 서비스 이용을 위한 최소한의 개인정보이므로 동의하지 않을 경우
 				서비스를 이용하실 수 없습니다</p>
 			<p class="reset mt30 a-r font-orange">* 필수</p>
-			<form name="regFrm" method="post">
+			<form name="regFrm" method="post" action="/question/write">
 				<div class="table-wrap mt10" style="display: block;">
 					<table class="board-form va-m">
 						<colgroup>
@@ -117,13 +117,15 @@
 						<tbody>
 							<tr>
 								<th scope="row">문의선택<em class="font-orange">*</em></th>
-								<td colspan="3"><input type="radio" id="aq2"
-									name="inqMclCd" value="QD01M02" data-cd="QD_ETC_DIV_CD"
-									checked=""> <label for="aq2">고객센터문의</label> <input
-									type="radio" id="aq1" name="inqMclCd" class="ml20"
-									value="QD01M01" data-cd="QD_BRCH_DIV_CD"> 
+								<td colspan="3">
+									<label for="aq2">고객센터문의</label>
+									<input type="radio" id="aq2"
+										name="inqMclCd" value="QD01M02" data-cd="QD_ETC_DIV_CD"
+										checked="">
 									<label for="aq1">극장별문의</label> 
-								<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
+									<input type="radio" id="aq1" name="inqMclCd" class="ml20"
+										value="QD01M01" data-cd="QD_BRCH_DIV_CD"> 
+									<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
 										<option value="">지역선택</option>
 										<option value="10">서울</option>
 										<option value="30">경기</option>
@@ -133,9 +135,11 @@
 										<option value="65">광주/전라</option>
 										<option value="70">강원</option>
 										<option value="80">제주</option>
-								</select> <select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
-										<option value="">극장선택</option>
-								</select></td>
+									</select> 
+									<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
+									<option value="">극장선택</option>
+								</select>
+							</td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="ask-type">문의유형</label> <em
@@ -152,7 +156,7 @@
 								</select></td>
 							</tr>
 							<tr>
-								<th scope="row"><label for="name">이름</label> <em
+								<th scope="row"><label for="name" >이름</label> <em
 									class="font-orange">*</em></th>
 								<td><input type="text" id="name" name="inqurNm"
 									class="input-text w150px" value="" maxlength="30"></td>

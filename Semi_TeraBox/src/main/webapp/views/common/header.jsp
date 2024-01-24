@@ -5,113 +5,75 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
+    <link rel="icon" href="${path}/views/common/img/TeraBox.ico">
+	<link rel="stylesheet" href="${path}/views/common/css/header.css">
     <title>LIFE THEATER, 테라박스</title>
+	<script src="${path}/views/js/jquery-3.7.1.min.js"></script>
+	<script src="${path}/views/common/js/header.js"></script>
 
 <body>
-<link rel="stylesheet" href="${path}/views/common/css/header.css">
-<script src="${path}/views/js/jquery-3.7.1.min.js"></script>
-<script>
-	window.onload = function(){
-		//상단 메뉴 사이트맵 열기/닫기 이벤트
-		let siteMap = document.getElementsByClassName('cm-link-area-sitemap')[0];
-		siteMap.addEventListener('click', function(event){
-			let siteMapId = document.getElementById('cm_layer_sitemap');
-			if(siteMap.classList.contains('on'))
-			{
-				siteMap.classList.remove('on');
-				siteMapId.style.display = 'none';
-			}
-			else{
-				siteMap.classList.add('on');
-				siteMapId.style.display = 'block';
-			}
-		});
-		//상단 메뉴 검색창 열기/닫기 이벤트
-		let areaMovie = document.getElementsByClassName('cm-link-area-movie')[0];
-		areaMovie.addEventListener('click', function(event){
-			let headerSearch = document.getElementById('cm_layer_header_search');
-			if(areaMovie.classList.contains('on'))
-			{
-				areaMovie.classList.remove('on');
-				headerSearch.style.display = 'none';
-			}
-			else{
-				areaMovie.classList.add('on');
-				headerSearch.style.display = 'block';
-			}
-		});
-		//상단 메뉴 마이페이지 열기/닫기 이벤트
-		let mypage = document.getElementsByClassName('cm-link-area-mypage')[0];
-		mypage.addEventListener('click', function(event){
-			let layerMypage = document.getElementById('cm_layer-mypage');
-			if(mypage.classList.contains('on'))
-			{
-				mypage.classList.remove('on');
-				layerMypage.style.display = 'none';
-				document.getElementsByClassName('cm-login-before')[0].style.display = 'none';
-			}
-			else{
-				mypage.classList.add('on');
-				layerMypage.style.display = 'block';
-				document.getElementsByClassName('cm-login-before')[0].style.display = 'block';
-			}
-		});
-        //상단 메뉴 영화 호버 이벤트
-        // let menu = $('a[class~=cm-link-text-]');
-        // menu.array.forEach(element => {
-        //     console.log(element);
-        // });
-
-		let menus   = document.querySelectorAll('a[class^=cm-link-text-]');
-        let subMenuArea = document.getElementsByClassName('cm-header-nav')[0];
-        let subMenu     = document.getElementsByClassName('cm-gnb-depth2');
-
-        for(let idx = 0 ; idx < menus.length; idx++){
-            let menu = menus[idx];
-            menu.setAttribute('idx', idx);
-            menu.addEventListener('mouseover', function(event){
-                for(let idx = 0; idx < menus.length; idx ++){
-                    menus[idx].classList.remove('on');
-                }
-                $(this).addClass('on');
-                let elementIdx = $(this).attr('idx');
-                subMenuArea.style.display = 'block';
-                
-                for(let idx = 0; idx < subMenu.length; idx ++){
-                    subMenu[idx].style.display = 'none';
-                }
-                subMenu[elementIdx].style.display = 'block';
-            });
-        }
-        subMenuArea.addEventListener('mouseout', function(event){
-            subMenuArea.style.display = 'none';
-            for(let idx = 0; idx < menus.length; idx ++){
-                menus[idx].classList.remove('on');
-            }
-        });
-        subMenuArea.addEventListener('mouseover', function(event){
-            subMenuArea.style.display = 'block';
-        });
-            
-        // cm-link-text-movie
-        // cm-link-text-ticket
-        // cm-link-text-cinema
-        // cm-link-text-question
-		
-	}
-</script>
+<div class="cm-login-modal" style="display: none;">
+    <section class="cm-loginform">
+    <!-- 로그인창 -->
+    <div class="cm-login-box-out">   
+        <!--로그인창 헤더  -->
+        <div class="cm-layer-header">
+            <h4>로그인</h4>
+            <button type="button" class="cm-login-close-btn"></button>
+        </div>
+        <!-- 로그인창 내부 테두리 -->
+        <div class="cm-login-box-inner">
+            <!-- 왼쪽 -->
+            <!-- ID/PW 입력 -->
+            <div class="cm-col-left">
+                <div class="cm-id-intput-area">
+                    <form id="loginForm" action="/login" method="POST">
+                    <!-- 아이디 -->
+                    <input type="text" class="cm-input-text" id="user_id" name="user_id" autocomplete="off" required placeholder="로그인" maxlength="20" value="${cookie.saveId.value}">
+                    <!-- 비밀번호 -->
+                    <input type="password" class="cm-input-text" id="user_pw" name="user_pw" autocomplete="off" required placeholder="비밀번호" maxlength="20">
+                    <!-- 아이디저장  -->
+                    <div class="cm-ckboxline">
+                        <input type="checkbox" id="saveId" name="saveId" ${empty cookie.saveId.value ? '' : 'checked'}>
+                        <label for="saveId">아이디 저장</label>
+                    </div>
+                    <div class="cm-btn-area">
+                        <button type="submit" id="cm_btnlogin" class="cm-btnred" disabled="disabled" >로그인</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 오른쪽 -->
+            <!-- 배너광고 -->
+            <div class="cm-col-right">
+                <div class="cm-login-ad">
+                    <a href="https://direct.hi.co.kr/service.do?m=3293e8e708&HDMS1=banner&HDMS2=megabox&HDMS3=%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%8C%9D%EC%97%85
+                            _%EC%9A%B0%EC%B8%A1&HDMS4=%EC%A3%BC%ED%96%89%EA%B1%B0%EB%A6%AC_%ED%99%94%EC%9D%B4%ED%8A%B8&utm_source=megabox&utm_medium=display&utm
+                            _campaign=%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%8C%9D%EC%97%85_%EC%9A%B0%EC%B8%A1&utm_content=%EC%A3%BC%ED%96%89%EA%B1%B0%EB%A6%AC_%ED%99%94%EC%9D%B4%ED%8A%B8">       
+                        <img id="cm_banner" src="https://mlink-cdn.netinsight.co.kr/2023/07/03/c4dd80cdcc9039419686f47cf702d96c.png" alt="테라박스 현대해상">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
 <header id="cm_header">
     <div class="cm-content">
         <div class="cm-mainLogo"><img src="${path }/views/common/img/mainLogo.png" alt=""></div>
         <div class="cm-login-link">
-            <a href="#">로그인</a>
-            <a href="/member/enroll">회원가입</a>
+            <c:if test="${empty loginMember}">
+                <a href="javascript:" class="cm-btn-modal-open">로그인</a>
+                <a href="/member/confirm">회원가입</a>
+            </c:if>
+            <c:if test="${not empty loginMember}">
+                <a href="/logout">로그아웃</a>
+            </c:if>
             <a href="/ticket/">빠른예매</a>
         </div>
         <div class="cm-header-link-left">
-            <a href="" class="cm-link-area-sitemap"></a>
-            <a href="" class="cm-link-area-movie"></a>
+            <a href="javascript:" class="cm-link-area-sitemap"></a>
+            <a href="javascript:" class="cm-link-area-movie"></a>
             <div>
                 <a href="/movie"  class="cm-link-text-movie">영화</a>
                 <a href="/ticket" class="cm-link-text-ticket">예매</a>
@@ -123,7 +85,7 @@
                 <a href="/question" class="cm-link-text-question">고객센터</a>
             </div>
             <a href="/ticket" class="cm-link-area-ticket"></a>
-            <a href="" class="cm-link-area-mypage"></a>
+            <a href="javascript:" class="cm-link-area-mypage"></a>
         </div>
     </div>
     <nav class="cm-header-nav" style="display:none;">
@@ -204,7 +166,7 @@
         </div>
         <!--// wrap -->
     </div>
-    <div id="cm_layer_header_search" class="cm-header-layer cm-layer-header-search cm-appendHtml" style="display:none;">
+    <div id="cm_layer_movie" class="cm-header-layer cm-layer-header-search cm-appendHtml" style="display:none;">
         <div class="cm-header-search-wrap">
             <div class="cm-tab-rank cm-tab-layer">
                 <ul>
@@ -234,37 +196,40 @@
 			</form>
         </div>
     </div>
-    <div id="cm_layer-mypage" class="cm-header-layer cm-layer-mypage">
+    <div id="cm_layer_mypage" class="cm-header-layer cm-layer-mypage">
         <!-- wrap-->
         <div class="cm-mypage-wrap" >
-    
-            <div class="cm-login-after" style="display: block;">
+            <c:if test="${not empty loginMember}">
+                <!-- 로그인 후 -->
+            <div class="cm-login-after">
                 <div class="cm-inner">
                     <div class="cm-box">
                         <div class="cm-mbimg"><img src="https://img.megabox.co.kr/static/pc/images/2023/01/member_WELCOME_2.png" alt="WELCOME"></div>
-                        <div class="cm-name">양우찬<span>님</span></div>
+                        <div class="cm-name">${loginMember.memberId}<span> 님</span></div>
     
                         <a href="/mypage/myticket" class="cm-linkBtn" title="나의  테라박스">나의  테라박스</a>
                     </div>
                     <div class="cm-box cm-reserve">
                         <div class="cm-tit">
-                            <a class="cm-linkA" href="/mypage/myticket" title="예매내역"><span>예매</span></a>
+                            <a class="cm-linkA" href="/mypage" title="예매내역"><span>예매</span></a>
                         </div>
     
                         <div title="예매 수" class="cm-count"><div class="cm-txt">예매내역이 없어요!</div></div>
                     </div>
                 </div>
             </div>
+            </c:if>
+            
+            <c:if test="${empty loginMember}">
             <!-- 로그인 전 -->
-            <div class="cm-login-before" style="display: none;">
+            <div class="cm-login-before">
                 <div class="cm-txt">영화를 사랑하는 당신을 위한 꼭 맞는 혜택까지 확인해 보세요!</div>
-    
                 <div class="cm-linkBox">
-                    <a href="layer_login_common" id="cm_moveLogin" title="로그인" class="cm-btn-modal-open" w-data="850" h-data="484">로그인</a>
-                    <a href="/member/enroll" class="cm-link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
+                    <a href="javascript:"    class="cm-btn-modal-open" title="로그인" id="cm_moveLogin"  >로그인</a>
+                    <a href="/member/enroll" class="cm-link"           title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
                 </div>
-    
             </div>
+            </c:if>
         </div>
     </div>
 </header>
