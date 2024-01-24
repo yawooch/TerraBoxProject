@@ -56,14 +56,13 @@
     </div>
 </footer>
 <script>
-$(document).ready(()=>{
-    let findCinema  = $('.cm-footer-findCinema');
-    let closeCinema = $('.cm-btn-footer-layer-close');
+    let findCinema = document.getElementsByClassName('cm-footer-findCinema')[0];
+    let closeCinema = document.getElementsByClassName('cm-btn-footer-layer-close')[0];
     //극장찾기 열기/닫기 이벤트
-    findCinema.click(function(event){
+    findCinema.addEventListener('click',function(event){
         event.preventDefault();
         let listCinema = $('#cm_layer_looking_theater');
-console.log('hello');
+
         if(listCinema.hasClass('on')){
             listCinema.removeClass('on');
         }
@@ -72,10 +71,7 @@ console.log('hello');
         }
     });
     //극장찾기 닫기 이벤트
-    closeCinema.click(function(event){
+    closeCinema.addEventListener('click',function(event){
         $('#cm_layer_looking_theater').removeClass('on');
     });
-});
 </script>
-</body>
-</html>

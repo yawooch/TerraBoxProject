@@ -8,8 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tera.member.model.vo.Member;
-
+import com.tera.common.jdbc.test.vo.Member;
 
 /**
  * <MEMBER 테이블>
@@ -34,7 +33,7 @@ public class MemberDao
         {
             Class.forName("oracle.jdbc.driver.OracleDriver");// 오라클 드라이버
             
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "C##TERA", "TERA");
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@112.156.11.186:8087:xe", "C##TERA", "TERA");
             stmt       = connection.createStatement();
             rs         = stmt.executeQuery("SELECT * FROM MEMBER");
             
