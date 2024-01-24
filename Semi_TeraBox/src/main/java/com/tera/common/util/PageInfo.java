@@ -39,6 +39,11 @@ public class PageInfo {
 		return this.currentPage;
 	}
 	
+	// 전체 리스트 수 메소드 추가
+	public int getListCount() {
+		return this.listCount;
+	}
+	
 	public int getPrevPage() {
 		int prevPage = this.getCurrentPage() - 1;
 
