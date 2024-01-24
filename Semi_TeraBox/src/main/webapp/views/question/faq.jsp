@@ -122,7 +122,7 @@
 									<button disabled>${ current }</button>
 								</c:when>
 								<c:otherwise>			
-									<button onclick="location.href='${path}/question/faq?page${ current }'">${ current }</button>
+									<button onclick="location.href='${path}/question/faq?page=${ current }'">${ current }</button>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
