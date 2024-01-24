@@ -47,25 +47,25 @@
                         <div class="tk-seat-count">
                             <div class="tk-cell">
                                 <p class="tk-txt">성인</p>
-                                <div class="tk-counter-group">
+                                <div class="tk-counter-group adult">
                                     <button class="tk-btn-minus tk_btn_minus" id="tk_btn_minus" >-</button>
-                                    <div class="tk-counter"><span id="tk_now">0</span></div>
+                                    <div class="tk-counter"><span id="tk_now_adult">0</span></div>
                                     <button class="tk-btn-plus tk_btn_plus" id="tk_btn_plus">+</button>
                                 </div>
                             </div>
                             <div class="tk-cell">
                                 <p class="tk-txt">청소년</p>
-                                <div class="tk-counter-group">
+                                <div class="tk-counter-group junior">
                                     <button class="tk-btn-minus tk_btn_minus" id="tk_btn_minus2">-</button>
-                                    <div class="tk-counter"><span id="tk_now2">0</span></div>
+                                    <div class="tk-counter"><span id="tk_now_junior">0</span></div>
                                     <button class="tk-btn-plus  tk_btn_plus" id="tk_btn_plus2">+</button>
                                 </div>
                             </div>
                             <div class="tk-cell">
                                 <p class="tk-txt">경로</p>
-                                <div class="tk-counter-group">
+                                <div class="tk-counter-group senior">
                                     <button class="tk-btn-minus tk_btn_minus" id="tk_btn_minus3">-</button>
-                                    <div class="tk-counter"><span id="tk_now3">0</span></div>
+                                    <div class="tk-counter"><span id="tk_now_senior">0</span></div>
                                     <button class="tk-btn-plus tk_btn_plus" id="tk_btn_plus3">+</button>
                                 </div>
                             </div>

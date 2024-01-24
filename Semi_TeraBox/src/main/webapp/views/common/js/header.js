@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+
 	//로고 이미지를 클릭하면 메인화면으로 돌아간다.
 	$('.cm-mainLogo').click(()=>{
 		location.href = '/';
@@ -84,25 +85,34 @@ $(document).ready(()=>{
 		}
 
 	});
-	//TeraModal
-	//모달 화면 표시
-	let teraModal = function(text, width)
-	{
-		if(width === null || width === undefined){
-			width = '300px';
-		}
-		width = width.replace('px','');
-
-		$('section.cm-modalSection').css('width', width + 'px');
-		$('section.cm-modalSection').css('margin-left', (width/2*-1)+ 'px');
-
-		$('#modalText').html(text);
-		$('.cm-modal').fadeIn(200,'linear');
-		//모달 화면 닫기
-		$('.cm-close-btn,#cm_btnConfirm').click((event)=>{
-			$('.cm-modal').fadeOut(200,'linear');
-		});
-	}
-	teraModal('alert 창 테서터');
 
 });
+//TeraModal
+//모달 화면 표시
+//사용법
+//teraModal('alert 창 테서터');
+//teraModal('alert 창 테서터', '500px');
+//teraModal('alert 창 테서터', '500px', '500px');
+let teraModal = function(text, width, height)
+{
+	if(width === null || width === undefined){
+		width = '300px';
+	}
+	if(height === null || height === undefined){
+		height = '180px';
+	}
+	width  = width.replace('px','');
+	height = height.replace('px','');
+	
+	$('#modalText').html(text);
+	$('section.cm-modalSection').css('width', width + 'px');
+	$('section.cm-modalSection').css('margin-left', (width/2*-1)+ 'px');
+	$('section.cm-modalSection').css('height', height + 'px');
+	$('section.cm-modalSection').css('margin-top', (height/2*-1)+ 'px');
+
+	$('.cm-modal').fadeIn(200,'linear');
+	//모달 화면 닫기
+	$('.cm-close-btn,#cm_btnConfirm').click((event)=>{
+		$('.cm-modal').fadeOut(200,'linear');
+	});
+}
