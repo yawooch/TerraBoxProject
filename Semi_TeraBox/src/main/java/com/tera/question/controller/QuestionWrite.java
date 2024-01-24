@@ -64,6 +64,6 @@ public class QuestionWrite extends HttpServlet {
 
 		System.out.println(new QuestionBoardService().save(question));
 
-		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/question/myquestionlist.jsp").forward(request, response);
 	}
 }
