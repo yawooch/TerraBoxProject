@@ -15,15 +15,31 @@ public class MovieService {
 	// 영화 부분 메소드
 	public List<Movie> getMovieList() {
 		List<Movie> list = null; 
-		Connection connection = getConnection();
-//		list = new MovieDao().findAll(connection, null)
 		
-		return null;
+		Connection connection = getConnection();
+		
+		list = new MovieDao().findMovieAll(connection);
+		
+		close(connection);
+		
+		return list;
 	}
 	
 	
-	
-	
+	// 영화 번호를 통해 영화 객체 얻기
+	// 영화 세부페이지
+	public Movie getMovieByNo(int no) {
+		Movie movie = null;
+		
+		Connection connection = getConnection();
+		
+		movie = new MovieDao().findByNo(connection, no);
+		
+		close(connection);
+		
+		return movie;
+	}
+
 	
 
 	
@@ -45,7 +61,7 @@ public class MovieService {
 		
 		Connection connection = getConnection();
 		
-		list = new MovieDao().findAll(connection, pageInfo);
+		list = new MovieDao().findCommentAll(connection, pageInfo);
 		
 		close(connection);
 		
@@ -68,5 +84,15 @@ public class MovieService {
 		
 		return result;
 	}
+
+
+	
+
+
+
+
+
+
+	
 
 }
