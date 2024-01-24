@@ -9,7 +9,7 @@
             <div class="main-notice-wrap">
                 <p class="main-tit">메가박스</p>
                 <p class="main-link">
-                    <a href="/support/notice/detail?artiNo=11027&amp;bbsNo=9" title="공지사항 상세보기">
+                    <a href="/question" title="공지사항 상세보기">
                     <strong>
                     [공지]
                     </strong>
@@ -18,7 +18,7 @@
                 </p>
                 <p class="main-date">2024.01.11</p>
                 <p class="main-more">
-                    <a href="/support/notice" title="전체공지 더보기">더보기 <i class="main-iconset main-ico-arr-right-gray"></i></a>
+                    <a href="/question" title="전체공지 더보기">더보기 <i class="main-iconset main-ico-arr-right-gray"></i></a>
                 </p>
             </div>
         </div>
@@ -26,42 +26,42 @@
         <div class="main-info-link">
             <div class="main-table">
                 <div class="main-cell">
-                    <a href="/support" title="고객센터 페이지로 이동">
+                    <a href="/question" title="고객센터 페이지로 이동">
                         <i class="main-iconset main-ico-main-customer"></i>
                         <span>고객센터</span>
                     </a>
                 </div>
 
                 <div class="main-cell">
-                    <a href="/support/faq" title="자주 묻는 질문 페이지로 이동">
+                    <a href="/question/faq" title="자주 묻는 질문 페이지로 이동">
                         <i class="main-iconset main-ico-main-faq"></i>
                         <span>자주 묻는 질문</span>
                     </a>
                 </div>
 
                 <div class="main-cell">
-                    <a href="/support/inquiry" title="1:1 문의 페이지로 이동">
+                    <a href="/question/personal" title="1:1 문의 페이지로 이동">
                         <i class="main-iconset main-ico-main-qna"></i>
                         <span>1:1 문의</span>
                     </a>
                 </div>
 
                 <div class="main-cell">
-                    <a href="/support/rent" title="단체/대관문의 페이지로 이동">
+                    <a href="/question/rental" title="단체/대관문의 페이지로 이동">
                         <i class="main-iconset main-ico-main-group"></i>
                         <span>단체/대관문의</span>
                     </a>
                 </div>
 
                 <div class="main-cell">
-                    <a href="/support/lost" title="분실물 문의/접수 페이지로 이동">
+                    <a href="/question/lost" title="분실물 문의/접수 페이지로 이동">
                         <i class="main-iconset main-ico-main-lost"></i>
                         <span>분실물 문의/접수</span>
                     </a>
                 </div>
 
                 <div class="main-cell">
-                    <a href="/booking/privatebooking" title="더 부티크 프라이빗 대관예매 페이지로 이동">
+                    <a href="/cinema/special" title="더 부티크 프라이빗 대관예매 페이지로 이동">
                         <i class="main-iconset main-ico-main-boutique"></i>
                         <span>특별관</span>
                     </a>

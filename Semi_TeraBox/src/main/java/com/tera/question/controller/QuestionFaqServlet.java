@@ -41,15 +41,15 @@ public class QuestionFaqServlet extends HttpServlet {
 		}catch (NumberFormatException e) {
 			page = 1;
 		}
-
-		
 		
 		listCount = new FaqService().getFaqCount(); 
+		
 		pageInfo = new PageInfo(page, 10, listCount, 10);
 
+		list = new FaqService().findAll(pageInfo);
 		
-		list = new FaqService().findAll();
-		
+		System.out.println(pageInfo);
+						
 		request.setAttribute("pageInfo", pageInfo);
 		
 		request.setAttribute("list", list);

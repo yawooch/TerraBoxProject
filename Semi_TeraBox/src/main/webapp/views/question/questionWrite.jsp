@@ -105,7 +105,7 @@
 			<p class="reset mt10">* 원활한 서비스 이용을 위한 최소한의 개인정보이므로 동의하지 않을 경우
 				서비스를 이용하실 수 없습니다</p>
 			<p class="reset mt30 a-r font-orange">* 필수</p>
-			<form name="regFrm" method="post" action="/question/write">
+			<form name="regFrm" method="post" action="/question/writeview">
 				<div class="table-wrap mt10" style="display: block;">
 					<table class="board-form va-m">
 						<colgroup>

@@ -183,6 +183,7 @@ main nav>ul li:nth-child(2) {
 /* 영화 리스트 */
 .mv-main-ul {
     margin-left: -60px;
+    margin-top: 30px;
     padding: 0;
 }
 
@@ -230,7 +231,8 @@ main nav>ul li:nth-child(2) {
 }
 
 .mv-main-poster-ex {
-    height: 55%;
+    height: 50%;
+    overflow: hidden;
 }
 
 .mv-main-poster-ex>span{

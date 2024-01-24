@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.tera.common.util.PageInfo;
 import com.tera.movie.model.service.MovieService;
+import com.tera.movie.model.vo.Movie;
 import com.tera.movie.model.vo.MovieComment;
 
 @WebServlet(name = "movieComment", urlPatterns = { "/movie/comment" })
@@ -29,47 +30,36 @@ public class MovieCommentServlet extends HttpServlet {
     	int listCount = 0;
     	List<MovieComment> list = null;
     	
-    	// 임의 값 입력
-//    	list = new ArrayList<>();
-//    	MovieComment movieComment = new MovieComment();
-//		
-//		movieComment.setTicketNo(2);
-//		movieComment.setScore(9);
-//		movieComment.setComment("너무재미있습니다 테스트입니다.");
-//		movieComment.setCreateDate(null);
-//		movieComment.setPoint("관람,연출");
-//		movieComment.setMovieNo(2);
-//		
-//		list.add(movieComment);
-    	// 여기까지
+    	// 영화 객체 저장 부분
+    	int no = Integer.parseInt(request.getParameter("no"));
+		System.out.println("영화 번호: " + no);
 		
+		Movie movie = new MovieService().getMovieByNo(no);
+		
+		request.setAttribute("movie", movie);
+    	
+		// 관람평 부분
     	try {
     		page = Integer.parseInt(request.getParameter("page"));
 			
 		} catch (NumberFormatException e) {
 			page = 1;
 		}
-
-//    	System.out.println(page);
     	
-    	listCount = new MovieService().getMovieCommentCount();
+    	listCount = new MovieService().getMovieCommentCount(movie);
     	pageInfo = new PageInfo(page, 5, listCount, 5);
-    	list = new MovieService().getMovieCommentList(pageInfo);
+    	list = new MovieService().getMovieCommentList(pageInfo, movie);
     	
     	request.setAttribute("pageInfo", pageInfo);
     	request.setAttribute("list", list);
-//    	request.setAttribute("movieComment", movieComment);
     	
     	System.out.println(list);
-    	
+   
     	request.getRequestDispatcher("/views/movie/movieComment.jsp").forward(request, response);
-    	
     }
     
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//    	System.out.println("감상평: " + request.getParameter("comment"));
-//    	System.out.println("포인트: " + request.getParameter("ele"));
     	
     	MovieComment movieComment = new MovieComment();
     	movieComment.setComment(request.getParameter("comment"));

@@ -19,9 +19,9 @@
         <section class="mv-movie-detail">
             <div class="mv-div-black">
                 <div class="mv-div1">
-                    <h2 class="mv-kr-name">서울의 봄</h2>
+                    <h2 class="mv-kr-name">${ movie.korName }</h2>
                     <br>
-                    <p class="mv-eng-name">12.12: THE DAY</p>
+                    <p class="mv-eng-name">${ movie.engName }</p>
                     <div class="mv-btn-util">
                         <button class="mv-btn-black" id="mv-like">
                             <img src="${path}/views/movie/image/heart.png" class="mv-icon heart" id="mv-like-image">
@@ -65,9 +65,9 @@
                 
                 <div class="mv-div2">
                     <div class="mv-poster">
-                        <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg">
+                        <img src="${ movie.poster }">
                         <div class="mv-movie-age">
-                            <img src="${path}/views/movie/image/Movie_age.png" >
+                            <img src="${path}/views/movie/image/Movie_age.png" >  <!-- 바꿔야함 -->
                         </div>
                         <div class="mv-download-poster">
                             <img src="${path}/views/movie/image/download_poster.png">
@@ -82,43 +82,29 @@
         <section class="mv-sec1">
             <nav>
                 <ul>
-                    <li class="mv-first"><a href="/movie">주요정보/예고편/스틸컷</a></li>
-                    <li class="mv-second"><a href="/movie/comment">실관람평</a></li>
-                    <li class="mv-last"><a href="/movie/post">무비포스트</a></li>
+                    <li class="mv-first"><a href="/movie/detail?no=${ movie.no }">주요정보/예고편/스틸컷</a></li>
+                    <li class="mv-second"><a href="/movie/comment?no=${ movie.no }">실관람평</a></li>
+                    <li class="mv-last"><a href="/movie/post?no=${ movie.no }">무비포스트</a></li>
                 </ul>
 
             </nav>
+            <!-- 바꿔야 함 ${ movie.synopsis } --> 
             <p class="mv-large-p">1979년 12월 12일, 수도 서울 군사반란 발생</p>
             <p class="mv-small-p">
-                그날, 대한민국의 운명이 바뀌었다<br>
-                <br>
-                대한민국을 뒤흔든 10월 26일 이후, 서울에 새로운 바람이 불어온 것도 잠시<br>
-
-                12월 12일, 보안사령관 전두광이 반란을 일으키고<br>
-                군 내 사조직을 총동원하여 최전선의 전방부대까지 서울로 불러들인다.<br>
-                <br>
-                권력에 눈이 먼 전두광의 반란군과 이에 맞선 수도경비사령관 이태신을 비롯한<br>
-                진압군 사이, 일촉즉발의 9시간이 흘러가는데…<br>
-                <br>
-                목숨을 건 두 세력의 팽팽한 대립<br>
-                오늘 밤, 대한민국 수도에서 가장 치열한 전쟁이 펼쳐진다!</p>
+                ${ movie.synopsis }
+            </p>
 
             <button class="mv-btn-more off" id="mv-moreText">더보기</button>
             <div>
-                <p>상영타입 : 2D, 2D ATMOS, 디지털가치봄, 한글자막(CC)</p>
+                <p>상영타입 : ${ movie.type }</p>
                 <div class="mv-movie-info">
-                    <p>감독 : 김성수   </p>
-                    <p>장르 : 드라마 / 141 분</p>
-                    <p>등급 : 12세이상관람가</p>
-                    <p>개봉일 : 2023.11.22</p>
+                    <p>감독 : ${ movie.director }   </p>
+                    <p>장르 : ${ movie.genre }</p>
+                    <p>등급 : ${ movie.grade }</p>
+                    <p>개봉일 : ${movie.openDate }</p>
                 </div>
-                <p>출연진 : 황정민, 정우성, 이성민, 박해준, 김성균, 김의성, 
-                    정동환, 안내상, 유성주, 최병모, 한규원, 우미화, 차건우, 
-                    김옥주, 박정표, 곽진석, 이승희, 김기무, 문성복, 현봉식, 
-                    곽자형, 전운종, 전수지, 서광재, 임철형, 권혁, 한창헌, 
-                    송영근, 최원경, 차래형, 공재민, 박민이, 염동헌, 전진기, 
-                    정형석, 박정학, 박원상, 남윤호, 홍서준, 안세호, 박훈, 
-                    이재윤, 김성오</p>
+                <p>출연진 : ${ movie.actors }
+                </p>
             </div>
         </section>
         

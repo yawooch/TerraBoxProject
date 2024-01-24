@@ -12,37 +12,63 @@ import com.tera.movie.model.vo.MovieComment;
 
 public class MovieService {
 	
+	// 영화 부분 메소드
+	public List<Movie> getMovieList() {
+		List<Movie> list = null; 
+		
+		Connection connection = getConnection();
+		
+		list = new MovieDao().findMovieAll(connection);
+		
+		close(connection);
+		
+		return list;
+	}
+	
+	
+	// 영화 번호를 통해 영화 객체 얻기
+	// 영화 세부페이지
+	public Movie getMovieByNo(int no) {
+		Movie movie = null;
+		
+		Connection connection = getConnection();
+		
+		movie = new MovieDao().findByNo(connection, no);
+		
+		close(connection);
+		
+		return movie;
+	}
 
-	public int getMovieCommentCount() {
+	
+
+	
+	// 영화 코멘트 부분 메소드 3가지
+	public int getMovieCommentCount(Movie movie) {
 		int count = 0;
 		
 		Connection connection = getConnection();
 		
-		count = new MovieDao().getMovieCommentCount(connection);
+		count = new MovieDao().getMovieCommentCount(connection, movie);
 		
 		close(connection);
 		
 		return count;
 	}
 	
-	
-	public List<MovieComment> getMovieCommentList(PageInfo pageInfo) {
+	public List<MovieComment> getMovieCommentList(PageInfo pageInfo, Movie movie) {
 		List<MovieComment> list = null;
 		
 		Connection connection = getConnection();
 		
-		list = new MovieDao().findAll(connection, pageInfo);
-		
-		
+		list = new MovieDao().findCommentAll(connection, pageInfo, movie);
 		
 		close(connection);
-		
 		
 		return list;
 		
 	}
-
-
+	
 	public int save(MovieComment movieComment) {
 		int result = 0;
 		
@@ -56,13 +82,17 @@ public class MovieService {
 			rollback(connection);
 		}
 		
-		
 		return result;
 	}
 
 
-	public List<Movie> getMovieList() {
-		return null;
-	}
+	
+
+
+
+
+
+
+	
 
 }

@@ -12,6 +12,29 @@
 	<script src="${path}/views/common/js/header.js"></script>
 
 <body>
+<div class="cm-modal" style="display: none;">
+    <section class="cm-modalSection">
+    <!-- 모달창 -->
+    <div class="cm-modal-box-out">   
+        <!--모달창 헤더  -->
+        <div class="cm-modal-layer-header">
+            <h4>알림</h4>
+            <button type="button" class="cm-close-btn"></button>
+        </div>
+        <!-- 모달창 내부 테두리 -->
+        <div class="cm-modal-box-inner">
+            <div class="cm-modal-col">
+                <div class="cm-modal-intput-area">
+                    <p id="modalText"></p>
+                </div>
+                <div class="cm-modalBtn-area">
+                    <button type="button" id="cm_btnConfirm" class="cm-btnred">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
 <div class="cm-login-modal" style="display: none;">
     <section class="cm-loginform">
     <!-- 로그인창 -->

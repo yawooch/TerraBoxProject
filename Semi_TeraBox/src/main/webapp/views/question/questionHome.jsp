@@ -2,9 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<jsp:include page="/views/common/header.jsp" />
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/views/question/css/question.css">
+<jsp:include page="${path}/views/common/header.jsp" />
+<link rel="stylesheet" href="../question/css/questionHome.css">
 <link rel="img" href="/src/main/webapp/img/">
 <div class="qt-body-by">
 
@@ -12,10 +11,11 @@
 		<div class="qt-submenu-by">
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
-					<span></span> <a href="http://localhost:8080/question"
+					<span></span> <a
+						href="http://localhost:8080/views/question/questionHome.jsp"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="http://localhost:8080/question" title="고객센터 페이지로 이동"
-						id="qt_submenuname1_by"> 고객센터 홈</a>
+						href="http://localhost:8080/views/question/questionHome.jsp"
+						title="고객센터 페이지로 이동" id="qt_submenuname1_by"> 고객센터 홈</a>
 				</div>
 			</div>
 		</div>
@@ -27,12 +27,13 @@
 				</p>
 				<ul class="qt-te-area-by">
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/question">고객센터 홈</a></li>
-					<li><a href="http://localhost:8080/question/notice">공지사항</a></li>
-					<li><a href="http://localhost:8080/question/faq">자주 묻는 질문</a></li>
-					<li><a href="http://localhost:8080/question/faq">1:1 문의</a></li>
-					<li><a href="http://localhost:8080/question/write">단체관람 및
-							대관문의</a></li>
+						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
+							홈</a></li>
+					<li><a href="http://localhost:8080/views/question/faq.jsp">자주
+							묻는 질문</a></li>
+					<li><a
+						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
+					<li><a href="#">단체관람 및 대관문의</a></li>
 					<li><a
 						href="http://localhost:8080/views/question/lostItem.jsp">분실물
 							문의</a></li>
@@ -61,7 +62,7 @@
 				<div class="qt-custo-main-by">
 					<div class="qt-custo-main-area-by">
 						<div class="qt-block-content-by">
-							<a href="http://localhost:8080/question/notice"
+							<a href="http://localhost:8080/views/question/lostItem.jsp"
 								title="분실물 문의 페이지로 이동">
 								<p>
 									<Strong>분실물 문의</Strong> "잃어버린 물건을 접수해 주시면" <br> "신속히
@@ -70,8 +71,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content1-by">
-							<a href="http://localhost:8080/question/write"
-								title="1:1 문의 페이지로 이동">
+							<a href="#" title="1:1 문의 페이지로 이동">
 								<p>
 									<Strong>1:1 문의</Strong> "해결되지않은 문제가 있나요?" <br> "1:1문의로
 									문의주세요"
@@ -79,8 +79,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content2-by">
-							<a href="http://localhost:8080/question/write"
-								title="단체관람 및 대관 문의 페이지로 이동">
+							<a href="#" title="단체관람 및 대관 문의 페이지로 이동">
 								<p>
 									<Strong>단체관람 및 대관문의</Strong> "단체관람 및 대관을 원하시면" <br> "문의
 									해주세요"
@@ -88,7 +87,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content3-by">
-							<a href="http://localhost:8080/question/faq"
+							<a href="http://localhost:8080/views/question/faq.jsp"
 								title="자주 묻는 질문 페이지로 이동">
 								<p>
 									<Strong>자주 묻는 질문</Strong> "빠르고 간편하게 검색하세요"
@@ -100,8 +99,9 @@
 						<div class="qt-block-left-by">
 							<div class="qt-tit-area-by">
 								<h3 class="qt-tit-by qt-small-by ">자주 묻는 질문 BEST5</h3>
-								<a href="http://localhost:8080/question/faq" class="qt-more-by"
-									title="더보기"> 더보기 <i class="qt-iconsetarea-by"></i>
+								<a href="http://localhost:8080/views/question/faq.jsp"
+									class="qt-more-by" title="더보기"> 더보기 <i
+									class="qt-iconsetarea-by"></i>
 								</a>
 							</div>
 							<div>
@@ -132,7 +132,7 @@
 						<div class="qt-block-right-by">
 							<div class="qt-tit-area-by">
 								<h3 class="qt-tit-by qt-small-by ">공지사항</h3>
-								<a href="http://localhost:8080/question/notice"
+								<a href="http://localhost:8080/views/question/lostItem.jsp"
 									class="qt-more-by" title="더보기"> 더보기 <i
 									class="qt-iconsetarea-by"></i>
 								</a>
@@ -175,4 +175,4 @@
 			</div>
 		</div>
 	</main>
-	<jsp:include page="/views/common/footer.jsp" />
+	<jsp:include page="${path}/views/common/footer.jsp" />

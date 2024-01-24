@@ -801,7 +801,7 @@ a {
 article, aside, figcaption, figure, footer, header, main, nav, section {
     display: block;
 }
-.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by strong {
+.qt-pagination-by .qt-control-by, .qt-pagination-by buttom, .qt-pagination-by strong {
     display: inline-block;
     position: relative;
     min-width: 32px;
@@ -833,6 +833,17 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     border: 2px solid #6D3030;
     color: #6D3030;
 }
+
+.faq-btn-number {
+	border: 1px solid #EBEBEB;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 26px;
+    line-height: 14px;
+    border-radius: 1.5px;
+}
+
+
 
 
 .lnb-area{

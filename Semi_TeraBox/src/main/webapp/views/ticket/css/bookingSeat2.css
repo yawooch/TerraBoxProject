@@ -408,9 +408,6 @@ h3 {
     border: 1px solid #6D3030;
 }
 
-.tk-seat-click:hover{
-    background-image: url(../img/bg-seat-choice.png);
-}
 
 .tk-seat-end {
     margin-bottom: 10px;
@@ -596,6 +593,13 @@ h3 {
     margin: 10px 0 7px 20px;
     display: inline-block;
 }
+.tk-titleImg.checked {
+    background-image: url(../img/bg-check-box.png);
+    width: 28px;
+    height: 28px;
+    margin: 10px 0 7px 20px;
+    display: inline-block;
+}
 
 .tk-titleText{
     width: 120px;
@@ -647,4 +651,8 @@ h3 {
     height: 40px;
     border-bottom-right-radius: 10px;
     padding: 10px 0;
+}
+.tk-next-page.enabled{
+    background-color: #037B94;
+    cursor:pointer;
 }

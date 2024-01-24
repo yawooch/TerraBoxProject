@@ -10,22 +10,108 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.tera.common.util.PageInfo;
+import com.tera.movie.model.vo.Movie;
 import com.tera.movie.model.vo.MovieComment;
 
 import static com.tera.common.jdbc.JDBCTemplate.*;
 
 public class MovieDao {
+	
+	
+	// 영화 부분 메소드
+	public List<Movie> findMovieAll(Connection connection) {
+		List<Movie> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT * FROM MOVIE ORDER BY MOVIE_NO DESC";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Movie movie = new Movie();
+				
+				movie.setNo(rs.getInt("MOVIE_NO"));
+				movie.setKorName(rs.getString("MV_KOR_NAME"));
+				movie.setEngName(rs.getString("MV_ENG_NAME"));
+				movie.setPoster(rs.getString("MV_POSTER"));
+				movie.setSynopsis(rs.getString("MV_SYNOPSIS"));
+				movie.setType(rs.getString("MV_TYPE"));
+				movie.setDirector(rs.getString("MV_DIRECTOR"));
+				movie.setGenre(rs.getString("MV_GENRE"));
+				movie.setGrade(rs.getString("MV_GRADE"));
+				movie.setOpenDate(rs.getDate("MV_OPEN_DATE"));
+				movie.setActors(rs.getString("MV_CASTINGS"));
+				
+				list.add(movie);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
 
-	public int getMovieCommentCount(Connection connection) {
+	
+
+	// 영화 단일 객체 불러오기
+	public Movie findByNo(Connection connection, int no) {
+		Movie movie = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM MOVIE WHERE MOVIE_NO = ?";
+		
+
+		try {
+			pstmt = connection.prepareStatement(query);
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				movie = new Movie();
+				
+				movie.setNo(rs.getInt("MOVIE_NO"));
+				movie.setKorName(rs.getString("MV_KOR_NAME"));
+				movie.setEngName(rs.getString("MV_ENG_NAME"));
+				movie.setPoster(rs.getString("MV_POSTER"));
+				movie.setSynopsis(rs.getString("MV_SYNOPSIS"));
+				movie.setType(rs.getString("MV_TYPE"));
+				movie.setDirector(rs.getString("MV_DIRECTOR"));
+				movie.setGenre(rs.getString("MV_GENRE"));
+				movie.setGrade(rs.getString("MV_GRADE"));
+				movie.setOpenDate(rs.getDate("MV_OPEN_DATE"));
+				movie.setActors(rs.getString("MV_CASTINGS"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return movie;
+	}
+
+
+
+	
+	// 영화 관람평 부분 메소드 3가지
+	// 관람평 갯수 세기
+	public int getMovieCommentCount(Connection connection, Movie movie) {
 		int count = 0;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null; 
 		
-		String query = "SELECT COUNT(*) FROM MOVIE_EVAL";
+		String query = "SELECT COUNT(*) FROM MOVIE_EVAL WHERE MOVIE_NO = ?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
-			
+			pstmt.setInt(1, movie.getNo());
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
@@ -39,11 +125,11 @@ public class MovieDao {
 			close(pstmt);
 		}
 		
-		
 		return count;
 	}
 
-	public List<MovieComment> findAll(Connection connection, PageInfo pageInfo) {
+	// 관람평 출력
+	public List<MovieComment> findCommentAll(Connection connection, PageInfo pageInfo, Movie movie) {
 		List<MovieComment> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -57,14 +143,16 @@ public class MovieDao {
 				+ 		"FROM MOVIE_EVAL "
 				+ 		"ORDER BY TO_NUMBER(TICKET_NO) DESC "
 				+ 	") "
+				+ " WHERE MOVIE_NO = ?"
 				+ ") "
-				+ "WHERE RNUM BETWEEN ? and ?";
+				+ "WHERE RNUM BETWEEN ? AND ?";
 		
 				
 		try {
 			pstmt = connection.prepareStatement(query);
-			pstmt.setInt(1, pageInfo.getStartList());
-			pstmt.setInt(2, pageInfo.getEndList());
+			pstmt.setInt(1, movie.getNo());
+			pstmt.setInt(2, pageInfo.getStartList());
+			pstmt.setInt(3, pageInfo.getEndList());
 			rs = pstmt.executeQuery();
 			
 			
@@ -77,7 +165,7 @@ public class MovieDao {
 				movieComment.setComment(rs.getString("EVAL_COMMENT"));
 				movieComment.setCreateDate(rs.getDate("EVAL_REG_DTTM"));
 				movieComment.setPoint(rs.getString("VIW_PNT_CONTENT"));
-				movieComment.setMovieNo(rs.getString("MOVIE_NO"));
+				movieComment.setMovieNo(rs.getInt("MOVIE_NO"));
 				
 				list.add(movieComment);
 			}
@@ -93,6 +181,8 @@ public class MovieDao {
 		return list;
 	}
 
+	
+	// 관람평 입력
 	public int insertMovieComment(Connection connection, MovieComment movieComment) {
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -114,6 +204,10 @@ public class MovieDao {
 		
 		return result;
 	}
+
+
+
+
 
 	
 	

@@ -3,16 +3,19 @@
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 	<jsp:include page="${path}/views/common/header.jsp" />
     <link rel="stylesheet" href="${path}/views/ticket/css/tk.css">
-    <link rel="stylesheet" href="../ticket/css/jquery.mCustomScrollbar.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <link rel="stylesheet" href="${path}/views/ticket/css/jquery.mCustomScrollbar.min.css"/>
+    <script src="${path}/views/ticket/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <main>
     <script>
-        (function($){
-        $(window).on("load",function(){
+        $(document).ready(function(){
             $(".content").mCustomScrollbar();
+
+            $('#mCSB_17_container *').click(function(event){
+                console.log(event.target);
+                console.log('클릭!');
+                location.href = '/ticket/seat';
+            });
         });
-    })(jQuery);
     </script>
         <!-- body중 메뉴바 -->
         <section>
