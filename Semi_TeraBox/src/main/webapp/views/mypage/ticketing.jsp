@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <link rel="icon" href="${path}/views/question/img/TeraBox.ico">
     <title>LIFE THEATER, 테라박스</title>
-    <link rel="stylesheet" href="./css/ticketing.css">
-    <jsp:include page="${path}/views/common/header.jsp" />
+    <link rel="stylesheet" href="${ path }/views/mypage/css/Ticketing.css">
+    <jsp:include page="/views/common/header.jsp" />
 <body>
     <!-- body중 메뉴바 -->
     <div style="width: 100%; background-color: #f8f8fa;">
@@ -199,4 +199,4 @@
         </section>
         </div>
     </main>
-<jsp:include page="${path}/views/common/footer.jsp" />
+<jsp:include page="/views/common/footer.jsp" />

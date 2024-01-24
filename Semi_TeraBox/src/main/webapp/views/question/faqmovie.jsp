@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<jsp:include page="${path}/views/common/header.jsp" />
+<jsp:include page="/views/common/header.jsp" />
 <link rel="stylesheet" href="../question/css/faqmovie.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
@@ -14,9 +14,9 @@
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
 					<span></span> <a
-						href="http://localhost:8080/views/question/questionHome.jsp"
+						href="${ path }/views/question/questionHome.jsp"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="http://localhost:8080/views/question/faq.jsp"
+						href="${ path }/views/question/faq.jsp"
 						title="고객센터 페이지로 이동" id="qt_submenuname1_by">자주 묻는 질문</a>
 				</div>
 			</div>
@@ -24,20 +24,20 @@
 		<div class="qt-mainarea-by">
 			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
 				<p class="qt-sidebar-each-by">
-					<a href="http://localhost:8080/views/question/questionHome.jsp"
+					<a href="${ path }/views/question/questionHome.jsp"
 						title="고객센터">고객센터</a>
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
+						href="${ path }/views/question/questionHome.jsp">고객센터
 							홈</a></li>
 					<li><a class="qt-second-text-by"
-						href="http://localhost:8080/views/question/faq.jsp">자주 묻는 질문</a></li>
+						href="${ path }/views/question/faq.jsp">자주 묻는 질문</a></li>
 					<li><a
-						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
+						href="${ path }/views/question/announcement.jsp">공지사항</a></li>
 					<li><a href="#">단체관람 및 대관문의</a></li>
 					<li><a
-						href="http://localhost:8080/views/question/lostItem.jsp">분실물
+						href="${ path }/views/question/lostItem.jsp">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
@@ -67,21 +67,21 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="전체">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/faq.jsp">전체</a>
+									href="${ path }/views/question/faq.jsp">전체</a>
 							</button>
 						</li>
 						<li class="qt-on-by">
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="영화예매">
 								<a class="qt-acolor-by"
-									href="http://localhost:8080/views/question/faqmovie.jsp">영화예매</a>
+									href="#">영화예매</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="극장/특별관">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/faqstate.jsp">극장/특별관</a>
+									href="${ path }/views/question/faqstate.jsp">극장/특별관</a>
 							</button>
 						</li>
 					</ul>
@@ -326,4 +326,4 @@
 			</div>
 		</div>
 	</main>
-	<jsp:include page="${path}/views/common/footer.jsp" />
+	<jsp:include page="/views/common/footer.jsp" />

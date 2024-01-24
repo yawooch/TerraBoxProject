@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<jsp:include page="${path}/views/common/header.jsp" />
+<jsp:include page="/views/common/header.jsp" />
 <link rel="stylesheet" href="../question/css/faqstate.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
@@ -65,14 +65,14 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="전체">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/faq.jsp">전체</a>
+									href="${ path }/views/question/faq.jsp">전체</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="영화예매">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/faqmovie.jsp">영화
+									href="${ path }/views/question/faqmovie.jsp">영화
 									예매</a>
 							</button>
 						</li>
@@ -80,7 +80,7 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="극장/특별관">
 								<a class="qt-acolor-by"
-									href="http://localhost:8080/views/question/faqstate.jsp"></a>극장/특별관
+									href="#"></a>극장/특별관
 							</button>
 						</li>
 					</ul>
@@ -96,24 +96,19 @@
 								<div class="qt-qut-by" id="qt_on_by">
 									<a href="#">
 										<p class="qt-tit-by">
-											<span class="qt-font-green-by">[극장/특별관]</span>
+											<span class="qt-font-green-by">[${ faq.faqCategory }]</span>
 										</p>
 										<p class="qt-txt-by">
-											<span class="qt-font-block-by">오리지널 티켓 및 특전 수량 안내</span>
+											<span class="qt-font-block-by">${ faq.faqTitle }</span>
 										</p>
 									</a>
 								</div>
 								<div class="qt-awn-by" id="qt_awn_by">
 									<p class="qt-cont-by">
-										<span style="font-size: 10.0pt"> <span
-											style="line-height: 107%;"> <span> 안녕하세요. 테라박스
-													입니다. <br> <br> 기존 특전관련 잔여 수량에 대한 안내가 되었습니다만, <br>
-													고객님의 많은 관심과 성원으로 지점별 현황 파악이 원활 하지 않아 <br> 20년 8월 13일부로
-													<br> <strong>드림센터에서는 오리지널 티켓과 영화 특전의 지점별 수량에
-														관한 정보를 제공하지 않습니다.</strong> <br> 번거로우시겠지만 고객님께서는 지점 방문 후 확인
-													부탁드립니다. <br> <br> 항상 테라박스를 이용해 주셔서 감사합니다.
-											</span>
-										</span>
+										<span style="font-size: 10.0pt">
+									<!--  	 <span style="line-height: 107%;"></span> --> 
+										 ${ faq.faqContent }
+										
 										</span>
 									</p>
 								</div>
@@ -277,4 +272,4 @@
 			</div>
 		</div>
 	</main>
-	<jsp:include page="${path}/views/common/footer.jsp" />
+	<jsp:include page="/views/common/footer.jsp" />

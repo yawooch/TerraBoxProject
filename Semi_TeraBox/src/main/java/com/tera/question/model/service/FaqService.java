@@ -7,19 +7,22 @@ import static com.tera.common.jdbc.JDBCTemplate.getConnection;
 import static com.tera.common.jdbc.JDBCTemplate.close;
 
 import com.tera.common.jdbc.JDBCTemplate;
+import com.tera.common.util.PageInfo;
 import com.tera.question.model.dao.FaqDao;
 import com.tera.question.model.vo.Faq;
 
 public class FaqService {
 
-	public List<Faq> findAll() {
+	public List<Faq> findAll(PageInfo pageInfo) {
+		
+		
 		// 커넥션 생성
 		
 		Connection connection = getConnection();
 		
 		// dao 호출 
 		
-		List<Faq> list = new FaqDao().findAll(connection);
+		List<Faq> list = new FaqDao().findAll(connection, pageInfo);
 		// 호출한 dao에 커넥션을 전달해준다.
 	
 		
@@ -38,6 +41,18 @@ public class FaqService {
 		
 		close(connection);		
 		return count;
+	}
+
+	public List<Faq> findMovieAll(PageInfo pageInfo) {
+		
+		Connection connection = getConnection();
+		
+		List<Faq> list = new FaqDao().findMovieAll(connection, pageInfo);
+		
+		
+		close(connection);
+		
+		return list;
 	}
 	
 	

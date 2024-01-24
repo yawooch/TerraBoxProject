@@ -9,19 +9,31 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tera.common.jdbc.JDBCTemplate;
+import com.tera.common.util.PageInfo;
 import com.tera.question.model.vo.Faq;
 
 public class FaqDao {
 
-	public List<Faq> findAll(Connection connection) {
+	public List<Faq> findAll(Connection connection, PageInfo pageInfo) {
 		List<Faq> list = new ArrayList<>();  //받아줘야하는게 리스트 타입인데 그중에 많이 사용하는게 어레이리스트 !
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		// 쿼리생성
-		String query = "SELECT * FROM FAQ";
+		String query = "SELECT * FROM  "
+				+ "(SELECT ROWNUM AS RNUM, "
+				+ "FAQ.FAQ_NO, "
+				+ "FAQ_TITLE, "
+				+ "FAQ.FAQ_CONTENT, "
+				+ "FAQ.FAQ_CATEGORY, "
+				+ "FAQ.MEMBER_ID "
+				+ "FROM FAQ ) "
+				+ "WHERE RNUM BETWEEN ? AND ? ";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
+			pstmt.setInt(1, pageInfo.getStartList());
+			pstmt.setInt(2, pageInfo.getEndList());
 			
 			rs = pstmt.executeQuery();
 			
@@ -36,7 +48,7 @@ public class FaqDao {
 				faq.setFaqContent(rs.getString("FAQ_CONTENT"));
 				faq.setFaqCategory(rs.getString("FAQ_CATEGORY"));
 				faq.setMemberId(rs.getString("MEMBER_ID"));
-				System.out.println(faq);
+//				System.out.println(faq);
 				
 				
 				// list<Faq>로 받는다.
@@ -56,11 +68,81 @@ public class FaqDao {
 
 	public int getFaqCount(Connection connection) {
 		int count = 0;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		String query = "SELECT COUNT(*) FROM FAQ";
 		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				count = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+			
+		}
 		
 		return count;
 	}
+
+	public List<Faq> findMovieAll(Connection connection, PageInfo pageInfo) {
+		List<Faq> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String query = "SELECT * FROM "
+				+ "(SELECT ROWNUM AS RNUM, "
+				+ "FAQ.FAQ_NO, "
+				+ "FAQ_TITLE, "
+				+ "FAQ.FAQ_CONTENT, "
+				+ "FAQ.FAQ_CATEGORY, "
+				+ "FAQ.MEMBER_ID FROM FAQ ) "
+				+ "WHERE FAQ_CATEGORY = '영화예매' "
+				+ "AND RNUM BETWEEN ? AND ?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			pstmt.setInt(1, pageInfo.getStartList());
+			pstmt.setInt(2, pageInfo.getEndList());
+			
+			rs = pstmt.executeQuery(query);
+			
+			while(rs.next()) {
+				Faq faq = new Faq();
+				
+				faq.setFaqNo(rs.getString("FAQ_NO"));
+				faq.setFaqTitle(rs.getString("FAQ_TITLE"));
+				faq.setFaqContent(rs.getString("FAQ_CONTENT"));
+				faq.setFaqCategory(rs.getString("FAQ_CATEGORY"));
+				faq.setMemberId(rs.getString("MEMBER_ID"));
+				
+				list.add(faq);
+			}
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return list;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
