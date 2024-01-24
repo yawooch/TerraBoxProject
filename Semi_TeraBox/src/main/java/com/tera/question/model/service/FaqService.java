@@ -43,17 +43,23 @@ public class FaqService {
 		return count;
 	}
 
-	public List<Faq> findMovieAll(PageInfo pageInfo) {
+	public List<Faq> findCategory(String category) {
 		
 		Connection connection = getConnection();
 		
-		List<Faq> list = new FaqDao().findMovieAll(connection, pageInfo);
+		List<Faq> list = new FaqDao().findCategory(connection, category);
 		
 		
 		close(connection);
 		
 		return list;
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 }

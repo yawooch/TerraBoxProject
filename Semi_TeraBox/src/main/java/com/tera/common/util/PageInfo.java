@@ -52,14 +52,14 @@ public class PageInfo {
 	}
 	
 	public int getStartList() {
-//		return (this.getCurrentPage() - 1) * this.listLimit + 1;
-		return (this.getMaxPage() - this.getCurrentPage()) * this.listLimit + 1;
+		return (this.getCurrentPage() - 1) * this.listLimit + 1;
+//		return (this.getMaxPage() - this.getCurrentPage()) * this.listLimit + 1;
 	}
 	
 	public int getEndList() {
-//		int endList = this.getStartList() + this.listLimit - 1;
-//		return endList > this.listCount ? this.listCount : endList;
-		int endList = this.getStartList() - this.listLimit + 1;
-		return endList > 1 ? endList : 1;
+		int endList = this.getStartList() + this.listLimit - 1;
+		return endList > this.listCount ? this.listCount : endList;
+//		int endList = this.getStartList() - this.listLimit + 1;
+//		return endList > 1 ? endList : 1;
 	}
 }
