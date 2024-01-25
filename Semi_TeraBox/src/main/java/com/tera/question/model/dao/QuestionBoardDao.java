@@ -38,7 +38,7 @@ public class QuestionBoardDao {
 				question.setNo(rs.getString("QUEST_NO"));
 				question.setTitle(rs.getString("QUEST_TITLE"));
 				question.setContent(rs.getString("QUEST_CONTENT"));
-				question.setPassNo(rs.getString("QUEST_PASS_NO"));
+				question.setPassNo(rs.getInt("QUEST_PASS_NO"));
 				question.setPhone(rs.getString("QUEST_PHONE"));
 				question.setName(rs.getString("QUEST_NAME"));
 				question.setDivsion(rs.getString("QUEST_DIVISION"));
@@ -54,6 +54,7 @@ public class QuestionBoardDao {
 				question.setAnswContent(rs.getString("ANSW_CONTENT"));
 				question.setAnswRegDttm(rs.getDate("ANSW_REG_DTTM"));
 				question.setAnswMemberId(rs.getString("ANSW_MEMBER_ID"));
+				question.setMvKorName(rs.getString("MV_KOR_NAME"));
 			
 				list.add(question);
 			}
@@ -107,7 +108,7 @@ public class QuestionBoardDao {
 
 			pstmt.setString(1, question.getTitle());
 			pstmt.setString(2, question.getContent());
-			pstmt.setString(3, question.getPassNo());
+			pstmt.setInt(3, question.getPassNo());
 			pstmt.setString(4, question.getPhone());
 			pstmt.setString(5, question.getName());
 			pstmt.setString(6, question.getEmail());
@@ -126,6 +127,61 @@ public class QuestionBoardDao {
 		return result;
 
 	}
+	
+	
+	public int insertrentBoard(Connection connection, Question question) {
+		int result = 0;
+		PreparedStatement rentpstmt = null;
+		ResultSet rs = null;
+
+		String query = " INSERT INTO QUESTION"
+				+ "( CINEMA_ID,"
+				+ "RENTAL_DATE,"
+				+ "MV_KOR_NAME,"
+				+ "VISIT_NUM,"
+				+ "QUEST_NAME,"
+				+ "QUEST_PHONE,"
+				+ "QUEST_EMAIL,"
+				+ "QUEST_TITLE,"
+				+ "QUEST_CONTENT,"
+				+ "QUEST_PASS_NO "
+				+ ") "
+				+ "VALUES( "
+				+ "SEQ_QT_NO.NEXTVAL"+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?"+", ?"+", ?"+")"
+				+ "FROM QUESTION "
+				+ "LEFT JOIN MOVIE ON (QUEST_TYPE = MV_TYPE)";
+
+		try {
+
+			rentpstmt = connection.prepareStatement(query);
+
+			rentpstmt.setString(1, question.getCinemaId());
+			rentpstmt.setString(2, question.getRentDate());
+			rentpstmt.setString(3, question.getMvKorName());
+			rentpstmt.setInt(4, question.getNum());
+			rentpstmt.setString(5, question.getName());
+			rentpstmt.setString(6, question.getPhone());
+			rentpstmt.setString(7, question.getEmail());
+			rentpstmt.setString(8, question.getTitle());
+			rentpstmt.setString(9, question.getContent());
+			rentpstmt.setInt(10, question.getPassNo());
+
+			result = rentpstmt.executeUpdate();
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rentpstmt);
+			close(rs);
+		}
+
+		return result;
+
+	}
+	
+	
+	
 	
 	public int getBoardCount(Connection connection) {
 		int count = 0;

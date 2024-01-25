@@ -78,8 +78,8 @@
 
 			<div class="tab-block">
 				<ul>
-					<li class="on"><a href="/question/write" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
-					<li><a href="/question/write" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+					<li class="on"><a href="/question/writeview" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+					<li><a href="/question/writerentview" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
 					<li><a href="/question/lost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
 				</ul>
 			</div>
@@ -105,7 +105,7 @@
 			<p class="reset mt10">* 원활한 서비스 이용을 위한 최소한의 개인정보이므로 동의하지 않을 경우
 				서비스를 이용하실 수 없습니다</p>
 			<p class="reset mt30 a-r font-orange">* 필수</p>
-			<form name="regFrm" method="post">
+			<form name="regFrm" method="post" action="/question/writeview">
 				<div class="table-wrap mt10" style="display: block;">
 					<table class="board-form va-m">
 						<colgroup>
@@ -117,13 +117,15 @@
 						<tbody>
 							<tr>
 								<th scope="row">문의선택<em class="font-orange">*</em></th>
-								<td colspan="3"><input type="radio" id="aq2"
-									name="inqMclCd" value="QD01M02" data-cd="QD_ETC_DIV_CD"
-									checked=""> <label for="aq2">고객센터문의</label> <input
-									type="radio" id="aq1" name="inqMclCd" class="ml20"
-									value="QD01M01" data-cd="QD_BRCH_DIV_CD"> 
+								<td colspan="3">
+									<label for="aq2">고객센터문의</label>
+									<input type="radio" id="aq2"
+										name="inqMclCd" value="QD01M02" data-cd="QD_ETC_DIV_CD"
+										checked="">
 									<label for="aq1">극장별문의</label> 
-								<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
+									<input type="radio" id="aq1" name="inqMclCd" class="ml20"
+										value="QD01M01" data-cd="QD_BRCH_DIV_CD"> 
+									<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
 										<option value="">지역선택</option>
 										<option value="10">서울</option>
 										<option value="30">경기</option>
@@ -133,9 +135,11 @@
 										<option value="65">광주/전라</option>
 										<option value="70">강원</option>
 										<option value="80">제주</option>
-								</select> <select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
-										<option value="">극장선택</option>
-								</select></td>
+									</select> 
+									<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
+									<option value="">극장선택</option>
+								</select>
+							</td>
 							</tr>
 							<tr>
 								<th scope="row"><label for="ask-type">문의유형</label> <em
@@ -152,7 +156,7 @@
 								</select></td>
 							</tr>
 							<tr>
-								<th scope="row"><label for="name">이름</label> <em
+								<th scope="row"><label for="name" >이름</label> <em
 									class="font-orange">*</em></th>
 								<td><input type="text" id="name" name="inqurNm"
 									class="input-text w150px" value="" maxlength="30"></td>
@@ -167,10 +171,10 @@
 								<td colspan="3"><input type="text" name="hpNum1"
 									id="hpNum1" class="input-text w60px numType" maxlength="3"
 									title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-									type="text" name="hpNum2" id="hpNum2"
+									type="text" name="hpNum2" id="hpNum1"
 									class="input-text w70px numType" maxlength="4"
 									title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-									type="text" name="hpNum3" id="hpNum3"
+									type="text" name="hpNum3" id="hpNum1"
 									class="input-text w70px numType" maxlength="4"
 									title="핸드폰번호 마지막자리 입력">
 									<button id="btnQnaMblpCertNoSend" type="button"
@@ -265,7 +269,7 @@
 							<tr>
 								<th scope="row"><label for="name">비밀번호</label> <em
 									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text" id="nonMbInqPw"
+								<td colspan="3"><input type="password" id="nonMbInqPw"
 									name="nonMbInqPwd" class="input-text w150px pwnew"
 									maxlength="4" oninput="gfn_numberMaxLength(this);"> <em
 									class="fc_r ml10">* 1:1 문의에 대한 고객정보 보호를 위해 게시글의 비밀번호를
@@ -306,11 +310,9 @@
 							<tr>
 								<th scope="row"><label for="date">관람/대관일</label> <em
 									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text"
-									title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
-									class="date-calendar hasDatepicker" disabled="disabled">
-									<button type="button" class="ui-datepicker-trigger">날짜
-										선택</button> <select name="lentTime" class="small ml07" title="시간선택"
+								<td colspan="3"><input type="date" title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
+									class="date-calendar hasDatepicker"/>
+								<select name="lentTime" class="small ml07" title="시간선택"
 									tabindex="-98">
 										<option value="">시간선택</option>
 										<option value="01">01</option>
@@ -366,9 +368,9 @@
 									<td><input type="text" name="hpNum1" id="lentHpNum1"
 										class="input-text w60px numType" maxlength="3"
 										title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-										type="text" name="hpNum2" class="input-text w60px numType"
+										id="lentHpNum2" type="text" name="hpNum2" class="input-text w60px numType"
 										maxlength="4" title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-										type="text" name="hpNum3" class="input-text w60px numType"
+									id="lentHpNum3"	type="text" name="hpNum3" class="input-text w60px numType"
 										maxlength="4" title="핸드폰번호 마지막자리 입력"></td>
 									<th scope="row"><label for="lentRpstEmail">이메일</label> <em
 										class="font-orange">*</em></th>
