@@ -28,6 +28,7 @@
                     <p id="modalText"></p>
                 </div>
                 <div class="cm-modalBtn-area">
+                    <button type="button" id="cm_btnCancel"  class="cm-btnwhite">취소</button>
                     <button type="button" id="cm_btnConfirm" class="cm-btnred">확인</button>
                 </div>
             </div>

@@ -1,82 +1,185 @@
 $(document).ready(function(){
-	let arr = [];
-	let sum    = 0;
-	let sel    = 0;
-	let maxCnt = 8;
+	let arr      = [];//좌석 선택 배열
+	let sum      = 0; //선택 인원수
+	let sel      = 0; //선택된 좌석수
+	let maxCnt   = 8; // 최대 선택인원 수
+	let modifyYn = false; //좌석 선택 여부
+	
+
+	//좌석 초기화 함수
+	function initSeat(){
+
+		//카운터 초기화
+		$('span[id^=tk_now_]').html('0');
+
+		sum = 0;
+		//선택좌석 초기화
+		seatSetter();
 		
+		arr = [];//좌석배열초기화
+		//선택한 좌석을 초기화
+		$('.tk-seat-click').removeClass('choiced');
+		$('.tk-seat-click').css('background-image', 'url(/views/ticket/img/bg-seat-common.png)');
+
+	}
+	//초기화 버튼 클릭
+	$('#seatMemberCntInit').on('click', function(e){
+		initSeat();
+	});
+
 	//카운터가 마이너스가 클릭되었을때
 	$('.tk-counter-group .tk-btn-minus').click(function(event){
+
+		if(sum==sel&& modifyYn){
+			if(confirm('선택을 취소하고 다시 선택하시겠습니까?')){
+				initSeat();
+				return 0;
+			}
+			else{
+				return 0;
+			}
+		}
 		let groupDiv = $(event.target).parents('div').attr('class').split(' ')[1];
 		let nowCnt = $('#tk_now_'+groupDiv).html();
+		
 
 		//0보다 작을때 - 를 해주면 안된다.
 		nowCnt = Number(nowCnt) !== 0 && Number(sum)    !== 0 ? Number(nowCnt)-1 : Number(nowCnt);
-		sum    = Number(sum)    !== 0 ? Number(sum)-1 : Number(sum);
+		sum    = Number(sum)-1;
 		$('#tk_now_'+ groupDiv).html(nowCnt);
 
-		if (sum <= 0){
+		if (sum < 0){
+			sum    = 0;
 			teraModal('관람하실 인원수를 선택해주세요');	  
 		}
+		//선택좌석쪽에 표시해준다.
+		seatSetter();
 	});
 	
 	//카운터가 플러스가 클릭되었을때
 	$('.tk-counter-group .tk-btn-plus').click(function(event){
 		let groupDiv = $(event.target).parents('div').attr('class').split(' ')[1];
 		let nowCnt = $('#tk_now_'+groupDiv).html();
-
+		
 		//8보다 클때 + 를 해주면 안된다.
 		nowCnt = Number(nowCnt) !== maxCnt && Number(sum)    !== maxCnt? Number(nowCnt)+1 : Number(nowCnt);
-		sum    = Number(sum)    !== maxCnt ? Number(sum)+1 : Number(sum);
+		sum    = Number(sum)+1;
 		$('#tk_now_'+ groupDiv).html(nowCnt);
 		
-		if (sum >= maxCnt){
+		if (sum > maxCnt){
+			sum = maxCnt;
 			teraModal('최대 인원수를 초과했습니다.');	  
 		}
+		
+		//선택좌석쪽에 표시해준다.
+		seatSetter();
 	});
-
 	//좌석 좌표 세팅하기
 	let tkSeatClick = $('.tk-seat-click');
-	
 
-	tkSeatClick.on('mouseover mouseout', {
-		'mouseover' : function(event){
-			$(event.target).css('background-image', 'url(../img/bg-seat-choice.png)');
-		},
-		'mouseout' : function(event){
-			$(event.target).css('background-image', 'url(../img/bg-seat-common.png)');
+	//좌석에 마우스 올리고 내릴때
+	tkSeatClick.on('mouseover', function(event){
+		$(event.target).css('background-image', 'url(/views/ticket/img/bg-seat-choice.png)');
+		if((sum-sel)%2 == 0 && sum !== 0)
+		{
+			let overSeatY = $(event.target).attr('cord').replace(/[A-Z]/gi, '');
+			let overSeatX = $(event.target).attr('cord').replace(/[0-9]/gi, '');
+			let pareSeat = Number(overSeatY) === 12? 11 : Number(overSeatY) + 1;
+			let pareElem = $('.tk-seat-click[cord=' + overSeatX + pareSeat +']');
+			if(!pareElem.hasClass('choiced')){
+				pareElem.css('background-image', 'url(/views/ticket/img/bg-seat-choice.png)');
+			}
+		}
+	});
+	tkSeatClick.on('mouseout', function(event){
+		if(!$(event.target).hasClass('choiced')){
+			$(event.target).css('background-image', 'url(/views/ticket/img/bg-seat-common.png)');
+		}
+		if((sum-sel)%2 == 0 && sum !== 0)
+		{
+			let overSeatY = $(event.target).attr('cord').replace(/[A-Z]/gi, '');
+			let overSeatX = $(event.target).attr('cord').replace(/[0-9]/gi, '');
+			let pareSeat = Number(overSeatY) === 12? 11 : Number(overSeatY) + 1;
+			let pareElem = $('.tk-seat-click[cord=' + overSeatX + pareSeat +']');
+			if(!pareElem.hasClass('choiced')){
+				pareElem.css('background-image', 'url(/views/ticket/img/bg-seat-common.png)');
+			}
 		}
 	});
 
-	tkSeatClick.each(element =>{
-		$(tkSeatClick[element]).click(function(e){
-			$(e.target).css({'background':'url(/views/ticket/img/bg-seat-choice.png))'});
-			let seatNumber = $(e.target).attr('cord');
-		
-			
-			let flag= arr.includes(seatNumber);
-			
-			if(!flag){
-				arr.push(seatNumber);
+	//좌석을 클릭했을때
+	tkSeatClick.click(function(e){
+		//인원 증가도 안했는데 선택하려고할때
+		if (sum <= 0 ) {
+			teraModal('관람하실 인원을 먼저 선택해주세요.');
+			return;
+		}
+		let overSeatY = $(e.target).attr('cord').replace(/[A-Z]/gi, '');
+		let overSeatX = $(e.target).attr('cord').replace(/[0-9]/gi, '');
+		let pareSeat = Number(overSeatY) === 12? 11 : Number(overSeatY) + 1;
+		let pareElem = $('.tk-seat-click[cord=' + overSeatX + pareSeat +']');
+		//선택되어 있는 좌석을 다시 클릭할때
+		if($(e.target).hasClass('choiced'))
+		{
+			$(e.target).removeClass('choiced');
+			if((sum-sel)%2 == 0 && sum !== 0)
+			{
+				sel --;
+				pareElem.removeClass('choiced');
 			}
-			
-			if (sum < 0 ) {
-				alert('좌석을 다시 선택해주세요.');
-			}else{
-				
-			for(let i = 0; i<arr.length; i++){
-				$('.tk-choice-seat-now').eq(i).text(arr[i]);
-				$('.tk-choice-seat-now').eq(i).attr("style", "background-color: #6D3030;");
-				
+			sel --;
+			modifyYn = sel ===0? false: modifyYn; //좌석 선택 여부
+		}
+		else{
+			if(sel !== sum)
+			{
+				modifyYn = true; //좌석 선택 여부
+				$(e.target).addClass('choiced');
+				if((sum-sel)%2 == 0 && sum !== 0)
+				{
+					sel ++;
+					pareElem.addClass('choiced');
 				}
-				
+				sel ++;
 			}
-			
-			sum --;
-			
-			console.log(sum);
-						
-		});
+			else{
+				teraModal('좌석선택이 완료되었습니다.');
+				return;
+			}
+		}
+		seatSetter();
 	});
+
+	//선택좌석 세팅하는 함수
+	let seatSetter = function(){
+		//모든좌석 초기화
+		for(let idx = 0; idx < 8; idx ++ )
+		{
+			$('.tk-choice-seat-now').eq(idx).html('-');
+			$('.tk-choice-seat-now').eq(idx).removeClass('enabled');
+			$('.tk-choice-seat-now').eq(idx).removeClass('choiced');
+		}
+		//선택좌석쪽에 사용가능한영역을 표시한다.
+		for(let idx = 0; idx < sum; idx ++ )
+		{
+			$('.tk-choice-seat-now').eq(idx).addClass('enabled');
+		}
+		//선택한 좌석을 좌표를 가져온다
+		arr = [];//좌석배열초기화
+		$('.tk-seat-click').each((ele)=>{
+			if($('.tk-seat-click').eq(ele).hasClass('choiced'))
+			{
+				arr = [...arr,$('.tk-seat-click').eq(ele).attr('cord')];
+			}
+		});
+		//선택한 좌석 세팅
+		for(let idx = 0; idx < arr.length; idx ++ )
+		{
+			$('.tk-choice-seat-now').eq(idx).html(arr[idx]);
+			$('.tk-choice-seat-now').eq(idx).addClass('enabled');
+			$('.tk-choice-seat-now').eq(idx).addClass('choiced');
+		}
+	};
 	
 	//약관필수동의 처리
 	$('#tk_titleImg').click(function(){
@@ -92,16 +195,62 @@ $(document).ready(function(){
 		}
 	});
 	
-	//예매버튼 클릭시
-	$('#tk_next_page').click(function(){
-			// $("#formSubmit").click();
-		
-			if($('#tk_next_page').hasClass('enabled')){
-				location.href = '/';
-			}
+	$('.tk-previous-page').click(function(){
+		location.href = '/ticket';
 	});
-	
+		//예매버튼 클릭시
+	$('#tk_next_page').click(function(){
+		if($('#tk_next_page').hasClass('enabled')){
+			let selCount = 0;
+			let totCount = 0;
+			let submitSign = false;
 
+			$('.tk-choice-seat-now').each((idx, element)=>{
+				console.log(element);
+				if($(element).hasClass('enabled') && $(element).hasClass('choiced')){
+					totCount++;
+					selCount++;
+				}
+				else if($(element).hasClass('enabled')){
+					totCount++;
+				}
+				console.log(`totCount : ${totCount}, selCount : ${selCount}`);
+				
+				if(totCount !== selCount || totCount ===0)
+				{
+					teraModal('좌석을 모두 선택후 예매 바랍니다.');
+					submitSign = false;
+				}
+			});
+			for(let idx = 0; idx < arr.length; idx++){
+				$('[name=selectCord]').eq(idx).val(arr[idx]);
+			}
+			let countSenior = Number($('#tk_now_senior').text());
+			let countAdult  = Number($('#tk_now_adult').text());
+			let countJunior = Number($('#tk_now_junior').text());
 
+			console.log(`countAdult : ${countAdult}, countJunior : ${countJunior}, countSenior : ${countSenior}`);
 
+			let ticketArr = $('[name=ticketDv]');
+			ticketArr.each((idx, ele)=>{
+				if(countSenior !== 0)
+				{
+					$(ticketArr[idx]).val('경로');
+					countSenior--;
+				}
+				else if(countAdult !== 0)
+				{
+					$(ticketArr[idx]).val('성인');
+					countAdult--;
+				}
+				else if(countJunior !== 0)
+				{
+					$(ticketArr[idx]).val('청소년');
+					countJunior--;
+				}
+			});
+
+			// location.href = '/';
+		}
+	});
 });

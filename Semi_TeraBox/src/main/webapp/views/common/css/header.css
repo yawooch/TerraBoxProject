@@ -807,11 +807,23 @@ section.cm-loginform{
 }
 #cm_btnConfirm.cm-btnred {
     color: #fff;
-    border: 0;
     cursor:pointer;
     background: #6D3030;
+    border: 1px solid #6D3030;
     border-radius: 5px;
     padding: 8px 15px;
+}
+#cm_btnCancel.cm-btnwhite {
+    color: #6D3030;
+    cursor:pointer;
+    background: #fff;
+    border: 1px solid #6D3030;
+    border-radius: 5px;
+    padding: 8px 15px;
+    display: none;
+}
+#cm_btnCancel.cm-btnwhite.enable {
+    display: inline-block;
 }
 
 .cm-modal{
