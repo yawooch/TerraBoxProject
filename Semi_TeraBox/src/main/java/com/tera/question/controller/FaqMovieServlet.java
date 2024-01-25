@@ -27,7 +27,7 @@ public class FaqMovieServlet extends HttpServlet {
     	PageInfo pageInfo = null;
     	int page = 0;
     	int listCount = 0;
-    	String category = null;
+    	String category = "영화예매";
     	
     	try {
 			
@@ -41,13 +41,13 @@ public class FaqMovieServlet extends HttpServlet {
     	
     	pageInfo = new PageInfo(page, 10, listCount, 10);
     	
-    	list = new FaqService().findCategory("영화예매", pageInfo);
+    	list = new FaqService().findCategory(category, pageInfo);
     	
     	request.setAttribute("pageInfo", pageInfo);
 
     	request.setAttribute("list", list);
     	
-    	System.out.println(listCount);
+//    	System.out.println(listCount);
       
     	request.getRequestDispatcher("/views/question/faqmovie.jsp").forward(request, response);
     }

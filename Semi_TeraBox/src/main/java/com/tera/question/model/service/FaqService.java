@@ -1,12 +1,11 @@
 package com.tera.question.model.service;
 
+import static com.tera.common.jdbc.JDBCTemplate.close;
+import static com.tera.common.jdbc.JDBCTemplate.getConnection;
+
 import java.sql.Connection;
 import java.util.List;
 
-import static com.tera.common.jdbc.JDBCTemplate.getConnection;
-import static com.tera.common.jdbc.JDBCTemplate.close;
-
-import com.tera.common.jdbc.JDBCTemplate;
 import com.tera.common.util.PageInfo;
 import com.tera.question.model.dao.FaqDao;
 import com.tera.question.model.vo.Faq;
