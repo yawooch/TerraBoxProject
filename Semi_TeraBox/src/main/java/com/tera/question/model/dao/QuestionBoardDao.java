@@ -54,7 +54,7 @@ public class QuestionBoardDao {
 				question.setAnswContent(rs.getString("ANSW_CONTENT"));
 				question.setAnswRegDttm(rs.getDate("ANSW_REG_DTTM"));
 				question.setAnswMemberId(rs.getString("ANSW_MEMBER_ID"));
-				question.setMvKorName(rs.getString("MV_KOR_NAME"));
+				question.setMovieName(rs.getString("MOVIENAME"));
 			
 				list.add(question);
 			}
@@ -137,7 +137,7 @@ public class QuestionBoardDao {
 		String query = " INSERT INTO QUESTION"
 				+ "( CINEMA_ID,"
 				+ "RENTAL_DATE,"
-				+ "MV_KOR_NAME,"
+				+ "MOVIE_NAME,"
 				+ "VISIT_NUM,"
 				+ "QUEST_NAME,"
 				+ "QUEST_PHONE,"
@@ -147,9 +147,8 @@ public class QuestionBoardDao {
 				+ "QUEST_PASS_NO "
 				+ ") "
 				+ "VALUES( "
-				+ "SEQ_QT_NO.NEXTVAL"+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?"+", ?"+", ?"+")"
-				+ "FROM QUESTION "
-				+ "LEFT JOIN MOVIE ON (QUEST_TYPE = MV_TYPE)";
+				+ "SEQ_QT_NO.NEXTVAL"+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ")"
+				+ "FROM QUESTION ";
 
 		try {
 
@@ -157,7 +156,7 @@ public class QuestionBoardDao {
 
 			rentpstmt.setString(1, question.getCinemaId());
 			rentpstmt.setString(2, question.getRentDate());
-			rentpstmt.setString(3, question.getMvKorName());
+			rentpstmt.setString(3, question.getMovieName());
 			rentpstmt.setInt(4, question.getNum());
 			rentpstmt.setString(5, question.getName());
 			rentpstmt.setString(6, question.getPhone());

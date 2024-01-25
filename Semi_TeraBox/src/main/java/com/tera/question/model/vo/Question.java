@@ -31,6 +31,6 @@ public class Question {
 	private String answContent;  //답변내용
 	private Date answRegDttm;    //답변등록일시
 	private String answMemberId;   //답변아이디 
-	private String mvKorName;    //영화이름
+	private String movieName;    //영화이름
 
 }

@@ -13,6 +13,9 @@ import com.tera.common.util.PageInfo;
 import com.tera.question.model.service.QuestionBoardService;
 import com.tera.question.model.vo.Question;
 
+
+//나의문의내력리스트 이동하는 서블릿(실행안됨)
+
 @WebServlet(name = "questionMyquestionList", urlPatterns = { "/question/myquestionList" })
 public class QuestionMyquestionList extends HttpServlet {
 	private static final long serialVersionUID = 1L;

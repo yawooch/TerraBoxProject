@@ -38,15 +38,15 @@ public class QuestionWriterent extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int no =0;
+		int fo =0;
 		Question question = new Question();
 
 //		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
 
 		question.setCinemaId(request.getParameter("theater"));
 		question.setRentDate(request.getParameter("date"));
-		question.setMvKorName(request.getParameter("lentAdmisMovieNm"));
-		question.setNum(Integer.parseInt((request.getParameter("lentAdmisPcntCnt"))));
+		question.setMovieName(request.getParameter("lentAdmisMovieNm"));
+		question.setNum(Integer.parseInt((request.getParameter("admisPcntCnt"))));
 		question.setName(request.getParameter("lentAinqurNm"));
 		question.setPhone(request.getParameter("lentHpNum1") + request.getParameter("lentHpNum2") + request.getParameter("lentHpNum3"));
 		question.setEmail(request.getParameter("lentRpstEmail"));
@@ -56,7 +56,7 @@ public class QuestionWriterent extends HttpServlet {
 		
 		System.out.println(question);
 		
-		no = new QuestionBoardService().save(question);
+		fo = new QuestionBoardService().rentsave(question);
 	
 
 		request.getRequestDispatcher("/views/question/myquestionlist.jsp").forward(request, response);

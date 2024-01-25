@@ -29,6 +29,20 @@ public class QuestionBoardService {
 		return result;
 
 	}
+	public int rentsave(Question question) {
+		int result = 0;
+		Connection connection = getConnection();
+
+		result = new QuestionBoardDao().insertrentBoard(connection, question);
+
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		return result;
+
+	}
 	
 	public int getQuestionCount() {
 		int count =0;
