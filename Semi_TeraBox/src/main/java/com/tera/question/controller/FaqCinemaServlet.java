@@ -28,6 +28,7 @@ public class FaqCinemaServlet extends HttpServlet {
     	PageInfo pageInfo = null;
     	int page = 0;
     	int listCount = 0;
+    	String category = "극장/특별관";
     	
     	try {
 			
@@ -36,12 +37,11 @@ public class FaqCinemaServlet extends HttpServlet {
 			page = 1;
 		}
     	
-    	
-    	listCount = new FaqService().getFaqCount();
+    	listCount = new FaqService().getCategoryCount(category);
     	
     	pageInfo = new PageInfo(page, 10, listCount, 10);
     	
-    	list = new FaqService().findCategory("극장/특별관", pageInfo);
+    	list = new FaqService().findCategory(category, pageInfo);
     	
     	request.setAttribute("pageInfo", pageInfo);
     	
