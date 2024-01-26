@@ -69,7 +69,7 @@ public class LostDao {
 				question.setNo(rs.getString("QUEST_NO"));
 				question.setTitle(rs.getString("QUEST_TITLE"));
 				question.setContent(rs.getString("QUEST_CONTENT"));
-				question.setPassNo(rs.getString("QUEST_PASS_NO"));
+				question.setPassNo(rs.getInt("QUEST_PASS_NO"));
 				question.setPhone(rs.getString("QUEST_PHONE"));
 				question.setName(rs.getString("QUEST_NAME"));
 				question.setDivsion(rs.getString("QUEST_DIVISION"));
