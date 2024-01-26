@@ -1,19 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
-	<jsp:include page="${path}/views/common/header.jsp" />
-    <link rel="stylesheet" href="${path}/views/ticket/css/tk.css">
-    <link rel="stylesheet" href="${path}/views/ticket/css/jquery.mCustomScrollbar.min.css"/>
-    <script src="${path}/views/ticket/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<jsp:include page="${path}/views/common/header.jsp" />
+<link rel="stylesheet" href="${path}/views/ticket/css/jquery.mCustomScrollbar.min.css"/>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<link rel="stylesheet" href="${path}/views/common/js/jquery-ui-1.13.2/jquery-ui.css">
+<script src="${path}/views/common/js/jquery-ui-1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="${path}/views/ticket/css/tk.css">
+<script src="${path}/views/ticket/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    
     <main>
     <script>
+        
+        
+        let datePickerSet = {
+                showOn: "button"
+                , buttonImage: "${path}/views/ticket/img/ico-calendar-w20.png"
+                , buttonImageOnly: true
+                , buttonText: "Select date"
+                , dateFormat: 'yyyy-mm-dd'
+                , prevText: '이전 달'
+                , nextText: '다음 달'
+                , monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+                , monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+                , dayNames: ['일', '월', '화', '수', '목', '금', '토']
+                , dayNamesShort: ['일', '월', '화', '수', '목', '금', '토']
+                , dayNamesMin: ['일', '월', '화', '수', '목', '금', '토']
+                , showMonthAfterYear: true
+                , yearSuffix: '년'
+            };
         $(document).ready(function(){
             $(".content").mCustomScrollbar();
+
+            $('#datePicker').datepicker(datePickerSet);
 
             $('#mCSB_17_container *').click(function(event){
                 console.log(event.target);
                 console.log('클릭!');
                 location.href = '/ticket/seat';
+            });
+            //시간 앞으로 이동
+            $('.btn-next-time').click(function(event){
+                let leftSize = Number($('.wrap .view').css('left').replace('px', ''));
+                leftSize = leftSize - 35;
+                $('.wrap .view').animate({left: leftSize + 'px'});
+            });
+            //시간 뒤로 이동
+            $('.btn-prev-time').click(function(event){
+                let leftSize = Number($('.wrap .view').css('left').replace('px', ''));
+                leftSize = leftSize + 35;
+                $('.wrap .view').animate({left: leftSize + 'px'});
+            });
+            //일 앞으로 이동
+            $('.btn-next').click(function(event){
+                let leftSize = Number($('#formDeList .wrap').css('left').replace('px', ''));
+                leftSize = leftSize - 70;
+                $('#formDeList .wrap').animate({left: leftSize + 'px'});
+            });
+            //일 뒤로 이동
+            $('.btn-pre').click(function(event){
+                let leftSize = Number($('#formDeList .wrap').css('left').replace('px', ''));
+                leftSize = leftSize + 70;
+                $('#formDeList .wrap').animate({left: leftSize + 'px'});
             });
         });
     </script>
@@ -41,7 +89,7 @@
                     <div class="time-schedule">
                         <div class="wrap">
                             <!-- 이전날짜 -->
-                            <button type="button" title="이전 날짜 보기" class="btn-pre" disabled="true">
+                            <button type="button" title="이전 날짜 보기" class="btn-pre">
                                 <i class="iconset ico-cld-pre"></i>
                             </button>
                             <!-- 날짜목록박스 -->
@@ -49,7 +97,7 @@
                                 <!-- 년도월표시 -->
                                 <div class="year" style="left: 0px; z-index: 1; opacity: 1;">2024.01</div>
                                 <div class="year" style="left: 839px; z-index: 1; opacity: 1;">2024.02</div>
-                            	<div style="overflow: hidden;">
+                                <div style="overflow: hidden;">
                                 <div class="date-area" id="formDeList">
                                     <div class="wrap" style="position: relative; width: 2100px; border: none; left: -70px;">
                                         <button class="" type="button" date-data="2024.01.18" month="0" tabindex="-1">
@@ -150,15 +198,15 @@
                                         </button>
                                     </div>
                                 </div>
-                            	</div>
+                                </div>
                             </div>
                             <!-- 다음날짜 -->
                             <button type="button" title="다음 날짜 보기" class="btn-next">
                                 <i class="iconset ico-cld-next"></i>
                             </button>
                             <div class="bg-line">
-                                <input type="hidden" id="datePicker" value="2024.01.27" class="hasDatepicker">
-                                <button type="button" id="calendar" onclick="$('#datePicker').datepicker('show')" class="btn-calendar-large" title="달력보기"> 달력보기</button>
+                                <input type="hidden" id="datePicker" value="" class="">
+                                <!-- <button type="button" id="calendar" onclick="$('#datePicker').datepicker();" class="btn-calendar-large" title="달력보기"> 달력보기</button> -->
                             </div>
                         </div>
                     </div>

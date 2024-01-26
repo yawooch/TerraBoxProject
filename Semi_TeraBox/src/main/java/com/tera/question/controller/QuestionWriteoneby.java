@@ -12,13 +12,13 @@ import com.tera.question.model.service.QuestionBoardService;
 import com.tera.question.model.vo.Question;
 
 /**
- * 문의하기 입력을 처리하는 Servlet
+ * 1:1 문의하기 입력을 처리하는 Servlet
  */
 @WebServlet(name = "questionWriteview", urlPatterns = { "/question/writeview" })
-public class QuestionWrite extends HttpServlet {
+public class QuestionWriteoneby extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public QuestionWrite() {
+	public QuestionWriteoneby() {
 	}
 
 	/**
@@ -38,31 +38,23 @@ public class QuestionWrite extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		int no =0;
 		Question question = new Question();
 
-//		 question.setQuestNo(request.getParameter("inqMclCd"));
-
-//		System.out.println(request.getParameter("custInqTitle"));
-//		System.out.println(request.getParameter("custInqCn"));
-//		System.out.println(request.getParameter("nonMbInqPwd"));
-//		System.out.println(
-//				request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
-//		System.out.println(request.getParameter("inqurNm"));
-//		System.out.println(request.getParameter("rpstEmail"));
-//		System.out.println(request.getParameter("inqMclCd"));
+//		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
 
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
-		question.setPassNo(request.getParameter("nonMbInqPwd"));
+		question.setPassNo(Integer.parseInt((request.getParameter("nonMbInqPwd"))));
 		question.setPhone(request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
 		question.setName(request.getParameter("inqurNm"));
 		question.setEmail(request.getParameter("rpstEmail"));
 		question.setType(request.getParameter("inqMclCd"));
 
 		System.out.println(question);
-
-		System.out.println(new QuestionBoardService().save(question));
+		
+		no = new QuestionBoardService().save(question);
+	
 
 		request.getRequestDispatcher("/views/question/myquestionlist.jsp").forward(request, response);
 	}

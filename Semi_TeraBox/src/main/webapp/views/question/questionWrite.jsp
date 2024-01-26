@@ -78,8 +78,8 @@
 
 			<div class="tab-block">
 				<ul>
-					<li class="on"><a href="/question/write" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
-					<li><a href="/question/write" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+					<li class="on"><a href="/question/writeview" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+					<li><a href="/question/writerentview" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
 					<li><a href="/question/lost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
 				</ul>
 			</div>
@@ -269,7 +269,7 @@
 							<tr>
 								<th scope="row"><label for="name">비밀번호</label> <em
 									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text" id="nonMbInqPw"
+								<td colspan="3"><input type="password" id="nonMbInqPw"
 									name="nonMbInqPwd" class="input-text w150px pwnew"
 									maxlength="4" oninput="gfn_numberMaxLength(this);"> <em
 									class="fc_r ml10">* 1:1 문의에 대한 고객정보 보호를 위해 게시글의 비밀번호를
@@ -310,11 +310,9 @@
 							<tr>
 								<th scope="row"><label for="date">관람/대관일</label> <em
 									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text"
-									title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
-									class="date-calendar hasDatepicker" disabled="disabled">
-									<button type="button" class="ui-datepicker-trigger">날짜
-										선택</button> <select name="lentTime" class="small ml07" title="시간선택"
+								<td colspan="3"><input type="date" title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
+									class="date-calendar hasDatepicker"/>
+								<select name="lentTime" class="small ml07" title="시간선택"
 									tabindex="-98">
 										<option value="">시간선택</option>
 										<option value="01">01</option>
@@ -370,9 +368,9 @@
 									<td><input type="text" name="hpNum1" id="lentHpNum1"
 										class="input-text w60px numType" maxlength="3"
 										title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-										type="text" name="hpNum2" class="input-text w60px numType"
+										id="lentHpNum2" type="text" name="hpNum2" class="input-text w60px numType"
 										maxlength="4" title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-										type="text" name="hpNum3" class="input-text w60px numType"
+									id="lentHpNum3"	type="text" name="hpNum3" class="input-text w60px numType"
 										maxlength="4" title="핸드폰번호 마지막자리 입력"></td>
 									<th scope="row"><label for="lentRpstEmail">이메일</label> <em
 										class="font-orange">*</em></th>
