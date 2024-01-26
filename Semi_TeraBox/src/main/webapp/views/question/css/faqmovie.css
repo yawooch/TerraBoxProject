@@ -811,7 +811,7 @@ a:-webkit-any-link {
 article, aside, figcaption, figure, footer, header, main, nav, section {
     display: block;
 }
-.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by strong {
+.qt-pagination-by .qt-control-by, .qt-pagination-by button, .qt-pagination-by strong {
     display: inline-block;
     position: relative;
     min-width: 32px;
@@ -820,7 +820,7 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     padding: 0 8px;
     border: 1px solid #ebebeb;
     text-decoration: none;
-    line-height: 30px;
+    line-height: 35px;
     color: #333;
     font-weight: 400;
     vertical-align: middle;
@@ -839,7 +839,7 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
 .qt-acolor1-by{
     color: #666!important;
 }
-.qt-pagination-by a:hover{
+.qt-pagination-by button:hover{
     border: 2px solid #6D3030;
     color: #6D3030;
 }
@@ -847,4 +847,14 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
 .qt-pagination-by strong:hover{
     border: 2px solid #6D3030;
     color: #6D3030;
+}
+
+.faq-btn-number {
+	border: 1px solid #EBEBEB;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 32px;
+    height:32px;
+    line-height: 14px;
+    border-radius: 2px;
 }

@@ -272,9 +272,9 @@
                             </div>
                             <div class="tk-choice-seat-right">
                                 <div class="tk-select-seat">선택좌석</div>
-                                <form action="/ticket" method="GET">
+                                <form action="/ticket/reserved" method="POST" id="ticketForm">
                                 <div class="tk-my-seat">
-                                    <div class="tk-choice-seat-now" name="a" id="select_seat_01" >-</div>
+                                    <div class="tk-choice-seat-now" name="a">-</div>
                                     <div class="tk-choice-seat-now" name="a">-</div>
                                     <div class="tk-choice-seat-now" name="a">-</div>
                                     <div class="tk-choice-seat-now" name="a">-</div>
@@ -283,6 +283,18 @@
                                     <div class="tk-choice-seat-now" name="a">-</div>
                                     <div class="tk-choice-seat-now" name="a">-</div>                                
                                     <input type="submit" style="display : none;" id="formSubmit">
+                                    <input type="hidden" name="selectCord" value="">
+                                    <input type="hidden" name="selectCord" value="">
+                                    <input type="hidden" name="selectCord" value="">
+                                    <input type="hidden" name="selectCord" value="">
+                                    <input type="hidden" name="selectCord" value="">
+                                    <input type="hidden" name="selectCord" value="">
+                                    <input type="hidden" name="ticketDv"   value="">
+                                    <input type="hidden" name="ticketDv"   value="">
+                                    <input type="hidden" name="ticketDv"   value="">
+                                    <input type="hidden" name="ticketDv"   value="">
+                                    <input type="hidden" name="ticketDv"   value="">
+                                    <input type="hidden" name="ticketDv"   value="">
                                 </div>
                                 </form>
                             </div>

@@ -119,8 +119,8 @@
 						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }" >
 							<c:choose>
 								<c:when test="${current == pageInfo.currentPage }">
-									<button style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 1.5px;
-									    width: 26px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
+									<button style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 4px;
+									    width: 32px; height:32px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
 								</c:when>
 								<c:otherwise>			
 									<button class="faq-btn-number" onclick="location.href='${path}/question/faq?page=${ current }'">${ current }</button>

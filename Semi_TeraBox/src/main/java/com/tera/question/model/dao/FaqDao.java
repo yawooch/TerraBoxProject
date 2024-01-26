@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tera.common.jdbc.JDBCTemplate;
 import com.tera.common.util.PageInfo;
 import com.tera.question.model.vo.Faq;
 
@@ -100,11 +99,11 @@ public class FaqDao {
 		ResultSet rs = null;
 		
 		
-		String query = "SELECT COUNT(*) FROM FAQ WHERE FAQ_CATEGORY = ? ";
+		String query = "SELECT COUNT(*) FROM FAQ WHERE FAQ_CATEGORY = ?";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
-			
+
 			pstmt.setString(1, category);
 			
 			rs = pstmt.executeQuery();
@@ -123,7 +122,7 @@ public class FaqDao {
 		}
 		
 		return count;
-	}
+	};
 	
 	
 	
@@ -131,24 +130,38 @@ public class FaqDao {
 		List<Faq> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String query = "SELECT * FROM  "
-				+ "(SELECT ROWNUM AS RNUM, "
-				+ "FAQ.FAQ_NO, "
-				+ "FAQ_TITLE, "
-				+ "FAQ.FAQ_CONTENT, "
-				+ "FAQ.FAQ_CATEGORY, "
-				+ "FAQ.MEMBER_ID "
-				+ "FROM FAQ ) "
-				+ "WHERE FAQ_CATEGORY = ? "
-				+ "AND RNUM BETWEEN ? AND ? ";
+		String query = "SELECT RNUM, "
+				     + "       FAQ_NO, "
+				     + "       FAQ_TITLE, "
+				     + "       FAQ_CONTENT, "
+				     + "       FAQ_CATEGORY, "
+				     + "       MEMBER_ID "
+				     + "  FROM (SELECT ROWNUM AS RNUM, "
+				     + "               FAQ.FAQ_NO, "
+				     + "               FAQ_TITLE, "
+				     + "               FAQ.FAQ_CONTENT, "
+				     + "               FAQ.FAQ_CATEGORY, "
+				     + "               FAQ.MEMBER_ID "
+				     + "          FROM ( "
+				     + "                SELECT * "
+				     + "                  FROM FAQ "
+				     + "               WHERE FAQ_CATEGORY = ? "
+				     + "                ORDER BY "
+				     + "                    FAQ_NO DESC "
+				     + "               ) FAQ "
+				     + "        ORDER BY "
+				     + "              FAQ_NO DESC) "
+				     + "  WHERE RNUM BETWEEN ? AND ? ";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
-			
-			
+
 			pstmt.setString(1, category);
 			pstmt.setInt(2, pageInfo.getStartList());
 			pstmt.setInt(3, pageInfo.getEndList());
+			System.out.println(pageInfo.getStartList());
+			System.out.println(pageInfo.getEndList());
+			
 			
 			rs = pstmt.executeQuery();
 			
@@ -174,6 +187,40 @@ public class FaqDao {
 		
 		return list;
 	}
+
+	public List<Faq> findHome(Connection connection) {
+		List<Faq> list = new ArrayList<>();
+		ResultSet rs = null;
+		String query = "SELECT * FROM FAQ WHERE ROWNUM <= 4"; 
+		PreparedStatement pstmt = null;
+		
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Faq faq = new Faq();
+				
+				faq.setFaqNo(rs.getString("FAQ_NO"));
+				faq.setFaqTitle(rs.getString("FAQ_TITLE"));
+				faq.setFaqContent(rs.getString("FAQ_CONTENT"));
+				faq.setFaqCategory(rs.getString("FAQ_CATEGORY"));
+				faq.setMemberId(rs.getString("MEMBER_ID"));
+				
+				list.add(faq);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return list;
+	};
 
 	
 	

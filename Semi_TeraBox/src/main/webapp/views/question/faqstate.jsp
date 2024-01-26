@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<jsp:include page="/views/common/header.jsp" />
 <link rel="stylesheet" href="${ path }/views/question/css/faqstate.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
-<script src="${ path }/question/js/faqstate.js"></script>
+<jsp:include page="/views/common/header.jsp" />
+<script src="${ path }/views/question/js/faqstate.js"></script>
 <div class="qt-body-by">
 	<main class="qt-main-by">
 		<div class="qt-submenu-by">
@@ -115,12 +115,19 @@
 						</c:forEach>
 						</ul>
 					</div>
-					<nav class="qt-pagination-by">
-						<strong class="qt-active-by">1</strong> <a title="2페이지보기" href="#"
-							pagenum="2">2</a> <a title="3페이지보기" href="#" pagenum="3">3</a> <a
-							title="4페이지보기" href="#" pagenum="4">4</a> <a title="5페이지보기"
-							href="#" pagenum="5">5</a> <a title="6페이지보기" href="#" pagenum="6">6</a>
-					</nav>
+					<div class="qt-pagination-by"> 
+						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }" >
+							<c:choose>
+								<c:when test="${current == pageInfo.currentPage }">
+									<button style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 4px;
+									    width: 32px; height:32px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
+								</c:when>
+								<c:otherwise>			
+									<button class="faq-btn-number" onclick="location.href='${path}/question/faqcinema?page=${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</div>
 				</div>
 			</div>
 		</div>

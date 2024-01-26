@@ -406,7 +406,7 @@ h2.tit {
 /* 달력 */
 .time-schedule .bg-line {
     margin-left: 8px;
-    float: right;
+    float: left;
     position: relative;
 }
 .time-schedule .btn-calendar-large {
@@ -1120,3 +1120,18 @@ li {
     border: 1px solid #f2f4f5;
 }
 
+.ui-datepicker-trigger{
+    width: 35px;
+    height: 35px;
+    padding: 5px 5px;
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -999px;
+    border-bottom: 0!important;
+    background-color: transparent!important;
+}
+
+#ui-datepicker-div{
+    z-index: 4!important;
+}

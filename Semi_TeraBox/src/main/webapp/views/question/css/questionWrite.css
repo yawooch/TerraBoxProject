@@ -466,6 +466,7 @@ select {
     border-radius: 3px;
     height:36px;
     color:#999999;
+    margin-left: 5px;
 }
 .board-search {
     position: relative;
@@ -767,13 +768,13 @@ em {
 
 .date-calendar {
     display: inline-block;
-    width: 118px;
+    width: 115px;
     height: 32px;
     padding: 0 10px;
     line-height: 30px;
     border-radius: 0!important;
     border: 1px solid #d8d9db;
-    border-width: 1px 0 1px 1px;
+    border-width: 1px 1px 1px 1px;
     vertical-align: middle;
     font-family: NanumBarunGothic,Dotum,'돋움',sans-serif;
 }

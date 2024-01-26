@@ -813,8 +813,8 @@ a {
 article, aside, figcaption, figure, footer, header, main, nav, section {
     display: block;
 }
-.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by strong {
-    display: inline-block;
+.qt-pagination-by .qt-control-by, .qt-pagination-by button, .qt-pagination-by strong {
+     display: inline-block;
     position: relative;
     min-width: 32px;
     height: 32px;
@@ -842,7 +842,7 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     color: #666!important;
 }
 
-.qt-pagination-by a:hover{
+.qt-pagination-by button:hover{
     border: 2px solid #6D3030;
     color: #6D3030;
 }
@@ -850,4 +850,14 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
 .qt-pagination-by strong:hover{
     border: 2px solid #6D3030;
     color: #6D3030;
+}
+
+.faq-btn-number {
+	border: 1px solid #EBEBEB;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 32px;
+    height:32px;
+    line-height: 14px;
+    border-radius: 4px;
 }

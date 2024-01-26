@@ -3,31 +3,6 @@
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <jsp:include page="/views/common/header.jsp" />
 <link rel="stylesheet" href="${path}/views/question/css/questionWrite.css">
-<script>
-    $(document).ready(function(){
-        let tabBlock = $('.tab-block ul li');//탭 <li> 선택장
-        let tableWrap = $('.table-wrap'); // 유형별 기본폼 선택자
-		//탭을 선택할 때 이벤트를 설정한다
-        tabBlock.each(element => {
-			//클릭 이벤트 설정
-            $(tabBlock[element]).on('click', function(event){
-				//탭(<li>)에 있는 on 클래스 제거(탭이 선택되었을 때 검정색으로 표시되는 부분을 on으로 설정)
-                tabBlock.each(ele => {
-                    $(tabBlock[ele]).removeClass('on');
-                });
-                $(event.target).parent().addClass('on');// 선택된 탭만 on 클래스를 준다.
-
-                console.log($(tableWrap[element]).css('display'));
-				
-				//입력 양식을 일단 다 안보이게
-                tableWrap.each(e =>{
-                    $(tableWrap[e]).css('display', 'none');
-                });
-                $(tableWrap[element]).css('display', 'block');// 선택된 탭에 해당하는  입력 양식을 보여준다.
-            });
-        });
-    });
-</script>
 <div class="container has-lnb">
     <div class="page-util">
         <div class="inner-wrap">
@@ -78,8 +53,8 @@
 
 			<div class="tab-block">
 				<ul>
-					<li class="on"><a href="/question/write" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
-					<li><a href="/question/write" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+					<li><a href="/question/writeview" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+					<li class="on"><a href="/question/writerentview" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
 					<li><a href="/question/lost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
 				</ul>
 			</div>
@@ -105,177 +80,8 @@
 			<p class="reset mt10">* 원활한 서비스 이용을 위한 최소한의 개인정보이므로 동의하지 않을 경우
 				서비스를 이용하실 수 없습니다</p>
 			<p class="reset mt30 a-r font-orange">* 필수</p>
-			<form name="regFrm" method="post">
+			<form name="regFrm" method="post" action="/question/writerentview">
 				<div class="table-wrap mt10" style="display: block;">
-					<table class="board-form va-m">
-						<colgroup>
-							<col style="width: 150px;">
-							<col>
-							<col style="width: 150px;">
-							<col>
-						</colgroup>
-						<tbody>
-							<tr>
-								<th scope="row">문의선택<em class="font-orange">*</em></th>
-								<td colspan="3"><input type="radio" id="aq2"
-									name="inqMclCd" value="QD01M02" data-cd="QD_ETC_DIV_CD"
-									checked=""> <label for="aq2">고객센터문의</label> <input
-									type="radio" id="aq1" name="inqMclCd" class="ml20"
-									value="QD01M01" data-cd="QD_BRCH_DIV_CD"> 
-									<label for="aq1">극장별문의</label> 
-								<select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
-										<option value="">지역선택</option>
-										<option value="10">서울</option>
-										<option value="30">경기</option>
-										<option value="35">인천</option>
-										<option value="45">대전/충청/세종</option>
-										<option value="55">부산/대구/경상</option>
-										<option value="65">광주/전라</option>
-										<option value="70">강원</option>
-										<option value="80">제주</option>
-								</select> <select id="theater" name="theater" class="small ml10" title="지역선택" disabled="disabled" tabindex="-98">
-										<option value="">극장선택</option>
-								</select></td>
-							</tr>
-							<tr>
-								<th scope="row"><label for="ask-type">문의유형</label> <em
-									class="font-orange">*</em></th>
-								<td colspan="3"><select name="inqSclCd" id="ask-type"
-									class="small" tabindex="-98">
-										<option value="">문의유형 선택</option>
-										<option value="QDET01">영화정보문의</option>
-										<option value="QDET02">회원 및 포인트문의</option>
-										<option value="QDET03">예매/결제관련문의</option>
-										<option value="QDET04">이벤트문의</option>
-										<option value="QDET05">일반문의</option>
-										<option value="QDET06">제안/건의</option>
-								</select></td>
-							</tr>
-							<tr>
-								<th scope="row"><label for="name">이름</label> <em
-									class="font-orange">*</em></th>
-								<td><input type="text" id="name" name="inqurNm"
-									class="input-text w150px" value="" maxlength="30"></td>
-								<th scope="row"><label for="qnaRpstEmail">이메일</label> <em
-									class="font-orange">*</em></th>
-								<td><input type="text" name="rpstEmail" id="qnaRpstEmail"
-									class="input-text" value="" maxlength="50"></td>
-							</tr>
-							<tr>
-								<th scope="row"><label for="hpNum1">휴대전화</label> <em
-									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text" name="hpNum1"
-									id="hpNum1" class="input-text w60px numType" maxlength="3"
-									title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-									type="text" name="hpNum2" id="hpNum2"
-									class="input-text w70px numType" maxlength="4"
-									title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-									type="text" name="hpNum3" id="hpNum3"
-									class="input-text w70px numType" maxlength="4"
-									title="핸드폰번호 마지막자리 입력">
-									<button id="btnQnaMblpCertNoSend" type="button"
-										disabled="disabled" class="button gray w100px ml08 disabled">인증요청</button>
-									<div id="qnaMblpNo-error-text" class="alert"></div></td>
-							</tr>
-
-							<tr id="qnaMblpCertRow" style="display: none;">
-								<th scope="row"><label for="ibxQnaMblpCharCertNo">인증번호</label>
-									<em class="font-orange">*</em></th>
-								<td colspan="3">
-									<div class="chk-num">
-										<div class="line">
-											<input maxlength="4" type="text" id="ibxQnaMblpCharCertNo"
-												class="input-text w180px numType" title="인증번호 입력"
-												disabled="disabled">
-											<!--인증번호 입력-->
-											<div id="qnaTimer" class="time-limit">3:00</div>
-										</div>
-									</div>
-									<button id="btnQnaMblpCharCert" type="button"
-										class="button purple w100px ml08 disabled"
-										disabled="disabled">
-										인증확인
-										<!--인증확인-->
-									</button>
-									<div id="qnaCertNo-error-text" class="alert"></div>
-								</td>
-							</tr>
-
-							<tr>
-								<th scope="row"><label for="qnaCustInqTitle">제목</label> <em
-									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text" name="custInqTitle"
-									id="qnaCustInqTitle" class="input-text" maxlength="100"></td>
-							</tr>
-							<tr>
-								<th scope="row"><label for="textarea">내용</label> <em
-									class="font-orange">*</em></th>
-								<td colspan="3">
-									<div class="textarea">
-										<div id="textarea-notice"
-											style="color: #999999; margin-left: 10px;">
-											<ul>- 문의내용에 개인정보(이름,연락처,카드번호 등)가 포함되지 않도록 유의하시기 바랍니다.
-											</ul>
-											<ul style="font-weight: bold">- 비회원 문의시 이메일로 답변내용이
-												발송되오니 정확하게 작성부탁드립니다.
-											</ul>
-											<ul>- 회원로그인 후 문의작성시 나의 문의내역을 통해 답변을 확인하실 수 있습니다.
-											</ul>
-										</div>
-										<textarea id="textarea" name="custInqCn" rows="5" cols="30"
-											title="내용입력" class="input-textarea"></textarea>
-										<div class="util">
-											<p class="count">
-												<span id="textareaCnt">0</span> / 2000
-											</p>
-										</div>
-									</div>
-								</td>
-							</tr>
-							<!-- 2019-02-14 사진첨부 마크업 수정 -->
-							<tr>
-								<th scope="row">사진첨부</th>
-								<td colspan="3">
-									<div class="upload-image-box">
-
-										<div class="info-txt">
-											<p>* JPEG, PNG 형식의 5M 이하의 파일만 첨부 가능합니다. (최대 5개)</p>
-
-											<!-- to 개발 : 이미지 추가가 5개가 되면 버튼 숨김 -->
-											<button type="button" id="uploadBtn" class="btn-image-add">
-												<span>파일선택</span>
-											</button>
-											<!--// to 개발 : 이미지 추가가 5개가 되면 버튼 숨김 -->
-											<p>* 개인정보가 포함된 이미지 등록은 자제하여 주시기 바랍니다.</p>
-										</div>
-										<div id="imgList">
-											<p class="dw-link">
-												<a
-													href="/SharedImg/2024/01/19/KnFRypUIGlG1dILWYMQeErqImz9Zwkf9.png"
-													title="첨부파일 다운로드">츠어여 (4).png</a>
-												<button type="button" class="btn-del" data-no="1191167"
-													data-sn="1">첨부파일 삭제</button>
-											</p>
-										</div>
-									</div>
-								</td>
-							</tr>
-							<!--// 2019-02-14 사진첨부 마크업 수정 -->
-
-							<tr>
-								<th scope="row"><label for="name">비밀번호</label> <em
-									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text" id="nonMbInqPw"
-									name="nonMbInqPwd" class="input-text w150px pwnew"
-									maxlength="4" oninput="gfn_numberMaxLength(this);"> <em
-									class="fc_r ml10">* 1:1 문의에 대한 고객정보 보호를 위해 게시글의 비밀번호를
-										설정해주세요.</em></td>
-							</tr>
-
-						</tbody>
-					</table>
-				</div>
-				<div class="table-wrap mt10" style="display: none;">
 					<table class="board-form va-m">
 						<colgroup>
 							<col style="width: 150px;">
@@ -306,11 +112,9 @@
 							<tr>
 								<th scope="row"><label for="date">관람/대관일</label> <em
 									class="font-orange">*</em></th>
-								<td colspan="3"><input type="text"
-									title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
-									class="date-calendar hasDatepicker" disabled="disabled">
-									<button type="button" class="ui-datepicker-trigger">날짜
-										선택</button> <select name="lentTime" class="small ml07" title="시간선택"
+								<td colspan="3"><input type="date" title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
+									class="date-calendar hasDatepicker"/>
+								<select name="lentTime" class="small ml07" title="시간선택"
 									tabindex="-98">
 										<option value="">시간선택</option>
 										<option value="01">01</option>
@@ -349,7 +153,7 @@
 								<tr>
 									<th scope="row"><label for="lentAdmisPcntCnt">관람인원</label>
 										<em class="font-orange">*</em></th>
-									<td colspan="3"><input type="text" name="admisPcntCnt"
+									<td colspan="3"><input type="number" name="admisPcntCnt"
 										id="lentAdmisPcntCnt" class="input-text w150px a-r numType"
 										maxlength="3"> 명</td>
 								</tr>
@@ -366,9 +170,9 @@
 									<td><input type="text" name="hpNum1" id="lentHpNum1"
 										class="input-text w60px numType" maxlength="3"
 										title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-										type="text" name="hpNum2" class="input-text w60px numType"
+										id="lentHpNum2" type="text" name="hpNum2" class="input-text w60px numType"
 										maxlength="4" title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-										type="text" name="hpNum3" class="input-text w60px numType"
+									id="lentHpNum3"	type="text" name="hpNum3" class="input-text w60px numType"
 										maxlength="4" title="핸드폰번호 마지막자리 입력"></td>
 									<th scope="row"><label for="lentRpstEmail">이메일</label> <em
 										class="font-orange">*</em></th>
@@ -411,96 +215,6 @@
 							</tbody>
 						</table>
 				</div>
-				<div class="table-wrap mt10" style="display: none;">
-					<table class="board-form va-m">
-						<colgroup>
-						<col style="width: 150px;">
-						<col>
-						<col style="width: 150px;">
-						<col>
-						</colgroup>
-						<tbody>
-						<tr>
-							<th scope="row"><label for="place">분실장소</label> <em
-								class="font-orange">*</em></th>
-							<td colspan="3"><select id="theater" class="small"
-								title="지역선택">
-									<option value="">지역선택</option>
-									<option value="10">서울</option>
-									<option value="30">경기</option>
-									<option value="35">인천</option>
-									<option value="45">대전/충청/세종</option>
-									<option value="55">부산/대구/경상</option>
-									<option value="65">광주/전라</option>
-									<option value="70">강원</option>
-									<option value="80">제주</option>
-							</select> <select name="brchNo" id="theater02" title="극장선택"
-								class="small ml07" disabled="disabled">
-									<option value="">극장선택</option>
-							</select></td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="name">이름</label> <em
-								class="font-orange">*</em></th>
-							<td colspan="3"><input type="text" name="inqurNm"
-								id="name" class="input-text w150px" value="" maxlength="30"></td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="hpNum1">연락처</label> <em
-								class="font-orange">*</em></th>
-							<td><input type="text" name="hpNum1" id="hpNum1"
-								class="input-text w60px numType" maxlength="3"
-								title="핸드폰번호 첫자리 입력"> <span>-</span> <input
-								type="text" name="hpNum2" class="input-text w60px numType"
-								maxlength="4" title="핸드폰번호 중간자리 입력"> <span>-</span> <input
-								type="text" name="hpNum3" class="input-text w60px numType"
-								maxlength="4" title="핸드폰번호 마지막자리 입력"></td>
-							<th scope="row"><label for="email">이메일</label> <em
-								class="font-orange">*</em></th>
-							<td><input type="text" name="rpstEmail" id="email"
-								class="input-text" value="" autocomplete="new-password"
-								maxlength="50"></td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="title">제목</label> <em
-								class="font-orange">*</em></th>
-							<td colspan="3"><input type="text" name="custInqTitle"
-								id="title" class="input-text" maxlength="100"></td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="textarea">내용</label> <em
-								class="font-orange">*</em></th>
-							<td colspan="3">
-								<div class="textarea">
-									<textarea id="textarea" name="custInqCn" rows="5" cols="30"
-										title="내용입력"
-										placeholder="※ 문의 내용에 개인정보(이름, 연락처, 카드번호 등)가 포함되지 않도록 유의하시기 바랍니다.
-※ 분실장소와 분실물에 대한 상세 정보를 작성해주시면 분실물을 찾는데 도움이 됩니다.
-- 관람 영화정보(영화제목, 상영 회차, 상영시간 등) :
-- 극장/좌석/장소 정보 :
-- 분실물 상세정보"
-										class="input-textarea"></textarea>
-									<div class="util">
-										<p class="count">
-											<span id="textareaCnt">0</span> / 2000
-										</p>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="pw">비밀번호</label> <em
-								class="font-orange">*</em></th>
-							<td colspan="3"><input type="number" maxlength="4"
-								name="lstrtclInqPwd" id="pw" class="input-text w150px pwnew"
-								placeholder="숫자 4자리" oninput="gfn_numberMaxLength(this);">
-								<em class="fc_r ml10">* 분실물에 대한 고객정보 보호를 위하여 게시글의 비밀번호를
-									설정해주세요.</em></td>
-						</tr>
-						</tbody>
-						</table>
-				</div>
-
 				<div class="btn-group pt40 positionRelative">
 					<button type="submit" class="button purple large">등록</button>
 				</div>
@@ -508,7 +222,5 @@
 		</div>
 		</div>
 	</div>
-</div>
-</div>
 </div>
 <jsp:include page="${path}/views/common/footer.jsp" />

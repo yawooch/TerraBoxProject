@@ -407,6 +407,9 @@ h3 {
     background-image : url(../img/bg-seat-common.png);
     border: 1px solid #6D3030;
 }
+.tk-seat-click.choiced { 
+    background-image : url(../img/bg-seat-choice.png);
+}
 
 
 .tk-seat-end {
@@ -573,6 +576,13 @@ h3 {
     text-align: center;
     padding: 6px 0;
 }
+.tk-choice-seat-now.enabled {
+    background-color: #53565b;
+}
+.tk-choice-seat-now.enabled.choiced {
+    background-color: #6D3030;
+}
+
 
 .tk-btn-group {
     z-index: 1;
@@ -643,6 +653,11 @@ h3 {
     height: 40px;
     border-bottom-left-radius:10px;
     padding: 10px 0;
+    cursor:pointer;
+}
+.tk-previous-page:hover{
+    cursor:pointer;
+    background-color: #ae2c2f;
 }
 
 .tk-next-page{
@@ -653,6 +668,6 @@ h3 {
     padding: 10px 0;
 }
 .tk-next-page.enabled{
-    background-color: #037B94;
+    background-color: #ae2c2f;
     cursor:pointer;
 }
