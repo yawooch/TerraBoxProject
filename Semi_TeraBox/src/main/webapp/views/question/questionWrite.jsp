@@ -78,9 +78,10 @@
 
 			<div class="tab-block">
 				<ul>
-					<li class="on"><a href="/question/write" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
-					<li><a href="/question/write" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
-					<li><a href="/question/lost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
+					<!-- a 태그의 href 속성 삭제 -->
+					<li class="on"><a class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+					<li><a class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+					<li><a class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
 				</ul>
 			</div>
 			<div class="agree-box">

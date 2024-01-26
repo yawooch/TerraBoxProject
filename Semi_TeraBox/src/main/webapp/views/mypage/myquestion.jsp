@@ -4,13 +4,14 @@
 <c:set var="path" value="${ pageContext.request.contextPath }" />
 <jsp:include page="${path}/views/common/header.jsp" />
 <link rel="stylesheet" href="${path}/views/mypage/css/myquestion.css">
+<!-- 나의 문의 내역 -->
 <div class="container has-lnb">
 	<div class="page-util">
 		<div class="inner-wrap">
 			<div class="location">
-				<span>Home</span> <a href="/mypage" title="나의 테라박스 페이지로 이동">나의
-					테라박스</a> <a href="/mypage/myqeustion" title="나의 문의내역 페이지로 이동">나의
-					문의내역</a>
+				<span>Home</span> 
+				<a href="/mypage" title="나의 테라박스 페이지로 이동">나의 테라박스</a> 
+				<a href="/mypage/myqeustion" title="나의 문의내역 페이지로 이동">나의 문의내역</a>
 			</div>
 		</div>
 	</div>
@@ -85,15 +86,29 @@
 							<th scope="col">등록일</th>
 						</tr>
 					</thead>
+<%-- 					<c:if test="${ not empty list }"> --%>
+<%-- 						<c:forEach var="questionlst" items="${ list }"> --%>
+<!-- 							<tbody> -->
+<!-- 								<tr> -->
+<%-- 									<th scope="col">${questlist.QuestNo}</th> --%>
+<%-- 									<th scope="col">${question.CinemaId }</th> --%>
+<%-- 									<th scope="col">${qtuestion.type }</th> --%>
+<%-- 									<th scope="col">${question.quest.title }</th> --%>
+<%-- 									<th scope="col">${question.questName }</th> --%>
+<!-- 								</tr> -->
+<!-- 							</tbody> -->
+<%-- 						</c:forEach> --%>
+<%-- 					</c:if> --%>
 					<c:if test="${ not empty list }">
-						<c:forEach var="questionlst" items="${ list }">
+						<c:forEach var="question" items="${ list }">
 							<tbody>
 								<tr>
-									<th scope="col">${questlist.QuestNo}</th>
-									<th scope="col">${question.CinemaId }</th>
-									<th scope="col">${qtuestion.type }</th>
-									<th scope="col">${question.quest.title }</th>
-									<th scope="col">${question.questName }</th>
+									<th scope="col">${question.no}</th>
+									<th scope="col">${question.cinemaId }</th>
+									<th scope="col">${question.type }</th>
+									<th scope="col">${question.title }</th>
+									<th scope="col">${question.check }</th>
+									<th scope="col">${question.answRegDttm }</th>
 								</tr>
 							</tbody>
 						</c:forEach>

@@ -53,7 +53,6 @@ public class MovieCommentServlet extends HttpServlet {
     	request.setAttribute("pageInfo", pageInfo);
     	request.setAttribute("list", list);
     	
-    	System.out.println(list);
    
     	request.getRequestDispatcher("/views/movie/movieComment.jsp").forward(request, response);
     }
@@ -66,6 +65,8 @@ public class MovieCommentServlet extends HttpServlet {
     	movieComment.setPoint(request.getParameter("ele"));
     	
     	int result = new MovieService().save(movieComment);
+    	
+    	request.getRequestDispatcher("/views/movie/movieComment.jsp").forward(request, response);
     	
 //    	if (result > 0) {
 //    		

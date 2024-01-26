@@ -133,6 +133,7 @@ public class MovieDao {
 		List<MovieComment> list = new ArrayList<>();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		MovieComment movieComment = null;
 		
 		// 우선 부수적인것 제외하고 불러오기만
 		String query = "SELECT RNUM, TICKET_NO, EVAL_POINT, EVAL_COMMENT, EVAL_REG_DTTM, VIW_PNT_CONTENT, MOVIE_NO "
@@ -157,7 +158,7 @@ public class MovieDao {
 			
 			
 			while (rs.next()) {
-				MovieComment movieComment = new MovieComment();
+				movieComment = new MovieComment();
 				
 				movieComment.setRowNum(rs.getInt("RNUM"));
 				movieComment.setTicketNo(rs.getString("TICKET_NO"));

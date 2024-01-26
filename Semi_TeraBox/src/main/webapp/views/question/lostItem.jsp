@@ -10,6 +10,7 @@
 <script src="./js/lostItem.js"></script>
 <div class="qt-body-by">
 
+<!-- 분실물 문의 -->
 	<main class="qt-main-by">
 		<div class="qt-submenu-by">
 			<div class="qt-submenu-area-by">
@@ -121,60 +122,23 @@
 								<td>답변완료</td>
 								<td>2024,01,07</td>
 							</tr>
-							<tr>
-								<td>7863</td>
-								<td>동대문</td>
-								<th scope="row"><a href="#" class="btn-layer-open moveBtn"
-									data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">샤넬
-										화장품</a></th>
-								<td>미답변</td>
-								<td>2024,01,07</td>
-							</tr>
-							<tr>
-								<td>7862</td>
-								<td>홍대</td>
-								<th scope="row"><a href="#" class="btn-layer-open moveBtn"
-									data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">카드지갑</a>
-								</th>
-								<td>답변완료</td>
-								<td>2024,01,07</td>
-							</tr>
-							<tr>
-								<td>7861</td>
-								<td>상암</td>
-								<th scope="row"><a href="#" class="btn-layer-open moveBtn"
-									data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">신용카드
-										분실 문의</a></th>
-								<td>미답변</td>
-								<td>2024,01,07</td>
-							</tr>
-							<tr>
-								<td>7860</td>
-								<td>강남</td>
-								<th scope="row"><a href="#" class="btn-layer-open moveBtn"
-									data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">분실물
-										반지를 찾습니다.</a></th>
-								<td>답변완료</td>
-								<td>2024,01,07</td>
-							</tr>
-							<tr>
-								<td>7859</td>
-								<td>강남</td>
-								<th scope="row"><a href="#" class="btn-layer-open moveBtn"
-									data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">신분증</a>
-								</th>
-								<td>답변완료</td>
-								<td>2024,01,07</td>
-							</tr>
-							<tr>
-								<td>7858</td>
-								<td>동대문</td>
-								<th scope="row"><a href="#" class="btn-layer-open moveBtn"
-									data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">남성
-										검은색 지갑</a></th>
-								<td>미답변</td>
-								<td>2024,01,07</td>
-							</tr>
+							
+							<c:if test="${ not empty list }">
+								<c:forEach var="question" items="${list}">
+									<tr>
+										<td>${question.no}</td>
+										<td>${question.cinemaId}</td>
+										<th scope="row">
+											<a href="#" class="btn-layer-open moveBtn"
+											data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">
+											${question.title} 
+											</a>
+										</th>
+										<td> ${question.check} </td>
+										<td> ${question.answRegDttm} </td>
+									</tr>
+								</c:forEach>
+							</c:if>
 
 						</tbody>
 					</table>

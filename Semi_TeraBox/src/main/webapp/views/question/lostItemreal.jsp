@@ -9,6 +9,7 @@
 <script src="../js/jquery-3.7.1.js"></script>
 <script src="./js/lostItemreal.js"></script>
 <div class="qt-body-by">
+<!-- 분실물 상세 -->
 	<main class="qt-main-by">
 		<div class="qt-submenu-by">
 			<div class="qt-submenu-area-by">
