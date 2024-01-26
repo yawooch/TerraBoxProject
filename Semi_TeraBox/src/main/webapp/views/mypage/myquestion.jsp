@@ -105,8 +105,8 @@
 								<tr>
 									<th scope="col">${question.no}</th>
 									<th scope="col">${question.cinemaId }</th>
-									<th scope="col">${question.type }</th>
-									<th scope="col">${question.title }</th>
+									<th scope="col">${question.division }</th>
+									<th scope="col"><a href="${ path }/mypage/questionanswer?no=${question.no}">${question.title }</a></th>
 									<th scope="col">${question.check }</th>
 									<th scope="col">${question.answRegDttm }</th>
 								</tr>

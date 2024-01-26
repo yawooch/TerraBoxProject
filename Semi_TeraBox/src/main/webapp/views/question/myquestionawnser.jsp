@@ -43,32 +43,39 @@
 				<div class="table-wrap"></div>
 				<div class="board-view">
 					<div class="tit-area">
-						<p class="tit">[상암]지갑</p>
+						<p class="tit">${ question.title }</p>
 					</div>
 					<div class="info">
 						<p>
-							<span class="txt">문의사항</span>
+							<span class="txt">
+							${ question.division }
+							<c:if test="${ not empty question.type }">
+								<span> - ${ question.type }</span>
+							</c:if>
+							</span>
 						</p>
 						<p>
-							<strong class="txt">강남</strong>
+							<strong class="txt">${ question.cinemaId }</strong>
 						</p>
 						<p>
-							<span class="txt">010-1234-4567</span>
+							<span class="txt">${ qeustion.phone }</span>
 						</p>
 						<p>
-							<span class="txt">kh1234@naver.com</span>
+							<span class="txt">${ question.email }</span>
 						</p>
 						<p>
-							<span class="txt">2024.01.17 21:56:35</span>
+							<span class="txt">${ question.answRegDttm }</span>
 						</p>
 						<p>
-							<span class="txt">미답변</span>
+							<span class="txt">답변 상태: ${ question.check }</span>
 						</p>
 					</div>
 					<div class="cont">
 						<textarea rows="5" cols="30" readonly class="input-textarea view"
-							style="border: none;">지갑을 잃어버렸습니다
-                            </textarea>
+							style="border: none;">${ question.content }</textarea>
+                        <c:if test="${ not empty question.answContent }">
+                        	<div> ${ question.answContent }</div>
+                        </c:if>
 					</div>
 					<div class="btn-group pt40">
 						<a href="http://localhost:8080/views/question/lostItem.jsp"

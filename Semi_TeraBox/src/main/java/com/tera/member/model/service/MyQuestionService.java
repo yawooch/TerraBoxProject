@@ -38,4 +38,18 @@ public class MyQuestionService {
 		return list;
 	}
 
+
+	
+	// no를 통해서 question 객체 얻어옴
+	public Question getQuestionByNo(int no) {
+		Question question = null;
+		Connection connection = getConnection();
+		
+		question = new MyQuestionDao().findQuestionByNo(connection, no);
+		
+		close(connection);
+		
+		return question;
+	}
+
 }
