@@ -504,7 +504,7 @@
 				</div>
 
 				<div class="btn-group pt40 positionRelative">
-					<button type="submit" class="button purple large">등록</button>
+					<button type="submit" class="button purple large"><a href="${path }/mypage/question"></a>등록</button>
 				</div>
 			</form>
 		</div>

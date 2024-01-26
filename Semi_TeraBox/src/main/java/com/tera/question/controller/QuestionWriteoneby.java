@@ -27,9 +27,11 @@ public class QuestionWriteoneby extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 
 		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
+		
+		
 	}
 
 	/**
@@ -42,7 +44,8 @@ public class QuestionWriteoneby extends HttpServlet {
 		Question question = new Question();
 
 //		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
-
+		
+		question.setNo(request.getParameter(""));
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("nonMbInqPwd"))));
@@ -55,7 +58,6 @@ public class QuestionWriteoneby extends HttpServlet {
 		
 		no = new QuestionBoardService().save(question);
 	
-
-		request.getRequestDispatcher("/views/question/myquestionlist.jsp").forward(request, response);
+		response.sendRedirect("/mypage/question");
 	}
 }

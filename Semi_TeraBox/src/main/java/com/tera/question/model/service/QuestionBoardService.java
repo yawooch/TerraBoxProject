@@ -44,30 +44,9 @@ public class QuestionBoardService {
 
 	}
 	
-	public int getQuestionCount() {
-		int count =0;
-		
-		Connection connection = getConnection();
-		
-		count = new QuestionBoardDao().getBoardCount(connection);
-		
-		close(connection);
-		
-		return count;
-	}
 	
 	
-	public List<Question> getQuestionList(PageInfo pageInfo){
-		List<Question> list =null;
-		Connection connection =getConnection();
-		
-		list = new QuestionBoardDao().findAll(connection, pageInfo);
-		
-		close(connection);
-		
-		return list;
-	}
-
+	
 }
 
 

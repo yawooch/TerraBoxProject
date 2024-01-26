@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 문의하기 입력을 처리하는  Servlet
+ * 문의하기 이동하는 처리하는  Servlet
  */
 @WebServlet(name = "questionWrite", urlPatterns = { "/question/write" })
 public class QuestionLostListServlet extends HttpServlet {
@@ -21,15 +21,9 @@ public class QuestionLostListServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
 	}
 
-	/**
-	 * 입력한 폼을 전달받아 DB에 문의 정보를 입력한다.
-	 */
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-	}
+	
 
 }

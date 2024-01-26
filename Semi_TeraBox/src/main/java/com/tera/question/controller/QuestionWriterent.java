@@ -28,7 +28,6 @@ public class QuestionWriterent extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-
 		request.getRequestDispatcher("/views/question/questionWriterent.jsp").forward(request, response);
 	}
 
@@ -40,17 +39,16 @@ public class QuestionWriterent extends HttpServlet {
 			throws ServletException, IOException {
 		int fo =0;
 		Question question = new Question();
-
+System.out.println(11);
 //		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
-
-		question.setCinemaId(request.getParameter("theater"));
-		question.setRentDate(request.getParameter("date"));
-		question.setMovieName(request.getParameter("lentAdmisMovieNm"));
+		question.setCinemaId(request.getParameter("theaters"));
+		question.setRentDate(request.getParameter("lentDe"));
+		question.setQuestMoive(request.getParameter("admisMovieNm"));
 		question.setNum(Integer.parseInt((request.getParameter("admisPcntCnt"))));
-		question.setName(request.getParameter("lentAinqurNm"));
-		question.setPhone(request.getParameter("lentHpNum1") + request.getParameter("lentHpNum2") + request.getParameter("lentHpNum3"));
-		question.setEmail(request.getParameter("lentRpstEmail"));
-		question.setTitle(request.getParameter("lentCustInqTitle"));
+		question.setName(request.getParameter("inqurNm"));
+		question.setPhone(request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
+		question.setEmail(request.getParameter("rpstEmail"));
+		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("nonMbInqPwd"))));
 		
@@ -59,6 +57,6 @@ public class QuestionWriterent extends HttpServlet {
 		fo = new QuestionBoardService().rentsave(question);
 	
 
-		request.getRequestDispatcher("/views/question/myquestionlist.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
 	}
 }

@@ -94,7 +94,7 @@
 								<th scope="row"><label for="theater">극장</label> <em
 									class="font-orange">*</em></th>
 								<td colspan="3"><select id="theater" class="small"
-									title="지역선택" tabindex="-98">
+									title="지역선택" tabindex="-98" name="theaters">
 										<option value="">지역선택</option>
 										<option value="10">서울</option>
 										<option value="30">경기</option>

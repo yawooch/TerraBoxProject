@@ -13,7 +13,6 @@ import com.tera.common.util.PageInfo;
 import com.tera.question.model.vo.Question;
 
 public class QuestionBoardDao {
-	
 
 	public List<Question> findAll(Connection connection, PageInfo pageinfo) {
 		List<Question> list = new ArrayList<>();
@@ -28,7 +27,7 @@ public class QuestionBoardDao {
 			pstmt = connection.prepareStatement(query);
 			pstmt.setInt(1, pageinfo.getStartList());
 			pstmt.setInt(2, pageinfo.getEndList());
-			
+
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -54,11 +53,11 @@ public class QuestionBoardDao {
 				question.setAnswContent(rs.getString("ANSW_CONTENT"));
 				question.setAnswRegDttm(rs.getDate("ANSW_REG_DTTM"));
 				question.setAnswMemberId(rs.getString("ANSW_MEMBER_ID"));
-				question.setMovieName(rs.getString("MOVIENAME"));
-			
+				question.setQuestMoive(rs.getString("QUEST_MOVIE"));
+
 				list.add(question);
 			}
-	
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -67,30 +66,6 @@ public class QuestionBoardDao {
 		}
 		return list;
 
-	}
-	
-	public int findBoardByNo(Connection connection,int no) {
-		int count = 0;
-		PreparedStatement psmt = null;
-		ResultSet rs = null;
-		String query = "SELECT COUNT(*) FROM QUESTION WHERE STATUS ='Y'";
-
-		try {
-			psmt = connection.prepareStatement(query);	
-			rs = psmt.executeQuery();
-
-			if (rs.next()) {
-				count = rs.getInt(1);
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(psmt);
-		}
-
-		return count;
 	}
 
 	public int insertBoard(Connection connection, Question question) {
@@ -116,7 +91,6 @@ public class QuestionBoardDao {
 
 			result = pstmt.executeUpdate();
 
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -127,28 +101,16 @@ public class QuestionBoardDao {
 		return result;
 
 	}
-	
-	
+
 	public int insertrentBoard(Connection connection, Question question) {
 		int result = 0;
 		PreparedStatement rentpstmt = null;
 		ResultSet rs = null;
 
-		String query = " INSERT INTO QUESTION"
-				+ "( CINEMA_ID,"
-				+ "RENTAL_DATE,"
-				+ "MOVIE_NAME,"
-				+ "VISIT_NUM,"
-				+ "QUEST_NAME,"
-				+ "QUEST_PHONE,"
-				+ "QUEST_EMAIL,"
-				+ "QUEST_TITLE,"
-				+ "QUEST_CONTENT,"
-				+ "QUEST_PASS_NO "
-				+ ") "
-				+ "VALUES( "
-				+ "SEQ_QT_NO.NEXTVAL"+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ")"
-				+ "FROM QUESTION ";
+		String query = " INSERT INTO QUESTION" + "( QUEST_NO" + ", CINEMA_ID" + ", RENTAL_DATE" + ", QUEST_MOVIE"
+				+ ", VISIT_NUM" + ", QUEST_NAME" + ", QUEST_PHONE" + ", QUEST_EMAIL" + ", QUEST_TITLE"
+				+ ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ")" + "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?"
+				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ")";
 
 		try {
 
@@ -156,7 +118,7 @@ public class QuestionBoardDao {
 
 			rentpstmt.setString(1, question.getCinemaId());
 			rentpstmt.setString(2, question.getRentDate());
-			rentpstmt.setString(3, question.getMovieName());
+			rentpstmt.setString(3, question.getQuestMoive());
 			rentpstmt.setInt(4, question.getNum());
 			rentpstmt.setString(5, question.getName());
 			rentpstmt.setString(6, question.getPhone());
@@ -167,7 +129,6 @@ public class QuestionBoardDao {
 
 			result = rentpstmt.executeUpdate();
 
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -177,32 +138,6 @@ public class QuestionBoardDao {
 
 		return result;
 
-	}
-	
-	
-	
-	
-	public int getBoardCount(Connection connection) {
-		int count = 0;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String query = "SELECT COUNT(*) FROM QUESTION WHERE STATUS = 'Y'";
-
-		try {
-			pstmt = connection.prepareStatement(query);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				count = rs.getInt(1);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(rs);
-			close(pstmt);
-		}
-
-		return count;
 	}
 
 }
