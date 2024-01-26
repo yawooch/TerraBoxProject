@@ -74,7 +74,7 @@ public class MyQuestionDao {
 				question.setPassNo(rs.getInt("QUEST_PASS_NO"));
 				question.setPhone(rs.getString("QUEST_PHONE"));
 				question.setName(rs.getString("QUEST_NAME"));
-				question.setDivsion(rs.getString("QUEST_DIVISION"));
+				question.setDivision(rs.getString("QUEST_DIVISION"));
 				question.setEmail(rs.getString("QUEST_EMAIL"));
 				question.setId(rs.getString("MEMBER_ID"));
 				question.setCheck(rs.getString("ANSW_CHECK"));
@@ -96,6 +96,60 @@ public class MyQuestionDao {
 		
 		
 		return list;
+	}
+
+
+
+	public Question findQuestionByNo(Connection connection, int no) {
+		Question question = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT QUEST_NO, "
+				+ 				"QUEST_TITLE, "
+				+ 				"QUEST_CONTENT, "
+				+ 				"QUEST_PHONE, "
+				+ 				"QUEST_DIVISION, "
+				+ 				"QUEST_TYPE, "
+				+ 				"QUEST_EMAIL, "
+				+ 				"ANSW_CHECK, "
+				+ 				"CINEMA_ID, "
+				+ 				"ANSW_CONTENT, "
+				+ 				"ANSW_REG_DTTM "
+				+		"FROM QUESTION "
+				+ 		"WHERE QUEST_NO = ?";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			pstmt.setInt(1, no);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				question = new Question();
+				
+				question.setNo(rs.getString("QUEST_NO"));
+				question.setTitle(rs.getString("QUEST_TITLE"));
+				question.setContent(rs.getString("QUEST_CONTENT"));
+				question.setPhone(rs.getString("QUEST_PHONE"));
+				question.setDivision(rs.getString("QUEST_DIVISION"));
+				question.setType(rs.getString("QUEST_TYPE"));
+				question.setEmail(rs.getString("QUEST_EMAIL"));
+				question.setCheck(rs.getString("ANSW_CHECK"));
+				question.setCinemaId(rs.getString("CINEMA_ID"));
+				question.setAnswContent(rs.getString("ANSW_CONTENT"));
+				question.setAnswRegDttm(rs.getDate("ANSW_REG_DTTM"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return question;
 	}
 
 }

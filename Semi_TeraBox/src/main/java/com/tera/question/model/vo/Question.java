@@ -18,7 +18,7 @@ public class Question {
 	private int    passNo; //문의글비밀번호
 	private String phone;  //휴대전화번호
 	private String name;   //이름
-	private String divsion;//문의구문(분실물/일대일/대관)
+	private String division;//문의구문(분실물/일대일/대관)
 	private String email;  //이메일
 	private String type;   //문의유형
 	private String file;  // 첨부파일
