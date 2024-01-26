@@ -45,7 +45,7 @@ public class QuestionWriteLost extends HttpServlet {
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("lstrtclInqPwd"))));
 
-		System.out.println(question);
+		
 		
 		no = new QuestionBoardService().Lostsave(question);
 	
