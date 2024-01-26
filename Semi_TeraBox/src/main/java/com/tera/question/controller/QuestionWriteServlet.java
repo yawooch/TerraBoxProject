@@ -16,16 +16,11 @@ public class QuestionWriteServlet extends HttpServlet {
 
 	public QuestionWriteServlet() {}
 
-	
-	
-	
-	
-	
 	/**
 	 * 주소 요청을 받아 해당 JSP 파일에 response해준다
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/question/lostItem.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/question/questionWriteLost.jsp").forward(request, response);
 	}
 }

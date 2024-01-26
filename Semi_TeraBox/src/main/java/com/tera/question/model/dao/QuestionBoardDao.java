@@ -54,6 +54,7 @@ public class QuestionBoardDao {
 				question.setAnswRegDttm(rs.getDate("ANSW_REG_DTTM"));
 				question.setAnswMemberId(rs.getString("ANSW_MEMBER_ID"));
 				question.setQuestMoive(rs.getString("QUEST_MOVIE"));
+				question.setLostPlace(rs.getString("LOSTPLACE"));
 
 				list.add(question);
 			}
@@ -107,25 +108,22 @@ public class QuestionBoardDao {
 		PreparedStatement rentpstmt = null;
 		ResultSet rs = null;
 
-		String query = " INSERT INTO QUESTION" + "( QUEST_NO" + ", CINEMA_ID" + ", RENTAL_DATE" + ", QUEST_MOVIE"
-				+ ", VISIT_NUM" + ", QUEST_NAME" + ", QUEST_PHONE" + ", QUEST_EMAIL" + ", QUEST_TITLE"
-				+ ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ")" + "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?"
-				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ")";
+		String query = " INSERT INTO QUESTION" + "( QUEST_NO" + ", LOSTPLACE" + ", QUEST_NAME" + ", QUEST_PHONE"
+				+ ", QUEST_EMAIL" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ")" 
+				+ "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?"
+				+ ", ?" + ", ?" + ", ?" + ", ?" + ")";
 
 		try {
 
 			rentpstmt = connection.prepareStatement(query);
 
-			rentpstmt.setString(1, question.getCinemaId());
-			rentpstmt.setString(2, question.getRentDate());
-			rentpstmt.setString(3, question.getQuestMoive());
-			rentpstmt.setInt(4, question.getNum());
-			rentpstmt.setString(5, question.getName());
-			rentpstmt.setString(6, question.getPhone());
-			rentpstmt.setString(7, question.getEmail());
-			rentpstmt.setString(8, question.getTitle());
-			rentpstmt.setString(9, question.getContent());
-			rentpstmt.setInt(10, question.getPassNo());
+			rentpstmt.setString(1, question.getLostPlace());
+			rentpstmt.setString(2, question.getName());
+			rentpstmt.setString(3, question.getPhone());
+			rentpstmt.setString(4, question.getEmail());
+			rentpstmt.setString(5, question.getTitle());
+			rentpstmt.setString(6, question.getContent());
+			rentpstmt.setInt(7, question.getPassNo());
 
 			result = rentpstmt.executeUpdate();
 
@@ -139,6 +137,7 @@ public class QuestionBoardDao {
 		return result;
 
 	}
+
 	public int insertLostBoard(Connection connection, Question question) {
 		int result = 0;
 		PreparedStatement rentpstmt = null;
@@ -176,6 +175,5 @@ public class QuestionBoardDao {
 		return result;
 
 	}
-
 
 }

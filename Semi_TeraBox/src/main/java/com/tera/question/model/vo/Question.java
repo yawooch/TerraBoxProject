@@ -32,5 +32,7 @@ public class Question {
 	private Date answRegDttm;    //답변등록일시
 	private String answMemberId;   //답변아이디 
 	private String questMoive;    //영화이름
+	private String lostPlace;    //분실장소
+	
 
 }

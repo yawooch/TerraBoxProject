@@ -43,6 +43,20 @@ public class QuestionBoardService {
 		return result;
 
 	}
+	public int Lostsave(Question question) {
+		int result = 0;
+		Connection connection = getConnection();
+
+		result = new QuestionBoardDao().insertLostBoard(connection, question);
+
+		if (result > 0) {
+			commit(connection);
+		} else {
+			rollback(connection);
+		}
+		return result;
+
+	}
 	
 	
 	
