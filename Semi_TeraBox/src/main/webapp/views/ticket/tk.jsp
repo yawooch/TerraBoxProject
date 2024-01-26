@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <jsp:include page="${path}/views/common/header.jsp" />
 <link rel="stylesheet" href="${path}/views/ticket/css/jquery.mCustomScrollbar.min.css"/>
@@ -11,21 +12,38 @@
     
     <main>
     <script>
-        
+
+        //생성자 함수
+        function StrDp(dateOrigStr){
+            //속성 정의
+            this.dateOrigStr = dateOrigStr;
+            this.dayArr      = ['일','월','화','수','목','금','토'];
+            this.monthArr    = ['1월', '2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+            this.datePick    = new Date(this.dateOrigStr);//날짜 타입으로 변경
+            this.dateStr     = this.dateOrigStr.replaceAll('-', '.');//날짜전체 yyyy.mm.dd 형식
+            this.year        = this.datePick.getFullYear();//년
+            this.yearStr     = this.datePick.getFullYear()+ '년';//년
+            this.month       = this.datePick.getMonth() + 1;//월
+            this.monRename   = this.monthArr[this.datePick.getMonth()];//1월, 2월...
+            this.monthPad    = (this.datePick.getMonth() + 1)>9?(this.datePick.getMonth() + 1)+'':'0'+(this.datePick.getMonth() + 1) ;//01
+            this.date        = this.datePick.getDate();//일
+            this.dayName     = this.dayArr[this.datePick.getDay()];//요일
+            this.dayRename   = this.datePick.getDate() === new Date().getDate()? '오늘' : this.datePick.getDate() === new Date().getDate() +1? '내일' : this.dayArr[this.datePick.getDay()];//요일
+        }        
         
         let datePickerSet = {
                 showOn: "button"
                 , buttonImage: "${path}/views/ticket/img/ico-calendar-w20.png"
                 , buttonImageOnly: true
                 , buttonText: "Select date"
-                , dateFormat: 'yyyy-mm-dd'
+                , dateFormat: 'yy-mm-dd'
                 , prevText: '이전 달'
                 , nextText: '다음 달'
-                , monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+                , monthNames:      ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
                 , monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-                , dayNames: ['일', '월', '화', '수', '목', '금', '토']
-                , dayNamesShort: ['일', '월', '화', '수', '목', '금', '토']
-                , dayNamesMin: ['일', '월', '화', '수', '목', '금', '토']
+                , dayNames:        ['일', '월', '화', '수', '목', '금', '토']
+                , dayNamesShort:   ['일', '월', '화', '수', '목', '금', '토']
+                , dayNamesMin:     ['일', '월', '화', '수', '목', '금', '토']
                 , showMonthAfterYear: true
                 , yearSuffix: '년'
             };
@@ -62,6 +80,34 @@
                 let leftSize = Number($('#formDeList .wrap').css('left').replace('px', ''));
                 leftSize = leftSize + 70;
                 $('#formDeList .wrap').animate({left: leftSize + 'px'});
+            });
+            //날짜 선택했을때
+            $('#datePicker').on('change',function(event){
+                let date = $(event.target).val();
+                let d = new StrDp(date);
+                let tommorow = '';
+                let tempDate = '';
+                $('#formDeList .wrap *').remove();
+                let parentEle = $('#formDeList .wrap');
+                let createStr = '';
+
+                for(let idx = 0; idx < 15; idx ++){
+                    if(idx !== 0)
+                    {
+                        tempDate = new Date((d.datePick.setDate(d.datePick.getDate()+1)));
+                        tommorow = tempDate.getFullYear() + '-' + ((tempDate.getMonth()+1)>9?(tempDate.getMonth()+1): '0'+(tempDate.getMonth()+1)) + '-'+ ((tempDate.getDate())>9?(tempDate.getDate()): '0'+(tempDate.getDate()));
+                        d = new StrDp(tommorow);
+                    }
+                    console.log(tommorow);
+                    // console.log(d.dateStr);
+                    createStr += '<button class="'+ (d.dayName === '토'?'sat':d.dayName === '일'?'holi':'') +'" type="button" date-data="' + d.dateStr + '" month="'+ (d.datePick.getMonth()) +'">';
+                    createStr +=     '<span class="ir">'+ d.yearStr +' ' + d.monRename + '</span>';
+                    createStr +=     '<em style="pointer-events:none;">'+ d.date +'<span style="pointer-events:none;" class="ir">일</span></em>';
+                    createStr +=     '<span class="day-kr" style="pointer-events:none;display:inline-block">'+ d.dayRename +'</span>';
+                    createStr += '</button>';
+                }
+                parentEle.append(createStr);
+
             });
         });
     </script>
