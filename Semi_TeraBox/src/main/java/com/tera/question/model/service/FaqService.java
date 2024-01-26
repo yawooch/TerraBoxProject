@@ -69,6 +69,14 @@ public class FaqService {
 		
 		return list;
 	}
+
+	public List<Faq> findHome() {
+		
+		Connection connection = getConnection();
+		
+		List<Faq> list = new FaqDao().findHome(connection);
+		return list;
+	}
 	
 	
 	

@@ -186,6 +186,40 @@ public class FaqDao {
 		
 		
 		return list;
+	}
+
+	public List<Faq> findHome(Connection connection) {
+		List<Faq> list = new ArrayList<>();
+		ResultSet rs = null;
+		String query = "SELECT * FROM FAQ WHERE ROWNUM <= 4"; 
+		PreparedStatement pstmt = null;
+		
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Faq faq = new Faq();
+				
+				faq.setFaqNo(rs.getString("FAQ_NO"));
+				faq.setFaqTitle(rs.getString("FAQ_TITLE"));
+				faq.setFaqContent(rs.getString("FAQ_CONTENT"));
+				faq.setFaqCategory(rs.getString("FAQ_CATEGORY"));
+				faq.setMemberId(rs.getString("MEMBER_ID"));
+				
+				list.add(faq);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return list;
 	};
 
 	

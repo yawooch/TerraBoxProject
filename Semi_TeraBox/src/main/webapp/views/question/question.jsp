@@ -64,8 +64,8 @@
 							<a href="http://localhost:8080/question/notice"
 								title="분실물 문의 페이지로 이동">
 								<p>
-									<Strong>분실물 문의</Strong> "잃어버린 물건을 접수해 주시면" <br> "신속히
-									찾아드리겠습니다"
+									<Strong>분실물 문의</Strong> 잃어버린 물건을 접수해 주시면 <br> 신속히
+									찾아드리겠습니다
 								</p>
 							</a>
 						</div>
@@ -73,8 +73,8 @@
 							<a href="http://localhost:8080/question/write"
 								title="1:1 문의 페이지로 이동">
 								<p>
-									<Strong>1:1 문의</Strong> "해결되지않은 문제가 있나요?" <br> "1:1문의로
-									문의주세요"
+									<Strong>1:1 문의</Strong> 해결되지않은 문제가 있나요? <br> 1:1문의로
+									문의주세요
 								</p>
 							</a>
 						</div>
@@ -82,8 +82,8 @@
 							<a href="http://localhost:8080/question/write"
 								title="단체관람 및 대관 문의 페이지로 이동">
 								<p>
-									<Strong>단체관람 및 대관문의</Strong> "단체관람 및 대관을 원하시면" <br> "문의
-									해주세요"
+									<Strong>단체관람 및 대관문의</Strong> 단체관람 및 대관을 원하시면 <br> 문의
+									해주세요
 								</p>
 							</a>
 						</div>
@@ -91,7 +91,7 @@
 							<a href="http://localhost:8080/question/faq"
 								title="자주 묻는 질문 페이지로 이동">
 								<p>
-									<Strong>자주 묻는 질문</Strong> "빠르고 간편하게 검색하세요"
+									<Strong>자주 묻는 질문</Strong> 빠르고 간편하게 검색하세요
 								</p>
 							</a>
 						</div>
@@ -106,26 +106,15 @@
 							</div>
 							<div>
 								<ol class="qt-quqtionlist-by">
-									<li><a href="#" class="qt-qna1-by" data-idx="1"
-										title="질문 상세 보기"> <span class="qt-numbercheck-by">1</span>
-											&nbsp; <span class="qt-numbercheck-area-by">[기프트카드]</span>
-											기프트카드를 보냈는데 상대방이 받지 못한다고 합니다. <span class="qt-date-by">2023.07.12</span>
+								<c:forEach var="faq" items="${ list }">
+									<c:set var="i" value="${ i+1 }" />
+									<li><a href="${ path }/question/faq" class="qt-qna1-by" data-idx="1"
+										title="질문 상세 보기"> <span class="qt-numbercheck-by">${i}</span>
+											&nbsp; <span class="qt-numbercheck-area-by">[${ faq.faqCategory }]</span>
+											${ faq.faqTitle } <span class="qt-date-by">2023.07.12</span>
 									</a></li>
-									<li><a href="#" class="qt-qna1-by" data-idx="2"
-										title="질문 상세 보기"> <span class="qt-numbercheck-by">2</span>
-											&nbsp; <span class="qt-numbercheck-area-by">[기프트카드]</span>
-											선물은 어떤 경로로 보낼 수 있나요? <span class="qt-date-by">2023.07.12</span>
-									</a></li>
-									<li><a href="#" class="qt-qna1-by" data-idx="3"
-										title="질문 상세 보기"> <span class="qt-numbercheck-by">3</span>
-											&nbsp; <span class="qt-numbercheck-area-by">[기프트카드]</span>
-											신용카드의 구매 한도는 얼마이며, 법인카드로 결제가 가능한가요? <span class="qt-date-by">2023.07.12</span>
-									</a></li>
-									<li><a href="#" class="qt-qna1-by" data-idx="4"
-										title="질문 상세 보기"> <span class="qt-numbercheck-by">4</span>
-											&nbsp; <span class="qt-numbercheck-area-by">[기프트카드]</span> 여러
-											명에게 선물한 후 부분적으로 취소가 가능한가요? <span class="qt-date-by">2023.07.12</span>
-									</a></li>
+								</c:forEach>
+									
 								</ol>
 							</div>
 						</div>
@@ -139,27 +128,17 @@
 							</div>
 							<div>
 								<ol class="qt-quqtionlist-by">
+								<c:forEach var="notice" items="${ list2 }" begin="1" end="3">								
 									<li><a href="#" class="qt-qna1-by" data-no="11027"
 										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
 
 											<span class="qt-numbercheck-area-by"> <i
-												class="qt-iconotice-by"></i> [공지]
-										</span> 서울페이(서울사랑상품권) 서비스 종료 안내 (1/31) <span class="qt-date-by">2024.01.11</span>
+												class="qt-iconotice-by"></i> [${notice.noticeType}]
+										</span>${notice.noticeTitle}<span class="qt-date-by">${notice.noticeRegDate}</span>
 									</a></li>
-									<li><a href="#" class="qt-qna1-by" data-idx="2"
-										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
+								</c:forEach>
+									
 
-											<span class="qt-numbercheck-area-by"> <i
-												class="qt-iconotice-by"></i> [공지]
-										</span> NICE평가정보 서비스 점검 안내(01/15) <span class="qt-date-by">2024.01.11</span>
-									</a></li>
-									<li><a href="#" class="qt-qna1-by" data-idx="3"
-										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
-
-											<span class="qt-numbercheck-area-by"> <i
-												class="qt-iconotice-by"></i> [공지]
-										</span> [컬쳐랜드] 시스템 점검 안내 (1/25) <span class="qt-date-by">2024.01.11</span>
-									</a></li>
 									<li><a href="#" class="qt-qna1-by" data-idx="4"
 										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
 											<span class="qt-iconotice-name-by"> <i
