@@ -39,14 +39,14 @@ public class QuestionWriterent extends HttpServlet {
 			throws ServletException, IOException {
 		int fo =0;
 		Question question = new Question();
-System.out.println(11);
-//		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
+
+		
 		question.setCinemaId(request.getParameter("theaters"));
 		question.setRentDate(request.getParameter("lentDe"));
 		question.setQuestMoive(request.getParameter("admisMovieNm"));
 		question.setNum(Integer.parseInt((request.getParameter("admisPcntCnt"))));
 		question.setName(request.getParameter("inqurNm"));
-		question.setPhone(request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
+		question.setPhone(request.getParameter("hpNum1") + "-"+ request.getParameter("hpNum2")+ "-" + request.getParameter("hpNum3"));
 		question.setEmail(request.getParameter("rpstEmail"));
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
@@ -57,6 +57,6 @@ System.out.println(11);
 		fo = new QuestionBoardService().rentsave(question);
 	
 
-		request.getRequestDispatcher("/views/mypage/myquestion.jsp").forward(request, response);
+		response.sendRedirect("/mypage/question");
 	}
 }
