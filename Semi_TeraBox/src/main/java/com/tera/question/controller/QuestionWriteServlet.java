@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// 병만: 이 서블릿도 조금 이해가 안가는 부분이 있어요
+// lost라는 url로 요청받으면 분실물 목록으로 이동하는 걸로 만들어놔서
+// url 패턴이 겹치는 걸로 보이므로
+// url 패턴을 lostwrite로 바꿔주시면 좋을 거 같아요
+
+
 /**
  * 분실물 목록을 화면을 처리하는  Servlet
  */

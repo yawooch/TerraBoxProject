@@ -38,7 +38,7 @@
 				</ul>
 
 				<div class="btn-group right">
-					<a href="/question/writeview" class="button" id="inqBtn" title="문의하기">문의하기</a>
+					<a href="${ path }/question/writeview" class="button" id="inqBtn" title="문의하기">문의하기</a>
 				</div>
 			</div>
 

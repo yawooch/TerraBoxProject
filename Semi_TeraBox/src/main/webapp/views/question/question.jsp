@@ -25,7 +25,7 @@
 		<div class="qt-mainarea-by">
 			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
 				<p class="qt-sidebar-each-by">
-					<a href="#" title="고객센터">고객센터</a>
+					<a href="${ path }/question" title="고객센터">고객센터</a>
 				</p>
 				<ul class="qt-te-area-by">
 					<li class="qt-first-area-by"><a class="qt-first-text-by"

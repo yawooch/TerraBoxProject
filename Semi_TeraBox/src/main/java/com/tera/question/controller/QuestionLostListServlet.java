@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+// 병만: 이 서블릿이 왜 있는지 모르겠어요
+// write라는 url로 요청하면 작성폼이 나와야하는데 포워딩은 나의 문의 내역으로 넘어가는 걸로 보이네요.
+// 
 /**
  * 문의하기 이동하는 처리하는  Servlet
  */

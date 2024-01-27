@@ -66,8 +66,7 @@
 						<li class="qt-on-by">
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="전체">
-								<a class="qt-acolor-by"
-									href="${ path }/question/faq">전체</a>
+								<a class="qt-acolor-by" href="${ path }/question/faq">전체</a>
 							</button>
 						</li>
 						<li>

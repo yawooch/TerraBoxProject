@@ -8,8 +8,8 @@
         <div class="inner-wrap">
             <div class="location">
                 <span>Home</span>
-                <a href="/question" title="고객센터 페이지로 이동">고객센터</a>
-                <a href="/question/write" title="문의하기 페이지로 이동">문의하기</a>
+                <a href="${path}/question" title="고객센터 페이지로 이동">고객센터</a>
+                <a href="${path}/question/write" title="문의하기 페이지로 이동">문의하기</a>
             </div>
         </div>
     </div>
@@ -18,12 +18,12 @@
                <nav id="lnb">
                    <p class="tit"><a href="${path}/question" title="고객센터">고객센터</a></p>
                    <ul>
-                       <li class=""><a href="/question"      title="고객센터 홈">고객센터 홈</a></li>
-                       <li class=""><a href="/question/notice" title="공지사항">공지사항</a></li>
-                       <li class=""><a href="/question/faq"    title="자주 묻는 질문">자주 묻는 질문</a></li>
-                       <li class="on"><a href="/question/write"  title="1:1 문의">1:1 문의</a></li>
-                       <li class=""><a href="/question/write"  title="단체관람 및 대관문의">단체관람 및 대관문의</a></li>
-                       <li class=""><a href="/question/lost"   title="분실물 문의">분실물 문의</a></li>
+                       <li class=""><a href="${path}/question"      title="고객센터 홈">고객센터 홈</a></li>
+                       <li class=""><a href="${path}/question/announcement" title="공지사항">공지사항</a></li>
+                       <li class=""><a href="${path}/question/faq"    title="자주 묻는 질문">자주 묻는 질문</a></li>
+                       <li class=""><a href="${ path }/question/writeview"  title="1:1 문의">1:1 문의</a></li>
+                       <li class=""><a href="${path}/question/writerentview"  title="단체관람 및 대관문의">단체관람 및 대관문의</a></li>
+                       <li class="on"><a href="${path}/question/lost"   title="분실물 문의">분실물 문의</a></li>
                    </ul>
                    <div class="left-customer-info">
                        <p class="tit">
@@ -53,9 +53,9 @@
 
 			<div class="tab-block">
 				<ul>
-					<li ><a href="/question/writeview" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
-					<li><a href="/question/writerentview" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
-					<li class="on"><a href="/question/writeLost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
+					<li ><a href="${path}/question/writeview" class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+					<li><a href="${path}/question/writerentview" class="btn" title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+					<li class="on"><a href="${path}/question/writeLost"  class="btn" title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
 				</ul>
 			</div>
 			<div class="agree-box">
