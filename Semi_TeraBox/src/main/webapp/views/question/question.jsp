@@ -25,7 +25,7 @@
 		<div class="qt-mainarea-by">
 			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
 				<p class="qt-sidebar-each-by">
-					<a href="#" title="고객센터">고객센터</a>
+					<a href="${ path }/question" title="고객센터">고객센터</a>
 				</p>
 				<ul class="qt-te-area-by">
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
@@ -33,10 +33,10 @@
 					<li><a href="${ path }/question/announcement">공지사항</a></li>
 					<li><a href="${ path }/question/faq">자주 묻는 질문</a></li>
 					<li><a href="/question/writeview">1:1 문의</a></li>
-					<li><a href="${ path }/question/write">단체관람 및
+					<li><a href="${ path }/question/writerentview">단체관람 및
 							대관문의</a></li>
 					<li><a
-						href="${ path }/views/question/lostItem.jsp">분실물
+						href="${ path }/question/lost">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
@@ -63,7 +63,7 @@
 				<div class="qt-custo-main-by">
 					<div class="qt-custo-main-area-by">
 						<div class="qt-block-content-by">
-							<a href="${ path }/question/notice"
+							<a href="${ path }/question/lost"
 								title="분실물 문의 페이지로 이동">
 								<p>
 									<Strong>분실물 문의</Strong> 잃어버린 물건을 접수해 주시면 <br> 신속히
@@ -72,7 +72,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content1-by">
-							<a href="${ path }/question/write"
+							<a href="${ path }/question/writeview"
 								title="1:1 문의 페이지로 이동">
 								<p>
 									<Strong>1:1 문의</Strong> 해결되지않은 문제가 있나요? <br> 1:1문의로
@@ -81,7 +81,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content2-by">
-							<a href="${ path }/question/write"
+							<a href="${ path }/question/writerentview"
 								title="단체관람 및 대관 문의 페이지로 이동">
 								<p>
 									<Strong>단체관람 및 대관문의</Strong> 단체관람 및 대관을 원하시면 <br> 문의

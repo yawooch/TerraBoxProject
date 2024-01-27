@@ -21,10 +21,10 @@
 					<a href="/mypage" title="나의 테라박스">나의 테라박스</a>
 				</p>
 				<ul>
-					<li class=""><a href="/mypage" title="예매/구매내역">예매/구매내역</a></li>
-					<li class="on"><a href="/mypage/question" title="나의 문의내역">나의
+					<li class=""><a href="${path}/mypage" title="예매/구매내역">예매/구매내역</a></li>
+					<li class="on"><a href="${path}/mypage/question" title="나의 문의내역">나의
 							문의내역</a></li>
-					<li class=""><a href="/mypage/myinfo" title="회원정보">회원정보</a></li>
+					<li class=""><a href="${path}/mypage/myinfo" title="회원정보">회원정보</a></li>
 				</ul>
 			</nav>
 		</div>

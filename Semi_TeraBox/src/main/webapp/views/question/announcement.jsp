@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<link rel="stylesheet" href="${ pageContext.request.contextPath }/views/question/css/announcement.css">
+<link rel="stylesheet"
+	href="${ pageContext.request.contextPath }/views/question/css/announcement.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
 <jsp:include page="${path}/views/common/header.jsp" />
@@ -12,11 +13,10 @@
 		<div class="qt-submenu-by">
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
-					<span></span> <a
-						href="${ path }/question"
-						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="${ path }/question/notice"
-						title="고객센터 페이지로 이동" id="qt_submenuname1_by">공지사항</a>
+					<span></span> <a href="${ path }/question" title="고객센터 페이지로 이동"
+						id="qt_submenuname_by"> 고객센터</a> <a
+						href="${path}/question/announcement" title="고객센터 페이지로 이동"
+						id="qt_submenuname1_by">공지사항</a>
 				</div>
 			</div>
 		</div>
@@ -28,17 +28,13 @@
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="${ path }/question">고객센터
-							홈</a></li>
+						href="${ path }/question">고객센터 홈</a></li>
 					<li><a class="qt-third-text-by"
-						href="${ path }/question/notice">공지사항</a></li>
-					<li><a href="${ path }/question/faq">자주묻는
-							질문</a></li>
-						<li><a href="${ path }/question/writeview">1:1 문의</a></li>
+						href="${path}/question/announcement">공지사항</a></li>
+					<li><a href="${ path }/question/faq">자주묻는 질문</a></li>
+					<li><a href="${ path }/question/writeview">1:1 문의</a></li>
 					<li><a href="${ path }/question/writerentview">단체관람 및 대관문의</a></li>
-					<li><a
-						href="${ path }/views/question/lostItem.jsp">분실물
-							문의</a></li>
+					<li><a href="${path}//question/lost">분실물 문의</a></li>
 				</ul>
 				<div class="qt-info-by">
 					<p class="qt-sidebar-each-by">
@@ -56,15 +52,14 @@
 						<li class="qt-on-by">
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="전체">
-								<a class="qt-acolor-by"
-									href="${ path }/question/notice">전체</a>
+								<a class="qt-acolor-by" href="${ path }/question/notice">전체</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="테라박스 공지">
 								<a class="qt-acolor1-by"
-									href="${ path }/views/question/announcementTerr.jsp">테라박스
+									href="#">테라박스
 									공지</a>
 							</button>
 						</li>
@@ -72,8 +67,7 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="지점 공지">
 								<a class="qt-acolor1-by"
-									href="${ path }/views/question/announcementSeuel.jsp">지점
-									공지</a>
+									href="#">지점 공지</a>
 							</button>
 						</li>
 					</ul>
@@ -117,34 +111,43 @@
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach var="notice" items="${ list }">
-							<tr>
-								<td>${ notice.noticeNo }</td>
-								<td>${ notice.cinemaArea }</td>
-								<td>${ notice.noticeType }</td>
-								<th><a href="#" class="qt-moveBtn-by" title="공지사항 상세보기">[${ notice.cinemaArea }] ${ notice.noticeTitle }</a></th>
-								<td>${ notice.noticeRegDate }</td>
-							</tr>
-						</c:forEach>
+							<c:forEach var="notice" items="${ list }">
+								<tr>
+									<td>${ notice.noticeNo }</td>
+									<td>${ notice.cinemaArea }</td>
+									<td>${ notice.noticeType }</td>
+									<th><a href="#" class="qt-moveBtn-by" title="공지사항 상세보기">[${ notice.cinemaArea }]
+											${ notice.noticeTitle }</a></th>
+									<td>${ notice.noticeRegDate }</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 				<div class="qt-pagination-by">
-					<a title="첫번째 페이지보기" href="${ path }/question/announcement?page=1" class="control first" >first</a>
-					<a title="이전페이지보기" href="${ path }/question/announcement?page=${ pageInfo.prevPage }" class="control previous" >previous</a>
-						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }" >
-							<c:choose>
-								<c:when test="${current == pageInfo.currentPage }">
-									<button style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 4px;
-									    width: 32px; height:32px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
-								</c:when>
-								<c:otherwise>			
-									<button class="faq-btn-number" onclick="location.href='${path}/question/announcement?page=${ current }'">${ current }</button>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>
-					<a title="10페이지보기" href="${ path }/question/announcement?page=${ pageInfo.nextPage }" class="control next">next</a>
-					<a title="마지막 페이지보기" href="${ path }/question/announcement?page=${ pageInfo.maxPage }" class="control last">last</a>
+					<a title="첫번째 페이지보기" href="${ path }/question/announcement?page=1"
+						class="control first">first</a> <a title="이전페이지보기"
+						href="${ path }/question/announcement?page=${ pageInfo.prevPage }"
+						class="control previous">previous</a>
+					<c:forEach var="current" begin="${ pageInfo.startPage }"
+						end="${ pageInfo.endPage }">
+						<c:choose>
+							<c:when test="${current == pageInfo.currentPage }">
+								<button
+									style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 4px; width: 32px; height: 32px; line-height: 22px; color: white; cursor: auto;"
+									disabled>${ current }</button>
+							</c:when>
+							<c:otherwise>
+								<button class="faq-btn-number"
+									onclick="location.href='${path}/question/announcement?page=${ current }'">${ current }</button>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+					<a title="10페이지보기"
+						href="${ path }/question/announcement?page=${ pageInfo.nextPage }"
+						class="control next">next</a> <a title="마지막 페이지보기"
+						href="${ path }/question/announcement?page=${ pageInfo.maxPage }"
+						class="control last">last</a>
 				</div>
 			</div>
 	</main>

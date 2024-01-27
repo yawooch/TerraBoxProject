@@ -13,11 +13,10 @@
 		<div class="qt-submenu-by">
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
-					<span></span> <a
-						href="http://localhost:8080/views/question/questionHome.jsp"
-						title="고객센터 페이지로 이동" id="qt_submenuname_by">고객센터</a> <a
-						href="http://localhost:8080/views/question/announcement.jsp"
-						title="고객센터 페이지로 이동" id="qt_submenuname1_by">공지사항</a>
+					<span></span> <a href="${path}/question" title="고객센터 페이지로 이동"
+						id="qt_submenuname_by">고객센터</a> <a
+						href="${path}/question/announcement" title="고객센터 페이지로 이동"
+						id="qt_submenuname1_by">공지사항</a>
 				</div>
 			</div>
 		</div>
@@ -29,16 +28,13 @@
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
-							홈</a></li>
-					<li><a href="http://localhost:8080/views/question/faq.jsp">자주묻는
-							질문</a></li>
+						href="${path}/question">고객센터 홈</a></li>
 					<li><a class="qt-third-text-by"
-						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
-					<li><a href="#">단체관람 및 대관문의</a></li>
-					<li><a
-						href="http://localhost:8080/views/question/lostItem.jsp">분실물
-							문의</a></li>
+						href="${path}/question/announcement">공지사항</a></li>
+					<li><a href="${path}/question/faq">자주묻는 질문</a></li>
+					<li><a href="${ path }/question/writeview">1:1 문의</a></li>
+					<li><a href="${path}/question/writerentview">단체관람 및 대관문의</a></li>
+					<li><a href="${path}//question/lost">분실물 문의</a></li>
 				</ul>
 				<div class="qt-info-by">
 					<p class="qt-sidebar-each-by">
@@ -57,14 +53,14 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="전체">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/announcement.jsp">전체</a>
+									href="${ path }/question/notice">전체</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="테라박스 공지">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/announcementTerr.jsp">테라박스
+									href="${ path }/question/notice">테라박스
 									공지</a>
 							</button>
 						</li>
@@ -72,7 +68,7 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="지점 공지">
 								<a class="qt-acolor-by"
-									href="http://localhost:8080/views/question/announcementSeuel.jsp">지점
+									href="${ path }/question/notice">지점
 									공지</a>
 							</button>
 						</li>

@@ -29,13 +29,14 @@
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
 						href="${ path }/question">고객센터
 							홈</a></li>
-					<li><a class="qt-second-text-by"
-						href="${ path }/question/faq">자주 묻는 질문</a></li>
 					<li><a
 						href="${ path }/question/notice">공지사항</a></li>
-					<li><a href="${ path }/question/write">단체관람 및 대관문의</a></li>
+					<li><a class="qt-second-text-by"
+						href="${ path }/question/faq">자주 묻는 질문</a></li>
+						<li><a href="${ path }/question/writeview">1:1 문의</a></li>
+					<li><a href="${ path }/question/writerentview">단체관람 및 대관문의</a></li>
 					<li><a
-						href="${ path }/question/lost">분실물
+						href="${ path }/question/writeLost">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
