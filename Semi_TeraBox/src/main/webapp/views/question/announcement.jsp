@@ -24,7 +24,7 @@
 		<div class="qt-mainarea-by">
 			<nav id="qt_sidebar-area_by" class="qt-sidebar-areapoint-by">
 				<p class="qt-sidebar-each-by">
-					<a href="#" title="고객센터">고객센터</a>
+					<a href="${ path }/question" title="고객센터">고객센터</a>
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
@@ -52,22 +52,21 @@
 						<li class="qt-on-by">
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="전체">
-								<a class="qt-acolor-by" href="${ path }/question/notice">전체</a>
+								<a class="qt-acolor-by" href="${ path }/question/announcement">전체</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="테라박스 공지">
 								<a class="qt-acolor1-by"
-									href="#">테라박스
-									공지</a>
+									href="${ path }/question/announcementTera">테라박스 공지</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="지점 공지">
 								<a class="qt-acolor1-by"
-									href="#">지점 공지</a>
+									href="${ path }/question/announcementSeoul">지점 공지</a>
 							</button>
 						</li>
 					</ul>

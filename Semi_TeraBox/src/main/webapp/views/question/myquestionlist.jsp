@@ -8,8 +8,8 @@
 	<div class="page-util">
 		<div class="inner-wrap">
 			<div class="location">
-				<span>Home</span> <a href="/mypage" title="나의 테라박스 페이지로 이동">나의
-					테라박스</a> <a href="/mypage/myqeustion" title="나의 문의내역 페이지로 이동">나의
+				<span>Home</span> <a href="${path}/mypage" title="나의 테라박스 페이지로 이동">나의
+					테라박스</a> <a href="${path}/mypage/myqeustion" title="나의 문의내역 페이지로 이동">나의
 					문의내역</a>
 			</div>
 		</div>

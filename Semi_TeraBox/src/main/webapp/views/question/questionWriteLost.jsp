@@ -8,8 +8,8 @@
         <div class="inner-wrap">
             <div class="location">
                 <span>Home</span>
-                <a href="/question" title="고객센터 페이지로 이동">고객센터</a>
-                <a href="/question/write" title="문의하기 페이지로 이동">문의하기</a>
+                <a href="${path}/question" title="고객센터 페이지로 이동">고객센터</a>
+                <a href="${path}/question/write" title="문의하기 페이지로 이동">문의하기</a>
             </div>
         </div>
     </div>
