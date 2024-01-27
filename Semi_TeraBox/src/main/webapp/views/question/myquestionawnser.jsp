@@ -58,7 +58,7 @@
 							<strong class="txt">${ question.cinemaId }</strong>
 						</p>
 						<p>
-							<span class="txt">${ qeustion.phone }</span>
+							<span class="txt">${ question.phone }</span>
 						</p>
 						<p>
 							<span class="txt">${ question.email }</span>

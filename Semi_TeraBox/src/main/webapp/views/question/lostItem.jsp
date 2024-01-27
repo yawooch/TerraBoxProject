@@ -129,7 +129,7 @@
 										<td>${question.no}</td>
 										<td>${question.cinemaId}</td>
 										<th scope="row">
-											<a href="#" class="btn-layer-open moveBtn"
+											<a href="${ path }/question/lostitem?no=${question.no}" class="btn-layer-open moveBtn"
 											data-sn="726847" data-no="14853206" title="분실물 문의 상세보기 ">
 											${question.title} 
 											</a>
