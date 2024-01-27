@@ -208,9 +208,7 @@ h2.tit {
 .wrap {
     overflow: visible;
     height: 40px;
-    border-top: 1px solid #555;
-    border-left: 1px solid #d8d9db;
-    border-right: 1px solid #d8d9db;
+    border: 1px solid #d8d9db;
 }
 .button{
     overflow: visible;
@@ -237,7 +235,7 @@ h2.tit {
     background-position: 0 0;
     background-repeat: no-repeat;
 }
-.btn-pre {
+.btn-prev-date {
     cursor: pointer;
     padding: 6 1 6 1;
     width: 30px;
@@ -389,7 +387,7 @@ h2.tit {
 .time-schedule .ico-cld-next {
     margin-left: 1px
 }
-.time-schedule .btn-next {
+.time-schedule .btn-next-date {
     width: 30px;
     height: 39px;
     border: 0!important;
@@ -714,7 +712,7 @@ ul {
     
 }
 
-/* .quick-reserve-area .view-area .choice-all {
+.quick-reserve-area .view-area .choice-all {
     overflow: hidden;
     width: 100%;
     height: 90px;
@@ -734,12 +732,19 @@ ul {
 .quick-reserve-area .view-area .choice-all span {
     display: block;
     padding: 0;
-} */
+}
 /* 하나라도 영화선택 */
 .quick-reserve-area .view-area .choice-list {
     overflow: hidden;
     margin: 10px 0 0 0;
     height: 90px;
+}
+
+.quick-reserve-area .view-area .choice-list .bg .wrap .img {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
 }
 .quick-reserve-area .view-area .choice-list .bg {
     overflow: hidden;
@@ -747,6 +752,28 @@ ul {
     width: 63px;
     height: 90px;
     background: url(https://img.megabox.co.kr/static/pc/images/reserve/bg-empty-cell.png) no-repeat center;
+}
+.quick-reserve-area .view-area .choice-list .bg .wrap .img img {
+    width: 100%;
+    height: 100%;
+}
+.quick-reserve-area .view-area .choice-list .bg .wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.quick-reserve-area .view-area .choice-list .bg .wrap .del {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    background: url(https://img.megabox.co.kr/static/pc/images/reserve/btn-choice-dell.png) no-repeat 0 0;
 }
 .quick-reserve-area .view-area .choice-list .bg+.bg {
     margin-left: 20px;
@@ -870,6 +897,18 @@ li {
     color: #fff;
     background-color: #666;
 }
+.quick-reserve-area .theater-choice .list .scroll ul li .btn.on:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    z-index: 2;
+    width: 6px;
+    height: 11px;
+    margin: -6px 0 0 0;
+    background: url(https://img.megabox.co.kr/static/pc/images/reserve/bg-arr-theater-choice.png) no-repeat 0 0;
+}
 /* 극장스크롤바 */
 .m-scroll .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
     position: relative;
@@ -880,6 +919,7 @@ li {
     background-color: #555;
     text-align: center;
 }
+
 
 /* 극장 view-area */
 .quick-reserve-area .theater-choice .view-area .choice-list {
@@ -1063,11 +1103,10 @@ li {
     font-weight: 300;
 }
 
-.movie-schedule-area .mCSB_container .btn:hover{
+.movie-schedule-area .mCSB_container .btn:hover, #mCSB_1_container button:hover, #brchList button:hover{
     background-color: #d8d9db;
-
+    cursor:pointer;
 }
-
 
 /* 제목 */
 .quick-reserve-area .movie-schedule-area .result .scroll ul li .btn .title {
@@ -1118,6 +1157,33 @@ li {
     letter-spacing: 0;
     text-align: center;
     border: 1px solid #f2f4f5;
+}
+.quick-reserve-area .theater-choice .view-area .choice-list .bg {
+    overflow: visible;
+    display: table;
+    table-layout: fixed;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin: 0 0 0 18px;
+    background: url(https://img.megabox.co.kr/static/pc/images/reserve/bg-empty-cell-circle.png) no-repeat center;
+}
+.quick-reserve-area .theater-choice .view-area .choice-list .bg .wrap {
+    display: table-cell;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #ebebeb;
+}
+.quick-reserve-area .theater-choice .view-area .choice-list .bg .wrap .txt {
+    display: inline-block;
+    padding: 0 10px;
+    color: #222;
+    font-size: .8667em;
+    letter-spacing: 0;
 }
 
 .ui-datepicker-trigger{

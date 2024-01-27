@@ -9,108 +9,9 @@
 <script src="${path}/views/common/js/jquery-ui-1.13.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="${path}/views/ticket/css/tk.css">
 <script src="${path}/views/ticket/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="${path}/views/ticket/js/tk.js"></script>
     
     <main>
-    <script>
-
-        //생성자 함수
-        function StrDp(dateOrigStr){
-            //속성 정의
-            this.dateOrigStr = dateOrigStr;
-            this.dayArr      = ['일','월','화','수','목','금','토'];
-            this.monthArr    = ['1월', '2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
-            this.datePick    = new Date(this.dateOrigStr);//날짜 타입으로 변경
-            this.dateStr     = this.dateOrigStr.replaceAll('-', '.');//날짜전체 yyyy.mm.dd 형식
-            this.year        = this.datePick.getFullYear();//년
-            this.yearStr     = this.datePick.getFullYear()+ '년';//년
-            this.month       = this.datePick.getMonth() + 1;//월
-            this.monRename   = this.monthArr[this.datePick.getMonth()];//1월, 2월...
-            this.monthPad    = (this.datePick.getMonth() + 1)>9?(this.datePick.getMonth() + 1)+'':'0'+(this.datePick.getMonth() + 1) ;//01
-            this.date        = this.datePick.getDate();//일
-            this.dayName     = this.dayArr[this.datePick.getDay()];//요일
-            this.dayRename   = this.datePick.getDate() === new Date().getDate()? '오늘' : this.datePick.getDate() === new Date().getDate() +1? '내일' : this.dayArr[this.datePick.getDay()];//요일
-        }        
-        
-        let datePickerSet = {
-                showOn: "button"
-                , buttonImage: "${path}/views/ticket/img/ico-calendar-w20.png"
-                , buttonImageOnly: true
-                , buttonText: "Select date"
-                , dateFormat: 'yy-mm-dd'
-                , prevText: '이전 달'
-                , nextText: '다음 달'
-                , monthNames:      ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-                , monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-                , dayNames:        ['일', '월', '화', '수', '목', '금', '토']
-                , dayNamesShort:   ['일', '월', '화', '수', '목', '금', '토']
-                , dayNamesMin:     ['일', '월', '화', '수', '목', '금', '토']
-                , showMonthAfterYear: true
-                , yearSuffix: '년'
-            };
-        $(document).ready(function(){
-            $(".content").mCustomScrollbar();
-
-            $('#datePicker').datepicker(datePickerSet);
-
-            $('#mCSB_17_container *').click(function(event){
-                console.log(event.target);
-                console.log('클릭!');
-                location.href = '/ticket/seat';
-            });
-            //시간 앞으로 이동
-            $('.btn-next-time').click(function(event){
-                let leftSize = Number($('.wrap .view').css('left').replace('px', ''));
-                leftSize = leftSize - 35;
-                $('.wrap .view').animate({left: leftSize + 'px'});
-            });
-            //시간 뒤로 이동
-            $('.btn-prev-time').click(function(event){
-                let leftSize = Number($('.wrap .view').css('left').replace('px', ''));
-                leftSize = leftSize + 35;
-                $('.wrap .view').animate({left: leftSize + 'px'});
-            });
-            //일 앞으로 이동
-            $('.btn-next').click(function(event){
-                let leftSize = Number($('#formDeList .wrap').css('left').replace('px', ''));
-                leftSize = leftSize - 70;
-                $('#formDeList .wrap').animate({left: leftSize + 'px'});
-            });
-            //일 뒤로 이동
-            $('.btn-pre').click(function(event){
-                let leftSize = Number($('#formDeList .wrap').css('left').replace('px', ''));
-                leftSize = leftSize + 70;
-                $('#formDeList .wrap').animate({left: leftSize + 'px'});
-            });
-            //날짜 선택했을때
-            $('#datePicker').on('change',function(event){
-                let date = $(event.target).val();
-                let d = new StrDp(date);
-                let tommorow = '';
-                let tempDate = '';
-                $('#formDeList .wrap *').remove();
-                let parentEle = $('#formDeList .wrap');
-                let createStr = '';
-
-                for(let idx = 0; idx < 15; idx ++){
-                    if(idx !== 0)
-                    {
-                        tempDate = new Date((d.datePick.setDate(d.datePick.getDate()+1)));
-                        tommorow = tempDate.getFullYear() + '-' + ((tempDate.getMonth()+1)>9?(tempDate.getMonth()+1): '0'+(tempDate.getMonth()+1)) + '-'+ ((tempDate.getDate())>9?(tempDate.getDate()): '0'+(tempDate.getDate()));
-                        d = new StrDp(tommorow);
-                    }
-                    console.log(tommorow);
-                    // console.log(d.dateStr);
-                    createStr += '<button class="'+ (d.dayName === '토'?'sat':d.dayName === '일'?'holi':'') +'" type="button" date-data="' + d.dateStr + '" month="'+ (d.datePick.getMonth()) +'">';
-                    createStr +=     '<span class="ir">'+ d.yearStr +' ' + d.monRename + '</span>';
-                    createStr +=     '<em style="pointer-events:none;">'+ d.date +'<span style="pointer-events:none;" class="ir">일</span></em>';
-                    createStr +=     '<span class="day-kr" style="pointer-events:none;display:inline-block">'+ d.dayRename +'</span>';
-                    createStr += '</button>';
-                }
-                parentEle.append(createStr);
-
-            });
-        });
-    </script>
         <!-- body중 메뉴바 -->
         <section>
             <div class="tk-page-util">
@@ -135,17 +36,17 @@
                     <div class="time-schedule">
                         <div class="wrap">
                             <!-- 이전날짜 -->
-                            <button type="button" title="이전 날짜 보기" class="btn-pre">
+                            <button type="button" title="이전 날짜 보기" class="btn-prev-date">
                                 <i class="iconset ico-cld-pre"></i>
                             </button>
                             <!-- 날짜목록박스 -->
                             <div class="date-list">
                                 <!-- 년도월표시 -->
                                 <div class="year" style="left: 0px; z-index: 1; opacity: 1;">2024.01</div>
-                                <div class="year" style="left: 839px; z-index: 1; opacity: 1;">2024.02</div>
+                                <div class="year" style="left: 910px; z-index: 1; opacity: 1;">2024.02</div>
                                 <div style="overflow: hidden;">
                                 <div class="date-area" id="formDeList">
-                                    <div class="wrap" style="position: relative; width: 2100px; border: none; left: -70px;">
+                                    <div class="wrap" style="position: relative; width: 2100px; border: none; left: 0px;">
                                         <button class="" type="button" date-data="2024.01.18" month="0" tabindex="-1">
                                             <span class="ir">2024년 1월</span>
                                             <em style="pointer-events:none;">18<span style="pointer-events:none;" class="ir">일</span></em>
@@ -247,7 +148,7 @@
                                 </div>
                             </div>
                             <!-- 다음날짜 -->
-                            <button type="button" title="다음 날짜 보기" class="btn-next">
+                            <button type="button" title="다음 날짜 보기" class="btn-next-date">
                                 <i class="iconset ico-cld-next"></i>
                             </button>
                             <div class="bg-line">
@@ -273,57 +174,23 @@
                                                 <!-- 영화목록상세 -->
                                                 <div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="ltr">
                                                     <ul>
-                                                        <li>
-                                                            <button type="button" class="btn on " movie-nm="엔드 오브 에반게리온" movie-no="23097300" img-path="/SharedImg/2023/12/29/SPkT9JIvqlfh06XYPy0WihdUI5jgrLm4_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-19">청소년관람불가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">엔드 오브 에반게리온</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="외계+인 2부" movie-no="23085100" img-path="/SharedImg/2023/12/18/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">외계+인 2부</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="시민덕희" movie-no="23093500" img-path="/SharedImg/2023/12/15/NWONgIDGBypWUvJSg3RHcUYbpt2sHPW3_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15">15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">시민덕희</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="위시" movie-no="23094700" img-path="/SharedImg/2023/12/20/m5crrh1pa4RIS5SIC6u1cJsSAhx4Sjqs_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-all">전체관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">위시</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="덤 머니" movie-no="23093200" img-path="/SharedImg/2023/12/22/UCZpTzo6NPIFmkkgBgQRCT9Ja2JmJwKs_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15">15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">덤 머니</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn disabled" movie-nm="링팝 : 더 브이알콘서트 카이" movie-no="24001100" img-path="/SharedImg/2024/01/09/NCQGQ8zw0V6MnZ7DR3lOh0JmdtlMxCV8_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="N"><span class="movie-grade small age-all">전체관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">링팝 : 더 브이알콘서트 카이</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="신 에반게리온 극장판" movie-no="24000900" img-path="/SharedImg/2024/01/04/ZONuSoKkUgUSMk8TmI8WLl8zTA4XmgVZ_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15">15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">신 에반게리온 극장판</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="서울의 봄" movie-no="23081200" img-path="/SharedImg/2023/11/22/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">서울의 봄</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="노량: 죽음의 바다" movie-no="23092700" img-path="/SharedImg/2023/12/21/lYCj0izHwMOIbNYHsqYj4dZHVYuq5AnW_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">노량: 죽음의 바다</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="에반게리온 신극장판: 서" movie-no="24000200" img-path="/SharedImg/2024/01/02/yifTio2qStp3RXcHpOPUCVCCm3kbDSWX_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">에반게리온 신극장판: 서</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="스즈메의 문단속" movie-no="23000600" img-path="/SharedImg/2023/04/02/jpVJy55iJTCzSxRk3NhLedZQnBo3xtVl_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">스즈메의 문단속</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="에반게리온 신극장판: 파" movie-no="24000300" img-path="/SharedImg/2024/01/02/dALLH8hgsMQQkOMxH95hRyIdeemZA88E_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">에반게리온 신극장판: 파</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="인투 더 월드" movie-no="23090000" img-path="/SharedImg/2023/12/07/OOQa6qfVWaK8JQZLOaNhAL9kXpDxxEuc_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-all">전체관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">인투 더 월드</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="에반게리온 신극장판: Q" movie-no="24000400" img-path="/SharedImg/2024/01/02/l02Dx9lRIkAz9PxjALLGPtsP8xpLNAOR_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15">15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">에반게리온 신극장판: Q</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="더 퍼스트 슬램덩크" movie-no="22103500" img-path="/SharedImg/2023/12/22/6zcW2RLJPbzHqGE492Nvs6kdwI1xVoC0_150.png" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12">12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">더 퍼스트 슬램덩크</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn disabled" movie-nm="싱어게인3 파이널 생중계" movie-no="24001900" img-path="/SharedImg/2024/01/10/BtRCB4xk1PoxYbhJZGZnushf1Jh6hj2h_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="N"><span class="movie-grade small age-15">15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">싱어게인3 파이널 생중계</span></button>
-                                                        </li>
-                                                        <li>
-                                                            <button type="button" class="btn" movie-nm="신차원! 짱구는 못말려 더 무비 초능력 대결전 ~날아라 수제김밥~" movie-no="23091100" img-path="/SharedImg/2023/12/26/U0C9k4eB0jQgGUiAWNKu98X8VGfSSSZ8_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-all">전체관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">신차원! 짱구는 못말려 더 무비 초능력 대결전 ~날아라 수제김밥~</span></button>
-                                                        </li>
+                                                        <li> <button type="button" class="btn" movie-nm="엔드 오브 에반게리온"                                            movie-no="23097300" img-path="/views/ticket/img/SPkT9JIvqlfh06XYPy0WihdUI5jgrLm4_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-19"> 청소년관람불가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">엔드 오브 에반게리온                                         </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="외계+인 2부"                                                     movie-no="23085100" img-path="/views/ticket/img/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">외계+인 2부                                                  </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="시민덕희"                                                        movie-no="23093500" img-path="/views/ticket/img/NWONgIDGBypWUvJSg3RHcUYbpt2sHPW3_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15"> 15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">시민덕희                                                     </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="위시"                                                            movie-no="23094700" img-path="/views/ticket/img/m5crrh1pa4RIS5SIC6u1cJsSAhx4Sjqs_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-all">전체관람가    </span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">위시                                                         </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="덤 머니"                                                         movie-no="23093200" img-path="/views/ticket/img/UCZpTzo6NPIFmkkgBgQRCT9Ja2JmJwKs_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15"> 15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">덤 머니                                                      </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="링팝 : 더 브이알콘서트 카이"                                     movie-no="24001100" img-path="/views/ticket/img/NCQGQ8zw0V6MnZ7DR3lOh0JmdtlMxCV8_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="N"><span class="movie-grade small age-all">전체관람가    </span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">링팝 : 더 브이알콘서트 카이                                  </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="신 에반게리온 극장판"                                            movie-no="24000900" img-path="/views/ticket/img/ZONuSoKkUgUSMk8TmI8WLl8zTA4XmgVZ_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15"> 15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">신 에반게리온 극장판                                         </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="서울의 봄"                                                       movie-no="23081200" img-path="/views/ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">서울의 봄                                                    </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="노량: 죽음의 바다"                                               movie-no="23092700" img-path="/views/ticket/img/lYCj0izHwMOIbNYHsqYj4dZHVYuq5AnW_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">노량: 죽음의 바다                                            </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="에반게리온 신극장판: 서"                                         movie-no="24000200" img-path="/views/ticket/img/yifTio2qStp3RXcHpOPUCVCCm3kbDSWX_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">에반게리온 신극장판: 서                                      </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="스즈메의 문단속"                                                 movie-no="23000600" img-path="/views/ticket/img/jpVJy55iJTCzSxRk3NhLedZQnBo3xtVl_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">스즈메의 문단속                                              </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="에반게리온 신극장판: 파"                                         movie-no="24000300" img-path="/views/ticket/img/dALLH8hgsMQQkOMxH95hRyIdeemZA88E_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">에반게리온 신극장판: 파                                      </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="인투 더 월드"                                                    movie-no="23090000" img-path="/views/ticket/img/OOQa6qfVWaK8JQZLOaNhAL9kXpDxxEuc_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-all">전체관람가    </span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">인투 더 월드                                                 </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="에반게리온 신극장판: Q"                                          movie-no="24000400" img-path="/views/ticket/img/l02Dx9lRIkAz9PxjALLGPtsP8xpLNAOR_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-15"> 15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">에반게리온 신극장판: Q                                       </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="더 퍼스트 슬램덩크"                                              movie-no="22103500" img-path="/views/ticket/img/6zcW2RLJPbzHqGE492Nvs6kdwI1xVoC0_150.png" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-12"> 12세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">더 퍼스트 슬램덩크                                           </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="싱어게인3 파이널 생중계"                                         movie-no="24001900" img-path="/views/ticket/img/BtRCB4xk1PoxYbhJZGZnushf1Jh6hj2h_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="N"><span class="movie-grade small age-15"> 15세이상관람가</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">싱어게인3 파이널 생중계                                      </span></button> </li>
+                                                        <li> <button type="button" class="btn" movie-nm="신차원! 짱구는 못말려 더 무비 초능력 대결전 ~날아라 수제김밥~"   movie-no="23091100" img-path="/views/ticket/img/U0C9k4eB0jQgGUiAWNKu98X8VGfSSSZ8_150.jpg" movie-popup-at="N" movie-popup-no="0" form-at="Y"><span class="movie-grade small age-all">전체관람가    </span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">신차원! 짱구는 못말려 더 무비 초능력 대결전 ~날아라 수제김밥~</span></button> </li>
                                                     </ul>
                                                 </div>
                                                 <!-- 영화목록스크롤 -->
@@ -337,19 +204,16 @@
                             <!-- view-area -->
                             <div class="view-area">
                                 <!-- 영화선택X -->
-                                <!-- <div class="choice-all" id="choiceMovieNone">
+                                <div class="choice-all" id="choiceMovieNone">
                                     <strong>모든영화</strong>
                                     <span>목록에서 영화를 선택하세요.</span>
-                                </div> -->
+                                </div>
                                 <!-- 영화 하나라도 선택시 -->
-                                <div class="choice-list" id="choiceMovieList">
+                                <div class="choice-list" id="choiceMovieList" style="display:none;">
                                     <!-- 비어있는 영역 -->
-                                    <div class="bg">
-                                    </div>
-                                    <div class="bg">
-                                    </div>
-                                    <div class="bg">
-                                    </div>
+                                    <div class="bg"></div>
+                                    <div class="bg"></div>
+                                    <div class="bg"></div>
                                 </div>
                             </div>
                             <!--// movie-schedule-area : 시간표 출력 영역-->
@@ -379,66 +243,26 @@
                                                                 <div id="mCSB_4_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
                                                                     <!-- 서울상세 -->
                                                                     <ul>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1372" brch-nm="강남" brch-eng-nm="Gangnam" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">강남</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="0023" brch-nm="강남대로(씨티)" brch-eng-nm="Gangnam-daero (City)" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">강남대로(씨티)</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1341" brch-nm="강동" brch-eng-nm="Gangdong" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">강동</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1431" brch-nm="군자" brch-eng-nm="Gunja" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1669">군자</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="0041" brch-nm="더 부티크 목동현대백화점" brch-eng-nm="The Boutique Mokdong-Hyundai Department store" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="2221">더 부티크 목동현대백화점</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1003" brch-nm="동대문" brch-eng-nm="Dongdaemoon" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="962">동대문</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1572" brch-nm="마곡" brch-eng-nm="Magok" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="936">마곡</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1581" brch-nm="목동" brch-eng-nm="Mokdong" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="968">목동</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1311" brch-nm="상봉" brch-eng-nm="Sangbong" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="980">상봉</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1211" brch-nm="상암월드컵경기장" brch-eng-nm="Sangam-WorldCup Stadium" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1001">상암월드컵경기장</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1331" brch-nm="성수" brch-eng-nm="Seongsu" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1006" class="on">성수</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1371" brch-nm="센트럴" brch-eng-nm="Central" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1002">센트럴</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1381" brch-nm="송파파크하비오" brch-eng-nm="Songpa Park Habio" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">송파파크하비오</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1202" brch-nm="신촌" brch-eng-nm="Sinchon" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">신촌</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1561" brch-nm="이수" brch-eng-nm="Isu" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">이수</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1321" brch-nm="창동" brch-eng-nm="Changdong" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">창동</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1351" brch-nm="코엑스" brch-eng-nm="COEX" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="954">코엑스</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1212" brch-nm="홍대" brch-eng-nm="Hongdae" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">홍대</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" brch-no="1571" brch-nm="화곡" brch-eng-nm="Hwagok" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="999">화곡</button>
-                                                                        </li>
-                                                                        <li>
-                                                                            <button id="btn" type="button" class="disabled" brch-no="1562" brch-nm="ARTNINE" brch-eng-nm="ARTNINE" form-at="N" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0">ARTNINE</button>
-                                                                        </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1372" brch-nm="강남"                     brch-eng-nm="Gangnam"                                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >강남                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="0023" brch-nm="강남대로(씨티)"           brch-eng-nm="Gangnam-daero (City)"                          form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >강남대로(씨티)          </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1341" brch-nm="강동"                     brch-eng-nm="Gangdong"                                      form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >강동                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1431" brch-nm="군자"                     brch-eng-nm="Gunja"                                         form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1669"           >군자                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="0041" brch-nm="더 부티크 목동현대백화점" brch-eng-nm="The Boutique Mokdong-Hyundai Department store" form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="2221"           >더 부티크 목동현대백화점</button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1003" brch-nm="동대문"                   brch-eng-nm="Dongdaemoon"                                   form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="962"            >동대문                  </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1572" brch-nm="마곡"                     brch-eng-nm="Magok"                                         form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="936"            >마곡                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1581" brch-nm="목동"                     brch-eng-nm="Mokdong"                                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="968"            >목동                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1311" brch-nm="상봉"                     brch-eng-nm="Sangbong"                                      form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="980"            >상봉                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1211" brch-nm="상암월드컵경기장"         brch-eng-nm="Sangam-WorldCup Stadium"                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1001"           >상암월드컵경기장        </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1331" brch-nm="성수"                     brch-eng-nm="Seongsu"                                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1006"           >성수                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1371" brch-nm="센트럴"                   brch-eng-nm="Central"                                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="1002"           >센트럴                  </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1381" brch-nm="송파파크하비오"           brch-eng-nm="Songpa Park Habio"                             form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >송파파크하비오          </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1202" brch-nm="신촌"                     brch-eng-nm="Sinchon"                                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >신촌                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1561" brch-nm="이수"                     brch-eng-nm="Isu"                                           form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >이수                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1321" brch-nm="창동"                     brch-eng-nm="Changdong"                                     form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >창동                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1351" brch-nm="코엑스"                   brch-eng-nm="COEX"                                          form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="954"            >코엑스                  </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1212" brch-nm="홍대"                     brch-eng-nm="Hongdae"                                       form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >홍대                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1571" brch-nm="화곡"                     brch-eng-nm="Hwagok"                                        form-at="Y" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="Y" brch-popup-no="999"            >화곡                    </button> </li>
+                                                                        <li> <button id="btn" type="button" brch-no="1562" brch-nm="ARTNINE"                  brch-eng-nm="ARTNINE"                                       form-at="N" area-cd="10" area-cd-nm="서울" spclb-yn="N" brch-bokd-unable-at="N" brch-popup-at="N" brch-popup-no="0"              >ARTNINE                 </button> </li>
                                                                     </ul>
                                                                 </div>
                                                                 <!-- 스크롤바 -->
@@ -453,7 +277,11 @@
                             </div>
                             <!-- 극장 view-area -->
                             <div class="view-area">
-                                <div class="choice-list" id="choiceBrchList" style="display: block;">
+                                <div class="choice-all" id="choiceBrchNone">
+                                    <strong>전체극장</strong>
+                                    <span>목록에서 극장을 선택하세요.</span>
+                                </div>
+                                <div class="choice-list" id="choiceBrchList" style="display: none;">
                                     <div class="bg">
                                     </div>
                                     <div class="bg">
