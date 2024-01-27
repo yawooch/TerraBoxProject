@@ -33,10 +33,10 @@
 					<li><a href="${ path }/question/announcement">공지사항</a></li>
 					<li><a href="${ path }/question/faq">자주 묻는 질문</a></li>
 					<li><a href="/question/writeview">1:1 문의</a></li>
-					<li><a href="${ path }/question/write">단체관람 및
+					<li><a href="${ path }/question/writerentview">단체관람 및
 							대관문의</a></li>
 					<li><a
-						href="${ path }/views/question/lostItem.jsp">분실물
+						href="${ path }/question/lost">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
@@ -63,7 +63,7 @@
 				<div class="qt-custo-main-by">
 					<div class="qt-custo-main-area-by">
 						<div class="qt-block-content-by">
-							<a href="${ path }/question/notice"
+							<a href="${ path }/question/lost"
 								title="분실물 문의 페이지로 이동">
 								<p>
 									<Strong>분실물 문의</Strong> 잃어버린 물건을 접수해 주시면 <br> 신속히
@@ -72,7 +72,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content1-by">
-							<a href="${ path }/question/write"
+							<a href="${ path }/question/writeview"
 								title="1:1 문의 페이지로 이동">
 								<p>
 									<Strong>1:1 문의</Strong> 해결되지않은 문제가 있나요? <br> 1:1문의로
@@ -81,7 +81,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content2-by">
-							<a href="${ path }/question/write"
+							<a href="${ path }/question/writerentview"
 								title="단체관람 및 대관 문의 페이지로 이동">
 								<p>
 									<Strong>단체관람 및 대관문의</Strong> 단체관람 및 대관을 원하시면 <br> 문의
@@ -131,14 +131,14 @@
 							<div>
 								<ol class="qt-quqtionlist-by">
 								<c:forEach var="notice" items="${ list2 }" begin="1" end="2">								
-									<li><a href="${ path }/question/notice" class="qt-qna1-by" data-no="11027"
+									<li><a href="${ path }/question/announcement" class="qt-qna1-by" data-no="11027"
 										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
 
 											<span class="qt-numbercheck-area-by"> <i
 												class="qt-iconotice-by"></i> [${notice.noticeType}]
 										</span>${notice.noticeTitle}<span class="qt-date-by"><fmt:formatDate value="${notice.noticeRegDate}" pattern="yyyy.MM.dd"/></span>
 									</a></li>
-									<li><a href="${ path }/question/notice" class="qt-qna1-by" data-idx="4"
+									<li><a href="${ path }/question/announcement" class="qt-qna1-by" data-idx="4"
 										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
 											<span class="qt-iconotice-name-by"> <i
 												class="qt-iconotice-block-by"></i> [${ notice.cinemaArea }]

@@ -34,4 +34,13 @@ public class AnnouncementService {
 		return count;
 	}
 
+	public List<Notice> findSeoul() {
+		List<Notice> list = null;
+		
+		
+		
+		
+		return list;
+	}
+
 }

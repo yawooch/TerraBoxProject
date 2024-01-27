@@ -135,8 +135,9 @@ p {
 #qt_contents_by {
     float: right;
     width: 840px;
-    height: 752px;
+   /* height: 752px; */
     padding-top: 40px;
+   	margin-bottom: 30px;
 }
 
 #qt_footer_by {

@@ -2,11 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
-<jsp:include page="${path}/views/common/header.jsp" />
-<link rel="stylesheet" href="../question/css/announcementSeuel.css">
+<link rel="stylesheet" href="${ pageContext.request.contextPath }/views/question/css/announcementSeuel.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
-<script src="../js/jquery-3.7.1.js"></script>
+<jsp:include page="${path}/views/common/header.jsp" />
 <script src="./js/announcementSeuel.js"></script>
 <div class="qt-body-by">
 	<main class="qt-main-by">
@@ -14,9 +13,9 @@
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
 					<span></span> <a
-						href="http://localhost:8080/views/question/questionHome.jsp"
+						href="${ path }/question"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by">고객센터</a> <a
-						href="http://localhost:8080/views/question/announcement.jsp"
+						href="${ path }/question/announcement"
 						title="고객센터 페이지로 이동" id="qt_submenuname1_by">공지사항</a>
 				</div>
 			</div>
@@ -29,16 +28,14 @@
 				</p>
 				<ul>
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/views/question/questionHome.jsp">고객센터
+						href="${ path }/question">고객센터
 							홈</a></li>
-					<li><a href="http://localhost:8080/views/question/faq.jsp">자주묻는
-							질문</a></li>
-					<li><a class="qt-third-text-by"
-						href="http://localhost:8080/views/question/announcement.jsp">공지사항</a></li>
-					<li><a href="#">단체관람 및 대관문의</a></li>
+					<li><a class="qt-third-text-by" href="${ path }/question/announcement">공지사항</a></li>
+					<li><a href="${ path }/question/faq">자주묻는 질문</a></li>
+					<li><a href="${ path }/question/writeview">1:1 문의</a></li>
+					<li><a href="${ path }/question/writerentview">단체관람 및 대관문의</a></li>
 					<li><a
-						href="http://localhost:8080/views/question/lostItem.jsp">분실물
-							문의</a></li>
+						href="${ path }/question/lost">분실물 문의</a></li>
 				</ul>
 				<div class="qt-info-by">
 					<p class="qt-sidebar-each-by">
@@ -57,14 +54,14 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="88" title="전체">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/announcement.jsp">전체</a>
+									href="${ path }/question/announcement">전체</a>
 							</button>
 						</li>
 						<li>
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no="89" title="테라박스 공지">
 								<a class="qt-acolor1-by"
-									href="http://localhost:8080/views/question/announcementTerr.jsp">테라박스
+									href="${ path }/question/announcementTera">테라박스
 									공지</a>
 							</button>
 						</li>
@@ -72,7 +69,7 @@
 							<button type="button" class="qt-btn-by qt-tabBtn-by"
 								id="qt-totalTab-by" data-no title="지점 공지">
 								<a class="qt-acolor-by"
-									href="http://localhost:8080/views/question/announcementSeuel.jsp">지점
+									href="${ path }/question/announcementSeoul">지점
 									공지</a>
 							</button>
 						</li>
@@ -87,7 +84,7 @@
 						<option value>동대문</option>
 					</select>
 					<p class="result-count">
-						<strong> "전체" <em class="font-gblue">3,646</em> "건"
+						<strong> 전체 <em class="font-gblue">3,646</em> 건
 						</strong>
 					</p>
 					<div class="board-search">
@@ -120,8 +117,8 @@
 								<td>1</td>
 								<td>강남</td>
 								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[강남]
-											7월 9일 긴급점검으로 인한 운영중단 및 취소 안내</span></a></th>
+								<th><a href="#" class="moveBtn" title="공지사항 상세보기">[강남]
+											7월 9일 긴급점검으로 인한 운영중단 및 취소 안내</a></th>
 								<td>2024.01.15</td>
 							</tr>
 							<tr>
@@ -168,7 +165,7 @@
 								<td>7</td>
 								<td>동대문</td>
 								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[동대문]
+								<th><a href="#" class="moveBtn" title="공지사항 상세보기">[동대문]
 											굿모닝시티 건물 주차요금 변경 안내</span></a></th>
 								<td>2024.01.15</td>
 							</tr>

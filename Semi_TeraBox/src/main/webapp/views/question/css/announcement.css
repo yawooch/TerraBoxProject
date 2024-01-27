@@ -886,7 +886,7 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     border-radius: 4px;
 }
 
-.qt-pagination-by a:hover{
+.qt-pagination-by a:hover, .qt-pagination-by button:hover{
     border: 2px solid #6D3030;
     color: #6D3030;
 }
