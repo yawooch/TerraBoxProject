@@ -46,6 +46,8 @@ public class MovieCommentServlet extends HttpServlet {
 			page = 1;
 		}
     	
+    	
+    	
     	listCount = new MovieService().getMovieCommentCount(movie);
     	pageInfo = new PageInfo(page, 5, listCount, 5);
     	list = new MovieService().getMovieCommentList(pageInfo, movie);

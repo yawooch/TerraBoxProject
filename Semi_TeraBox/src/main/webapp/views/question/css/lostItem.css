@@ -107,8 +107,8 @@ p {
 .qt-main-by {
     min-width: 1100px;
     min-height: 100%;
-    margin: -92px 0 -200px 0;
-    padding: 92px 0 200px 0;
+    margin: -92px 0 -92px 0;
+    padding: 92px 0 92px 0;
 }
 
 .qt-submenu-by {
@@ -135,7 +135,6 @@ p {
 #qt_contents_by {
     float: right;
     width: 840px;
-    height: 752px;
     padding-top: 40px;
 }
 
@@ -958,4 +957,35 @@ a.button:hover{
 .qt-pagination-by strong:hover{
     border: 2px solid #6D3030;
     color: #6D3030;
+}
+
+/* 페이지 이동 버튼 리스트 */
+.mv-com-btnlist {
+    position: relative;
+    text-align: center;
+}
+
+.mv-com-btnlist button {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+.mv-com-btnlist button:hover {
+    border: 1px solid #AF2D2D;
+    background-color: #ffffff;
+    color: #AF2D2D;
+}
+
+.mv-com-btnlist img {
+    vertical-align: middle;
+}
+
+.mv-com-btnFunction {
+    border: none;
+}
+
+.mv-com-btnNumber {
+    border: 1px solid #EBEBEB;
+    background-color: #ffffff;
 }

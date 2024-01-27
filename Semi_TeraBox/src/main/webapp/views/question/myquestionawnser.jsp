@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="${ pageContext.request.contextPath }/views/question/css/myquestionawnser.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
-<script src="../js/jquery-3.7.1.js"></script>
-<script src="./js/lostItemreal.js"></script>
+<script src="${path}/views/js/jquery-3.7.1.js"></script>
+<script src="${path}/views/question/js/lostItemreal.js"></script>
 <div class="qt-body-by">
 	<main class="qt-main-by">
 		<div class="page-util">
@@ -84,5 +84,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 	</main>
 	<jsp:include page="${path}/views/common/footer.jsp" />
+</div>

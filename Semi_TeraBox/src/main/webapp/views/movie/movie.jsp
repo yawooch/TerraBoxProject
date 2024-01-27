@@ -53,42 +53,6 @@
                 </div>
             </div>
             <ul class="mv-main-ul">
-                <li class="mv-main-mvlist">
-                    <div class="mv-main-mv-poster">
-                        <img src="${path}/views/movie/image/메인포스터_절찬_대표포스터.jpg" alt="">
-                        <div class="mv-main-poster-bg">
-                            <a href="/movie/detail" class="mv-main-poster-a">
-                                <div class="mv-main-poster-ex">
-                                    <span>
-                                        영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구영화 내용 어쩌구 저쩌구
-                                    </span>
-                                </div>
-                                <div class="mv-main-poster-score">
-                                    <div>
-                                        <span>평점</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mv-main-mv-name">
-                        <img src="${path}/views/movie/image/Movie_age.png" alt="">
-                        <span>서울의 봄서울의 봄서울의 봄서울의 봄서울의 봄</span>
-                    </div>
-                    <div class="mv-main-mv-info">
-                        <span class="mv-main-mv-tk">예매율 4.6%</span>
-                        <span class="mv-main-mv-op">개봉일 2023.11.22</span>
-                    </div>
-                    <div class="mv-main-mv-btn">
-                        <button class="mv-main-btn-like">
-                            <img src="${path}/views/movie/image/heartGray.png" alt="">
-                            <span>3.5k</span>
-                        </button>
-                        <button class="mv-main-btn-tk">
-                            <span>예매</span>
-                        </button>
-                    </div>
-                </li>
                 
                 <!-- 반복 -->
                 <c:if test="${ not empty list }">
@@ -124,9 +88,11 @@
 		                            <img src="${path}/views/movie/image/heartGray.png" alt="">
 		                            <span>3.5k</span>
 		                        </button>
-		                        <button class="mv-main-btn-tk">
-		                            <span>예매</span>
-		                        </button>
+		                        <a href="${ path }/ticket">
+			                        <button class="mv-main-btn-tk" >
+			                            <span>예매</span>
+			                        </button>
+		                        </a>
 		                    </div>
 		                </li>
                 	</c:forEach>

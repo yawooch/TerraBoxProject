@@ -36,9 +36,13 @@ public class MemberQuestionServlet extends HttpServlet {
 			page = 1;
 		}
     	
+    	
+    	
     	listCount = new MyQuestionService().getQuestionCount();
     	pageInfo = new PageInfo(page, 5, listCount, 5);
 		list = new MyQuestionService().getQuestionList(pageInfo);
+		
+		System.out.println(list); // 리스트에 객체가 담기지 않는 문제 발생 -> // Dao의 ROWNUM을 RNUM으로 별칭화 시켜서 사용해야 1번이 아닌 순서부터 출력할 수 있음
 		
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("list", list);

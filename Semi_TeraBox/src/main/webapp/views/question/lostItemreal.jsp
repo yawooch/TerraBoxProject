@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="${path}/views/question/css/lostItemreal.css">
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
-<script src="../js/jquery-3.7.1.js"></script>
-<script src="./js/lostItemreal.js"></script>
+<script src="${path}/views/js/jquery-3.7.1.js"></script>
+<script src="${path}/views/question/js/lostItemreal.js"></script>
 <div class="qt-body-by">
 <!-- 분실물 상세 -->
 	<main class="qt-main-by">
@@ -32,11 +32,11 @@
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
 						href="${path}/question">고객센터
 							홈</a></li>
-					<li><a href="${path}/question/faq">자주묻는
-							질문</a></li>
 					<li><a class="qt-third-text-by"
 						href="${path}/question/announcement">공지사항</a></li>
-							<li><a href="${path}/question/writeview">1:1 문의</a></li>
+					<li><a href="${path}/question/faq">자주묻는
+							질문</a></li>
+					<li><a href="${path}/question/writeview">1:1 문의</a></li>
 					<li><a href="${path}/question/writerentview">단체관람 및 대관문의</a></li>
 					<li><a class="qt-four-text-by"
 						href="${path}/question/lost">분실물
@@ -97,8 +97,9 @@
                         </c:if>
 					</div>
 					<div class="btn-group pt40">
-						<a href="http://localhost:8080/views/question/lostItem.jsp"
-							id="listBtn" class="button large" title="목록">목록</a> <a href="#"
+						<a href="${path}/question/lost"
+							id="listBtn" class="button large" title="목록">목록</a> 
+						<a href="#"
 							class="button large deleteBtn inq-delete" title="삭제">삭제</a>
 					</div>
 				</div>
