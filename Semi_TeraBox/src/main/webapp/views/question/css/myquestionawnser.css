@@ -107,8 +107,8 @@ p {
 .qt-main-by {
     min-width: 1100px;
     min-height: 100%;
-    margin: -92px 0 -200px 0;
-    padding: 92px 0 200px 0;
+    margin: -92px 0 -92px 0;
+    padding: 92px 0 92px 0;
 }
 
 .qt-submenu-by {
@@ -135,7 +135,6 @@ p {
 #qt_contents_by {
     float: right;
     width: 840px;
-    height: 752px;
     padding-top: 40px;
 }
 
@@ -694,8 +693,8 @@ p {
 .qt-main-by {
     min-width: 1100px;
     min-height: 100%;
-    margin: -92px 0 -200px 0;
-    padding: 92px 0 200px 0;
+    margin: -92px 0 -92px 0;
+    padding: 92px 0 92px 0;
 }
 
 .qt-submenu-by {
@@ -722,7 +721,6 @@ p {
 #qt_contents_by {
     float: right;
     width: 840px;
-    height: 752px;
     padding-top: 40px;
 }
 
@@ -1320,7 +1318,7 @@ a:link {
     color: #6D3030;
     font-weight: 400;
     /* background: #fff url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-arr-lnb.png) no-repeat right center; */
-    background: #fff url(../img/Group74.png) no-repeat right center;
+    background: #fff url(${path}/views/question/img/Group74.png) no-repeat right center;
 }
 #lnb>ul>li>a {
     display: block;

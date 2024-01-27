@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
+
 <jsp:include page="${path}/views/common/header.jsp" />
 <link rel="stylesheet" href="${path}/views/mypage/css/myquestion.css">
 <!-- 나의 문의 내역 -->
@@ -45,7 +46,7 @@
 			<div class="board-list-util mb10">
 				<p class="result-count">
 					<!-- to 개발 : 검색을 안한 경우 -->
-					<strong>전체 (<b id="totalCnt">0</b>건)
+					<strong>전체 (<b id="totalCnt">${ pageInfo.listCount }</b>건)
 					</strong>
 				</p>
 
@@ -99,27 +100,63 @@
 <!-- 							</tbody> -->
 <%-- 						</c:forEach> --%>
 <%-- 					</c:if> --%>
-					<c:if test="${ not empty list }">
-						<c:forEach var="question" items="${ list }">
-							<tbody>
-								<tr>
-									<th scope="col">${question.no}</th>
-									<th scope="col">${question.cinemaId }</th>
-									<th scope="col">${question.division }</th>
-									<th scope="col"><a href="${ path }/mypage/questionanswer?no=${question.no}">${question.title }</a></th>
-									<th scope="col">${question.check }</th>
-									<th scope="col">${question.answRegDttm }</th>
-								</tr>
-							</tbody>
-						</c:forEach>
-					</c:if>
+					<tbody>
+						<c:if test="${ not empty list }">
+							<c:forEach var="question" items="${ list }">
+									<tr>
+										<td scope="col">${question.no}</td>
+										<td scope="col">${question.cinemaId }</td>
+										<td scope="col">${question.division }</td>
+										<td scope="col"><a href="${ path }/mypage/questionanswer?no=${question.no}">${question.title }</a></td>
+										<td scope="col">${question.check }</td>
+										<td scope="col">${question.answRegDttm }</td>
+									</tr>
+							</c:forEach>
+						</c:if>
+					</tbody>
 				</table>
 			</div>
 			<!-- pagination -->
-			<nav class="pagination"></nav>
+			<nav class="pagination">
+				<div class="mv-com-btnlist">
+	                    <button class="mv-com-btnFirst mv-com-btnFunction" onclick="location.href='${ path }/mypage/question?&page=1'">
+	                        <img src="${path}/views/movie/image/arrow-leftleft.png" alt="">
+	                    </button>
+	                    <button class="mv-com-btnPrev mv-com-btnFunction" onclick="location.href='${ path }/mypage/question?&page=${ pageInfo.prevPage }'">
+	                        <img src="${path}/views/movie/image/arrow-left.png" alt="">
+	                    </button>
+	                    <c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }">
+							<c:choose>
+								<c:when test="${ current == pageInfo.currentPage }">
+									<button class="mv-com-btnNumber on">${ current }</button>
+								</c:when>
+								<c:otherwise>
+									<button class="mv-com-btnNumber" onclick="location.href='${ path }/mypage/question?&page=${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+	                    <button class="mv-com-btnNext mv-com-btnFunction" onclick="location.href='${ path }/mypage/question?&page=${ pageInfo.nextPage }'">
+	                        <img src="${path}/views/movie/image/arrow-right.png" alt="">
+	                    </button>
+	                    <button class="mv-com-btnLast mv-com-btnFunction" onclick="location.href='${ path }/mypage/question?&page=${ pageInfo.maxPage }'">
+	                        <img src="${path}/views/movie/image/arrow-rightright.png" alt="">
+	                    </button>
+	                </div>
+			</nav>
 			<!--// pagination -->
 		</div>
 	</div>
 </div>
-</div>
+<script>
+	$(document).ready(function() {
+	
+		// 선택된 버튼 색상 변경 및 커서 기본으로 변경
+	    $('.mv-com-btnlist').children('.on').css({
+	        'border': '1px solid #AF2D2D',
+	        'background-color': '#AF2D2D',
+	        'color': 'white',
+	        'cursor': 'auto'
+	    });
+	});
+</script>
 <jsp:include page="${path}/views/common/footer.jsp" />
