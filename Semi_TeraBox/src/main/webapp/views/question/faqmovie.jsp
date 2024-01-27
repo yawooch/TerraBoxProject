@@ -93,7 +93,7 @@
 						<c:forEach var="faq" items="${ list }">
 							<li>
 								<div class="qt-qut-by">
-									<a href="#" class="qt-qut-by-a">
+									<a href="#" onclick="return false" class="qt-qut-by-a">
 										<p class="qt-tit-by">
 											<span class="qt-font-green-by">[${ faq.faqCategory }]</span>
 										</p>

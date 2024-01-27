@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="path" value="${ pageContext.request.contextPath }" />
+
 <jsp:include page="/views/common/header.jsp" />
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/views/question/css/question.css">
@@ -12,9 +14,9 @@
 		<div class="qt-submenu-by">
 			<div class="qt-submenu-area-by">
 				<div class="qt-submenu-areaname-by">
-					<span></span> <a href="http://localhost:8080/question"
+					<span></span> <a href="${ path }/question"
 						title="고객센터 페이지로 이동" id="qt_submenuname_by"> 고객센터</a> <a
-						href="http://localhost:8080/question" title="고객센터 페이지로 이동"
+						href="${ path }/question" title="고객센터 페이지로 이동"
 						id="qt_submenuname1_by"> 고객센터 홈</a>
 				</div>
 			</div>
@@ -27,14 +29,14 @@
 				</p>
 				<ul class="qt-te-area-by">
 					<li class="qt-first-area-by"><a class="qt-first-text-by"
-						href="http://localhost:8080/question">고객센터 홈</a></li>
-					<li><a href="http://localhost:8080/question/notice">공지사항</a></li>
-					<li><a href="http://localhost:8080/question/faq">자주 묻는 질문</a></li>
+						href="${ path }/question">고객센터 홈</a></li>
+					<li><a href="${ path }/question/announcement">공지사항</a></li>
+					<li><a href="${ path }/question/faq">자주 묻는 질문</a></li>
 					<li><a href="/question/writeview">1:1 문의</a></li>
-					<li><a href="http://localhost:8080/question/write">단체관람 및
+					<li><a href="${ path }/question/write">단체관람 및
 							대관문의</a></li>
 					<li><a
-						href="http://localhost:8080/views/question/lostItem.jsp">분실물
+						href="${ path }/views/question/lostItem.jsp">분실물
 							문의</a></li>
 				</ul>
 				<div class="qt-info-by">
@@ -61,7 +63,7 @@
 				<div class="qt-custo-main-by">
 					<div class="qt-custo-main-area-by">
 						<div class="qt-block-content-by">
-							<a href="http://localhost:8080/question/notice"
+							<a href="${ path }/question/notice"
 								title="분실물 문의 페이지로 이동">
 								<p>
 									<Strong>분실물 문의</Strong> 잃어버린 물건을 접수해 주시면 <br> 신속히
@@ -70,7 +72,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content1-by">
-							<a href="http://localhost:8080/question/write"
+							<a href="${ path }/question/write"
 								title="1:1 문의 페이지로 이동">
 								<p>
 									<Strong>1:1 문의</Strong> 해결되지않은 문제가 있나요? <br> 1:1문의로
@@ -79,7 +81,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content2-by">
-							<a href="http://localhost:8080/question/write"
+							<a href="${ path }/question/write"
 								title="단체관람 및 대관 문의 페이지로 이동">
 								<p>
 									<Strong>단체관람 및 대관문의</Strong> 단체관람 및 대관을 원하시면 <br> 문의
@@ -88,7 +90,7 @@
 							</a>
 						</div>
 						<div class="qt-block-content3-by">
-							<a href="http://localhost:8080/question/faq"
+							<a href="${ path }/question/faq"
 								title="자주 묻는 질문 페이지로 이동">
 								<p>
 									<Strong>자주 묻는 질문</Strong> 빠르고 간편하게 검색하세요
@@ -100,7 +102,7 @@
 						<div class="qt-block-left-by">
 							<div class="qt-tit-area-by">
 								<h3 class="qt-tit-by qt-small-by ">자주 묻는 질문 BEST5</h3>
-								<a href="http://localhost:8080/question/faq" class="qt-more-by"
+								<a href="${ path }/question/faq" class="qt-more-by"
 									title="더보기"> 더보기 <i class="qt-iconsetarea-by"></i>
 								</a>
 							</div>
@@ -121,31 +123,29 @@
 						<div class="qt-block-right-by">
 							<div class="qt-tit-area-by">
 								<h3 class="qt-tit-by qt-small-by ">공지사항</h3>
-								<a href="http://localhost:8080/question/notice"
+								<a href="${ path }/question/announcement"
 									class="qt-more-by" title="더보기"> 더보기 <i
 									class="qt-iconsetarea-by"></i>
 								</a>
 							</div>
 							<div>
 								<ol class="qt-quqtionlist-by">
-								<c:forEach var="notice" items="${ list2 }" begin="1" end="3">								
-									<li><a href="#" class="qt-qna1-by" data-no="11027"
+								<c:forEach var="notice" items="${ list2 }" begin="1" end="2">								
+									<li><a href="${ path }/question/notice" class="qt-qna1-by" data-no="11027"
 										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
 
 											<span class="qt-numbercheck-area-by"> <i
 												class="qt-iconotice-by"></i> [${notice.noticeType}]
-										</span>${notice.noticeTitle}<span class="qt-date-by">${notice.noticeRegDate}</span>
+										</span>${notice.noticeTitle}<span class="qt-date-by"><fmt:formatDate value="${notice.noticeRegDate}" pattern="yyyy.MM.dd"/></span>
 									</a></li>
-								</c:forEach>
-									
-
-									<li><a href="#" class="qt-qna1-by" data-idx="4"
+									<li><a href="${ path }/question/notice" class="qt-qna1-by" data-idx="4"
 										title="공지사항 상세 보기"> <span class="qt-numbercheck-by"></span>
 											<span class="qt-iconotice-name-by"> <i
-												class="qt-iconotice-block-by"></i> [하남스타필드]
-										</span> [하남스타필드]상영관 명칭 변경 안내 <span class="qt-date-by">2024.01.11</span>
+												class="qt-iconotice-block-by"></i> [${ notice.cinemaArea }]
+										</span> [${ notice.cinemaArea }] ${notice.noticeTitle}<span class="qt-date-by"><fmt:formatDate value="${notice.noticeRegDate}" pattern="yyyy.MM.dd"/></span>
 									</a></li>
 
+								</c:forEach>
 								</ol>
 							</div>
 						</div>

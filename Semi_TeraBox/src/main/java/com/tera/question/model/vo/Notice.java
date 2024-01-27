@@ -10,17 +10,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Notice {
-	private String noticeNo;
+	private String noticeNo;	// 공지번호
 	
-	private String noticeTitle;
+	private String noticeTitle;	// 공지제목
 	
-	private String noticeContent;
+	private String noticeContent;	// 공지 내용
 	
-	private String noticeType;
+	private String noticeType;	// 공지 구분
 	
-	private Date noticeRegDate;
+	private Date noticeRegDate;	// 공지등록일
 	
-	private String cinemaId;
+	private String cinemaId;	// 극장아이디
 	
-	private String cinemaArea;
+	private String cinemaArea;	// 극장 
 }

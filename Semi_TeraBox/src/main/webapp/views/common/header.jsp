@@ -134,7 +134,7 @@
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/question/notice"    title="고객센터 홈">공지사항</a></li>
+                    <li><a href="/question/announcement"    title="고객센터 홈">공지사항</a></li>
                     <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
                     <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
                     <li><a href="/question/rental"    title="단체/대관 문의">단체/대관 문의</a></li>
