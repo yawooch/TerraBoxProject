@@ -155,11 +155,8 @@
 										class="small" tabindex="-98">
 											<option value="">문의유형 선택</option>
 											<option value="QDET01">영화정보문의</option>
-											<option value="QDET02">회원 및 포인트문의</option>
 											<option value="QDET03">예매/결제관련문의</option>
-											<option value="QDET04">이벤트문의</option>
 											<option value="QDET05">일반문의</option>
-											<option value="QDET06">제안/건의</option>
 									</select></td>
 								</tr>
 								<tr>
