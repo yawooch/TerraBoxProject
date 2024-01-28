@@ -59,6 +59,7 @@ public class QuestionWriteoneby extends HttpServlet {
 		question.setEmail(request.getParameter("rpstEmail"));
 		question.setType(request.getParameter("inqMclCd"));
 		question.setDivision("일대일"); 
+		question.setFile(request.getParameter("file"));
 		
 
 		System.out.println(question);

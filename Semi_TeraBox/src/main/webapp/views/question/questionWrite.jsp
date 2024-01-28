@@ -126,37 +126,26 @@
 							</colgroup>
 							<tbody>
 								<tr>
-									<th scope="row">문의선택<em class="font-orange">*</em></th>
-									<td colspan="3"><label for="aq2">고객센터문의</label> <input
-										type="radio" id="aq2" name="inqMclCd" value="QD01M02"
-										data-cd="QD_ETC_DIV_CD" checked=""> <label for="aq1">극장별문의</label>
-										<input type="radio" id="aq1" name="inqMclCd" class="ml20"
-										value="QD01M01" data-cd="QD_BRCH_DIV_CD"> <select
-										id="theater" name="theater" class="small ml10" title="지역선택"
-										disabled="disabled" tabindex="-98">
+									<th scope="row"><label for="theater">극장</label> <em
+										class="font-orange">*</em></th>
+									<td colspan="3"><select id="theater" class="small"
+										title="지역선택" tabindex="-98" name="theaters">
 											<option value="">지역선택</option>
 											<option value="10">서울</option>
-											<option value="30">경기</option>
-											<option value="35">인천</option>
-											<option value="45">대전/충청/세종</option>
-											<option value="55">부산/대구/경상</option>
-											<option value="65">광주/전라</option>
+											<option value="20">경기</option>
+											<option value="30">인천</option>
+											<option value="40">대전/충청/세종</option>
+											<option value="50">부산/대구/경상</option>
+											<option value="60">광주/전라</option>
 											<option value="70">강원</option>
 											<option value="80">제주</option>
-									</select> <select id="theater" name="theater" class="small ml10"
-										title="지역선택" disabled="disabled" tabindex="-98">
+									</select> <select name="brchNo" id="theater02" title="극장선택"
+										class="small ml07" tabindex="-98">
 											<option value="">극장선택</option>
-									</select></td>
-								</tr>
-								<tr>
-									<th scope="row"><label for="ask-type">문의유형</label> <em
-										class="font-orange">*</em></th>
-									<td colspan="3"><select name="inqSclCd" id="ask-type"
-										class="small" tabindex="-98">
-											<option value="">문의유형 선택</option>
-											<option value="QDET01">영화정보문의</option>
-											<option value="QDET03">예매/결제관련문의</option>
-											<option value="QDET05">일반문의</option>
+											<option value="15">홍대</option>
+											<option value="25">상암</option>
+											<option value="35">동대문</option>
+											<option value="45">강남</option>
 									</select></td>
 								</tr>
 								<tr>
@@ -245,25 +234,15 @@
 									<th scope="row">사진첨부</th>
 									<td colspan="3">
 										<div class="upload-image-box">
-
 											<div class="info-txt">
 												<p>* JPEG, PNG 형식의 5M 이하의 파일만 첨부 가능합니다. (최대 5개)</p>
-
 												<!-- to 개발 : 이미지 추가가 5개가 되면 버튼 숨김 -->
-												<button type="button" id="uploadBtn" class="btn-image-add">
-													<span>파일선택</span>
-												</button>
 												<!--// to 개발 : 이미지 추가가 5개가 되면 버튼 숨김 -->
 												<p>* 개인정보가 포함된 이미지 등록은 자제하여 주시기 바랍니다.</p>
 											</div>
 											<div id="imgList">
-												<p class="dw-link">
-													<a
-														href="/SharedImg/2024/01/19/KnFRypUIGlG1dILWYMQeErqImz9Zwkf9.png"
-														title="첨부파일 다운로드">츠어여 (4).png</a>
-													<button type="button" class="btn-del" data-no="1191167"
-														data-sn="1">첨부파일 삭제</button>
-												</p>
+													<input type="file" class="dw-link"name="file">
+													</input>
 											</div>
 										</div>
 									</td>
@@ -316,8 +295,8 @@
 										class="font-orange">*</em></th>
 									<td colspan="3"><input type="date"
 										title="날짜 입력 : yyyy.mm.dd" name="lentDe" id="date"
-										class="date-calendar hasDatepicker" /> <select name="lentTime"
-										class="small ml07" title="시간선택" tabindex="-98">
+										class="date-calendar hasDatepicker" /> <select
+										name="lentTime" class="small ml07" title="시간선택" tabindex="-98">
 											<option value="">시간선택</option>
 											<option value="01">01</option>
 											<option value="02">02</option>
@@ -511,7 +490,7 @@
 
 					<div class="btn-group pt40 positionRelative">
 						<button type="submit" class="button purple large">
-							<a href="${path }/mypage/question"></a>등록
+							<a href="${ path }/mypage/question"></a>등록
 						</button>
 					</div>
 				</form>

@@ -76,9 +76,10 @@ public class QuestionBoardDao {
 		ResultSet rs = null;
 
 		String query = " INSERT INTO QUESTION " + "( QUEST_NO" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO"
-				+ ", QUEST_PHONE" + ", QUEST_NAME" + ", QUEST_EMAIL" + ", QUEST_TYPE" + ", QUEST_DIVISION"
+				+ ", QUEST_PHONE" + ", QUEST_NAME" + ", QUEST_EMAIL" + ", QUEST_TYPE" + ", QUEST_DIVISION" + ", PICTR_FILE"
 				+ ", CINEMA_ID" + ", ANSW_CHECK" + ", ANSW_REG_DTTM" + ")" + "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?"
-				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", DEFAULT" + ", DEFAULT" + ", DEFAULT" + ")";
+				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", DEFAULT" + ", DEFAULT"
+				+ ", DEFAULT" + ")";
 
 		try {
 
@@ -92,6 +93,7 @@ public class QuestionBoardDao {
 			pstmt.setString(6, question.getEmail());
 			pstmt.setString(7, question.getType());
 			pstmt.setString(8, question.getDivision());
+			pstmt.setString(9, question.getFile());
 
 			result = pstmt.executeUpdate();
 
