@@ -51,6 +51,7 @@ public class QuestionWriterent extends HttpServlet {
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("nonMbInqPwd"))));
+		question.setDivision("단체/대관"); 
 		
 		System.out.println(question);
 		

@@ -7,9 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.tera.question.model.service.QuestionBoardService;
 import com.tera.question.model.vo.Question;
+
+import lombok.Setter;
 
 /**
  * 1:1 문의하기 입력을 처리하는 Servlet
@@ -28,10 +31,12 @@ public class QuestionWriteoneby extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		Question question = new Question();
+		
+		
 
 		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
-		
-		
+
 	}
 
 	/**
@@ -40,24 +45,26 @@ public class QuestionWriteoneby extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int no =0;
+		int no = 0;
 		Question question = new Question();
 
 //		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
-		
-		question.setNo(request.getParameter(""));
+
+		question.setNo(request.getParameter("No"));
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("nonMbInqPwd"))));
-		question.setPhone(request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
+		question.setPhone(request.getParameter("hpNum1") + "-"+ request.getParameter("hpNum2")+ "-" + request.getParameter("hpNum3"));
 		question.setName(request.getParameter("inqurNm"));
 		question.setEmail(request.getParameter("rpstEmail"));
 		question.setType(request.getParameter("inqMclCd"));
+		question.setDivision("일대일"); 
+		
 
 		System.out.println(question);
-		
+
 		no = new QuestionBoardService().save(question);
-	
+
 		response.sendRedirect("/mypage/question");
 	}
 }

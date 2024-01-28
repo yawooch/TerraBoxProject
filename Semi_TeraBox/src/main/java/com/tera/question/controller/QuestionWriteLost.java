@@ -39,11 +39,12 @@ public class QuestionWriteLost extends HttpServlet {
 		
 		question.setLostPlace(request.getParameter("theaters"));
 		question.setName(request.getParameter("inqurNm"));
-		question.setPhone(request.getParameter("hpNum1") + request.getParameter("hpNum2") + request.getParameter("hpNum3"));
+		question.setPhone(request.getParameter("hpNum1") + "-"+ request.getParameter("hpNum2")+ "-" + request.getParameter("hpNum3"));
 		question.setEmail(request.getParameter("rpstEmail"));
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("lstrtclInqPwd"))));
+		question.setDivision("분실물"); 
 
 		
 		

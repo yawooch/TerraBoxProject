@@ -33,6 +33,7 @@ public class Question {
 	private String answMemberId;   //답변아이디 
 	private String questMoive;    //영화이름
 	private String lostPlace;    //분실장소
+	private String delYn;
 	
 
 }

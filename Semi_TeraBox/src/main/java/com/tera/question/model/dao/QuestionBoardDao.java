@@ -20,7 +20,7 @@ public class QuestionBoardDao {
 		ResultSet rs = null;
 
 		String query = "SELECT ROWNUM QUEST_NO,QUEST_TITLE,QUEST_CONTENT,QUEST_PASS_NO,QUEST_PHONE,QUEST_NAME,QUEST_DIVISION,QUEST_EMAIL,"
-				+ "QUEST_TYPE,PICTR_FILE,VISIT_NUM,RENTAL_DATE,RENTAL_TIME,MEMBER_ID,ANSW_CHECK,CINEMA_ID,ANSW_CONTENT,ANSW_REG_DTTM,ANSW_MEMBER_ID "
+				+ "QUEST_TYPE,PICTR_FILE,VISIT_NUM,RENTAL_DATE,RENTAL_TIME,MEMBER_ID,ANSW_CHECK,CINEMA_ID,ANSW_CONTENT,ANSW_REG_DTTM,ANSW_MEMBER_ID,DEL_YN "
 				+ "FROM QUESTION, WHERE ROWNUM BETWEEN ? and ?";
 
 		try {
@@ -55,6 +55,7 @@ public class QuestionBoardDao {
 				question.setAnswMemberId(rs.getString("ANSW_MEMBER_ID"));
 				question.setQuestMoive(rs.getString("QUEST_MOVIE"));
 				question.setLostPlace(rs.getString("LOSTPLACE"));
+				question.setDelYn(rs.getString("DEL_YN"));
 
 				list.add(question);
 			}
@@ -75,8 +76,9 @@ public class QuestionBoardDao {
 		ResultSet rs = null;
 
 		String query = " INSERT INTO QUESTION " + "( QUEST_NO" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO"
-				+ ", QUEST_PHONE" + ", QUEST_NAME" + ", QUEST_EMAIL" + ", QUEST_TYPE" + ")" + "VALUES("
-				+ "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ")";
+				+ ", QUEST_PHONE" + ", QUEST_NAME" + ", QUEST_EMAIL" + ", QUEST_TYPE" + ", QUEST_DIVISION"
+				+ ", CINEMA_ID" + ", ANSW_CHECK" + ", ANSW_REG_DTTM" + ")" + "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?"
+				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", DEFAULT" + ", DEFAULT" + ", DEFAULT" + ")";
 
 		try {
 
@@ -89,6 +91,7 @@ public class QuestionBoardDao {
 			pstmt.setString(5, question.getName());
 			pstmt.setString(6, question.getEmail());
 			pstmt.setString(7, question.getType());
+			pstmt.setString(8, question.getDivision());
 
 			result = pstmt.executeUpdate();
 
@@ -109,9 +112,9 @@ public class QuestionBoardDao {
 		ResultSet rs = null;
 
 		String query = " INSERT INTO QUESTION" + "( QUEST_NO" + ", LOSTPLACE" + ", QUEST_NAME" + ", QUEST_PHONE"
-				+ ", QUEST_EMAIL" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ")" 
-				+ "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?"
-				+ ", ?" + ", ?" + ", ?" + ", ?" + ")";
+				+ ", QUEST_EMAIL" + ", QUEST_TITLE" + ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ", QUEST_DIVISION"
+				+ ", CINEMA_ID" + ", ANSW_CHECK" + ", ANSW_REG_DTTM" + ")" + "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?"
+				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", DEFAULT" + ", DEFAULT" + ", DEFAULT" + ")";
 
 		try {
 
@@ -124,6 +127,7 @@ public class QuestionBoardDao {
 			rentpstmt.setString(5, question.getTitle());
 			rentpstmt.setString(6, question.getContent());
 			rentpstmt.setInt(7, question.getPassNo());
+			rentpstmt.setString(8, question.getDivision());
 
 			result = rentpstmt.executeUpdate();
 
@@ -140,35 +144,36 @@ public class QuestionBoardDao {
 
 	public int insertLostBoard(Connection connection, Question question) {
 		int result = 0;
-		PreparedStatement rentpstmt = null;
+		PreparedStatement Lostpstmt = null;
 		ResultSet rs = null;
 
 		String query = " INSERT INTO QUESTION" + "( QUEST_NO" + ", CINEMA_ID" + ", RENTAL_DATE" + ", QUEST_MOVIE"
 				+ ", VISIT_NUM" + ", QUEST_NAME" + ", QUEST_PHONE" + ", QUEST_EMAIL" + ", QUEST_TITLE"
-				+ ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ")" + "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", ?" + ", ?" + ", ?"
-				+ ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ")";
+				+ ", QUEST_CONTENT" + ", QUEST_PASS_NO" + ", QUEST_DIVISION" + ", ANSW_CHECK" + ", ANSW_REG_DTTM" + ")"
+				+ "VALUES(" + "SEQ_QT_NO.NEXTVAL" + ", DEFAULT" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?" + ", ?"
+				+ ", ?" + ", ?" + ", ?" + ", DEFAULT" + ", DEFAULT" + ")";
 
 		try {
 
-			rentpstmt = connection.prepareStatement(query);
+			Lostpstmt = connection.prepareStatement(query);
 
-			rentpstmt.setString(1, question.getCinemaId());
-			rentpstmt.setString(2, question.getRentDate());
-			rentpstmt.setString(3, question.getQuestMoive());
-			rentpstmt.setInt(4, question.getNum());
-			rentpstmt.setString(5, question.getName());
-			rentpstmt.setString(6, question.getPhone());
-			rentpstmt.setString(7, question.getEmail());
-			rentpstmt.setString(8, question.getTitle());
-			rentpstmt.setString(9, question.getContent());
-			rentpstmt.setInt(10, question.getPassNo());
+			Lostpstmt.setString(1, question.getRentDate());
+			Lostpstmt.setString(2, question.getQuestMoive());
+			Lostpstmt.setInt(3, question.getNum());
+			Lostpstmt.setString(4, question.getName());
+			Lostpstmt.setString(5, question.getPhone());
+			Lostpstmt.setString(6, question.getEmail());
+			Lostpstmt.setString(7, question.getTitle());
+			Lostpstmt.setString(8, question.getContent());
+			Lostpstmt.setInt(9, question.getPassNo());
+			Lostpstmt.setString(10, question.getDivision());
 
-			result = rentpstmt.executeUpdate();
+			result = Lostpstmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close(rentpstmt);
+			close(Lostpstmt);
 			close(rs);
 		}
 
