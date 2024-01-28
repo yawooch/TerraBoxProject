@@ -6,7 +6,7 @@
 <link rel="img" href="/src/main/webapp/img/">
 <link rel="icon" href="../question/img/TeraBox.ico">
 <jsp:include page="${path}/views/common/header.jsp" />
-<script src="./js/announcementSeuel.js"></script>
+<script src="${ path }/views/question/js/announcementSeuel.js"></script>
 <div class="qt-body-by">
 	<main class="qt-main-by">
 		<div class="qt-submenu-by">
@@ -113,82 +113,37 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>강남</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기">[강남]
-											7월 9일 긴급점검으로 인한 운영중단 및 취소 안내</a></th>
-								<td>2024.01.15</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>강남</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[강남]
-											운영시간 임시 조정 안내</span></a></th>
-								<td>2024.01.15</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>동대문</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[동대문]
-											요금제 기준 변경 안내</span></a></th>
-								<td>2024.01.17</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>상암</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[상암월드컵경기장]23.10.31(화)
-											주차장 이용 안내</span></a></th>
-								<td>2024.01.15</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>목동</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[목동]
-											12월 26일 순간정전으로 인한 상영중단 및 취소 안내</span></a></th>
-								<td>2024.01.11</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>홍대</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[홍대]
-											현금없는 극장 운영안내</span></a></th>
-								<td>2024.01.12</td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>동대문</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기">[동대문]
-											굿모닝시티 건물 주차요금 변경 안내</span></a></th>
-								<td>2024.01.15</td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td>목동</td>
-								<td>공지</td>
-								<th><a href="#" class="moveBtn" title="공지사항 상세보기"><span>[목동]
-											건물 내 전기 작업 관련 안내</span></a></th>
-								<td>2024.01.15</td>
-							</tr>
+							<c:forEach var="notice" items="${ list }">
+								<c:set var="i" value="${ i+1 }" />
+									<tr>
+										<td>${i}</td>
+										<td>${ notice.cinemaArea }</td>
+										<td>${ notice.noticeType }</td>
+										<th><a href="#" class="moveBtn" title="공지사항 상세보기">[${ notice.cinemaArea }]
+													${ notice.noticeTitle }</a></th>
+										<td>${ notice.noticeRegDate }</td>
+									</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
-				<nav class="qt-pagination-by">
-					<strong class="qt-active-by">1</strong> <a title="2페이지보기" href="#"
-						pagenum="2">2</a> <a title="3페이지보기" href="#" pagenum="3">3</a> <a
-						title="4페이지보기" href="#" pagenum="4">4</a> <a title="5페이지보기"
-						href="#" pagenum="5">5</a> <a title="6페이지보기" href="#" pagenum="6">6</a>
-					<a title="이후 10페이지보기" href="#" class="control next" pagenum="11">next</a>
-					<a title="마지막 페이지보기" href="#" class="control last" pagenum="787">last</a>
-
-				</nav>
+				<div class="qt-pagination-by">
+					<a title="첫번째 페이지보기" href="${ path }/question/announcementSeoul?page=1" class="control first" >first</a>
+					<a title="이전페이지보기" href="${ path }/question/announcementSeoul?page=${ pageInfo.prevPage }" class="control previous" >previous</a>
+						<c:forEach var="current" begin="${ pageInfo.startPage }" end="${ pageInfo.endPage }" >
+							<c:choose>
+								<c:when test="${current == pageInfo.currentPage }">
+									<button style="border: 1px solid rgb(175, 45, 45); background-color: rgb(175, 45, 45); border-radius: 4px;
+									    width: 32px; height:32px; line-height: 22px; color: white; cursor: auto;"  disabled>${ current }</button>
+								</c:when>
+								<c:otherwise>			
+									<button class="faq-btn-number" onclick="location.href='${path}/question/announcementSeoul?page=${ current }'">${ current }</button>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					<a title="10페이지보기" href="${ path }/question/announcementSeoul?page=${ pageInfo.nextPage }" class="control next">next</a>
+					<a title="마지막 페이지보기" href="${ path }/question/announcementSeoul?page=${ pageInfo.maxPage }" class="control last">last</a>
+				</div>
 			</div>
 	</main>
 	<jsp:include page="${path}/views/common/footer.jsp" />

@@ -34,13 +34,53 @@ public class AnnouncementService {
 		return count;
 	}
 
-	public List<Notice> findSeoul() {
-		List<Notice> list = null;
+	public List<Notice> findSeoul(PageInfo pageInfo) {
 		
+		Connection connection = getConnection();
 		
+		List<Notice> list = new AnnouncementDao().findSeoul(connection, pageInfo);
 		
+		close(connection);
 		
 		return list;
 	}
+
+	public int getSeoulCount() {
+		int count = 0;
+		
+		Connection connection = getConnection();
+		
+		count = new AnnouncementDao().getSeoulCount(connection);
+		
+		close(connection);
+		
+		return count;
+	}
+
+	public List<Notice> findTera(PageInfo pageInfo) {
+		
+		Connection connection = getConnection();
+		
+		List<Notice> list = new AnnouncementDao().findTera(connection, pageInfo);
+		
+		close(connection);
+		return list;
+	}
+
+	public int getTeraCount() {
+		int count = 0;
+		
+		Connection connection = getConnection();
+		
+		count = new AnnouncementDao().getTeraCount(connection);
+		
+		close(connection);
+		
+		return count;
+		
+	}
+
+
+
 
 }

@@ -135,7 +135,8 @@ p {
 #qt_contents_by {
     float: right;
     width: 840px;
-    height: 752px;
+    /*height: 752px;*/
+    margin-bottom: 30px;
     padding-top: 40px;
 }
 
@@ -790,7 +791,7 @@ span{
 article, aside, figcaption, figure, footer, header, main, nav, section {
     display: block;
 }
-.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by strong {
+.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by button, .qt-pagination-by strong {
     display: inline-block;
     position: relative;
     min-width: 32px;
@@ -843,7 +844,7 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-paging.png) no-repeat 0 0;
 }
 
-.qt-pagination-by .control, .qt-pagination-by a, .qt-pagination-by strong {
+.qt-pagination-by .control, .qt-pagination-by a, .qt-pagination-by button, .qt-pagination-by strong {
     display: inline-block;
     position: relative;
     min-width: 32px;
@@ -859,7 +860,7 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     border-radius: 4px;
 }
 
-.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by strong {
+.qt-pagination-by .qt-control-by, .qt-pagination-by a, .qt-pagination-by button, .qt-pagination-by strong {
     display: inline-block;
     position: relative;
     min-width: 32px;
@@ -883,3 +884,25 @@ article, aside, figcaption, figure, footer, header, main, nav, section {
     border: 2px solid #6D3030;
     color: #6D3030;
 }
+
+.announcement-btn-number {
+	border: 1px solid #EBEBEB;
+    background-color: #ffffff;
+    padding: 5px;
+    width: 32px;
+    height:32px;
+    line-height: 14px;
+    border-radius: 4px;
+}
+
+.qt-pagination-by .control.first {
+        background-position: 0 0;
+
+}
+
+.qt-pagination-by .control.previous {
+    margin-right: 5px;
+    background-position: -32px 0;
+}
+
+

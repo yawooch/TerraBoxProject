@@ -159,10 +159,7 @@ public class FaqDao {
 			pstmt.setString(1, category);
 			pstmt.setInt(2, pageInfo.getStartList());
 			pstmt.setInt(3, pageInfo.getEndList());
-			System.out.println(pageInfo.getStartList());
-			System.out.println(pageInfo.getEndList());
-			
-			
+					
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
