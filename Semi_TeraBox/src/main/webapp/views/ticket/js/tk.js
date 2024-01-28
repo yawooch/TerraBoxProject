@@ -122,8 +122,112 @@ function dateBtnCreate(date)
     $('#formDeList .wrap').append(createStr);
 };
 
+//영화선택시 발생하는 이벤트
+function setMovieList (event){
+        
+    let targetEle = $(event.target);
+    if(event.target.tagName == 'SPAN'){
+        targetEle = $(event.target).parent();
+    }
+
+    let eventFlag = false;
+    let btnOnCnt  = 0;
+
+    //이미 선택된 영화를 다시 클릭했을때 
+    if(targetEle.hasClass('on')){
+        targetEle.removeClass('on');
+        let emptyCnt = 0;
+
+        let movieId = targetEle.attr('movie-no');
+        $('#choiceMovieList div.bg div.wrap[movie-no=' + movieId + ']').parent().remove();
+        $('#choiceMovieList').append('<div class="bg"></div>');
+        
+        $('#choiceMovieList div.bg').each((idx, ele)=>{
+            if($(ele).html()==''){
+                emptyCnt++;
+            }
+        });
+        if(emptyCnt === 3){
+            $('#choiceMovieList').hide();
+            $('#choiceMovieNone').show();
+        }
+    }
+    else{
+        $('#mCSB_1_container li button').each((idx, ele)=>{
+            if($(ele).hasClass('on'))
+            {
+                btnOnCnt++;
+            }
+        });
+        
+        if(btnOnCnt > 2){
+            teraModal('영화선택은 3개 까지만 가능합니다.');
+            eventFlag = true;
+            return ;
+        }else{
+            targetEle.addClass('on');
+
+            $('#choiceMovieNone').hide();
+            $('#choiceMovieList').show();
+            let emptyCnt = 0;
+            let imgPath = targetEle.attr('img-path');
+            // let imgPath = '/views/ticket/img/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_150.jpg';
+            let movieId = targetEle.attr('movie-no');
+            //영화 이미지 세팅 함수 시작
+            // fnImage
+            let createStr = '';
+            createStr +='<div class="wrap" movie-no="'+ movieId +'"> <div class="img">';
+            createStr +='<img src="'+ imgPath +'" alt="영화 제목" movie-no="'+ movieId +'"></div></div>';
+            //삭제 버튼 이미지 제외
+            // createStr +='<button type="button" class="del" onclick="fn_deleteMovieChoice(\'23077300\')">삭제</button> </div>';
+            $('#choiceMovieList div.bg').each((idx, ele)=>{
+                if($(ele).html()===''|| $(ele).html()===' ' ){
+                    emptyCnt ++;
+                }
+            });
+            $('#choiceMovieList div.bg').eq(btnOnCnt).append(createStr);
+        }
+    }
+}
+
 //문서 로드 후 
 $(document).ready(function(){
+    
+    let movieAgeArr = ['age-all', 'age-12', 'age-15', 'age-19'];
+    $('#mCSB_1_container ul').remove();
+    let createEle = '<ul>';
+
+    $.ajax({
+        type : 'POST',
+        url : '/ticket/movielist.ajax',
+            success:function(movies){
+
+                movies.forEach(movie => {
+                    let ageIdx = 4;
+                    if((movie.grade).indexOf('전체')!==-1){
+                        ageIdx = 0;
+                    }
+                    if((movie.grade).indexOf('12')!==-1){
+                        ageIdx = 1;
+                    }
+                    if((movie.grade).indexOf('15')!==-1){
+                        ageIdx = 2;
+                    }
+                    if((movie.grade).indexOf('청소년')!==-1){
+                        ageIdx = 3;
+                    }
+                    createEle +='<li> <button type="button" class="btn" movie-nm="'+ movie.korName +'" movie-no="' + movie.no + '" img-path="'+ movie.poster +'" ><span class="movie-grade small '+ movieAgeArr[ageIdx] +'"> ' + movie.grade + '</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">' + movie.korName + '</span></button> </li>';
+                });
+                createEle += '</ul>';
+                $('#mCSB_1_container').append(createEle);
+                $('#mCSB_1_container li button').click(setMovieList);
+                $(".content").mCustomScrollbar();
+            },
+            error: function(error){
+                console.log(`status : ${error.status}`);
+        }
+        
+    });
     $('#datePicker').val(dateToStr(new Date()));// datePicker 부분 날짜오늘로 초기화
     dateBtnCreate(dateStrToMove(dateToStr(new Date()))); // 날짜 버튼 생성
 
@@ -188,74 +292,7 @@ $(document).ready(function(){
     //*****************************************
     // 영화 선택 시작
     //*****************************************
-    $('#mCSB_1_container li button').click(function(event){
-        
-        let targetEle = $(event.target);
-        if(event.target.tagName == 'SPAN'){
-            targetEle = $(event.target).parent();
-        }
-
-        let eventFlag = false;
-        let btnOnCnt  = 0;
-
-        //이미 선택된 영화를 다시 클릭했을때 
-        if(targetEle.hasClass('on')){
-            targetEle.removeClass('on');
-            let emptyCnt;
-
-            let movieId = targetEle.attr('movie-no');
-            $('#choiceMovieList div.bg div.wrap[movie-no=' + movieId + ']').parent().remove();
-            $('#choiceMovieList').append('<div class="bg"></div>');
-            
-            
-            $('#choiceMovieList div.bg').each((idx, ele)=>{
-                if($(ele).find('div.wrap').length !==0 ){
-                    emptyCnt ++;
-                    console.log('Beer 있어?');
-                }
-            });
-            if(emptyCnt === 0){
-                $('#choiceMovieNone').show();
-                $('#choiceMovieList').hide();
-            }
-        }
-        else{
-            $('#mCSB_1_container li button').each((idx, ele)=>{
-                if($(ele).hasClass('on'))
-                {
-                    btnOnCnt++;
-                }
-            });
-            
-            if(btnOnCnt > 2){
-                teraModal('영화선택은 3개 까지만 가능합니다.');
-                eventFlag = true;
-                return ;
-            }else{
-                targetEle.addClass('on');
-
-                $('#choiceMovieNone').hide();
-                $('#choiceMovieList').show();
-                let emptyCnt = 0;
-                let imgPath = targetEle.attr('img-path');
-                // let imgPath = '/views/ticket/img/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_150.jpg';
-                let movieId = targetEle.attr('movie-no');
-                //영화 이미지 세팅 함수 시작
-                // fnImage
-                let createStr = '';
-                createStr +='<div class="wrap" movie-no="'+ movieId +'"> <div class="img">';
-                createStr +='<img src="'+ imgPath +'" alt="영화 제목" movie-no="'+ movieId +'"></div></div>';
-                //삭제 버튼 이미지 제외
-                // createStr +='<button type="button" class="del" onclick="fn_deleteMovieChoice(\'23077300\')">삭제</button> </div>';
-                $('#choiceMovieList div.bg').each((idx, ele)=>{
-                    if($(ele).html()===''|| $(ele).html()===' ' ){
-                        emptyCnt ++;
-                    }
-                });
-                $('#choiceMovieList div.bg').eq(btnOnCnt).append(createStr);
-            }
-        }
-    });
+    $('#mCSB_1_container li button').click(setMovieList);
     //*****************************************
     // 영화관 선택 시작
     //*****************************************
