@@ -85,11 +85,11 @@
 					<div class="tab-block">
 						<ul>
 							<li class="on"><a href="${path}/question/writeview"
-								class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의내역</a></li>
+								class="btn" title="1:1 문의내역 탭으로 이동">1:1 문의</a></li>
 							<li><a href="${path}/question/writerentview" class="btn"
-								title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의내역</a></li>
+								title="단체관람/대관 문의내역 탭으로 이동">단체관람/대관문의</a></li>
 							<li><a href="${path}/question/writeLost" class="btn"
-								title="분실물 문의내역 탭으로 이동">분실물 문의내역</a></li>
+								title="분실물 문의내역 탭으로 이동">분실물 문의</a></li>
 						</ul>
 					</div>
 					<div class="agree-box">
