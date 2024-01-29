@@ -32,7 +32,7 @@ public class MovieCommentServlet extends HttpServlet {
     	
     	// 영화 객체 저장 부분
     	int no = Integer.parseInt(request.getParameter("no"));
-		System.out.println("영화 번호: " + no);
+//		System.out.println("영화 번호: " + no);
 		
 		Movie movie = new MovieService().getMovieByNo(no);
 		
@@ -45,8 +45,6 @@ public class MovieCommentServlet extends HttpServlet {
 		} catch (NumberFormatException e) {
 			page = 1;
 		}
-    	
-    	
     	
     	listCount = new MovieService().getMovieCommentCount(movie);
     	pageInfo = new PageInfo(page, 5, listCount, 5);
@@ -65,10 +63,13 @@ public class MovieCommentServlet extends HttpServlet {
     	MovieComment movieComment = new MovieComment();
     	movieComment.setComment(request.getParameter("comment"));
     	movieComment.setPoint(request.getParameter("ele"));
+    	movieComment.setScore(Integer.parseInt(request.getParameter("score")));
+    	movieComment.setMovieNo(Integer.parseInt(request.getParameter("movieNo")));
     	
     	int result = new MovieService().save(movieComment);
     	
     	request.getRequestDispatcher("/views/movie/movieComment.jsp").forward(request, response);
+//    	response.sendRedirect("/views/movie/movieComment.jsp");
     	
 //    	if (result > 0) {
 //    		

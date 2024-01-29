@@ -80,13 +80,13 @@
 		                        <span>${ movie.korName }</span>
 		                    </div>
 		                    <div class="mv-main-mv-info">
-		                        <span class="mv-main-mv-tk">예매율 4.6%</span>
+		                        <span class="mv-main-mv-tk">예매율 -%</span>
 		                        <span class="mv-main-mv-op">개봉일 ${ movie.openDate }</span>
 		                    </div>
 		                    <div class="mv-main-mv-btn">
 		                        <button class="mv-main-btn-like">
 		                            <img src="${path}/views/movie/image/heartGray.png" alt="">
-		                            <span>3.5k</span>
+		                            <span>0</span>
 		                        </button>
 		                        <a href="${ path }/ticket">
 			                        <button class="mv-main-btn-tk" >

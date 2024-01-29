@@ -14,10 +14,14 @@ $(document).ready(function() {
     );
     //좋아요 버튼 클릭하면 on 클래스 추가
     $('#mv-like').on('click', () => {
+		let og_point = parseInt($('.mv-span-likescore').html());
+		
         if ($('#mv-like').hasClass('on')) {
             $('#mv-like').removeClass('on');
+            $('.mv-span-likescore').html(og_point - 1);
         } else {
             $('#mv-like').addClass('on');
+            $('.mv-span-likescore').html(og_point + 1);
         }
     });
     
@@ -99,9 +103,13 @@ $(document).ready(function() {
 	// 등록 버튼을 누르면 별점과 textarea의 innerHTML의 값과 관람포인트의 값들의 문자열이 Post 방식으로
 	// 서버에 넘어감
     $('.mv-com-write-btn-submit').on('click', () => {
-        alert($('#mv-com-write-textarea').val());
+//        alert($('#mv-com-write-textarea').val());
+//        alert($('#score').val());
+//		alert($('#movie-no').html());
         let comment = $('#mv-com-write-textarea').val();
         let ele = '';
+        let score = $('#score').val();
+        let movieNo = $('#movie-no').html();
         if ($('#mv-com-write-point-btn-ele1').css('background-color') == 'rgb(175, 45, 45)' ) {
             ele += $('#mv-com-write-point-btn-ele1').html();
         }
@@ -128,7 +136,9 @@ $(document).ready(function() {
             url: '/movie/comment',
             data: {
                 comment,
-                ele
+                ele,
+                score,
+                movieNo
             },
             success: (data) => {
                 console.log(data);

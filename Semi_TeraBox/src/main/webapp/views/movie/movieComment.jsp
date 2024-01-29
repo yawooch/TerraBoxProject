@@ -25,7 +25,7 @@
                     <div class="mv-btn-util">
                         <button class="mv-btn-black" id="mv-like">
                             <img src="${path}/views/movie/image/heart.png" class="mv-icon heart" id="mv-like-image">
-                            <span>1.2k</span>
+                            <span class="mv-span-likescore">0</span>
                         </button>
                         <button class="mv-btn-black" id="mv-link">
                             <img src="${path}/views/movie/image/share.png" class="mv-icon share" id="mv-link-image">
@@ -46,16 +46,16 @@
                             <tr>
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-megabox.png">
-                                    <em>9.9</em>
+                                    <em>-</em>
                                 </td> 
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-ticket-gray.png">
-                                    <em>1</em>
-                                    위(12.5%)
+                                    <em>-</em>
+                                    위(-%)
                                 </td>
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-person.png">
-                                    <em>1,159,789</em>
+                                    <em>-</em>
                                     명
                                 </td>
                             </tr>
@@ -107,7 +107,7 @@
                     <li class="mv-com-main-li fixed">
                         <div class="mv-com-main-li-icon">
                             <img src="${path}/views/movie/image/heartFull.png" alt="프사"> 
-                            <span>아이디</span>
+                            <span>TERABOX</span>
                         </div>
                         <div class="mv-com-main-textbox">
                             <div class="mv-com-main-textbox-text">
@@ -123,48 +123,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="mv-com-main-list">
-                        <div class="mv-com-main-li-icon">
-                            <img src="https://img.megabox.co.kr/static/pc/images/mypage/bg-profile.png" alt="">
-                            <span>아이디</span>
-                        </div>
-                        <div class="mv-com-main-textbox mv-textbox-user"><!-- 1. 연출 2. 스토리 3. 영상미 4. 배우 5. ost -->
-                            <div class="mv-com-main-name">관람평</div>
-                            <div class="mv-com-main-score">10</div>
-                            <div class="mv-com-main-point">스토리</div>
-                            <div class="mv-com-main-story">실관람평50자가 넘어가면 두줄로 나오는거 같습니다만//실관람평50자가 넘어가면 두줄로 나오는거 같습니다만</div>
-                            <div class="mv-com-main-like">
-                                <button class="mv-com-main-btn">
-                                    <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-like-g.png" class="mv-com-like-img">
-                                    <span class="mv-com-like-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mv-com-main-date">
-                            2024.01.07
-                        </div>
-                    </li>
-                    <li class="mv-com-main-list">
-                        <div class="mv-com-main-li-icon">
-                            <img src="https://img.megabox.co.kr/static/pc/images/mypage/bg-profile.png" alt="">
-                            <span>아이디</span>
-                        </div>
-                        <div class="mv-com-main-textbox mv-textbox-user"><!-- 1. 연출 2. 스토리 3. 영상미 4. 배우 5. ost -->
-                            <div class="mv-com-main-name">관람평</div>
-                            <div class="mv-com-main-score">10</div>
-                            <div class="mv-com-main-point">연출 외 <br> + 2</div>
-                            <div class="mv-com-main-story">실관람평50자가 넘어가면 </div>
-                            <div class="mv-com-main-like">
-                                <button class="mv-com-main-btn">
-                                    <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-like-g.png" class="mv-com-like-img">
-                                    <span class="mv-com-like-count">0</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mv-com-main-date">
-                            2024.01.07
-                        </div>
-                    </li>
+                   
                     <c:if test="${ not empty list }">
                    		<c:forEach var="movieComment" items="${ list }">
                    		<c:if test="${ movie.no == movieComment.movieNo }">
@@ -233,16 +192,28 @@
                 <div class="mv-com-write-main">
                     <div class="mv-com-write-score">
                         <p>
-                            "서울의 봄"
+                            "${ movie.korName }"
                             <br>
                             영화 어떠셨나요?
                         </p>
                         <div>
                             <div class="mv-com-write-star">
-                                <div>                                    
-                                    <button>
-                                        <!-- 평점 아직 미구현 -->
-                                    </button>
+                                <div>
+                                	<div id="movie-no" style="display: none">${movie.no}</div>
+                                	<form>
+	                                    <select name="score" id="score">
+	                                    	<option value="1">1</option>
+	                                    	<option value="2">2</option>
+	                                    	<option value="3">3</option>
+	                                    	<option value="4">4</option>
+	                                    	<option value="5">5</option>
+	                                    	<option value="6">6</option>
+	                                    	<option value="7">7</option>
+	                                    	<option value="8">8</option>
+	                                    	<option value="9">9</option>
+	                                    	<option value="10">10</option>
+	                                    </select>
+                                	</form>                                  
                                 </div>
                                 <span>별점</span>
                             </div>
@@ -269,7 +240,7 @@
                 </div>
                 <div class="mv-com-write-btn">
                     <button class="mv-com-write-btn-cancle">취소</button>
-                    <button class="mv-com-write-btn-submit">등록</button>
+                    <button type="submit" class="mv-com-write-btn-submit">등록</button>
                 </div>
             </div>
         </section>

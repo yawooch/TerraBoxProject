@@ -15,7 +15,7 @@ public class MovieComment {
 
 	private String ticketNo;
 	private int rowNum;
-	private double score;
+	private int score;
 	private String comment;
 	private Date createDate;
 	private String point;

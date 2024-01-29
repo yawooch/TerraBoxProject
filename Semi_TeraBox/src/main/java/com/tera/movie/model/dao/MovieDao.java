@@ -162,7 +162,7 @@ public class MovieDao {
 				
 				movieComment.setRowNum(rs.getInt("RNUM"));
 				movieComment.setTicketNo(rs.getString("TICKET_NO"));
-				movieComment.setScore(rs.getDouble("EVAL_POINT"));
+				movieComment.setScore(rs.getInt("EVAL_POINT"));
 				movieComment.setComment(rs.getString("EVAL_COMMENT"));
 				movieComment.setCreateDate(rs.getDate("EVAL_REG_DTTM"));
 				movieComment.setPoint(rs.getString("VIW_PNT_CONTENT"));
@@ -187,13 +187,15 @@ public class MovieDao {
 	public int insertMovieComment(Connection connection, MovieComment movieComment) {
 		int result = 0;
 		PreparedStatement pstmt = null;
-		String query = "INSERT INTO MOVIE_EVAL VALUES (2, 1, ?, SYSDATE, ?, 2)";
+		String query = "INSERT INTO MOVIE_EVAL VALUES (SEQ_TK_NO.NEXTVAL, ?, ?, SYSDATE, ?, ?)";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-			pstmt.setString(1, movieComment.getComment());
-			pstmt.setString(2, movieComment.getPoint());
+			pstmt.setInt(1, movieComment.getScore());
+			pstmt.setString(2, movieComment.getComment());
+			pstmt.setString(3, movieComment.getPoint());
+			pstmt.setInt(4, movieComment.getMovieNo());
 			
 			result = pstmt.executeUpdate();
 			
