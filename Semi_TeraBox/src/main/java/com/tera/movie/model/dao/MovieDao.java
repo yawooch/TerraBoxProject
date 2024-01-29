@@ -25,6 +25,7 @@ public class MovieDao {
 		ResultSet rs = null;
 		
 		String query = "SELECT * FROM MOVIE ORDER BY MOVIE_NO DESC";
+		String query = "SELECT * FROM MOVIE ORDER BY MV_OPEN_DATE";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
