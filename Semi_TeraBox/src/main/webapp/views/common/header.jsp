@@ -122,8 +122,7 @@
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/ticket"           title="빠른예매">빠른예매</a></li>
-                    <li><a href="/ticket/timetable" title="상영시간표">상영시간표</a></li>
+                    <li><a href="/ticket" class="cm-ticketBar" title="빠른예매">빠른예매</a></li>
                 </ul>
             </div>
             <div class="cm-gnb-depth2" style="display:none;">

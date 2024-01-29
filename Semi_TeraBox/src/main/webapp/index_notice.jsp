@@ -40,14 +40,14 @@
                 </div>
 
                 <div class="main-cell">
-                    <a href="/question/personal" title="1:1 문의 페이지로 이동">
+                    <a href="/question/writeview" title="1:1 문의 페이지로 이동">
                         <i class="main-iconset main-ico-main-qna"></i>
                         <span>1:1 문의</span>
                     </a>
                 </div>
 
                 <div class="main-cell">
-                    <a href="/question/rental" title="단체/대관문의 페이지로 이동">
+                    <a href="/question/writerentview" title="단체/대관문의 페이지로 이동">
                         <i class="main-iconset main-ico-main-group"></i>
                         <span>단체/대관문의</span>
                     </a>
