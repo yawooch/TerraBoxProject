@@ -25,7 +25,7 @@
                     <div class="mv-btn-util">
                         <button class="mv-btn-black" id="mv-like">
                             <img src="${path}/views/movie/image/heart.png" class="mv-icon heart" id="mv-like-image">
-                            <span>0</span>
+                            <span>1.2k</span>
                         </button>
                         <button class="mv-btn-black" id="mv-link">
                             <img src="${path}/views/movie/image/share.png" class="mv-icon share" id="mv-link-image">
@@ -46,16 +46,16 @@
                             <tr>
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-megabox.png">
-                                    <em>-</em>
+                                    <em>9.9</em>
                                 </td> 
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-ticket-gray.png">
-                                    <em>-</em>
-                                    위(-%)
+                                    <em>1</em>
+                                    위(12.5%)
                                 </td>
                                 <td>
                                     <img src="https://img.megabox.co.kr/static/pc/images/common/ico/ico-person.png">
-                                    <em>-</em>
+                                    <em>1,159,789</em>
                                     명
                                 </td>
                             </tr>
@@ -89,7 +89,7 @@
 
             </nav>
             <!-- 바꿔야 함 ${ movie.synopsis } --> 
-            <p class="mv-large-p"></p>
+            <p class="mv-large-p">1979년 12월 12일, 수도 서울 군사반란 발생</p>
             <p class="mv-small-p">
                 ${ movie.synopsis }
             </p>
@@ -112,8 +112,8 @@
         <!-- 동영상 -->
         <section class="mv-sec2">
             <div class="mv-movie-videotag">
-                <p>예고편(-)</p>
-                <p>스틸컷(-)</p>
+                <p>예고편(7)</p>
+                <p>스틸컷(83)</p>
             </div>
             <hr class="mv-bold-hr">
             <p class="mv-video-name">론칭 예고편</p>
@@ -221,7 +221,7 @@
         </section>
         <!-- 스틸컷 -->
         <section class="mv-sec3">
-            <h2>${ movie.korName }에 대한 <span>-</span>개의 스틸컷이 있어요!</h2>
+            <h2>서울에 봄에 대한 <span>83</span>개의 스틸컷이 있어요!</h2>
             <hr class="mv-thin-hr">
 
             <!-- masonry 라이브러리 사용 -->
