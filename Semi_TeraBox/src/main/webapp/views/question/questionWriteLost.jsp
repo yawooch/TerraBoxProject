@@ -116,8 +116,12 @@
 											<option value="70">강원</option>
 											<option value="80">제주</option>
 									</select> <select name="brchNo" id="theater02" title="극장선택"
-										class="small ml07" disabled="disabled">
+										class="small ml07">
 											<option value="">극장선택</option>
+											<option value="">강남</option>
+											<option value="">홍대</option>
+											<option value="">상암</option>
+											<option value="">동대문</option>
 									</select></td>
 								</tr>
 								<tr>
@@ -172,7 +176,7 @@
 								<tr>
 									<th scope="row"><label for="pw">비밀번호</label> <em
 										class="font-orange">*</em></th>
-									<td colspan="3"><input type="number" maxlength="4"
+									<td colspan="3"><input type="password" maxlength="4"
 										name="lstrtclInqPwd" id="pw" class="input-text w150px pwnew"
 										placeholder="숫자 4자리" oninput="gfn_numberMaxLength(this);">
 										<em class="fc_r ml10">* 분실물에 대한 고객정보 보호를 위하여 게시글의 비밀번호를

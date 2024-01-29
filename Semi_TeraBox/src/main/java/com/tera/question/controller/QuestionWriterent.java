@@ -7,7 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.tera.member.model.vo.Member;
 import com.tera.question.model.service.QuestionBoardService;
 import com.tera.question.model.vo.Question;
 
@@ -27,8 +29,22 @@ public class QuestionWriterent extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
 
-		request.getRequestDispatcher("/views/question/questionWriterent.jsp").forward(request, response);
+		Member loginMember = (Member) session.getAttribute("loginMember");
+		System.out.println(loginMember);
+
+		if (loginMember != null) {
+			request.getRequestDispatcher("/views/question/questionWriterent.jsp").forward(request, response);
+
+		} else {
+			request.setAttribute("msg", "로그인 후 작성해 주세요.");
+			request.setAttribute("location", "/");
+			request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
+		}
+
+		
 	}
 
 	/**

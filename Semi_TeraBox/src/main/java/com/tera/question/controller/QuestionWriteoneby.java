@@ -9,11 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.tera.common.jdbc.test.vo.Member;
+import com.tera.member.model.vo.Member;
 import com.tera.question.model.service.QuestionBoardService;
 import com.tera.question.model.vo.Question;
-
-import lombok.Setter;
 
 /**
  * 1:1 문의하기 입력을 처리하는 Servlet
@@ -32,17 +30,18 @@ public class QuestionWriteoneby extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		
-		Member loginMember = (Member) session.getAttribute("memberLogin");
 
-	
-			
+		Member loginMember = (Member) session.getAttribute("loginMember");
+		System.out.println(loginMember);
+
+		if (loginMember != null) {
 			request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
-	
-		
-		
-		
-		
+
+		} else {
+			request.setAttribute("msg", "로그인 후 작성해 주세요.");
+			request.setAttribute("location", "/");
+			request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
+		}
 
 	}
 
