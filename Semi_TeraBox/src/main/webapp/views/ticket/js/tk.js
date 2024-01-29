@@ -186,8 +186,8 @@ function setMovieClickEvent (event){
         }
     }
 }
+//극장을 선택했을 때 발생하는이벤트
 function setCinemaClickEvent(event){
-        
     let targetEle = $(event.target);
 
     let eventFlag = false;
@@ -248,55 +248,87 @@ function setCinemaClickEvent(event){
         }
     }
 };
+//상영 시간표를선택했을 때 발생하는이벤트
 function setTmtableClickEvent(event) {
-    console.log(event.target);
     let thisTarget = $(event.target).parents('button');
 
     let movieNo  = thisTarget.attr('rpst-movie-no');//영화번호
     let cinemaId = thisTarget.attr('brch-no');//극장아이디
     let scrnNo   = thisTarget.attr('play-schdl-no');//상영번호
-
     
-    console.log(`영화번호 : ${movieNo}\극장아이디 : ${cinemaId}\상영번호 : ${scrnNo}\n`);
+    let movieArr = [];
+    let cinemaArr = [];
 
+    $('#choiceMovieList div.bg').each((idx, ele)=>{
+        let emptyValue = $(ele).children('div.wrap').attr('movie-no');
+        if($(ele).html() != '' && emptyValue != undefined){
+            movieArr = [...movieArr, emptyValue];
+        }
+    });
+    $('#choiceBrchList div.bg').each((idx, ele)=>{
+        let emptyValue = $(ele).children('div.wrap').attr('brch-no');
+        if($(ele).html() != '' && emptyValue != undefined){
+            cinemaArr = [...cinemaArr, emptyValue];
+        }
+    });
+    let createInput  = '';
+    $('#selectMovieForm *').remove();
+
+    movieArr.forEach(movie=>{
+        createInput  += '<input type="hidden" name="selectMovie"  value="'+ movie +'"/>';
+    });
+    cinemaArr.forEach(cinema=>{
+        createInput += '<input type="hidden" name="selectCinema" value="'+ cinema +'"/>';
+    });
+    $('#selectMovieForm').append(createInput);
+
+    $('#selectMovieForm').submit();
+    
     // location.href = '/ticket/seat';
 }
+//영화 정보를 가져오는 ajax
 function getMovieListAjax(){
+    let selectDate = $('#datePicker').val();
+
     let movieAgeArr = ['age-all', 'age-12', 'age-15', 'age-19'];
     $('#mCSB_1_container ul').remove();
     let createEle = '<ul>';
-    
+
     $.ajax({
         type : 'POST',
         url : '/ticket/movielist.ajax',
-            success:function(movies){
-    
-                movies.forEach(movie => {
-                    let ageIdx = 4;
-                    if((movie.grade).indexOf('전체')!==-1){
-                        ageIdx = 0;
-                    }
-                    if((movie.grade).indexOf('12')!==-1){
-                        ageIdx = 1;
-                    }
-                    if((movie.grade).indexOf('15')!==-1){
-                        ageIdx = 2;
-                    }
-                    if((movie.grade).indexOf('청소년')!==-1){
-                        ageIdx = 3;
-                    }
-                    createEle +='<li> <button type="button" class="btn" movie-nm="'+ movie.korName +'" movie-no="' + movie.no + '" img-path="'+ movie.poster +'" ><span class="movie-grade small '+ movieAgeArr[ageIdx] +'"> ' + movie.grade + '</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">' + movie.korName + '</span></button> </li>';
-                });
-                createEle += '</ul>';
-                $('#mCSB_1_container').append(createEle);
-                $('#mCSB_1_container li button').click(setMovieClickEvent);
-                $(".content").mCustomScrollbar();
-            },
-            error: function(error){
-                console.log(`status : ${error.status}`);
+        data : {
+            selectDate
+        },
+        success:function(movies){
+
+            movies.forEach(movie => {
+                let ageIdx = 4;
+                if((movie.grade).indexOf('전체')!==-1){
+                    ageIdx = 0;
+                }
+                if((movie.grade).indexOf('12')!==-1){
+                    ageIdx = 1;
+                }
+                if((movie.grade).indexOf('15')!==-1){
+                    ageIdx = 2;
+                }
+                if((movie.grade).indexOf('청소년')!==-1){
+                    ageIdx = 3;
+                }
+                createEle +='<li> <button type="button" class="btn" movie-nm="'+ movie.korName +'" movie-no="' + movie.no + '" img-path="'+ movie.poster +'" ><span class="movie-grade small '+ movieAgeArr[ageIdx] +'"> ' + movie.grade + '</span><i class="iconset ico-heart-small">보고싶어 설정안함</i><span class="txt">' + movie.korName + '</span></button> </li>';
+            });
+            createEle += '</ul>';
+            $('#mCSB_1_container').append(createEle);
+            $('#mCSB_1_container li button').click(setMovieClickEvent);
+            $(".content").mCustomScrollbar();
+        },
+        error: function(error){
+            console.log(`status : ${error.status}`);
         }
     });
 }
+//극장정보를 가져오는 ajax
 function getCinemaListAjax(){
     $.ajax({
         type : 'POST',
@@ -318,6 +350,7 @@ function getCinemaListAjax(){
         }
     });
 }
+//상영시간표 정보를 가져오는 ajax
 function getTimeTablesAjax(){
     
     $.ajax({
@@ -370,6 +403,14 @@ function getTimeTablesAjax(){
 
 //문서 로드 후 
 $(document).ready(function(){
+    //날짜 선택 라이브러리 설정시작
+    $('#datePicker').datepicker(datePickerSet);
+    // $('#datePicker').val(dateToStr(new Date()));// datePicker 부분 날짜오늘로 초기화
+    // dateBtnCreate(dateStrToMove(dateToStr(new Date()))); // 날짜 버튼 생성
+    $('#datePicker').val('2024-01-28');// datePicker 부분 날짜오늘로 초기화
+    dateBtnCreate(dateStrToMove('2024-01-28')); // 테스트용 날짜 버튼 생성
+    //상단 년월 배너 세팅해준다.
+    setYearMonBann();
     
     //영화 목록을 불러온다.
     getMovieListAjax();
@@ -378,16 +419,8 @@ $(document).ready(function(){
     //상영시간표를 불러온다.
     getTimeTablesAjax()
 
-    $('#datePicker').val(dateToStr(new Date()));// datePicker 부분 날짜오늘로 초기화
-    dateBtnCreate(dateStrToMove(dateToStr(new Date()))); // 날짜 버튼 생성
-
-    //상단 년월 배너 세팅해준다.
-    setYearMonBann();
     //스크롤바 시작
     $(".content").mCustomScrollbar();
-
-    //날짜 선택 라이브러리 설정시작
-    $('#datePicker').datepicker(datePickerSet);
     
     //시간 버튼 - 뒤/앞으로 이동
     $('[class$=-time]').click(function(event){
@@ -431,6 +464,7 @@ $(document).ready(function(){
         //날짜 버튼을 생성한다.
         dateBtnCreate(date);
         setYearMonBann();
+        getMovieListAjax();
     });
     $('#formDeList .wrap button').click(clickDateButton);
 
@@ -445,5 +479,5 @@ $(document).ready(function(){
     //*****************************************
     // 시간표 선택 시작
     //*****************************************
-    $('#mCSB_17_container *').click(setTmtableClickEvent());
+    $('#mCSB_17_container *').click(setTmtableClickEvent);
 });

@@ -53,7 +53,7 @@ public class MemberDao {
 		int result = 0;
 		PreparedStatement pstmt = null;
 //		String query = "INSERT INTO MEMBER VALUES (?,?,?,TO_CHAR(TO_DATE(substr(?,0,6), 'rrMMDD'),'YYYYMMDD') ,?,?,?,'Y',NULL,DEFAULT,SYSDATE)";
-		String query = "INSERT INTO MEMBER VALUES (?,?,?,TO_CHAR(TO_DATE(substr(?,0,6), 'rrMMDD'),'YYYYMMDD') ,?,?,?,'Y',NULL,DEFAULT,SYSDATE)";
+		String query = "INSERT INTO MEMBER VALUES (?,?,?,TO_CHAR(TO_DATE(substr(?,0,6), 'rrMMDD'),'YYYYMMDD') ,?,?,?,?,NULL,DEFAULT,SYSDATE)";
 		try {
 			pstmt = connection.prepareStatement(query);
 			
@@ -64,6 +64,8 @@ public class MemberDao {
 			pstmt.setString(5, member.getMemPhone());
 			pstmt.setString(6, member.getMemEmail());
 			pstmt.setString(7, member.getMemSsn());
+			pstmt.setString(8, member.getMktAgreeYn());
+			System.out.println(member.getMktAgreeYn());
 			
 			result = pstmt.executeUpdate(); //업데이트된 행의 갯수
 		} catch (SQLException e) {

@@ -170,7 +170,7 @@ th{
 .cm-button{
     border-radius: 4px;
 }
-.button[disabled] {
+.cm-button:disabled {
     color: #777!important;
     cursor: default!important;
     background-color: #e0e0e0!important;

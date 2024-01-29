@@ -55,4 +55,9 @@ public class MemberService {
         }
     }
 
+	public Boolean isDuplicateId(String userId) {
+		return this.findMemberById(userId) != null;
+	}
+
+
 }

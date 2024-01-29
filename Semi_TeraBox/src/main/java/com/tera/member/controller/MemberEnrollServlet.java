@@ -32,7 +32,8 @@ public class MemberEnrollServlet extends HttpServlet {
     	request.setCharacterEncoding("UTF-8");
     	Member member = new Member();
     	
-    	
+    	String allowPromotions = request.getParameter("allowPromotions")== null? "N":request.getParameter("allowPromotions");
+    	member.setMktAgreeYn(allowPromotions);
     	member.setMemberId(request.getParameter("MEMBER_ID"));  //signup_3.jsp 의 name
     	member.setPassword(request.getParameter("PASSWORD"));
     	member.setMemEmail(request.getParameter("MEM_EMAIL"));
