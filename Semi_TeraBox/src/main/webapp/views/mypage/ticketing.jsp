@@ -85,7 +85,7 @@
 
                     <div class="mp-round">  
                         <a href="영화상세페이지로..?">
-                            <img src="img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="">
+                            <img src="${ path }/views/mypage/img/movie.jpg" alt="movie">
                         </a>            
                         <div class="mp-round-right">
                             <table>
@@ -162,7 +162,7 @@
                 </div>
                 <button type="button" class="btn-toggle">
                         이용안내
-                    <img src="${path}/views/mypage/img/ico-arr-toggle-down.png" alt="화살표">
+                    <img src="${path}/views/mypage/img/arrow.png" alt="화살표">
                 </button>
                 <!-- 토클로 보이게 안보이게 하기 -->
                 <div class="mp-count">

@@ -228,7 +228,7 @@
                         <div class="cm-mbimg"><img src="https://img.megabox.co.kr/static/pc/images/2023/01/member_WELCOME_2.png" alt="WELCOME"></div>
                         <div class="cm-name">${loginMember.memberId}<span> 님</span></div>
     
-                        <a href="/mypage/myticket" class="cm-linkBtn" title="나의  테라박스">나의  테라박스</a>
+                        <a href="/mypage" class="cm-linkBtn" title="나의  테라박스">나의  테라박스</a>
                     </div>
                     <div class="cm-box cm-reserve">
                         <div class="cm-tit">
