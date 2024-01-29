@@ -307,35 +307,35 @@
                                 <button type="button" class="btn-prev-time">이전 시간 보기</button>
                                 <div class="wrap">
                                     <div class="view" style="position: absolute; width: 1015px; transition: none 0s ease 0s; left: -175px;">
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">00</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">01</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">02</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">03</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">04</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">05</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">06</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">07</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">08</button>
+                                        <button type="button" class="hour" style="opacity: 1;">00</button>
+                                        <button type="button" class="hour" style="opacity: 1;">01</button>
+                                        <button type="button" class="hour" style="opacity: 1;">02</button>
+                                        <button type="button" class="hour" style="opacity: 1;">03</button>
+                                        <button type="button" class="hour" style="opacity: 1;">04</button>
+                                        <button type="button" class="hour" style="opacity: 1;">05</button>
+                                        <button type="button" class="hour" style="opacity: 1;">06</button>
+                                        <button type="button" class="hour" style="opacity: 1;">07</button>
+                                        <button type="button" class="hour" style="opacity: 1;">08</button>
                                         <button type="button" class="hour on" style="opacity: 1;">09</button>
                                         <button type="button" class="hour" style="opacity: 1;">10</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">11</button>
+                                        <button type="button" class="hour" style="opacity: 1">11</button>
                                         <button type="button" class="hour" style="opacity: 1;">12</button>
                                         <button type="button" class="hour" style="opacity: 1;">13</button>
                                         <button type="button" class="hour" style="opacity: 1;">14</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">15</button>
+                                        <button type="button" class="hour" style="opacity: 1;">15</button>
                                         <button type="button" class="hour" style="opacity: 1;">16</button>
                                         <button type="button" class="hour" style="opacity: 1;">17</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">18</button>
+                                        <button type="button" class="hour" style="opacity: 1">18</button>
                                         <button type="button" class="hour" style="opacity: 1;">19</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">20</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">21</button>
+                                        <button type="button" class="hour" style="opacity: 1;">20</button>
+                                        <button type="button" class="hour" style="opacity: 1;">21</button>
                                         <button type="button" class="hour" style="opacity: 1;">22</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">23</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">24</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">25</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">26</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">27</button>
-                                        <button type="button" class="hour" disabled="disabled" style="opacity: 0.5">28</button>
+                                        <button type="button" class="hour" style="opacity: 1;">23</button>
+                                        <button type="button" class="hour" style="opacity: 1;">24</button>
+                                        <button type="button" class="hour" style="opacity: 1;">25</button>
+                                        <button type="button" class="hour" style="opacity: 1;">26</button>
+                                        <button type="button" class="hour" style="opacity: 1;">27</button>
+                                        <button type="button" class="hour" style="opacity: 1;">28</button>
                                     </div>
                                 </div>
                                 <button type="button" class="btn-next-time">다음 시간 보기</button>

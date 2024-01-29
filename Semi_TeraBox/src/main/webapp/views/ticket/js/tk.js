@@ -1,4 +1,3 @@
-
 //첫번째 배너는 가장 왼쪽에 있으면서 해당요소의 월을 표시한다.
 //두번째 배너는 다음달 1일이 나타나면 해당요소의 월을 표시면서 따라다닌다..
 function setYearMonBann(){
@@ -65,7 +64,6 @@ let datePickerSet = {
     , showMonthAfterYear: true
     , yearSuffix: '년'
 };
-
 //ready 안에 있어야한다
 let clickDateButton = function(event){
     let selectDate = dateStrToMove($(event.target).attr('date-data'));
@@ -121,9 +119,8 @@ function dateBtnCreate(date)
     }
     $('#formDeList .wrap').append(createStr);
 };
-
 //영화선택시 발생하는 이벤트
-function setMovieList (event){
+function setMovieClickEvent (event){
         
     let targetEle = $(event.target);
     if(event.target.tagName == 'SPAN'){
@@ -189,19 +186,91 @@ function setMovieList (event){
         }
     }
 }
+function setCinemaClickEvent(event){
+        
+    let targetEle = $(event.target);
 
-//문서 로드 후 
-$(document).ready(function(){
+    let eventFlag = false;
+    let btnOnCnt  = 0;
+
+    //이미 선택된 영화관을 다시 클릭했을때 
+    if(targetEle.hasClass('on')){
+        targetEle.removeClass('on');
+        let emptyCnt = 0;
+
+        let theaterId = targetEle.attr('brch-no');
+        $('#choiceBrchList div.bg div.wrap[brch-no=' + theaterId + ']').parent().remove();
+        $('#choiceBrchList').append('<div class="bg"></div>');
+        
+        $('#choiceBrchList div.bg').each((idx, ele)=>{
+            if($(ele).html() == '' ){
+                emptyCnt = emptyCnt +1;
+            }
+        });
+        if(emptyCnt === 3){
+            $('#choiceBrchNone').show();
+            $('#choiceBrchList').hide();
+        }
+    }
+    else{
+        $('#mCSB_4_container li button').each((idx, ele)=>{
+            if($(ele).hasClass('on'))
+            {
+                btnOnCnt++;
+            }
+        });
+        
+        if(btnOnCnt > 2){
+            teraModal('영화관 선택은 3개 까지만 가능합니다.');
+            eventFlag = true;
+            return ;
+        }else{
+            targetEle.addClass('on');
+
+            $('#choiceBrchNone').hide();
+            $('#choiceBrchList').show();
+            let emptyCnt = 0;
+            let theaterId = targetEle.attr('brch-no');
+            // let imgPath = '/views/ticket/img/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_150.jpg';
+            let theaterName = targetEle.attr('brch-nm');
+            //영화 이미지 세팅 함수 시작
+            // fnImage
+            let createStr = '';
+            createStr +='<div class="wrap" brch-no="'+ theaterId +'"><p class="txt">'+ theaterName +'</p></div>';
+            //삭제 버튼 이미지 제외
+            // createStr +='<button type="button" class="del" onclick="fn_deleteMovieChoice(\'23077300\')">삭제</button> </div>';
+            $('#choiceBrchList div.bg').each((idx, ele)=>{
+                if($(ele).html()===''|| $(ele).html()===' ' ){
+                    emptyCnt ++;
+                }
+            });
+            $('#choiceBrchList div.bg').eq(btnOnCnt).append(createStr);
+        }
+    }
+};
+function setTmtableClickEvent(event) {
+    console.log(event.target);
+    let thisTarget = $(event.target).parents('button');
+
+    let movieNo  = thisTarget.attr('rpst-movie-no');//영화번호
+    let cinemaId = thisTarget.attr('brch-no');//극장아이디
+    let scrnNo   = thisTarget.attr('play-schdl-no');//상영번호
+
     
+    console.log(`영화번호 : ${movieNo}\극장아이디 : ${cinemaId}\상영번호 : ${scrnNo}\n`);
+
+    // location.href = '/ticket/seat';
+}
+function getMovieListAjax(){
     let movieAgeArr = ['age-all', 'age-12', 'age-15', 'age-19'];
     $('#mCSB_1_container ul').remove();
     let createEle = '<ul>';
-
+    
     $.ajax({
         type : 'POST',
         url : '/ticket/movielist.ajax',
             success:function(movies){
-
+    
                 movies.forEach(movie => {
                     let ageIdx = 4;
                     if((movie.grade).indexOf('전체')!==-1){
@@ -220,30 +289,106 @@ $(document).ready(function(){
                 });
                 createEle += '</ul>';
                 $('#mCSB_1_container').append(createEle);
-                $('#mCSB_1_container li button').click(setMovieList);
+                $('#mCSB_1_container li button').click(setMovieClickEvent);
                 $(".content").mCustomScrollbar();
             },
             error: function(error){
                 console.log(`status : ${error.status}`);
         }
-        
     });
+}
+function getCinemaListAjax(){
+    $.ajax({
+        type : 'POST',
+        url : '/ticket/cinema.ajax',
+            success:function(cinemas){
+                $('#mCSB_4_container ul').remove();
+                let createEle = '<ul>';
+
+                cinemas.forEach(cinema => {
+                    createEle +='<li> <button id="btn" type="button" brch-no="'+ cinema.cinemaId +'" brch-nm="'+ cinema.cinemaName +'"              area-cd-nm="서울" >'+ cinema.cinemaName +'</button> </li>';
+                });
+                createEle += '</ul>';
+                $('#mCSB_4_container').append(createEle);
+                $('#mCSB_4_container li button').click(setCinemaClickEvent);
+                $(".content").mCustomScrollbar();
+            },
+            error: function(error){
+                console.log(`status : ${error.status}`);
+        }
+    });
+}
+function getTimeTablesAjax(){
+    
+    $.ajax({
+        type : 'POST',
+        url : '/ticket/timetable.ajax',
+            success:function(tmtables){
+    
+                $('#mCSB_17_container ul').remove();
+                let createEle = '<ul>';
+                let selectDate = $('#datePicker').val();
+                selectDate = selectDate.replaceAll('-', '').replace(/^20/gi, '');
+
+                tmtables.forEach(tmtable => {
+                    createEle += '<li><button type="button" class="btn" id="'+ (selectDate + tmtable.scrnStrDttm.replace(':', '')) +'" rpst-movie-no="'+ tmtable.movieNo +'" brch-no="'+ tmtable.cinemaId +'" theab-no="03" play-schdl-no="'+ tmtable.scrnNo +'">';
+                    createEle += '    <div class="legend">';
+                    createEle += '        <i class="iconset ico-sun" title="조조">조조</i>';
+                    createEle += '    </div>';
+                    createEle += '    <span class="time">';
+                    createEle += '        <strong title="상영 시작">'+ tmtable.scrnStrDttm +'</strong>';
+                    createEle += '        <em title="상영 종료">~'+ tmtable.scrnEndDttm +'</em>';
+                    createEle += '    </span>';
+                    createEle += '    <span class="title">';
+                    createEle += '        <strong title="'+ tmtable.mvKorName +'">'+ tmtable.mvKorName +'오옹?</strong>';
+                    createEle += '        <em>2D</em>';
+                    createEle += '    </span>';
+                    createEle += '    <div class="info">';
+                    createEle += '        <span class="theater" title="극장">'+ tmtable.theaterName +'</span>';
+                    createEle += '        <span class="seat">';
+                    createEle += '            <strong class="now" title="잔여 좌석">오옹?</strong>';
+                    createEle += '            <span>/</span>';
+                    createEle += '            <em class="all" title="전체 좌석">오옹?</em>';
+                    createEle += '        </span>';
+                    createEle += '    </div>';
+                    createEle += '</button></li>';
+                });
+                createEle += '</ul>';
+                $('#mCSB_17_container').append(createEle);
+                $('#mCSB_17_container li button').click(setTmtableClickEvent);
+                $(".content").mCustomScrollbar();
+            },
+            error: function(error){
+                console.log(`status : ${error.status}`);
+        }
+    });
+}
+
+/************************************************************* */
+// READY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/************************************************************* */
+
+//문서 로드 후 
+$(document).ready(function(){
+    
+    //영화 목록을 불러온다.
+    getMovieListAjax();
+    //영화관 목록을 불러온다.
+    getCinemaListAjax();
+    //상영시간표를 불러온다.
+    getTimeTablesAjax()
+
     $('#datePicker').val(dateToStr(new Date()));// datePicker 부분 날짜오늘로 초기화
     dateBtnCreate(dateStrToMove(dateToStr(new Date()))); // 날짜 버튼 생성
 
+    //상단 년월 배너 세팅해준다.
     setYearMonBann();
     //스크롤바 시작
     $(".content").mCustomScrollbar();
 
     //날짜 선택 라이브러리 설정시작
     $('#datePicker').datepicker(datePickerSet);
-
-    $('#mCSB_17_container *').click(function(event){
-        location.href = '/ticket/seat';
-    });
     
-    // $('[class$=-date]').each((idx, ele)=>{console.log($(ele).attr('class'))});
-
     //시간 버튼 - 뒤/앞으로 이동
     $('[class$=-time]').click(function(event){
         let direction = -1;//앞으로/뒤로 방향값
@@ -292,71 +437,13 @@ $(document).ready(function(){
     //*****************************************
     // 영화 선택 시작
     //*****************************************
-    $('#mCSB_1_container li button').click(setMovieList);
+    $('#mCSB_1_container li button').click(setMovieClickEvent);
     //*****************************************
     // 영화관 선택 시작
     //*****************************************
-    $('#mCSB_4_container li button').click(function(event){
-        
-        let targetEle = $(event.target);
-
-        let eventFlag = false;
-        let btnOnCnt  = 0;
-
-        //이미 선택된 영화관을 다시 클릭했을때 
-        if(targetEle.hasClass('on')){
-            targetEle.removeClass('on');
-            let emptyCnt;
-
-            let theaterId = targetEle.attr('brch-no');
-            $('#choiceBrchList div.bg div.wrap[brch-no=' + theaterId + ']').parent().remove();
-            $('#choiceBrchList').append('<div class="bg"></div>');
-            
-            
-            $('#choiceBrchList div.bg').each((idx, ele)=>{
-                if($(ele).find('div.wrap').length !==0 ){
-                    emptyCnt ++;
-                }
-            });
-            if(emptyCnt === 0){
-                $('#choiceBrchNone').show();
-                $('#choiceBrchList').hide();
-            }
-        }
-        else{
-            $('#mCSB_4_container li button').each((idx, ele)=>{
-                if($(ele).hasClass('on'))
-                {
-                    btnOnCnt++;
-                }
-            });
-            
-            if(btnOnCnt > 2){
-                teraModal('영화관 선택은 3개 까지만 가능합니다.');
-                eventFlag = true;
-                return ;
-            }else{
-                targetEle.addClass('on');
-
-                $('#choiceBrchNone').hide();
-                $('#choiceBrchList').show();
-                let emptyCnt = 0;
-                let theaterId = targetEle.attr('brch-no');
-                // let imgPath = '/views/ticket/img/9jyGCFBkMW31zk7XRFD3PkdTOdnEvZXd_150.jpg';
-                let theaterName = targetEle.attr('brch-nm');
-                //영화 이미지 세팅 함수 시작
-                // fnImage
-                let createStr = '';
-                createStr +='<div class="wrap" brch-no="'+ theaterId +'"><p class="txt">'+ theaterName +'</p></div>';
-                //삭제 버튼 이미지 제외
-                // createStr +='<button type="button" class="del" onclick="fn_deleteMovieChoice(\'23077300\')">삭제</button> </div>';
-                $('#choiceBrchList div.bg').each((idx, ele)=>{
-                    if($(ele).html()===''|| $(ele).html()===' ' ){
-                        emptyCnt ++;
-                    }
-                });
-                $('#choiceBrchList div.bg').eq(btnOnCnt).append(createStr);
-            }
-        }
-    });
+    $('#mCSB_4_container li button').click(setCinemaClickEvent);
+    //*****************************************
+    // 시간표 선택 시작
+    //*****************************************
+    $('#mCSB_17_container *').click(setTmtableClickEvent());
 });
