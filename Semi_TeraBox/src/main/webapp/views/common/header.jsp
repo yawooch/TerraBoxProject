@@ -93,7 +93,7 @@
             <c:if test="${not empty loginMember}">
                 <a href="/logout">로그아웃</a>
             </c:if>
-            <a href="/ticket/">빠른예매</a>
+            <a href="/ticket">빠른예매</a>
         </div>
         <div class="cm-header-link-left">
             <a href="javascript:" class="cm-link-area-sitemap"></a>
@@ -116,8 +116,8 @@
         <div class="cm-header-nav-sub">
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
-                    <li><a href="/movie"           title="전체영화">전체영화</a></li>
-                    <li><a href="/movie/moviepost" title="무비포스트">무비포스트</a></li>
+                    <li><a href="/movie" class="cm-movieBar"  title="전체영화">전체영화</a></li>
+                    <li><a href="/movie/moviepost"			  title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
@@ -135,8 +135,8 @@
                 <ul>
                     <li><a href="/question/announcement"    title="고객센터 홈">공지사항</a></li>
                     <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
-                    <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
-                    <li><a href="/question/rental"    title="단체/대관 문의">단체/대관 문의</a></li>
+                    <li><a href="/question/writeview"  title="1:1문의">1:1 문의</a></li>
+                    <li><a href="/question/writerentview"    title="단체/대관 문의">단체/대관 문의</a></li>
                     <li><a href="/question/lost"      title="분실물 문의">분실물 문의</a></li>
                 </ul>
             </div>
@@ -152,7 +152,6 @@
 
                 <ul class="cm-list-depth">
                     <li><a href="/movie"           title="전체영화">전체영화</a></li>
-                    <li><a href="/movie/moviepost" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
 
@@ -161,7 +160,6 @@
 
                 <ul class="cm-list-depth">
                     <li><a href="/ticket"           title="빠른예매">빠른예매</a></li>
-                    <li><a href="/ticket/timetable" title="상영시간표">상영시간표</a></li>
                 </ul>
             </div>
 
@@ -179,10 +177,10 @@
 
                 <ul class="cm-list-depth">
                     <li><a href="/question"           title="고객센터 홈">고객센터 홈</a></li>
-                    <li><a href="/question/notice"    title="고객센터 홈">공지사항</a></li>
+                    <li><a href="/question/announcement"    title="고객센터 홈">공지사항</a></li>
                     <li><a href="/question/faq"       title="자주묻는 질문">자주묻는 질문</a></li>
-                    <li><a href="/question/personal"  title="1:1문의">1:1 문의</a></li>
-                    <li><a href="/question/rental"    title="단체/대관 문의">단체/대관 문의</a></li>
+                    <li><a href="/question/writeview" title="1:1문의">1:1 문의</a></li>
+                    <li><a href="/question/writerentview"    title="단체/대관 문의">단체/대관 문의</a></li>
                     <li><a href="/question/lost"      title="분실물 문의">분실물 문의</a></li>
                 </ul>
             </div>
