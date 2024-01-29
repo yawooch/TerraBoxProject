@@ -283,8 +283,6 @@ function setTmtableClickEvent(event) {
     $('#selectMovieForm').append(createInput);
 
     $('#selectMovieForm').submit();
-    
-    // location.href = '/ticket/seat';
 }
 //영화 정보를 가져오는 ajax
 function getMovieListAjax(){
@@ -366,7 +364,12 @@ function getTimeTablesAjax(){
                 tmtables.forEach(tmtable => {
                     createEle += '<li><button type="button" class="btn" id="'+ (selectDate + tmtable.scrnStrDttm.replace(':', '')) +'" rpst-movie-no="'+ tmtable.movieNo +'" brch-no="'+ tmtable.cinemaId +'" theab-no="03" play-schdl-no="'+ tmtable.scrnNo +'">';
                     createEle += '    <div class="legend">';
-                    createEle += '        <i class="iconset ico-sun" title="조조">조조</i>';
+                    if(tmtable.scrnStrDttm.split(':')[0]<=16){
+                        createEle += '        <i class="iconset ico-sun" title="조조">조조</i>';
+                    }
+                    if(tmtable.scrnStrDttm.split(':')[0]>=21){
+                        createEle += '        <i class="iconset ico-moon" title="심야">심야</i>';
+                    }
                     createEle += '    </div>';
                     createEle += '    <span class="time">';
                     createEle += '        <strong title="상영 시작">'+ tmtable.scrnStrDttm +'</strong>';

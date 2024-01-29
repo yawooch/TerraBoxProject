@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 예매 화면으로 가는 페이지를 호출하는 Servlet
  */
-@WebServlet(name = "ticketReserve", urlPatterns = { "/ticket/seat" })
+@WebServlet(name = "ticketReserve", urlPatterns = { "/ticket/seat/isused" })
 public class TicketSelectSeatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

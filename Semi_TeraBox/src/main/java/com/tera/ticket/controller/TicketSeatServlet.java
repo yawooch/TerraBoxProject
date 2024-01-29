@@ -1,6 +1,8 @@
 package com.tera.ticket.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,10 @@ public class TicketSeatServlet extends HttpServlet {
     public TicketSeatServlet() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println(Arrays.toString(request.getParameterValues("selectMovie")));
+		System.out.println(Arrays.toString(request.getParameterValues("selectCinema")));
+		
 		request.getRequestDispatcher("/views/ticket/bookingSeat2.jsp").forward(request, response);
 	}
 
