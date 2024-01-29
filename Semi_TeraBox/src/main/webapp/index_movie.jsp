@@ -34,7 +34,7 @@
             <button type="button" class="main-button btn-like">
                 <i class="iconset ico-heart-toggle-gray"></i>
             831</button>
-            <div class="case"><a class="main-button main-gred" title="영화 예매하기">예매</a></div>
+            <div class="case"><a class="main-button main-gred" href="/ticket" title="영화 예매하기">예매</a></div>
             </div>
         </li>
         <li>
@@ -57,7 +57,7 @@
                 <i class="iconset ico-heart-toggle-gray"></i>
                 1.2k
             </button>
-            <div class="case"><a class="main-button main-gred" title="영화 예매하기">예매</a></div>
+            <div class="case"><a class="main-button main-gred" href="/ticket" title="영화 예매하기">예매</a></div>
             </div>
         </li>
         <li>
@@ -80,7 +80,7 @@
             <button type="button" class="main-button btn-like">
                 <i class="iconset ico-heart-toggle-gray"></i>
                 3.4k</button>
-                <div class="case"><a class="main-button main-gred" title="영화 예매하기">예매</a></div>
+                <div class="case"><a class="main-button main-gred"  href="/ticket" title="영화 예매하기">예매</a></div>
             </div>
         </li>
         <li>
@@ -102,7 +102,7 @@
                 <button type="button" class="main-button btn-like">
                     <i class="iconset ico-heart-toggle-gray"></i>
                 1.5k</button>
-                <div class="case"><a class="main-button main-gred" title="영화 예매하기">예매</a></div>
+                <div class="case"><a class="main-button main-gred"  href="/ticket" title="영화 예매하기">예매</a></div>
             </div>
         </li>
         </ol>

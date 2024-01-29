@@ -17,10 +17,10 @@
             <div class="mp-inner-wrap">
                 <div class="mp-location">
                     <span>home</span>
-                    <a href="#" title="마이페이지">
+                    <a href="/mypage" title="마이페이지">
                         나의 테라박스
                     </a>
-                    <a href="#" title="나의 예매 내역">나의 예매 내역</a>
+                    <a href="/mypage" title="나의 예매 내역">나의 예매 내역</a>
                 </div>
             </div>
         </div>    
@@ -36,13 +36,13 @@
                         <a href="#">나의 테라박스</a>
                     </div>
                     <div class="mp-ticketing">
-                        <a href="#">나의 예매 내역  <img src="${path}/views/mypage/img/arrow.png" alt="화살표"></a>
+                        <a href="/mypage">나의 예매 내역  <img src="${path}/views/mypage/img/arrow.png" alt="화살표"></a>
                     </div>
                     <div class="mp-question">
-                        <a href="#">나의 문의 내역</a>
+                        <a href="/mypage/question">나의 문의 내역</a>
                     </div>
                     <div class="mp-member">
-                        <a href="#">회원 정보 수정</a>
+                        <a href="/mypage/myinfo">회원 정보 수정</a>
                     </div>
                     <!-- 클릭! 화살표 표시 한다!  -->
                 </div>
@@ -162,7 +162,7 @@
                 </div>
                 <button type="button" class="btn-toggle">
                         이용안내
-                    <img src="${path}/views/mypage/img/arrow.png" alt="화살표">
+                    <img src="${path}/views/mypage/img/ico-arr-toggle-down.png" alt="화살표">
                 </button>
                 <!-- 토클로 보이게 안보이게 하기 -->
                 <div class="mp-count">

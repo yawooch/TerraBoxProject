@@ -63,9 +63,11 @@
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.8) url(../img/arrowR_8x13.png) calc(100% - 11px) center/8px 13px scroll no-repeat;
 }
+
 .main-btn-pause{
     background: transparent url(../img/pause.png) center/18px scroll no-repeat;
 }
+
 .main-btn-mute{
     background: transparent url(../img/soundOff.png) center/18px scroll no-repeat;
 }

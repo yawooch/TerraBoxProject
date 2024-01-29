@@ -152,6 +152,7 @@
 
                 <ul class="cm-list-depth">
                     <li><a href="/movie"           title="전체영화">전체영화</a></li>
+                    <li><a href="/movie/moviepost" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
 
