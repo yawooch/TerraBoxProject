@@ -51,10 +51,12 @@ public class QuestionWriteoneby extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int no = 0;
+
+		HttpSession session = request.getSession();
+		Member loginMember = (Member) session.getAttribute("loginMember");
+
 		Question question = new Question();
 
-//		question.setPassNo Integer.parseInt(((request.getParameter("nonMbInqPwd")));
 
 		question.setNo(request.getParameter("No"));
 		question.setTitle(request.getParameter("custInqTitle"));
@@ -70,8 +72,9 @@ public class QuestionWriteoneby extends HttpServlet {
 
 		System.out.println(question);
 
-		no = new QuestionBoardService().save(question);
+		int no = new QuestionBoardService().save(question);
 
 		response.sendRedirect("/mypage/question");
+
 	}
 }
