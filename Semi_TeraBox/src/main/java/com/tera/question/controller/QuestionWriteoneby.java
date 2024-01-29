@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.tera.common.jdbc.test.vo.Member;
 import com.tera.question.model.service.QuestionBoardService;
 import com.tera.question.model.vo.Question;
 
@@ -30,12 +31,20 @@ public class QuestionWriteoneby extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		
-		Question question = new Question();
-		
-		
+		Member loginMember = (Member) session.getAttribute("memberLogin");
 
-		request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
+		if(loginMember != null) {
+			
+			request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
+		}else {
+			request.setAttribute("msg", "로그인 후 작성해 주세요");
+		}
+		
+		
+		
+		
 
 	}
 
@@ -54,13 +63,13 @@ public class QuestionWriteoneby extends HttpServlet {
 		question.setTitle(request.getParameter("custInqTitle"));
 		question.setContent(request.getParameter("custInqCn"));
 		question.setPassNo(Integer.parseInt((request.getParameter("nonMbInqPwd"))));
-		question.setPhone(request.getParameter("hpNum1") + "-"+ request.getParameter("hpNum2")+ "-" + request.getParameter("hpNum3"));
+		question.setPhone(request.getParameter("hpNum1") + "-" + request.getParameter("hpNum2") + "-"
+				+ request.getParameter("hpNum3"));
 		question.setName(request.getParameter("inqurNm"));
 		question.setEmail(request.getParameter("rpstEmail"));
 		question.setType(request.getParameter("inqMclCd"));
-		question.setDivision("일대일"); 
+		question.setDivision("일대일");
 		question.setFile(request.getParameter("file"));
-		
 
 		System.out.println(question);
 
