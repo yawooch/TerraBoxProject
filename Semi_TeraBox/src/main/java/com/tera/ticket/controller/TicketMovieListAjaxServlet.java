@@ -16,11 +16,11 @@ import com.tera.movie.model.vo.Movie;
 /**
  * 영화목록을 가져오는 Ajax Servlet
  */
-@WebServlet(name = "ticketMovieLIstAjax", urlPatterns = { "/ticket/movielist.ajax" })
-public class TicketMovieLIstAjaxServlet extends HttpServlet {
+@WebServlet(name = "ticketMovieListAjax", urlPatterns = { "/ticket/movielist.ajax" })
+public class TicketMovieListAjaxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public TicketMovieLIstAjaxServlet() {}
+    public TicketMovieListAjaxServlet() {}
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -30,5 +30,4 @@ public class TicketMovieLIstAjaxServlet extends HttpServlet {
         response.setContentType("application/json;charset=UTF-8");
         new Gson().toJson(movies, response.getWriter());
     }
-
 }

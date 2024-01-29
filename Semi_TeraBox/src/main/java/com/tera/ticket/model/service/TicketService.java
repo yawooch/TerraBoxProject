@@ -1,10 +1,16 @@
 package com.tera.ticket.model.service;
 
-import java.sql.Connection;
-import static com.tera.common.jdbc.JDBCTemplate.*;
+import static com.tera.common.jdbc.JDBCTemplate.close;
+import static com.tera.common.jdbc.JDBCTemplate.commit;
+import static com.tera.common.jdbc.JDBCTemplate.getConnection;
+import static com.tera.common.jdbc.JDBCTemplate.rollback;
 
-import com.tera.common.jdbc.test.vo.Ticket;
+import java.sql.Connection;
+import java.util.List;
+
+import com.tera.common.jdbc.JDBCTemplate;
 import com.tera.ticket.model.dao.TicketDao;
+import com.tera.ticket.model.vo.TimeTable;
 
 public class TicketService {
 	public int save(String seatNo){
@@ -24,4 +30,19 @@ public class TicketService {
 		
 		return result;
 	}
+
+	public List<TimeTable> getTimeTableList() {
+		List<TimeTable> timetables = null;
+		
+		Connection connection = JDBCTemplate.getConnection();
+		
+		timetables = new TicketDao().getTimeTableList(connection);
+		
+		System.out.println("Sevice : " + timetables);
+		
+		close(connection);
+		
+		return timetables;
+	}
+
 }
