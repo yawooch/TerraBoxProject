@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
@@ -235,17 +236,21 @@
                     <div class="tk-choice-box">                        
                         <div class="tk-bb-title">
                             <div class="tk-tit-age-img"></div>
-                            <div class="tk-title">서울의 봄</div>
+                            <div class="tk-title">${movie.korName}</div>
                             <div class="tk-sub-title">2D</div>
                         </div>
                         <div class="tk-bb-info">
-                            <div class="tk-info-one">이수</div>
-                            <div class="tk-poster"><img src="${path}/views/ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div>
-                            <div class="tk-info-two">6관</div>
-                            <div class="tk-info-three">2024.01.16(화)</div>
+                            <div class="tk-info-one">${timeTable.cinemaName}</div>
+<%--                             <div class="tk-poster"><img src="${movie.poster}/views/ticket/img/aM1zeiVGySigNObspcjcoH9NaebEPa2f_150.jpg" alt="포스터"></div> --%>
+                            <div class="tk-poster"><img src="${movie.poster}" alt="포스터"></div>
+                            <div class="tk-info-two">${timeTable.theaterName}</div>
+                            
+                            <fmt:parseDate value="${timeTable.scrnStrDt}" var="scrnDateparse" pattern="yyyy-MM-dd" />
+                            
+                            <div class="tk-info-three"><fmt:formatDate value="${scrnDateparse}" pattern="yyyy-MM-dd(E)" /></div>
                             <select name="tk-time" class="tk-time" 
                             style="background-color: #333; color: #fff; border:none;margin-top: 10px; margin-left: -4px;"> 
-                                <option selecte>16:40~19:10</option>
+                                <option selected>${timeTable.scrnStrDttm}~${timeTable.scrnEndDttm}</option>
                                 <option value="tk-time-1">09:40~12:10</option>
                                 <option value="tk-time-2">11:40~14:10</option>
                                 <option value="tk-time-3">16:40~19:10</option>
@@ -272,7 +277,8 @@
                             </div>
                             <div class="tk-choice-seat-right">
                                 <div class="tk-select-seat">선택좌석</div>
-                                <form action="/ticket/reserved" method="POST" id="ticketForm">
+                                <form action="/ticket/reserve" method="POST" id="ticketForm">
+                                <input type="hidden" name="scrnNo" value="${timeTable.scrnNo}"/>
                                 <div class="tk-my-seat">
                                     <div class="tk-choice-seat-now" name="a">-</div>
                                     <div class="tk-choice-seat-now" name="a">-</div>
@@ -283,18 +289,6 @@
                                     <div class="tk-choice-seat-now" name="a">-</div>
                                     <div class="tk-choice-seat-now" name="a">-</div>                                
                                     <input type="submit" style="display : none;" id="formSubmit">
-                                    <input type="hidden" name="selectCord" value="">
-                                    <input type="hidden" name="selectCord" value="">
-                                    <input type="hidden" name="selectCord" value="">
-                                    <input type="hidden" name="selectCord" value="">
-                                    <input type="hidden" name="selectCord" value="">
-                                    <input type="hidden" name="selectCord" value="">
-                                    <input type="hidden" name="ticketDv"   value="">
-                                    <input type="hidden" name="ticketDv"   value="">
-                                    <input type="hidden" name="ticketDv"   value="">
-                                    <input type="hidden" name="ticketDv"   value="">
-                                    <input type="hidden" name="ticketDv"   value="">
-                                    <input type="hidden" name="ticketDv"   value="">
                                 </div>
                                 </form>
                             </div>

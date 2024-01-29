@@ -245,6 +245,9 @@ function setCinemaClickEvent(event){
                 }
             });
             $('#choiceBrchList div.bg').eq(btnOnCnt).append(createStr);
+
+            //상영시간표 정보를가져오는 ajax
+            getTimeTablesAjax(true);
         }
     }
 };
@@ -255,31 +258,14 @@ function setTmtableClickEvent(event) {
     let movieNo  = thisTarget.attr('rpst-movie-no');//영화번호
     let cinemaId = thisTarget.attr('brch-no');//극장아이디
     let scrnNo   = thisTarget.attr('play-schdl-no');//상영번호
-    
-    let movieArr = [];
-    let cinemaArr = [];
 
-    $('#choiceMovieList div.bg').each((idx, ele)=>{
-        let emptyValue = $(ele).children('div.wrap').attr('movie-no');
-        if($(ele).html() != '' && emptyValue != undefined){
-            movieArr = [...movieArr, emptyValue];
-        }
-    });
-    $('#choiceBrchList div.bg').each((idx, ele)=>{
-        let emptyValue = $(ele).children('div.wrap').attr('brch-no');
-        if($(ele).html() != '' && emptyValue != undefined){
-            cinemaArr = [...cinemaArr, emptyValue];
-        }
-    });
     let createInput  = '';
     $('#selectMovieForm *').remove();
 
-    movieArr.forEach(movie=>{
-        createInput  += '<input type="hidden" name="selectMovie"  value="'+ movie +'"/>';
-    });
-    cinemaArr.forEach(cinema=>{
-        createInput += '<input type="hidden" name="selectCinema" value="'+ cinema +'"/>';
-    });
+    createInput  += '<input type="hidden" name="movieNo"  value="'+ movieNo +'"/>';
+    createInput  += '<input type="hidden" name="cinemaId" value="'+ cinemaId +'"/>';
+    createInput  += '<input type="hidden" name="scrnNo" value="'+ scrnNo +'"/>';
+
     $('#selectMovieForm').append(createInput);
 
     $('#selectMovieForm').submit();
@@ -349,53 +335,84 @@ function getCinemaListAjax(){
     });
 }
 //상영시간표 정보를 가져오는 ajax
-function getTimeTablesAjax(){
+function getTimeTablesAjax(condition){
+    let movieArr = [];
+    let cinemaArr = [];
+    let ajaxprocess = 'N';
+    //초기세팅시에는 선택한 데이터를 보내지 않는다.
+    if(condition)
+    {
     
+        $('#choiceMovieList div.bg').each((idx, ele)=>{
+            let emptyValue = $(ele).children('div.wrap').attr('movie-no');
+            if($(ele).html() != '' && emptyValue != undefined){
+                movieArr = [...movieArr, emptyValue];
+            }
+        });
+        $('#choiceBrchList div.bg').each((idx, ele)=>{
+            let emptyValue = $(ele).children('div.wrap').attr('brch-no');
+            if($(ele).html() != '' && emptyValue != undefined){
+                cinemaArr = [...cinemaArr, emptyValue];
+            }
+        });
+        if(movieArr.length === 0){
+            teraModal('영화를 선택해주세요')
+            return ;
+        }
+        ajaxprocess = 'Y'
+    }
     $.ajax({
         type : 'POST',
         url : '/ticket/timetable.ajax',
-            success:function(tmtables){
-    
-                $('#mCSB_17_container ul').remove();
-                let createEle = '<ul>';
-                let selectDate = $('#datePicker').val();
-                selectDate = selectDate.replaceAll('-', '').replace(/^20/gi, '');
+        data : {
+            'ajaxprocess' : ajaxprocess ,
+            'movieArr' : movieArr ,
+            'cinemaArr' : cinemaArr
+        },
+        dataType: 'json',
+        traditional: true,
+        success:function(tmtables){
 
-                tmtables.forEach(tmtable => {
-                    createEle += '<li><button type="button" class="btn" id="'+ (selectDate + tmtable.scrnStrDttm.replace(':', '')) +'" rpst-movie-no="'+ tmtable.movieNo +'" brch-no="'+ tmtable.cinemaId +'" theab-no="03" play-schdl-no="'+ tmtable.scrnNo +'">';
-                    createEle += '    <div class="legend">';
-                    if(tmtable.scrnStrDttm.split(':')[0]<=16){
-                        createEle += '        <i class="iconset ico-sun" title="조조">조조</i>';
-                    }
-                    if(tmtable.scrnStrDttm.split(':')[0]>=21){
-                        createEle += '        <i class="iconset ico-moon" title="심야">심야</i>';
-                    }
-                    createEle += '    </div>';
-                    createEle += '    <span class="time">';
-                    createEle += '        <strong title="상영 시작">'+ tmtable.scrnStrDttm +'</strong>';
-                    createEle += '        <em title="상영 종료">~'+ tmtable.scrnEndDttm +'</em>';
-                    createEle += '    </span>';
-                    createEle += '    <span class="title">';
-                    createEle += '        <strong title="'+ tmtable.mvKorName +'">'+ tmtable.mvKorName +'오옹?</strong>';
-                    createEle += '        <em>2D</em>';
-                    createEle += '    </span>';
-                    createEle += '    <div class="info">';
-                    createEle += '        <span class="theater" title="극장">'+ tmtable.theaterName +'</span>';
-                    createEle += '        <span class="seat">';
-                    createEle += '            <strong class="now" title="잔여 좌석">오옹?</strong>';
-                    createEle += '            <span>/</span>';
-                    createEle += '            <em class="all" title="전체 좌석">오옹?</em>';
-                    createEle += '        </span>';
-                    createEle += '    </div>';
-                    createEle += '</button></li>';
-                });
-                createEle += '</ul>';
-                $('#mCSB_17_container').append(createEle);
-                $('#mCSB_17_container li button').click(setTmtableClickEvent);
-                $(".content").mCustomScrollbar();
-            },
-            error: function(error){
-                console.log(`status : ${error.status}`);
+            $('#mCSB_17_container ul').remove();
+            let createEle = '<ul>';
+            let selectDate = $('#datePicker').val();
+            selectDate = selectDate.replaceAll('-', '').replace(/^20/gi, '');
+
+            tmtables.forEach(tmtable => {
+                createEle += '<li><button type="button" class="btn" id="'+ (selectDate + tmtable.scrnStrDttm.replace(':', '')) +'" rpst-movie-no="'+ tmtable.movieNo +'" brch-no="'+ tmtable.cinemaId +'" theab-no="03" play-schdl-no="'+ tmtable.scrnNo +'">';
+                createEle += '    <div class="legend">';
+                if(tmtable.scrnStrDttm.split(':')[0]<=16){
+                    createEle += '        <i class="iconset ico-sun" title="조조">조조</i>';
+                }
+                if(tmtable.scrnStrDttm.split(':')[0]>=21){
+                    createEle += '        <i class="iconset ico-moon" title="심야">심야</i>';
+                }
+                createEle += '    </div>';
+                createEle += '    <span class="time">';
+                createEle += '        <strong title="상영 시작">'+ tmtable.scrnStrDttm +'</strong>';
+                createEle += '        <em title="상영 종료">~'+ tmtable.scrnEndDttm +'</em>';
+                createEle += '    </span>';
+                createEle += '    <span class="title">';
+                createEle += '        <strong title="'+ tmtable.mvKorName +'">'+ tmtable.mvKorName +'오옹?</strong>';
+                createEle += '        <em>2D</em>';
+                createEle += '    </span>';
+                createEle += '    <div class="info">';
+                createEle += '        <span class="theater" title="극장">'+ tmtable.theaterName +'</span>';
+                createEle += '        <span class="seat">';
+                createEle += '            <strong class="now" title="잔여 좌석">오옹?</strong>';
+                createEle += '            <span>/</span>';
+                createEle += '            <em class="all" title="전체 좌석">오옹?</em>';
+                createEle += '        </span>';
+                createEle += '    </div>';
+                createEle += '</button></li>';
+            });
+            createEle += '</ul>';
+            $('#mCSB_17_container').append(createEle);
+            $('#mCSB_17_container li button').click(setTmtableClickEvent);
+            $(".content").mCustomScrollbar();
+        },
+        error: function(error){
+            console.log(`status : ${error.status}`);
         }
     });
 }
@@ -420,7 +437,7 @@ $(document).ready(function(){
     //영화관 목록을 불러온다.
     getCinemaListAjax();
     //상영시간표를 불러온다.
-    getTimeTablesAjax()
+    getTimeTablesAjax(false);
 
     //스크롤바 시작
     $(".content").mCustomScrollbar();

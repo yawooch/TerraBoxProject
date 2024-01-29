@@ -1,10 +1,44 @@
+//문자열을 받아 버튼생성에 필요한 형식을 반환한다.
+function StrDp(dateOrigStr){
+    //속성 정의
+    this.dayArr      = ['일','월','화','수','목','금','토'];
+    this.monthArr    = ['1월', '2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+    this.datePick    = new Date(dateOrigStr);//날짜 타입으로 변경
+    this.dateStr     = dateOrigStr.replaceAll('-', '.');//날짜전체 yyyy.mm.dd 형식
+    this.year        = this.datePick.getFullYear();//년
+    this.yearStr     = this.datePick.getFullYear()+ '년';//년
+    this.month       = this.datePick.getMonth() + 1;//월
+    this.monRename   = this.monthArr[this.datePick.getMonth()];//1월, 2월...
+    this.monthPad    = (this.datePick.getMonth() + 1)>9?(this.datePick.getMonth() + 1)+'':'0'+(this.datePick.getMonth() + 1) ;//01
+    this.date        = this.datePick.getDate();//일
+    this.dayName     = this.dayArr[this.datePick.getDay()];//요일
+    this.dayRename   = dateStrToMove(this.datePick) === dateStrToMove(dateToStr(new Date()))? '오늘' : dateStrToMove(this.datePick) === dateStrToMove(dateToStr(new Date()), +1)? '내일' : this.dayArr[this.datePick.getDay()];//요일
+}   
+//날짜 타입을 넣으면 yyyy-mm-dd 타입으로 변환해준다.
+function dateToStr(date){
+    let year       = date.getFullYear();
+    let month      = (date.getMonth()+1)>9?(date.getMonth()+1): '0'+(date.getMonth()+1);
+    let dateNumStr = ((date.getDate())>9?(date.getDate()): '0'+(date.getDate()));
+    return year + '-' + month + '-'+ dateNumStr;
+};
+//날짜 형식의 문자열을 넣으면 날짜 이동하여 yyyy-mm-dd 타입으로 반환해준다.
+function dateStrToMove(dateStr, moveInt)
+{
+    let date = new Date(dateStr);
+    if(moveInt === null || moveInt === undefined){
+        date = new Date((date.setDate(date.getDate())));
+    }
+    else{
+        date = new Date((date.setDate(date.getDate()+ Number(moveInt))));
+    }
+    return dateToStr(date);
+};
 $(document).ready(function(){
 	let arr      = [];//좌석 선택 배열
 	let sum      = 0; //선택 인원수
 	let sel      = 0; //선택된 좌석수
 	let maxCnt   = 8; // 최대 선택인원 수
 	let modifyYn = false; //좌석 선택 여부
-	
 
 	//좌석 초기화 함수
 	function initSeat(){
@@ -222,8 +256,14 @@ $(document).ready(function(){
 					submitSign = false;
 				}
 			});
+
+			//만들기 전 삭제
+			$('#ticketForm div.tk-my-seat input[type=hidden]').remove();
+
+			let createInput = '';
+
 			for(let idx = 0; idx < arr.length; idx++){
-				$('[name=selectCord]').eq(idx).val(arr[idx]);
+				createInput += '<input type="hidden" name="selectCord" value="'+ arr[idx] +'">';
 			}
 			let countSenior = Number($('#tk_now_senior').text());
 			let countAdult  = Number($('#tk_now_adult').text());
@@ -231,25 +271,18 @@ $(document).ready(function(){
 
 			console.log(`countAdult : ${countAdult}, countJunior : ${countJunior}, countSenior : ${countSenior}`);
 
-			let ticketArr = $('[name=ticketDv]');
-			ticketArr.each((idx, ele)=>{
-				if(countSenior !== 0)
-				{
-					$(ticketArr[idx]).val('경로');
-					countSenior--;
-				}
-				else if(countAdult !== 0)
-				{
-					$(ticketArr[idx]).val('성인');
-					countAdult--;
-				}
-				else if(countJunior !== 0)
-				{
-					$(ticketArr[idx]).val('청소년');
-					countJunior--;
-				}
-			});
-
+			for(let idx = 0 ; idx < countSenior; idx++){
+				createInput += '<input type="hidden" name="ticketDv"   value="경로">';
+			}
+			for(let idx = 0 ; idx < countAdult; idx++){
+				createInput += '<input type="hidden" name="ticketDv"   value="성인">';
+			}
+			for(let idx = 0 ; idx < countJunior; idx++){
+				createInput += '<input type="hidden" name="ticketDv"   value="청소년">';
+			}
+			$('#ticketForm div.tk-my-seat').append(createInput);
+			
+			$('#ticketForm').submit();
 			// location.href = '/';
 		}
 	});

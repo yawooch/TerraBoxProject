@@ -1,7 +1,9 @@
 package com.tera.ticket.controller;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,9 +27,18 @@ public class TicketTimeTableAjaxServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        List<TimeTable> timeTables = new TicketService().getTimeTableList();
+    	String ajaxprocess = request.getParameter("ajaxprocess");
+        String movies  = null;
+        String cinemas = null; 
+        if(ajaxprocess.equals("Y")) {
+        	
+        	movies  = Arrays.asList(request.getParameterValues("movieArr")).stream().map(movie -> "'" + movie + "'" )	.collect(Collectors.joining(","));
+        	cinemas = Arrays.asList(request.getParameterValues("cinemaArr")).stream().map(cinema -> "'" + cinema + "'" )	.collect(Collectors.joining(","));
+        	
+        }
         
-        System.out.println(timeTables);
+        List<TimeTable> timeTables = new TicketService().getTimeTableList(movies, cinemas);
+        
         
         response.setContentType("application/json;charset=UTF-8");
         new Gson().toJson(timeTables, response.getWriter());

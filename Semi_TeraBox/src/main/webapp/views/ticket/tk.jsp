@@ -507,7 +507,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="${ path }/ticket/seat" id="selectMovieForm"  method="GET"></form>
+                        <form action="${ path }/ticket/seat" id="selectMovieForm"  method="POST"></form>
                     </div>
                 </div>
             </div>

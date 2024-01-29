@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.tera.common.jdbc.JDBCTemplate;
 import com.tera.ticket.model.dao.TicketDao;
+import com.tera.ticket.model.vo.Ticket;
 import com.tera.ticket.model.vo.TimeTable;
 
 public class TicketService {
@@ -31,18 +32,48 @@ public class TicketService {
 		return result;
 	}
 
-	public List<TimeTable> getTimeTableList() {
+	public List<TimeTable> getTimeTableList(String movies, String cinemas) {
 		List<TimeTable> timetables = null;
 		
 		Connection connection = JDBCTemplate.getConnection();
 		
-		timetables = new TicketDao().getTimeTableList(connection);
-		
-		System.out.println("Sevice : " + timetables);
+		timetables = new TicketDao().getTimeTableList(connection, movies, cinemas);
 		
 		close(connection);
 		
 		return timetables;
+	}
+
+	public TimeTable getScrnInfoByScrnNo(String scrnNo) {
+		TimeTable timetable = null;
+		
+		Connection connection = getConnection();
+		
+		timetable = new TicketDao().getScrnInfoByScrnNo(connection, scrnNo);
+		
+		close(connection);
+		
+		return timetable;
+	}
+
+	public int saveTicket(Ticket ticket) {
+		int result = 0;
+		
+		Connection connection = getConnection();
+		
+		result = new TicketDao().insertTicket(connection, ticket);
+		
+		if(result > 0) {
+			commit(connection);
+		}
+		else {
+			rollback(connection);
+		}
+		
+		close(connection);
+		
+		
+		return result;
 	}
 
 }

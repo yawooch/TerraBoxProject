@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TimeTable {
 	private String scrnNo;       /* 상영번호 */
+	private String scrnStrDt;  /* 상영시작일 */
 	private String scrnStrDttm;  /* 상영시작시간 */
 	private String scrnEndDttm;  /* 상영종료시간 */
 	private String movieNo;      /* 영화번호 */
