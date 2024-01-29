@@ -42,7 +42,7 @@
                 <!-- 회원가입 완료 -->
                 <div class="join-complete">
                     <i class="icon-complete"></i>
-                    <p class="name">아무개님 테라박스 가입을 환영합니다.</p>
+                    <p class="name">${member.memberName}님 테라박스 가입을 환영합니다.</p>
                     <p class="txt">확인을 누르시면 메인페이지로 이동합니다.</p>
                 </div>
                 <!-- 신규혜택 버튼 -->

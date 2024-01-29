@@ -3,9 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="path" value="${ pageContext.request.contextPath }"/>
     <link rel="stylesheet" href="${path}/views/common/css/signup_2.css">
+	<script src="${path}/views/js/jquery-3.7.1.min.js"></script>
     
  <main>
- <form action="/member/input" method="post">
+ <form class="signip-form" action="/member/input" method="post">
       <div class="cm-member-wrap">
         <!-- 로고 -->
         <div class="cm-logo"><a href="https://megabox.co.kr/main" id="cm_logo">Megabox lifetheather</a>
@@ -49,14 +50,14 @@
             <div class="cm-agree-member">
                 <!-- 필수항목 전체동의 -->
                 <div class="cm-all-chk">
-                    <input type="checkbox" id="cm_chkall">
-                    <label for="chkall" id="cm_mustall">필수항목전체동의</label>
+                    <input type="checkbox" id="checkAll">
+                    <label for="checkAll" class="checkAll">필수항목전체동의</label>
                 </div>
                 <!-- 서비스이용약관동의(필수) -->
                 <div class="cm-block">
                     <div class="cm-chk">
-                        <input type="checkbox" id="cm_chkservice">
-                        <label for="chkservice" class="cm-must">서비스 이용약관 동의(필수)</label>
+                        <input type="checkbox" id="termsOfService" value="termsOfService">
+                        <label for="termsOfService" class="cm-must">서비스 이용약관 동의(필수)</label>
                     </div>
                     <div id="cm_purpose" class="cm-scroll" tabindex="0"> <!-- 마우스가 고장나거나 배터리가 나가서 키보드로만 컴퓨터를 조작해야할때 -->
                         <div>
@@ -377,8 +378,8 @@
                 <!-- 개인정보 수집 및 이용 동의(필수) -->
                 <div class="cm-block">
                     <div class="cm-chk">
-                        <input type="checkbox" id="cm_chkperson">
-                        <label for="chkperson" class="cm-must">개인정보 수집 및 이용 동의(필수)</label>
+                        <input type="checkbox" id="privacyPolicy" value="privacyPolicy">
+                        <label for="privacyPolicy" class="cm-must">개인정보 수집 및 이용 동의(필수)</label>
                     </div>
                     <div id="personinfo" class="cm-scroll" tabindex="0">
                         <div>
@@ -525,8 +526,8 @@
                 <!-- 마켓팅 활용을 위한 개인정보 수집 이용 안내(선택) -->
                 <div class="cm-block">
                     <div class="cm-chk">
-                        <input type="checkbox" id="cm_chkmarket">
-                        <label for="chkmarket" class="cm-mustnot">마켓팅 활용을 위한 개인정보 수집 이용 안내(선택)</label>
+                        <input type="checkbox" id="allowPromotions" name="allowPromotions" value="Y">
+                        <label for="allowPromotions" class="cm-mustnot">마켓팅 활용을 위한 개인정보 수집 이용 안내(선택)</label>
                     </div>
                     <div id="cm_marketinfo" class="cm-scroll x-scroll">
                         <!-- 3.스크롤 -->
@@ -562,8 +563,8 @@
                 <!-- 위치기반서비스 이용 약관동의(선택) -->
                 <div class="cm-block">
                     <div class="cm-chk">
-                        <input type="checkbox" id="cm_chklocation">
-                        <label for="chklocation" class="cm-mustnot">위치기반서비스 이용 약관동의(선택)</label>
+                        <input type="checkbox" id="locationPromotions">
+                        <label for="locationPromotions" class="cm-mustnot">위치기반서비스 이용 약관동의(선택)</label>
                     </div>
                     <div id="cm_locationinfo" class="cm-scroll x-scroll">
                         <!-- 4.스크롤 -->
@@ -696,7 +697,7 @@
                 <!-- 확인 버튼 -->
                 <div class="cm-agree-btn-bottom">
                     <button id="cm_btnagreebottom" type="submit"
-                     class="cm-button red" >확인</button>
+                     class="cm-button red" disabled>확인</button>
 <%--             <% Member member = (Member)session.getAttribute("member");  --%>
 <!--              String memberName = member.getMemberName(); -->
 <%--             %> --%>
@@ -710,5 +711,101 @@
                 </div>
         </div>
     </div>
+    <script>
+	    const form = document.querySelector(".signip-form"); // 데이터 전송 form
+	    const checkAll = document.querySelector(".cm-all-chk input"); // 모두 동의 체크박스
+	    const checkBoxes = document.querySelectorAll(".cm-block input"); // 모두 동의 제외 체크박스
+	    const submitButton = document.querySelector("#cm_btnagreebottom"); // 확인 버튼
+	    
+	    submitButton.addEventListener('submit', (event)=>{
+	    	event.preventDefault();
+	    	
+	    	console.log('여기?');
+	    	
+	    	let checkBox = document.getElementById('allowPromotions');
+	    	
+	    	console.log(checkBox.getAttribute('checked'));
+	    });
+	    
+	    const agreements = {
+	    		  termsOfService: false,
+	    		  privacyPolicy: false,
+	    		  allowPromotions: false,
+	    		  locationPromotions: false,
+	    		};
+    
+// 	    form.addEventListener('submit', (e) => {
+// 	    	e.preventDefault(); console.log('여기오니');
+
+// 	    	let checkBox = document.getElementById('allowPromotions');
+	    	
+// 	    	let checkBox = $('#allowPromotions:checked').val() ;
+// 	    	console.log($('#allowPromotions:checked').val());
+	    	
+//     	}); // 새로고침(submit) 되는 것 막음
+
+	    checkBoxes.forEach((item) => item.addEventListener('input', toggleCheckbox));
+
+	    function toggleCheckbox(e) {
+	      const { checked, id } = e.target;  
+	      agreements[id] = checked;
+	      this.parentNode.classList.toggle('active');
+	      checkAllStatus();
+	      toggleSubmitButton();
+	    }
+
+	    function checkAllStatus() {
+	      const { termsOfService, privacyPolicy, allowPromotions } = agreements;
+	      if (termsOfService && privacyPolicy && allowPromotions) {
+	        checkAll.checked = true;
+// 	        elStrongPasswordMessage.classList.add('hide');
+	      } else {
+	        checkAll.checked = false;
+// 	        elStrongPasswordMessage.classList.remove('hide');
+	      }
+	    }
+
+	    function toggleSubmitButton() {
+	      const { termsOfService, privacyPolicy } = agreements;
+	      if (termsOfService && privacyPolicy) {
+	        submitButton.disabled = false;
+	      } else {
+	        submitButton.disabled = true;
+	      }
+	    }
+
+	    checkAll.addEventListener('click', (e) => {
+	      const { checked } = e.target;
+	      if (checked) {
+	        checkBoxes.forEach((item) => {
+	          item.checked = true;
+	          agreements[item.id] = true;
+	          item.parentNode.classList.add('active');
+	        });
+	      } else {
+	        checkBoxes.forEach((item) => {
+	          item.checked = false;
+	          agreements[item.id] = false;
+	          item.parentNode.classList.remove('active');
+	        });
+	      }
+	      toggleSubmitButton();
+	    });
+	    
+// 	    function is_checked() {
+	    	  
+// 	    	  // 1. checkbox element를 찾습니다.
+// 	    	  const checkbox = document.getElementByClassName('cm-mustnot');
+
+// 	    	  // 2. checked 속성을 체크합니다.
+// 	    	  const is_checked = checkbox.checked;
+
+// 	    	  // 3. 결과를 출력합니다.
+// 	    	  document.getElementByClassName('result').innerText = is_checked;
+	    	  
+// 	    	}
+
+    
+    </script>
     </form>
 </main>
