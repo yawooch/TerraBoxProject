@@ -117,7 +117,7 @@
             <div class="cm-gnb-depth2" style="display:none;">
                 <ul>
                     <li><a href="/movie" class="cm-movieBar"  title="전체영화">전체영화</a></li>
-                    <li><a href="/movie/moviepost"			  title="무비포스트">무비포스트</a></li>
+                    <li><a href="/movie/post"			  title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
             <div class="cm-gnb-depth2" style="display:none;">
@@ -152,7 +152,7 @@
 
                 <ul class="cm-list-depth">
                     <li><a href="/movie"           title="전체영화">전체영화</a></li>
-                    <li><a href="/movie/moviepost" title="무비포스트">무비포스트</a></li>
+                    <li><a href="/movie/post" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
 

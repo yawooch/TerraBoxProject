@@ -17,6 +17,6 @@ public class MoviePostListServlet extends HttpServlet {
     public MoviePostListServlet() {}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        request.getRequestDispatcher("/views/cinema/special.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/movie/moviePost.jsp").forward(request, response);
     }
 }
