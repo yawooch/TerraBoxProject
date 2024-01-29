@@ -18,17 +18,19 @@
 	</div>
 	<div class="inner-wrap">
 		<div class="lnb-area">
-			<nav id="lnb">
-				<p class="tit">
-					<a href="/mypage" title="나의 테라박스">나의 테라박스</a>
-				</p>
-				<ul>
-					<li class=""><a href="/mypage" title="예매/구매내역">예매/구매내역</a></li>
-					<li class="on"><a href="/mypage/question" title="나의 문의내역">나의
-							문의내역</a></li>
-					<li class=""><a href="/mypage/myinfo" title="회원정보">회원정보</a></li>
-				</ul>
-			</nav>
+		  <div class="mp-tera-box">
+                        <a href="#">나의 테라박스</a>
+                    </div>
+			<div class="mp-question">
+                        <a href="/mypage">나의 예매 내역  </a>
+                    </div>
+                    
+                    <div class="mp-ticketing">
+                        <a href="/mypage/question">나의 문의 내역<img src="${path}/views/mypage/img/arrow.png" alt="화살표"></a>
+                    </div>
+                    <div class="mp-member">
+                        <a href="/mypage/myinfo">회원 정보 수정</a>
+                    </div>
 		</div>
 		<div id="contents" class="location-fixed">
 			<h2 class="tit">나의 문의내역</h2>
