@@ -25,7 +25,9 @@ public class TicketMovieListAjaxServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        List<Movie> movies = new MovieService().getMovieList();
+    	String selectDate = request.getParameter("selectDate");
+    	
+        List<Movie> movies = new MovieService().getMovieListByDate(selectDate);
         
         response.setContentType("application/json;charset=UTF-8");
         new Gson().toJson(movies, response.getWriter());

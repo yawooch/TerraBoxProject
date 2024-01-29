@@ -210,10 +210,59 @@ public class MovieDao {
 
 
 
+	public List<Movie> findMovieByDate(Connection connection, String selectDate) {
 
-
-	
-	
-	
-	
+		List<Movie> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String query = "SELECT MOVIE_NO"
+				     + "     , MV_KOR_NAME"
+				     + "     , MV_ENG_NAME"
+				     + "     , MV_POSTER"
+				     + "     , MV_SYNOPSIS"
+				     + "     , MV_TYPE"
+				     + "     , MV_DIRECTOR"
+				     + "     , MV_GENRE"
+				     + "     , MV_GRADE"
+				     + "     , MV_OPEN_DATE"
+				     + "     , MV_CASTINGS"
+				     + "  FROM MOVIE"
+				     + " WHERE MOVIE_NO IN ("
+				     + "SELECT MOVIE_NO"
+				     + "  FROM TIME_TABLE"
+				     + " WHERE TO_CHAR(SCRN_STR_DTTM, 'YYYY-MM-DD')  = ?)";
+		
+		try {
+			pstmt = connection.prepareStatement(query);
+			pstmt.setString(1 , selectDate);
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Movie movie = new Movie();
+				
+				movie.setNo(rs.getInt("MOVIE_NO"));
+				movie.setKorName(rs.getString("MV_KOR_NAME"));
+				movie.setEngName(rs.getString("MV_ENG_NAME"));
+				movie.setPoster(rs.getString("MV_POSTER"));
+				movie.setSynopsis(rs.getString("MV_SYNOPSIS"));
+				movie.setType(rs.getString("MV_TYPE"));
+				movie.setDirector(rs.getString("MV_DIRECTOR"));
+				movie.setGenre(rs.getString("MV_GENRE"));
+				movie.setGrade(rs.getString("MV_GRADE"));
+				movie.setOpenDate(rs.getDate("MV_OPEN_DATE"));
+				movie.setActors(rs.getString("MV_CASTINGS"));
+				
+				list.add(movie);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
 }

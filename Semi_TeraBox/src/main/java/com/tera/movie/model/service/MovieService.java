@@ -85,6 +85,18 @@ public class MovieService {
 		return result;
 	}
 
+	// 특정일을 넘겨받아 상영시간표에 있는 영화목록을 출력
+	public List<Movie> getMovieListByDate(String selectDate) {
+		List<Movie> list = null; 
+		
+		Connection connection = getConnection();
+		
+		list = new MovieDao().findMovieByDate(connection, selectDate);
+		
+		close(connection);
+		
+		return list;
+	}
 
 	
 
