@@ -35,12 +35,10 @@ public class QuestionWriteoneby extends HttpServlet {
 		
 		Member loginMember = (Member) session.getAttribute("memberLogin");
 
-		if(loginMember != null) {
+	
 			
 			request.getRequestDispatcher("/views/question/questionWrite.jsp").forward(request, response);
-		}else {
-			request.setAttribute("msg", "로그인 후 작성해 주세요");
-		}
+	
 		
 		
 		
