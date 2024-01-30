@@ -15,10 +15,14 @@ $(document).ready(function() {
     );
     //좋아요 버튼 클릭하면 on 클래스 추가
     $('#mv-like').on('click', () => {
+		let og_point = parseInt($('.mv-span-likescore').html());
+		
         if ($('#mv-like').hasClass('on')) {
             $('#mv-like').removeClass('on');
+            $('.mv-span-likescore').html(og_point - 1);
         } else {
             $('#mv-like').addClass('on');
+            $('.mv-span-likescore').html(og_point + 1);
         }
     });
     
