@@ -98,6 +98,9 @@ main section {
     margin: auto;
     font-size: 15px;
 }
+.mv-span-likescore {
+    line-height: 33px;
+}
 
 .mv-btn-util :last-child {
     margin-left: 10px;
