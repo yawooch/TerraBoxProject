@@ -60,7 +60,7 @@ public class MemberDao {
 			pstmt.setString(1,member.getMemberId());  
 			pstmt.setString(2,member.getPassword());
 			pstmt.setString(3, member.getMemberName());
-			pstmt.setString(4, member.getMemSsn());
+			pstmt.setString(4, member.getMemSsn().split("-")[0]);
 			pstmt.setString(5, member.getMemPhone());
 			pstmt.setString(6, member.getMemEmail());
 			pstmt.setString(7, member.getMemSsn());
