@@ -454,6 +454,24 @@ h2.tit {
     height: 1000%;
     background: #e0e0e0;
 }
+.theater-box .theater-list ul li:nth-child(3):after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1000%;
+    background: #e0e0e0;
+}
+.theater-box .theater-list ul li:nth-child(4):after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1000%;
+    background: #e0e0e0;
+}
 .theater-box .user-theater {
     position: absolute;
     padding: 0 20px;
