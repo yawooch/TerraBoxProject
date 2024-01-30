@@ -220,7 +220,7 @@
                         </div>
                         <div class="tit-util">
                             <h3 class="tit">극장 공지사항</h3>
-                            <a href="/support/notice?ti=3" class="more" title="극장 공지사항 더보기">더보기 <i
+                            <a href="/question/announcementSeoul" class="more" title="극장 공지사항 더보기">더보기 <i
                                     class="iconset ico-arr-right-gray"></i></a>
                         </div>
                         <div class="table-wrap">
@@ -243,7 +243,7 @@
                                     <tr>
                                         <td>코엑스</td>
                                         <th scope="row">
-                                            <a href="/support/notice/detail?artiNo=11028&amp;bbsNo=9"
+                                            <a href="/question/announcementSeoul"
                                                 title="[코엑스]시사회 진행에 따른 고객 안내 (1/18) 상세보기">
                                                 [코엑스]시사회 진행에 따른 고객 안내 (1/18)
                                             </a>
@@ -254,7 +254,7 @@
                                     <tr>
                                         <td>하남스타필드</td>
                                         <th scope="row">
-                                            <a href="/support/notice/detail?artiNo=11024&amp;bbsNo=9"
+                                            <a href="/question/announcementSeoul"
                                                 title="[하남스타필드]상영관 명칭 변경 안내 상세보기">
                                                 [하남스타필드]상영관 명칭 변경 안내
                                             </a>
@@ -265,7 +265,7 @@
                                     <tr>
                                         <td>검단</td>
                                         <th scope="row">
-                                            <a href="/support/notice/detail?artiNo=11023&amp;bbsNo=9"
+                                            <a href="/question/announcementSeoul"
                                                 title="[검단] 상영관 리클라이너 좌석 교체 및 리뉴얼 공사 일정 안내(1/8~2/29) 상세보기">
                                                 [검단] 상영관 리클라이너 좌석 교체 및 리뉴얼 공사 일정 안내(1/8~2/29)
                                             </a>
@@ -276,7 +276,7 @@
                                     <tr>
                                         <td>의정부민락</td>
                                         <th scope="row">
-                                            <a href="/support/notice/detail?artiNo=11022&amp;bbsNo=9"
+                                            <a href="/question/announcementSeoul"
                                                 title="[의정부민락]주차장(송양하나로마트) 제휴 종료 안내 상세보기">
                                                 [의정부민락]주차장(송양하나로마트) 제휴 종료 안내
                                             </a>
@@ -287,7 +287,7 @@
                                     <tr>
                                         <td>이수</td>
                                         <th scope="row">
-                                            <a href="/support/notice/detail?artiNo=11020&amp;bbsNo=9"
+                                            <a href="/question/announcementSeoul"
                                                 title="이수지점 <[Live] 2024 빈 필하모닉 신년음악회> 상영불가로 인한 센트럴지점 재예매 요청 상세보기">
                                                 이수지점 &lt;[Live] 2024 빈 필하모닉 신년음악회&gt; 상영불가로 인한 센트럴지점 재예매 요청
                                             </a>
