@@ -26,18 +26,18 @@ public class TicketReservationServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Ticket> tickets = new ArrayList<>();
 		HttpSession session = request.getSession();
 		
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		
 		String[] cordinates = request.getParameterValues("selectCord");
 		String[] ticketDvs = request.getParameterValues("ticketDv");
+		
 		int memberCnt = 0;
 		int result = 0;
 		
 		//좌석수와 예매자구분 수가 동일하지 않으면 오류로 간주
-		if(cordinates.length ==  ticketDvs.length) {
+		if(cordinates.length !=  ticketDvs.length) {
 			request.setAttribute("msg", "오류가 발생했습니다. 다시시도 바랍니다.");
 		}
 		else memberCnt = cordinates.length;
@@ -47,29 +47,17 @@ public class TicketReservationServlet extends HttpServlet {
 			request.setAttribute("msg", "로그인 정보가 Beer 있습니다.다시시도 바랍니다.");
 		}
 		
-		
 		//예매 발권 준비
-		
 		for (int i = 0; i < memberCnt; i++) {
-
-//			Thread thread = new Thread(() -> {
-//				new TicketService().saveTicket(ticket);
-//			});
-//			thread.start();
+			Ticket ticket = new Ticket();
+			
+			ticket.setMeberId2(loginMember.getMemberId());
+			ticket.setScrnNo(request.getParameter("scrnNo"));
+			ticket.setTicketDV(ticketDvs[i]);
+			ticket.setSeatNo(cordinates[i]);
+			
+			result = new TicketService().saveTicket(ticket);
 		}
-		Ticket ticket = new Ticket();
-		
-		ticket.setMeberId2(loginMember.getMemberId());
-		ticket.setScrnNo(request.getParameter("scrnNo"));
-		ticket.setTicketDV(ticketDvs[0]);
-		ticket.setSeatNo(cordinates[0]);
-		
-		tickets.add(ticket);
-		
-		result = new TicketService().saveTicket(ticket);
-		
-		
-		System.out.println("result : " + result);
 		
 		if(result > 0) {
 			request.setAttribute("msg", "예매 성공");
@@ -79,6 +67,5 @@ public class TicketReservationServlet extends HttpServlet {
 		}
 		
 		response.sendRedirect("/");
-		
 	}
 }

@@ -393,7 +393,7 @@ function getTimeTablesAjax(condition){
                 createEle += '        <em title="상영 종료">~'+ tmtable.scrnEndDttm +'</em>';
                 createEle += '    </span>';
                 createEle += '    <span class="title">';
-                createEle += '        <strong title="'+ tmtable.mvKorName +'">'+ tmtable.mvKorName +'오옹?</strong>';
+                createEle += '        <strong title="'+ tmtable.mvKorName +'">'+ tmtable.mvKorName +'</strong>';
                 createEle += '        <em>2D</em>';
                 createEle += '    </span>';
                 createEle += '    <div class="info">';

@@ -16,33 +16,18 @@ public class TicketDao {
 
 	public int insertTicket(Connection connection, Ticket ticket) {
 		int result = 0;
-//		int[] resultArr = new int[ticket2.size()];
 		PreparedStatement pstmt = null;
 		String query = "INSERT INTO TICKET (TICKET_NO , MEMBER_ID2 , SCRN_NO , TICKET_DV , SEAT_NO) VALUES(SEQ_TK_NO.NEXTVAL, ? , ? , ? , ?)";
 		
 		try {
 			pstmt = connection.prepareStatement(query);
 			
-//			for (Ticket ticket : tickets) {
-				
-				pstmt.setString(1,ticket.getMeberId2());
-				pstmt.setString(2,ticket.getScrnNo());
-				pstmt.setString(3,ticket.getTicketDV());
-				pstmt.setString(4,ticket.getSeatNo());
-				
-				result = pstmt.executeUpdate();
-
-				// addBatch() 로 메모리에 넣어준다.
-//				pstmt.addBatch();
-				// batch 메모리에 넣은 후 파라미터 클리어
-//				pstmt.clearParameters();
-				// 다음 데이터 파라미터 설정 후 addBatch()...반복
-//			}
-
-			// Batch 실행
-//			resultArr = pstmt.executeBatch();
-			// Batch 초기화
-//			pstmt.clearBatch();
+			pstmt.setString(1,ticket.getMeberId2());
+			pstmt.setString(2,ticket.getScrnNo());
+			pstmt.setString(3,ticket.getTicketDV());
+			pstmt.setString(4,ticket.getSeatNo());
+			
+			result = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -50,10 +35,6 @@ public class TicketDao {
 		finally {
 			close(pstmt);
 		}
-		
-//		for (int i = 0; i < resultArr.length; i++) {
-//			result += resultArr[i];
-//		}
 		return result;
 	}
 	//영화, 극장, 상영관, 상영시간표를 조인하여 결과물을 가져온다.
