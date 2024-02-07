@@ -73,6 +73,7 @@ public class RestApiTest {
 				ex.printStackTrace();
 			}
 		}
+		String json = new Gson().toJson(sb.toString());
 		System.out.println("결과 : " + sb.toString());
 	}
 
