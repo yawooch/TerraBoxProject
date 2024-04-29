@@ -2,6 +2,8 @@
 
 ![KH Semi Project](https://github.com/yawooch/TerraBoxProject/blob/master/%EC%82%B0%EC%B6%9C%EB%AC%BC/TeraBox.mainpage.png)
 
+참조자료 : [발표자료-TeraBox PJ.pdf](https://github.com/yawooch/TerraBoxProject/blob/master/%EC%82%B0%EC%B6%9C%EB%AC%BC/%EC%B5%9C%EC%A2%85%EC%A0%9C%EC%B6%9C/TeraBox%20PJ.pdf)
+
 ## 프로젝트 명 
 영화예약 사이트 구현 프로젝트
 
@@ -20,58 +22,35 @@
 
 
 
-## 사용기술
-
-
-
-## 개발환경 
-
 ## Skills
-![HTML5](https://img.shields.io/badge/-HTML5-F05032?style=for-the-badge&logo=html5&labelColor=000000)
-![CSS3](https://img.shields.io/badge/-CSS3-007ACC?style=for-the-badge&logo=css3&labelColor=000000&logoColor=007ACC)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&labelColor=000000&color=F7DF1E)
-![jquery](https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&labelColor=000000&color=0769AD)
-![java](https://img.shields.io/badge/java-78A083?style=for-the-badge&logo=java&labelColor=000000)
-![jsp](https://img.shields.io/badge/jsp-41644A?style=for-the-badge&logo=jsp&labelColor=000000)
-![spring](https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&labelColor=000000)
-![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&labelColor=000000)
-![Eclipse](https://img.shields.io/badge/-Eclipse-2C2255?style=for-the-badge&logo=Eclipse&labelColor=000000)
-![VSCode](https://img.shields.io/badge/-VSCode-2C2255?style=for-the-badge&logo=visualstudio&labelColor=000000)
 
+#### 개발환경 
 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="windows8 logo"  />
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
-  <img width="12" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" height="40" alt="windows8 logo"  /><img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" height="40" alt="oracle logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg" height="40" alt="tomcat logo"  />
   <img width="12" />
+
+#### 사용언어 
+Front : \
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  />
   <img width="12" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" height="40" alt="jquery logo"  />\
+Back  :\
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40" alt="java logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="40" alt="spring logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo"  />
+![jsp](https://img.shields.io/badge/jsp-41644A?style=for-the-badge&logo=jsp&labelColor=000000)
+
+
+### Tool
+![Figma](https://img.shields.io/badge/-Figma-F05032?style=for-the-badge&logo=Figma&labelColor=000000)
+![ERD Cloud](https://img.shields.io/badge/-ERD%20Cloud-9388FB?style=for-the-badge&logo=ERDCloud&labelColor=000000)
+![SQL Developer](https://img.shields.io/badge/-SQL%20Developer-16A100?style=for-the-badge&logo=SQLDeveloper&labelColor=000000)
+  <img src="https://cdn.simpleicons.org/git/F05032" height="40" alt="git logo"  />
   <img width="12" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=eclipse" height="40" alt="eclipseide logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" height="40" alt="oracle logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=postgres" height="40" alt="postgresql logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/microsoftsqlserver/CC2927" height="40" alt="microsoftsqlserver logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/git/F05032" height="40" alt="git logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/sourcetree/0052CC" height="40" alt="sourcetree logo"  />
-  <img width="12" />
-  <img src="https://cdn.simpleicons.org/react/61DAFB" height="40" alt="react logo"  />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" height="40" alt="jquery logo"  />
-</div>
